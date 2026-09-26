@@ -109,15 +109,6 @@
         .article-card .excerpt{color:var(--text-muted);font-size:13px;flex-grow:1;margin-bottom:12px}
         .article-card .meta{border-top:1px solid var(--border-color);padding-top:8px;display:flex;justify-content:space-between;font-size:11px;color:var(--text-muted)}
         .article-card .meta i{color:var(--secondary-blue)}
-        .featured-card{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 4px 15px rgba(26,43,74,.08);border:1px solid var(--border-color);cursor:pointer;position:relative}
-        .featured-card:hover{border-color:var(--gold-accent);box-shadow:0 8px 25px rgba(26,43,74,.12)}
-        .featured-card .featured-image{background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));min-height:250px;display:flex;align-items:center;justify-content:center;color:var(--gold-accent);font-size:60px;position:relative}
-        .featured-card .featured-body{padding:30px;display:flex;flex-direction:column;justify-content:center}
-        .featured-card .category-badge{background:var(--gold-light);color:var(--primary-navy);padding:4px 12px;border-radius:3px;font-size:11px;font-weight:700;align-self:flex-start;margin-bottom:12px}
-        .featured-card h2{font-size:1.5rem;font-weight:800;color:var(--primary-navy);margin-bottom:12px;line-height:1.4}
-        .featured-card .excerpt{color:var(--text-muted);font-size:14px;margin-bottom:15px;line-height:1.8}
-        .featured-card .meta{display:flex;gap:15px;font-size:12px;color:var(--text-muted);border-top:1px solid var(--border-color);padding-top:12px}
-        .featured-card .meta i{color:var(--secondary-blue)}
         .sidebar{display:flex;flex-direction:column;gap:20px}
         .sidebar-box{background:#fff;border-radius:6px;border:1px solid var(--border-color);overflow:hidden;box-shadow:0 2px 8px rgba(26,43,74,.04)}
         .sidebar-box .box-header{background:var(--primary-navy);color:#fff;padding:10px 16px;font-size:13.5px;font-weight:700;display:flex;align-items:center;gap:8px;border-bottom:2px solid var(--gold-accent)}
@@ -212,7 +203,7 @@
         .copy-link-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:var(--gold-accent);color:var(--primary-navy);border:none;border-radius:5px;font-family:'Tajawal',sans-serif;font-weight:700;font-size:13.5px;cursor:pointer;transition:.3s}
         .copy-link-btn:hover{background:var(--primary-navy);color:#fff;transform:translateY(-2px);box-shadow:0 5px 15px rgba(0,0,0,.15)}
         .card-copy-btn{position:absolute;top:10px;left:10px;background:rgba(26,43,74,.92);color:#fff;border:none;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:.3s;z-index:5;opacity:0;pointer-events:none}
-        .article-card:hover .card-copy-btn,.news-item:hover .card-copy-btn,.audio-card:hover .card-copy-btn,.video-card:hover .card-copy-btn,.book-card:hover .card-copy-btn,.featured-card:hover .card-copy-btn{opacity:1;pointer-events:auto}
+        .article-card:hover .card-copy-btn,.news-item:hover .card-copy-btn,.audio-card:hover .card-copy-btn,.video-card:hover .card-copy-btn,.book-card:hover .card-copy-btn{opacity:1;pointer-events:auto}
         .card-copy-btn:hover{background:var(--gold-accent);color:var(--primary-navy);transform:scale(1.1)}
         .comments-section{background:#fff;border-radius:6px;padding:20px 25px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-top:4px solid var(--primary-navy);margin-bottom:20px}
         .comments-section h3{color:var(--primary-navy);font-size:1.2rem;font-weight:800;margin-bottom:15px;display:flex;align-items:center;gap:8px}
@@ -312,7 +303,7 @@
         .news-item .news-excerpt{color:var(--text-muted);font-size:13.5px;line-height:1.8;margin:0 0 10px 0}
         .news-item .news-more{color:var(--gold-accent);font-size:13px;font-weight:700}
         @media (max-width:1024px){.news-grid{grid-template-columns:1fr 280px;gap:18px}.main-nav .nav-list li a{padding:13px 10px;font-size:12px}}
-        @media (max-width:900px){.news-grid{grid-template-columns:1fr}.sidebar{flex-direction:row;flex-wrap:wrap}.sidebar-box{flex:1;min-width:250px}.featured-card{grid-template-columns:1fr}.featured-card .featured-image{min-height:180px;font-size:45px}.contact-grid{grid-template-columns:1fr}.videos-grid{grid-template-columns:1fr}.card-copy-btn{opacity:1;pointer-events:auto}}
+        @media (max-width:900px){.news-grid{grid-template-columns:1fr}.sidebar{flex-direction:row;flex-wrap:wrap}.sidebar-box{flex:1;min-width:250px}.contact-grid{grid-template-columns:1fr}.videos-grid{grid-template-columns:1fr}.card-copy-btn{opacity:1;pointer-events:auto}}
         @media (max-width:768px){
             .main-nav{display:none}
             .main-nav.mobile-open{display:block;position:fixed;top:0;right:0;width:300px;height:100vh;z-index:2000;overflow-y:auto;box-shadow:-5px 0 20px rgba(0,0,0,.3)}
@@ -340,8 +331,6 @@
             .breaking-label{font-size:11px;padding:4px 10px}
             .breaking-ticker marquee{font-size:12.5px}
             .articles-grid,.library-grid,.team-grid,.videos-grid{grid-template-columns:1fr;gap:14px}
-            .featured-card .featured-body{padding:20px}
-            .featured-card h2{font-size:1.2rem}
             .section-header h2{font-size:1.1rem}
             .section-header h2::before{height:18px}
             .sidebar{flex-direction:column}
@@ -376,10 +365,7 @@
             .top-bar .container{justify-content:center}
             .top-bar .right{margin:0 auto;align-items:center}
             .top-bar .lang-note{text-align:center;font-size:9px}
-            .main-header .brand-text .sub{display:none}
-            .featured-card .featured-image{min-height:140px;font-size:38px}
-            .featured-card h2{font-size:1.05rem}
-            .featured-card .featured-body{padding:15px}
+            .main-header .brand-text .sub{font-size:9.5px;display:block}
             .mobile-clock-bar{font-size:10px;gap:7px;padding:6px 10px}
             .footer-contact-row{flex-direction:column;gap:8px}
             .footer-contact-item{font-size:12px}
@@ -417,7 +403,7 @@
                 <div class="logo-mark"><i class="fa-solid fa-lightbulb"></i></div>
                 <div class="brand-text">
                     <span class="main" data-i18n="brandName">مِشْكَاة</span>
-                    <span class="sub" data-i18n="brandSub">منصة فكرية توعوية لنشر المقالات والرؤى</span>
+                    <span class="sub" data-i18n="brandSub">منصة فكرية توعوية لنشر المقالات والرؤى.</span>
                 </div>
             </a>
             <div class="header-clock">
@@ -886,7 +872,7 @@
 
         const translations = {
             ar: {
-                title: 'منصة مشكاة | للنور والوعي', brandName: 'مِشْكَاة', brandSub: 'منصة فكرية توعوية لنشر المقالات والرؤى',
+                title: 'منصة مشكاة | للنور والوعي', brandName: 'مِشْكَاة', brandSub: 'منصة فكرية توعوية لنشر المقالات والرؤى.',
                 topBarText: 'منصة مشكاة | للنور والوعي',
                 langNote: 'ستتوفر ميزة ترجمة المقال قريباً',
                 navHome: 'الرئيسية', navLibrary: 'المكتبة', navAbout: 'عن المنصة', navSections: 'الأقسام', navCats: 'التصنيفات',
@@ -951,7 +937,7 @@
                 am: 'ص', pm: 'م', messageAlert: 'تم استلام رسالتك بنجاح!'
             },
             en: {
-                title: 'Mishkat Platform | For Light & Awareness', brandName: 'MISHKAT', brandSub: 'An intellectual platform for articles and insights',
+                title: 'Mishkat Platform | For Light & Awareness', brandName: 'MISHKAT', brandSub: 'An intellectual platform for articles and insights.',
                 topBarText: 'Mishkat Platform | For Light & Awareness',
                 langNote: 'Article translation feature coming soon',
                 navHome: 'Home', navLibrary: 'Library', navAbout: 'About', navSections: 'Sections', navCats: 'Categories',
@@ -1015,7 +1001,7 @@
                 am: 'AM', pm: 'PM', messageAlert: 'Your message has been received!'
             },
             fa: {
-                title: 'پلتفرم مشکاه | برای نور و آگاهی', brandName: 'مشکاه', brandSub: 'پلتفرم فکری برای مقالات و دیدگاه‌ها',
+                title: 'پلتفرم مشکاه | برای نور و آگاهی', brandName: 'مشکاه', brandSub: 'پلتفرم فکری برای مقالات و دیدگاه‌ها.',
                 topBarText: 'پلتفرم مشکاه | برای نور و آگاهی',
                 langNote: 'قابلیت ترجمه مقالات به‌زودی',
                 navHome: 'صفحه اصلی', navLibrary: 'کتابخانه', navAbout: 'درباره', navSections: 'بخش‌ها', navCats: 'دسته‌بندی‌ها',
@@ -1409,22 +1395,6 @@
             if (filtered.length === 0) { grid.innerHTML = ''; empty.style.display = 'block'; return; }
             empty.style.display = 'none';
             let html = '';
-            if (!isFiltered && filtered.length > 0) {
-                const first = filtered[0];
-                const idx = articles.indexOf(first);
-                html += `
-                    <div class="featured-card" onclick="openArticle(${idx})">
-                        <button class="card-copy-btn" onclick="copyArticleCardLink(event, ${idx})" title="نسخ الرابط"><i class="fa-solid fa-link"></i></button>
-                        <div class="featured-image"><i class="fa-solid fa-lightbulb"></i></div>
-                        <div class="featured-body">
-                            <span class="category-badge">${t[first.catKey] || ''}</span>
-                            <h2>${first.title}</h2>
-                            <p class="excerpt">${first.excerpt}</p>
-                            <div class="meta"><span><i class="fa-regular fa-user"></i> ${first.author}</span><span><i class="fa-regular fa-calendar"></i> ${first.date}</span></div>
-                        </div>
-                    </div>`;
-                filtered = filtered.slice(1);
-            }
             html += filtered.map(a => {
                 const idx = articles.indexOf(a);
                 return `<div class="article-card" onclick="openArticle(${idx})"><button class="card-copy-btn" onclick="copyArticleCardLink(event, ${idx})" title="نسخ الرابط"><i class="fa-solid fa-link"></i></button><div class="card-top"></div><div class="card-body"><span class="category-badge">${t[a.catKey] || ''}</span><h3>${a.title}</h3><p class="excerpt">${a.excerpt}</p><div class="meta"><span><i class="fa-regular fa-user"></i> ${a.author}</span><span><i class="fa-regular fa-calendar"></i> ${a.date}</span></div></div></div>`;
