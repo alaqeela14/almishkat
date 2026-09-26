@@ -399,6 +399,147 @@
     </style>
 </head>
 <body>
+  <!-- ==== الوضع الليلي ==== -->
+<style>
+    .dark-toggle{position:fixed;top:12px;left:12px;z-index:9999;width:36px;height:36px;border-radius:50%;background:rgba(26,43,74,.92);color:#c9a961;border:2px solid #c9a961;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:.3s;box-shadow:0 2px 8px rgba(0,0,0,.25);padding:0}
+    .dark-toggle:hover{background:#c9a961;color:#1a2b4a;transform:scale(1.12)}
+    body.dark-mode{background:#0d1520;color:#e0e6ed}
+    body.dark-mode .top-bar{background:#050a12}
+    body.dark-mode .main-header{background:#1a2535;border-bottom-color:#2a3a52}
+    body.dark-mode .main-nav{background:#131d2e}
+    body.dark-mode .main-nav .nav-list li a{color:#c5cfe0}
+    body.dark-mode .main-nav .nav-list li a:hover,
+    body.dark-mode .main-nav .nav-list li a.active{background:rgba(201,169,97,.15)}
+    body.dark-mode .main-nav .nav-list .dropdown-menu{background:#1a2535;border-color:#2a3a52}
+    body.dark-mode .main-nav .nav-list .dropdown-item{color:#e0e6ed}
+    body.dark-mode .main-nav .nav-list .dropdown-item:hover{background:#131d2e;color:#c9a961}
+    body.dark-mode .main-nav .search-mini{background:rgba(255,255,255,.05)}
+    body.dark-mode .breaking-bar{background:#1a2535;border-color:#2a3a52}
+    body.dark-mode .breaking-ticker marquee a{color:#e0e6ed}
+    body.dark-mode .hero-compact{background:linear-gradient(135deg,#0f1a2e,#1a2b45)}
+    body.dark-mode .page-title-bar{background:linear-gradient(135deg,#0f1a2e,#1a2b45)}
+    body.dark-mode .content-card,
+    body.dark-mode .article-card,
+    body.dark-mode .featured-card,
+    body.dark-mode .sidebar-box,
+    body.dark-mode .submit-box,
+    body.dark-mode .article-full,
+    body.dark-mode .share-section,
+    body.dark-mode .comments-section,
+    body.dark-mode .book-card,
+    body.dark-mode .modal-box,
+    body.dark-mode .team-card,
+    body.dark-mode .search-results-header,
+    body.dark-mode .search-result-item,
+    body.dark-mode .search-empty,
+    body.dark-mode .audio-card,
+    body.dark-mode .video-card,
+    body.dark-mode .news-item,
+    body.dark-mode .section-tile,
+    body.dark-mode .contact-tile{background:#1a2535!important;color:#e0e6ed;border-color:#2a3a52}
+    body.dark-mode .article-card h3,
+    body.dark-mode .featured-card h2,
+    body.dark-mode .content-card h2,
+    body.dark-mode .section-header h2,
+    body.dark-mode .article-full h1,
+    body.dark-mode .page-title-bar h1,
+    body.dark-mode .news-item h3,
+    body.dark-mode .video-card .video-body h3,
+    body.dark-mode .audio-card .audio-info h3,
+    body.dark-mode .search-result-item h3,
+    body.dark-mode .book-body h3,
+    body.dark-mode .team-card h3,
+    body.dark-mode .contact-tile h4,
+    body.dark-mode .section-tile h4,
+    body.dark-mode .audio-card .audio-info h3{color:#e0e6ed!important}
+    body.dark-mode .article-card .excerpt,
+    body.dark-mode .featured-card .excerpt,
+    body.dark-mode .book-desc,
+    body.dark-mode .audio-card .audio-desc,
+    body.dark-mode .news-item .news-excerpt,
+    body.dark-mode .article-card .meta,
+    body.dark-mode .featured-card .meta,
+    body.dark-mode .article-meta,
+    body.dark-mode .news-item .news-date,
+    body.dark-mode .content-card p,
+    body.dark-mode .contact-tile p,
+    body.dark-mode .section-tile p{color:#9ca8bb}
+    body.dark-mode .brand-text .main{color:#c9a961}
+    body.dark-mode .header-clock .time-row{color:#e0e6ed}
+    body.dark-mode .header-clock .date-row{color:#9ca8bb}
+    body.dark-mode .footer-socials .admin-link{display:none!important}
+    body.dark-mode footer{background:#050a12}
+    body.dark-mode .footer-bottom{background:#000308}
+    body.dark-mode .mobile-clock-bar,
+    body.dark-mode .mobile-search-bar{background:#1a2535;border-color:#2a3a52;color:#e0e6ed}
+    body.dark-mode .mobile-search-bar input{background:#0d1520;color:#e0e6ed;border-color:#2a3a52}
+    body.dark-mode .category-tabs .cat-btn{background:#1a2535;color:#e0e6ed;border-color:#2a3a52}
+    body.dark-mode .category-tabs .cat-btn.active{background:#c9a961;color:#1a2b4a}
+    body.dark-mode .sidebar-box .box-header{background:#131d2e}
+    body.dark-mode .most-read-item .number{background:#c9a961;color:#1a2b4a}
+    body.dark-mode .sidebar-cat-item span:first-child,
+    body.dark-mode .most-read-item .text p{color:#e0e6ed}
+    body.dark-mode .sidebar-cat-item .count{background:#0d1520;color:#c9a961}
+    body.dark-mode .article-full .article-body{color:#d5dce6}
+    body.dark-mode .article-full .article-body blockquote{background:#131d2e;color:#e0e6ed}
+    body.dark-mode .article-full .article-body code{background:#131d2e;color:#c9a961}
+    body.dark-mode .article-full .article-body h1,
+    body.dark-mode .article-full .article-body h2,
+    body.dark-mode .article-full .article-body h3,
+    body.dark-mode .article-full .article-body h4{color:#c9a961}
+    body.dark-mode .article-full .article-body strong{color:#e0e6ed}
+    body.dark-mode .article-full .article-body table th{background:#131d2e;color:#c9a961}
+    body.dark-mode .article-full .article-body table td{color:#e0e6ed}
+    body.dark-mode .top-bar .lang-btn{color:#9ca8bb;border-color:#3a4a6a}
+    body.dark-mode .top-bar .lang-btn.active,
+    body.dark-mode .top-bar .lang-btn:hover{border-color:#c9a961;color:#c9a961}
+    body.dark-mode .lang-note{color:#8896b0}
+    body.dark-mode .section-tile{background:#131d2e}
+    body.dark-mode .section-tile:hover{background:#1a2535}
+    body.dark-mode .search-result-item .result-snippet mark,
+    body.dark-mode .search-result-item .result-snippet{color:#9ca8bb}
+    body.dark-mode .search-result-item .result-snippet mark{background:#c9a961;color:#1a2b4a}
+    body.dark-mode .comments-section h3,
+    body.dark-mode .comments-section p{color:#e0e6ed}
+    body.dark-mode .submit-box label{color:#c9a961}
+    body.dark-mode .submit-box input,
+    body.dark-mode .submit-box textarea{background:#0d1520;color:#e0e6ed;border-color:#2a3a52}
+    body.dark-mode .section-header{border-bottom-color:#c9a961}
+</style>
+
+<button class="dark-toggle" id="darkToggle" title="الوضع الليلي"><i class="fa-solid fa-moon"></i></button>
+
+<script>
+(function(){
+    try {
+        if (localStorage.getItem('mishkat_theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+    } catch(e) {}
+    function initDarkToggle(){
+        const btn = document.getElementById('darkToggle');
+        if (!btn) return;
+        const setIcon = () => {
+            const isDark = document.body.classList.contains('dark-mode');
+            btn.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+            btn.title = isDark ? 'الوضع النهاري' : 'الوضع الليلي';
+        };
+        setIcon();
+        btn.addEventListener('click', function(){
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            try { localStorage.setItem('mishkat_theme', isDark ? 'dark' : 'light'); } catch(e) {}
+            setIcon();
+        });
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initDarkToggle);
+    } else {
+        initDarkToggle();
+    }
+})();
+</script>
+<!-- ==== نهاية الوضع الليلي ==== -->
 
     <div class="top-bar">
         <div class="container">
