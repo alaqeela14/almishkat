@@ -285,6 +285,15 @@
         .video-card .video-body h3{color:var(--primary-navy);font-size:1.05rem;font-weight:800;margin:0 0 8px 0;line-height:1.5}
         .video-card .video-meta{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--text-muted)}
         .video-card .video-meta i{color:var(--secondary-blue);margin-left:3px}
+        .news-item{background:#fff;border-radius:8px;padding:20px 22px;margin-bottom:16px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-right:5px solid var(--gold-accent);cursor:pointer;transition:.3s}
+        .news-item:hover{transform:translateX(-5px);box-shadow:0 8px 20px rgba(26,43,74,.12);border-right-color:var(--primary-navy)}
+        .news-item .news-type{display:inline-flex;align-items:center;gap:6px;background:var(--very-light-blue);color:var(--primary-navy);padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700;margin-bottom:10px;border:1px solid var(--border-color)}
+        .news-item .news-type i{color:var(--gold-accent)}
+        .news-item h3{color:var(--primary-navy);font-size:1.15rem;font-weight:800;margin:0 0 8px 0;line-height:1.5}
+        .news-item .news-date{font-size:12px;color:var(--text-muted);margin-bottom:8px}
+        .news-item .news-date i{color:var(--secondary-blue);margin-left:4px}
+        .news-item .news-excerpt{color:var(--text-muted);font-size:13.5px;line-height:1.8;margin:0 0 10px 0}
+        .news-item .news-more{color:var(--gold-accent);font-size:13px;font-weight:700}
         @media (max-width:1024px){.news-grid{grid-template-columns:1fr 280px;gap:18px}.main-nav .nav-list li a{padding:13px 10px;font-size:12px}}
         @media (max-width:900px){.news-grid{grid-template-columns:1fr}.sidebar{flex-direction:row;flex-wrap:wrap}.sidebar-box{flex:1;min-width:250px}.featured-card{grid-template-columns:1fr}.featured-card .featured-image{min-height:180px;font-size:45px}.contact-grid{grid-template-columns:1fr}.videos-grid{grid-template-columns:1fr}}
         @media (max-width:768px){
@@ -344,6 +353,8 @@
             .audio-card{padding:16px 18px}
             .audio-card .audio-icon{width:44px;height:44px;font-size:18px}
             .audio-card .audio-info h3{font-size:1rem}
+            .news-item{padding:16px 18px}
+            .news-item h3{font-size:1.05rem}
         }
         @media (max-width:480px){
             .top-bar .contact-info{display:none}
@@ -431,6 +442,8 @@
                         <li><a class="dropdown-item" onclick="showView('articles-tr')" data-i18n="navArticlesTr">المقالات بالتركية</a></li>
                     </ul>
                 </li>
+                <li><a data-view="news" data-i18n="navNews">الأخبار</a></li>
+                <li><a data-view="competitions" data-i18n="navCompetitions">مسابقات</a></li>
                 <li><a data-view="sections" data-i18n="navSections">الأقسام</a></li>
                 <li><a data-view="family" data-i18n="navFamily">أسرة المنصة</a></li>
                 <li><a data-view="about" data-i18n="navAbout">عن المنصة</a></li>
@@ -559,6 +572,31 @@
             </div>
         </div>
 
+        <div class="page-view" id="view-news">
+            <div class="page-title-bar">
+                <h1><i class="fa-solid fa-newspaper"></i> <span data-i18n="pageNews">الأخبار</span></h1>
+                <p data-i18n="pageNewsDesc">آخر أخبار المنصة والمستجدات</p>
+            </div>
+            <div id="newsList"></div>
+            <div class="library-empty hidden-section" id="newsEmpty">
+                <i class="fa-solid fa-newspaper"></i>
+                <h3 data-i18n="noNews">لا توجد أخبار حالياً</h3>
+                <p data-i18n="noNewsDesc">سيتم إضافة الأخبار قريباً</p>
+            </div>
+        </div>
+
+        <div class="page-view" id="view-competitions">
+            <div class="page-title-bar">
+                <h1><i class="fa-solid fa-trophy"></i> <span data-i18n="pageCompetitions">مسابقات</span></h1>
+                <p data-i18n="pageCompetitionsDesc">مسابقات ثقافية وفكرية</p>
+            </div>
+            <div class="library-empty" style="display:block;">
+                <i class="fa-solid fa-trophy"></i>
+                <h3 data-i18n="competitionsSoon">يجري الترتيب</h3>
+                <p data-i18n="competitionsSoonDesc">سيتم الإعلان عن المسابقات قريباً</p>
+            </div>
+        </div>
+
         <div class="page-view" id="view-library">
             <div class="page-title-bar">
                 <h1><i class="fa-solid fa-book"></i> <span data-i18n="pageLibrary">المكتبة</span></h1>
@@ -648,7 +686,7 @@
                 <div class="article-full" id="articleFullContent"></div>
 
                 <div class="share-section">
-                    <h3><i class="fa-solid fa-share-nodes"></i> <span data-i18n="shareTitle">شارك المقال</span></h3>
+                    <h3><i class="fa-solid fa-share-nodes"></i> <span data-i18n="shareTitle">شارك</span></h3>
                     <div class="share-buttons">
                         <button class="share-btn whatsapp" onclick="shareWhatsApp()"><i class="fab fa-whatsapp"></i> واتساب</button>
                         <button class="share-btn telegram" onclick="shareTelegram()"><i class="fab fa-telegram"></i> تيليجرام</button>
@@ -825,6 +863,7 @@
         let articlesByLang = { ar: [], en: [], fa: [], tr: [] };
         let mishkatAudios = [];
         let mishkatVideos = [];
+        let mishkatNews = [];
 
         const categoryToKey = {
             'مقالات ورؤى': 'cat1',
@@ -844,6 +883,7 @@
                 langNote: 'ستتوفر ميزة ترجمة المقال قريباً',
                 navHome: 'الرئيسية', navLibrary: 'المكتبة', navAbout: 'عن المنصة', navSections: 'الأقسام', navCats: 'التصنيفات',
                 navAudios: 'الصوتيات', navVideos: 'المرئيات',
+                navNews: 'الأخبار', navCompetitions: 'مسابقات',
                 navArticles: 'المقالات', navArticlesAr: 'المقالات بالعربية',
                 navArticlesEn: 'المقالات بالإنجليزية', navArticlesFa: 'المقالات بالفارسية', navArticlesTr: 'المقالات بالتركية',
                 navFamily: 'أسرة المنصة', navContact: 'تواصل معنا',
@@ -857,8 +897,8 @@
                 catAll: 'الكل', cat1: 'مقالات ورؤى', cat2: 'أهل البيت (ع)', cat3: 'وعي مجتمعي',
                 cat4: 'رؤى وحلول', cat5: 'قضايا معاصرة', cat6: 'حوارات ومقابلات', cat7: 'شبهات وردود', cat8: 'التوجيهات الأخلاقية',
                 featured: 'مقال مميز', backToArticles: 'رجوع للمقالات',
-                shareTitle: 'شارك المقال', commentsTitle: 'التعليقات', copyBtn: 'نسخ النص',
-                copySuccess: '✅ تم نسخ المقال كاملاً!', copyFail: '❌ فشل النسخ',
+                shareTitle: 'شارك', commentsTitle: 'التعليقات', copyBtn: 'نسخ النص',
+                copySuccess: '✅ تم نسخ المحتوى كاملاً!', copyFail: '❌ فشل النسخ',
                 searchResultsTitle: 'نتائج البحث', searchResultsFor: 'نتائج البحث عن:',
                 noSearchResults: 'لا توجد نتائج مطابقة', noSearchResultsDesc: 'جرّب كلمات بحث أخرى',
                 pageLibrary: 'المكتبة', pageLibraryDesc: 'كتب وملفات للتحميل والقراءة',
@@ -871,6 +911,11 @@
                 pageVideos: 'المرئيات', pageVideosDesc: 'مقاطع فيديو من قناتنا على يوتيوب',
                 noVideos: 'لا توجد مقاطع مرئية حالياً', noVideosDesc: 'سيتم إضافة المقاطع قريباً',
                 audioDownload: 'تحميل', audioShare: 'مشاركة', audioLinkCopied: '✅ تم نسخ الرابط!',
+                pageNews: 'الأخبار', pageNewsDesc: 'آخر أخبار المنصة والمستجدات',
+                noNews: 'لا توجد أخبار حالياً', noNewsDesc: 'سيتم إضافة الأخبار قريباً',
+                newsTypeText: 'نصي', newsTypeVideo: 'فيديو', readMore: 'اقرأ المزيد',
+                pageCompetitions: 'مسابقات', pageCompetitionsDesc: 'مسابقات ثقافية وفكرية',
+                competitionsSoon: 'يجري الترتيب', competitionsSoonDesc: 'سيتم الإعلان عن المسابقات قريباً',
                 pageArticlesEn: 'مقالات باللغة الإنجليزية', pageArticlesEnDesc: 'Articles in English',
                 pageArticlesFa: 'مقالات باللغة الفارسية', pageArticlesFaDesc: 'مقالات به زبان فارسی',
                 pageArticlesTr: 'مقالات باللغة التركية', pageArticlesTrDesc: 'Türkçe Makaleler',
@@ -878,7 +923,7 @@
                 noArticlesFa: 'لا توجد مقالات بالفارسية حالياً', noArticlesFaDesc: 'هنوز مقاله‌ای به فارسی نیست',
                 noArticlesTr: 'لا توجد مقالات بالتركية حالياً', noArticlesTrDesc: 'Henüz Türkçe makale yok',
                 pageFamily: 'أسرة المنصة', pageFamilyDesc: 'تعرف على فريق العمل',
-                familyIntroTitle: 'فريق مشكاة', familyIntroText: 'نعمل بروح الفريق الواحد، مؤمنين بأن العمل الجماعي هو أساس النجاح. تضم أسرة مشكاة نخبة من الكتّاب والمراجعين والمترجمين والداعمين.',
+                familyIntroTitle: 'فريق مشكاة', familyIntroText: 'نعمل بروح الفريق الواحد، مؤمنين بأن العمل الجماعي هو أساس النجاح.',
                 pageAbout: 'عن المنصة', pageAboutDesc: 'تعرّف على منصة مشكاة ورؤيتها ورسالتها',
                 aboutIntro: 'التعريف', aboutIntroText: 'مشكاة منصة إلكترونية ثقافية توعوية، تُعنى بنشر الأفكار والرؤى والمقالات الهادفة.',
                 aboutVision: 'الرؤية', aboutVisionText: 'أن تكون مشكاة منارة رقمية موثوقة، يلجأ إليها الباحث عن المعرفة الصافية.',
@@ -902,6 +947,7 @@
                 langNote: 'Article translation feature coming soon',
                 navHome: 'Home', navLibrary: 'Library', navAbout: 'About', navSections: 'Sections', navCats: 'Categories',
                 navAudios: 'Audios', navVideos: 'Videos',
+                navNews: 'News', navCompetitions: 'Competitions',
                 navArticles: 'Articles', navArticlesAr: 'Articles in Arabic',
                 navArticlesEn: 'English Articles', navArticlesFa: 'Farsi Articles', navArticlesTr: 'Turkish Articles',
                 navFamily: 'Platform Family', navContact: 'Contact Us',
@@ -915,8 +961,8 @@
                 catAll: 'All', cat1: 'Articles & Insights', cat2: 'Ahl al-Bayt (as)', cat3: 'Social Awareness',
                 cat4: 'Insights & Solutions', cat5: 'Contemporary Issues', cat6: 'Dialogues & Interviews', cat7: 'Doubts & Responses', cat8: 'Ethical Guidance',
                 featured: 'Featured Article', backToArticles: 'Back to Articles',
-                shareTitle: 'Share Article', commentsTitle: 'Comments', copyBtn: 'Copy Text',
-                copySuccess: '✅ Article copied!', copyFail: '❌ Copy failed',
+                shareTitle: 'Share', commentsTitle: 'Comments', copyBtn: 'Copy Text',
+                copySuccess: '✅ Content copied!', copyFail: '❌ Copy failed',
                 searchResultsTitle: 'Search Results', searchResultsFor: 'Results for:',
                 noSearchResults: 'No matching results', noSearchResultsDesc: 'Try different keywords',
                 pageLibrary: 'Library', pageLibraryDesc: 'Books for download and reading',
@@ -928,6 +974,11 @@
                 pageVideos: 'Videos', pageVideosDesc: 'Videos from our YouTube channel',
                 noVideos: 'No videos yet', noVideosDesc: 'Coming soon',
                 audioDownload: 'Download', audioShare: 'Share', audioLinkCopied: '✅ Link copied!',
+                pageNews: 'News', pageNewsDesc: 'Latest news and updates',
+                noNews: 'No news yet', noNewsDesc: 'Coming soon',
+                newsTypeText: 'Text', newsTypeVideo: 'Video', readMore: 'Read more',
+                pageCompetitions: 'Competitions', pageCompetitionsDesc: 'Cultural and intellectual competitions',
+                competitionsSoon: 'Coming Soon', competitionsSoonDesc: 'Competitions will be announced soon',
                 pageArticlesEn: 'English Articles', pageArticlesEnDesc: 'Articles in English',
                 pageArticlesFa: 'Farsi Articles', pageArticlesFaDesc: 'مقالات به زبان فارسی',
                 pageArticlesTr: 'Turkish Articles', pageArticlesTrDesc: 'Türkçe Makaleler',
@@ -935,7 +986,7 @@
                 noArticlesFa: 'No Farsi articles yet', noArticlesFaDesc: 'هنوز مقاله‌ای به فارسی نیست',
                 noArticlesTr: 'No Turkish articles yet', noArticlesTrDesc: 'Henüz Türkçe makale yok',
                 pageFamily: 'Platform Family', pageFamilyDesc: 'Meet the team',
-                familyIntroTitle: 'Mishkat Team', familyIntroText: 'We work as one team, believing that teamwork is the foundation of success.',
+                familyIntroTitle: 'Mishkat Team', familyIntroText: 'We work as one team.',
                 pageAbout: 'About', pageAboutDesc: 'Learn about Mishkat',
                 aboutIntro: 'Introduction', aboutIntroText: 'Mishkat is an electronic cultural and awareness platform.',
                 aboutVision: 'Vision', aboutVisionText: 'To be a trusted digital beacon.',
@@ -959,6 +1010,7 @@
                 langNote: 'قابلیت ترجمه مقالات به‌زودی',
                 navHome: 'صفحه اصلی', navLibrary: 'کتابخانه', navAbout: 'درباره', navSections: 'بخش‌ها', navCats: 'دسته‌بندی‌ها',
                 navAudios: 'صوتی', navVideos: 'ویدیو',
+                navNews: 'اخبار', navCompetitions: 'مسابقات',
                 navArticles: 'مقالات', navArticlesAr: 'مقالات به عربی',
                 navArticlesEn: 'مقالات انگلیسی', navArticlesFa: 'مقالات فارسی', navArticlesTr: 'مقالات ترکی',
                 navFamily: 'خانواده پلتفرم', navContact: 'تماس با ما',
@@ -985,6 +1037,11 @@
                 pageVideos: 'ویدیو', pageVideosDesc: 'ویدیوهای کانال یوتیوب ما',
                 noVideos: 'هنوز ویدیویی نیست', noVideosDesc: 'به‌زودی',
                 audioDownload: 'دانلود', audioShare: 'اشتراک', audioLinkCopied: '✅ کپی شد!',
+                pageNews: 'اخبار', pageNewsDesc: 'آخرین اخبار پلتفرم',
+                noNews: 'هنوز خبری نیست', noNewsDesc: 'به‌زودی',
+                newsTypeText: 'متنی', newsTypeVideo: 'ویدیو', readMore: 'ادامه مطلب',
+                pageCompetitions: 'مسابقات', pageCompetitionsDesc: 'مسابقات فرهنگی و فکری',
+                competitionsSoon: 'در حال ترتیب', competitionsSoonDesc: 'به‌زودی اعلام می‌شود',
                 pageArticlesEn: 'مقالات انگلیسی', pageArticlesEnDesc: 'Articles in English',
                 pageArticlesFa: 'مقالات فارسی', pageArticlesFaDesc: 'مقالات به زبان فارسی',
                 pageArticlesTr: 'مقالات ترکی', pageArticlesTrDesc: 'Türkçe Makaleler',
@@ -1017,10 +1074,9 @@
         async function loadArticlesFromJSON() {
             try {
                 const response = await fetch('articles.json?t=' + Date.now());
-                if (!response.ok) { console.warn('articles.json not found'); return; }
+                if (!response.ok) { return; }
                 const data = await response.json();
                 const items = data.items || [];
-
                 const articlesAr = items.map(item => ({
                     catKey: categoryToKey[item.category] || 'cat1',
                     title: item.title_ar || item.title || '',
@@ -1030,12 +1086,10 @@
                     body: item.body_ar || item.body || '',
                     category: item.category || ''
                 }));
-
                 mishkatArticles.ar = articlesAr;
                 mishkatArticles.en = articlesAr;
                 mishkatArticles.fa = articlesAr;
                 articlesByLang.ar = articlesAr;
-
                 articlesByLang.en = items.filter(i => i.title_en && i.title_en.trim()).map(i => ({
                     catKey: categoryToKey[i.category] || 'cat1',
                     title: i.title_en, author: i.author_en || '', date: i.date || '',
@@ -1057,7 +1111,7 @@
         async function loadBooksFromJSON() {
             try {
                 const response = await fetch('books.json?t=' + Date.now());
-                if (!response.ok) { console.warn('books.json not found'); return; }
+                if (!response.ok) { return; }
                 const data = await response.json();
                 const items = data.items || [];
                 const booksAr = items.map(item => ({
@@ -1074,7 +1128,7 @@
         async function loadAudiosFromJSON() {
             try {
                 const response = await fetch('audios.json?t=' + Date.now());
-                if (!response.ok) { console.warn('audios.json not found'); return; }
+                if (!response.ok) { return; }
                 const data = await response.json();
                 mishkatAudios = data.items || [];
             } catch (error) { console.error('Error loading audios:', error); }
@@ -1083,10 +1137,19 @@
         async function loadVideosFromJSON() {
             try {
                 const response = await fetch('videos.json?t=' + Date.now());
-                if (!response.ok) { console.warn('videos.json not found'); return; }
+                if (!response.ok) { return; }
                 const data = await response.json();
                 mishkatVideos = data.items || [];
             } catch (error) { console.error('Error loading videos:', error); }
+        }
+
+        async function loadNewsFromJSON() {
+            try {
+                const response = await fetch('news.json?t=' + Date.now());
+                if (!response.ok) { return; }
+                const data = await response.json();
+                mishkatNews = data.items || [];
+            } catch (error) { console.error('Error loading news:', error); }
         }
 
         function updateDateTime() {
@@ -1130,6 +1193,50 @@
             if (clockPeriodEl) clockPeriodEl.textContent = period;
             if (mobileClockEl) mobileClockEl.textContent = `${h}:${m}`;
             if (mobilePeriodEl) mobilePeriodEl.textContent = period;
+        }
+
+        function renderNews() {
+            const list = document.getElementById('newsList');
+            const empty = document.getElementById('newsEmpty');
+            if (!list) return;
+            if (!mishkatNews || mishkatNews.length === 0) {
+                list.innerHTML = '';
+                if (empty) empty.classList.remove('hidden-section');
+                return;
+            }
+            if (empty) empty.classList.add('hidden-section');
+            const t = translations[currentLang];
+            list.innerHTML = mishkatNews.map((n, i) => {
+                const typeLabel = n.type === 'video' ? (t.newsTypeVideo || 'فيديو') : (t.newsTypeText || 'نصي');
+                const typeIcon = n.type === 'video' ? 'fa-video' : 'fa-newspaper';
+                return `
+                    <div class="news-item" onclick="openNews(${i})">
+                        <span class="news-type"><i class="fa-solid ${typeIcon}"></i> ${typeLabel}</span>
+                        <h3>${n.title}</h3>
+                        ${n.date ? `<div class="news-date"><i class="fa-regular fa-calendar"></i> ${n.date}</div>` : ''}
+                        ${n.excerpt ? `<p class="news-excerpt">${n.excerpt}</p>` : ''}
+                        <span class="news-more">${t.readMore || 'اقرأ المزيد'} <i class="fa-solid fa-arrow-left"></i></span>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function openNews(index) {
+            const n = mishkatNews[index];
+            if (!n) return;
+            const t = translations[currentLang];
+            const container = document.getElementById('articleFullContent');
+            let bodyHtml = '';
+            if (n.type === 'video' && n.youtube_id) {
+                bodyHtml = `<div style="position:relative;width:100%;padding-bottom:56.25%;margin-bottom:20px;"><iframe src="https://www.youtube.com/embed/${n.youtube_id}" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen></iframe></div>`;
+                if (n.description) bodyHtml += `<p>${n.description.replace(/\n/g,'<br>')}</p>`;
+            } else {
+                bodyHtml = n.body ? n.body.replace(/\n/g,'<br>') : (n.excerpt || '');
+            }
+            container.innerHTML = `<span class="category-badge" style="display:inline-block;background:var(--gold-light);color:var(--primary-navy);padding:5px 14px;border-radius:4px;font-size:12px;font-weight:700;margin-bottom:15px;">${t.pageNews}</span><h1>${n.title}</h1><div class="article-meta"><span><i class="fa-regular fa-calendar"></i> ${n.date || ''}</span></div><div class="article-body">${bodyHtml}</div>`;
+            document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
+            document.getElementById('view-article').classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function renderAudios() {
@@ -1461,6 +1568,7 @@
             renderBooks();
             renderAudios();
             renderVideos();
+            renderNews();
             renderSidebar();
             renderLangArticles('en');
             renderLangArticles('fa');
@@ -1486,6 +1594,7 @@
             } else if (viewId === 'library') renderBooks();
             else if (viewId === 'audios') renderAudios();
             else if (viewId === 'videos') renderVideos();
+            else if (viewId === 'news') renderNews();
             else if (viewId === 'articles-en') renderLangArticles('en');
             else if (viewId === 'articles-fa') renderLangArticles('fa');
             else if (viewId === 'articles-tr') renderLangArticles('tr');
@@ -1514,10 +1623,7 @@
                     else if (eM) snippet = a.excerpt;
                     else if (bM) snippet = extractSnippet(a.body, q);
                     else snippet = a.author;
-                    results.push({
-                        type: 'article', typeLabel: 'مقال', typeIcon: 'fa-newspaper', index: i,
-                        title: a.title, snippet: highlightText(snippet, q), author: a.author, date: a.date
-                    });
+                    results.push({ type: 'article', typeLabel: 'مقال', typeIcon: 'fa-newspaper', index: i, title: a.title, snippet: highlightText(snippet, q), author: a.author, date: a.date });
                 }
             });
 
@@ -1531,10 +1637,7 @@
                     if (tM) snippet = b.description || b.title;
                     else if (dM) snippet = b.description;
                     else snippet = b.author;
-                    results.push({
-                        type: 'book', typeLabel: 'كتاب', typeIcon: 'fa-book', index: i,
-                        title: b.title, snippet: highlightText(snippet, q), author: b.author, date: b.date
-                    });
+                    results.push({ type: 'book', typeLabel: 'كتاب', typeIcon: 'fa-book', index: i, title: b.title, snippet: highlightText(snippet, q), author: b.author, date: b.date });
                 }
             });
 
@@ -1543,11 +1646,7 @@
                 const sM = (a.speaker||'').toLowerCase().includes(q);
                 const dM = (a.description||'').toLowerCase().includes(q);
                 if (tM || sM || dM) {
-                    results.push({
-                        type: 'audio', typeLabel: 'صوتي', typeIcon: 'fa-headphones', index: i,
-                        title: a.title, snippet: highlightText(a.description || a.speaker || a.title, q),
-                        author: a.speaker, date: a.date
-                    });
+                    results.push({ type: 'audio', typeLabel: 'صوتي', typeIcon: 'fa-headphones', index: i, title: a.title, snippet: highlightText(a.description || a.speaker || a.title, q), author: a.speaker, date: a.date });
                 }
             });
 
@@ -1556,11 +1655,20 @@
                 const cM = (v.channel||'').toLowerCase().includes(q);
                 const dM = (v.description||'').toLowerCase().includes(q);
                 if (tM || cM || dM) {
-                    results.push({
-                        type: 'video', typeLabel: 'مرئي', typeIcon: 'fa-video', index: i,
-                        title: v.title, snippet: highlightText(v.description || v.channel || v.title, q),
-                        author: v.channel, date: v.date
-                    });
+                    results.push({ type: 'video', typeLabel: 'مرئي', typeIcon: 'fa-video', index: i, title: v.title, snippet: highlightText(v.description || v.channel || v.title, q), author: v.channel, date: v.date });
+                }
+            });
+
+            mishkatNews.forEach((n, i) => {
+                const tM = (n.title||'').toLowerCase().includes(q);
+                const eM = (n.excerpt||'').toLowerCase().includes(q);
+                const bM = (n.body||'').toLowerCase().includes(q);
+                if (tM || eM || bM) {
+                    let snippet = '';
+                    if (tM) snippet = n.excerpt || n.title;
+                    else if (eM) snippet = n.excerpt;
+                    else snippet = extractSnippet(n.body, q);
+                    results.push({ type: 'news', typeLabel: 'خبر', typeIcon: 'fa-newspaper', index: i, title: n.title, snippet: highlightText(snippet, q), author: '', date: n.date });
                 }
             });
 
@@ -1590,7 +1698,6 @@
             const empty = document.getElementById('searchEmpty');
             const queryDisplay = document.getElementById('searchQueryDisplay');
             if (queryDisplay) queryDisplay.textContent = query;
-
             if (!results || results.length === 0) {
                 list.innerHTML = '';
                 empty.classList.remove('hidden-section');
@@ -1608,7 +1715,6 @@
                     </div>
                 `).join('');
             }
-
             document.body.classList.remove('extras-hidden');
             document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
             document.getElementById('view-search').classList.add('active');
@@ -1638,9 +1744,11 @@
                     if (els[index]) els[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }, 300);
             }
+            else if (type === 'news') {
+                openNews(index);
+            }
         }
 
-        // ============ نظام التعليقات (D1) ============
         function getCurrentArticleSlug() {
             const a = getCurrentArticle();
             if (!a) return 'home';
@@ -1714,6 +1822,7 @@
             await loadBooksFromJSON();
             await loadAudiosFromJSON();
             await loadVideosFromJSON();
+            await loadNewsFromJSON();
 
             document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', function() { setLanguage(this.dataset.lang); }));
             setLanguage(localStorage.getItem('mishkat_lang') || 'ar');
@@ -1762,7 +1871,7 @@
                 if (hash.match(/#article-\d+/)) {
                     const match = hash.match(/#article-(\d+)/);
                     if (match) openArticle(parseInt(match[1]));
-                } else if (['#audios','#videos','#library','#articles-en','#articles-fa','#articles-tr','#family','#about','#sections','#contact'].includes(hash)) {
+                } else if (['#audios','#videos','#news','#competitions','#library','#articles-en','#articles-fa','#articles-tr','#family','#about','#sections','#contact'].includes(hash)) {
                     showView(hash.substring(1));
                 }
             }
