@@ -15,21 +15,19 @@
         .hidden-section{display:none!important}
         .extras-hidden .breaking-bar{display:none!important}
 
-        /* ====== الشريط العلوي الجديد ====== */
-        .top-bar{background:var(--primary-navy-dark);color:#b8c4d6;padding:8px 0;border-bottom:2px solid var(--gold-accent);font-size:12px}
-        .top-bar .container{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:0 15px}
-        .top-bar .langs-socials{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-        .top-bar .social-icons{display:flex;gap:10px}
-        .top-bar .social-icons a{color:#b8c4d6;transition:.3s}
-        .top-bar .social-icons a:hover{color:var(--gold-accent)}
-        .top-bar .lang-btn{background:transparent;border:1px solid #3a4a6a;color:#b8c4d6;padding:3px 10px;border-radius:3px;cursor:pointer;font-size:11px;font-weight:500;transition:.3s;font-family:'Tajawal',sans-serif}
-        .top-bar .lang-btn:hover,.top-bar .lang-btn.active{border-color:var(--gold-accent);color:var(--gold-accent)}
-        .top-bar .lang-note{font-size:10px;color:#8896b0;font-style:italic;text-align:center;flex:1;min-width:140px}
-        .top-bar .clock-info{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:#b8c4d6}
-        .top-bar .clock-info > span{display:flex;align-items:center;gap:4px}
-        .top-bar .clock-info i{color:var(--gold-accent)}
+        /* ====== الشريط العلوي المدمج ====== */
+        .top-bar{background:var(--primary-navy-dark);color:#b8c4d6;padding:3px 0;border-bottom:2px solid var(--gold-accent);font-size:10.5px}
+        .top-bar .container{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding:0 12px;max-width:1400px;margin:0 auto}
+        .top-bar .clock-info{display:flex;align-items:center;gap:6px;color:#b8c4d6;flex-wrap:wrap;font-size:10px}
+        .top-bar .clock-info > span{display:flex;align-items:center;gap:3px}
+        .top-bar .clock-info i{color:var(--gold-accent);font-size:10px}
         .top-bar .clock-info .sep{color:#3a4a6a}
-        .dark-toggle{background:transparent;border:1px solid #3a4a6a;color:#b8c4d6;width:26px;height:26px;border-radius:50%;cursor:pointer;font-size:11px;display:inline-flex;align-items:center;justify-content:center;transition:.3s;padding:0;flex-shrink:0}
+        .top-bar .langs-group{display:flex;flex-direction:column;align-items:center;gap:1px;flex:1;min-width:180px}
+        .top-bar .langs-row{display:flex;gap:4px;align-items:center}
+        .top-bar .lang-btn{background:transparent;border:1px solid #3a4a6a;color:#b8c4d6;padding:1px 8px;border-radius:3px;cursor:pointer;font-size:10px;font-weight:500;transition:.3s;font-family:'Tajawal',sans-serif;line-height:1.5}
+        .top-bar .lang-btn:hover,.top-bar .lang-btn.active{border-color:var(--gold-accent);color:var(--gold-accent)}
+        .top-bar .lang-note{font-size:8.5px;color:#8896b0;font-style:italic;text-align:center;white-space:nowrap;line-height:1.2}
+        .dark-toggle{background:transparent;border:1px solid #3a4a6a;color:#b8c4d6;width:22px;height:22px;border-radius:50%;cursor:pointer;font-size:10px;display:inline-flex;align-items:center;justify-content:center;transition:.3s;padding:0;flex-shrink:0}
         .dark-toggle:hover{background:var(--gold-accent);color:var(--primary-navy);border-color:var(--gold-accent)}
 
         /* ====== البانر ====== */
@@ -38,12 +36,12 @@
         .menu-toggle{position:absolute;top:14px;left:14px;z-index:20;background:rgba(255,255,255,.95);color:var(--primary-navy);border:none;width:56px;height:56px;border-radius:10px;font-size:22px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center;transition:.3s;padding:0}
         .menu-toggle:hover{background:var(--gold-accent);transform:scale(1.05)}
 
-        /* ====== شريط البحث ====== */
-        .search-bar-main{background:#fff;padding:12px 15px;border-bottom:1px solid var(--border-color)}
-        .search-bar-main .container{display:flex;max-width:1400px;margin:0 auto;border:1px solid var(--border-color);border-radius:6px;overflow:hidden;background:#fff}
-        .search-bar-main input{flex:1;padding:12px 18px;border:none;outline:none;font-family:'Tajawal',sans-serif;font-size:14px;background:transparent;color:var(--text-dark)}
+        /* ====== شريط البحث (يسار، صغير) ====== */
+        .search-bar-main{background:#fff;padding:8px 15px;border-bottom:1px solid var(--border-color);display:flex;justify-content:flex-end;max-width:1400px;margin:0 auto}
+        .search-bar-main .search-inner{display:flex;max-width:360px;width:100%;border:1px solid var(--border-color);border-radius:6px;overflow:hidden;background:#fff}
+        .search-bar-main input{flex:1;padding:7px 14px;border:none;outline:none;font-family:'Tajawal',sans-serif;font-size:13px;background:transparent;color:var(--text-dark);min-width:0}
         .search-bar-main input::placeholder{color:#8896b0}
-        .search-bar-main button{padding:12px 28px;background:var(--primary-navy);color:#fff;border:none;cursor:pointer;font-family:'Tajawal',sans-serif;font-weight:700;font-size:14px;display:flex;align-items:center;gap:8px;transition:.3s}
+        .search-bar-main button{padding:7px 16px;background:var(--primary-navy);color:#fff;border:none;cursor:pointer;font-family:'Tajawal',sans-serif;font-weight:700;font-size:12.5px;display:flex;align-items:center;gap:5px;transition:.3s;white-space:nowrap}
         .search-bar-main button:hover{background:var(--gold-accent);color:var(--primary-navy)}
 
         /* ====== القائمة الجانبية ====== */
@@ -303,12 +301,13 @@
         .news-item .news-date i{color:var(--secondary-blue);margin-left:4px}
         .news-item .news-excerpt{color:var(--text-muted);font-size:13.5px;line-height:1.8;margin:0 0 10px 0}
         .news-item .news-more{color:var(--gold-accent);font-size:13px;font-weight:700}
+
         /* ====== الوضع الليلي ====== */
         body.dark-mode{background:#0d1520;color:#e0e6ed}
         body.dark-mode .top-bar{background:#050a12}
         body.dark-mode .banner-wrap{background:#0d1520}
         body.dark-mode .search-bar-main{background:#1a2535;border-bottom-color:#2a3a52}
-        body.dark-mode .search-bar-main .container{background:#0d1520;border-color:#2a3a52}
+        body.dark-mode .search-bar-main .search-inner{background:#0d1520;border-color:#2a3a52}
         body.dark-mode .search-bar-main input{color:#e0e6ed}
         body.dark-mode .breaking-bar{background:#1a2535;border-color:#2a3a52}
         body.dark-mode .breaking-ticker marquee a{color:#e0e6ed}
@@ -318,7 +317,6 @@
         body.dark-mode .article-card .excerpt,body.dark-mode .book-desc,body.dark-mode .audio-card .audio-desc,body.dark-mode .news-item .news-excerpt,body.dark-mode .article-card .meta,body.dark-mode .article-meta,body.dark-mode .news-item .news-date,body.dark-mode .content-card p,body.dark-mode .contact-tile p,body.dark-mode .section-tile p{color:#9ca8bb}
         body.dark-mode footer{background:#050a12}
         body.dark-mode .footer-bottom{background:#000308}
-        body.dark-mode .mobile-search-bar input{background:#0d1520;color:#e0e6ed;border-color:#2a3a52}
         body.dark-mode .category-tabs .cat-btn{background:#1a2535;color:#e0e6ed;border-color:#2a3a52}
         body.dark-mode .category-tabs .cat-btn.active{background:#c9a961;color:#1a2b4a}
         body.dark-mode .sidebar-box .box-header{background:#131d2e}
@@ -335,15 +333,21 @@
         @media (max-width:1024px){.news-grid{grid-template-columns:1fr 280px;gap:18px}}
         @media (max-width:900px){.news-grid{grid-template-columns:1fr}.sidebar{flex-direction:row;flex-wrap:wrap}.sidebar-box{flex:1;min-width:250px}.contact-grid{grid-template-columns:1fr}.videos-grid{grid-template-columns:1fr}.card-copy-btn{opacity:1;pointer-events:auto}}
         @media (max-width:768px){
-            .top-bar .container{flex-direction:column;gap:6px;padding:0 10px}
-            .top-bar .langs-socials{width:100%;justify-content:center}
-            .top-bar .clock-info{width:100%;justify-content:center;font-size:11px;gap:8px}
-            .top-bar .lang-note{order:3;width:100%}
+            .top-bar{padding:3px 0}
+            .top-bar .container{flex-wrap:wrap;justify-content:center;gap:3px 8px;padding:0 8px}
+            .top-bar .clock-info{font-size:9px;gap:5px;width:100%;justify-content:center}
+            .top-bar .clock-info i{font-size:9px}
+            .top-bar .langs-group{min-width:0;width:100%}
+            .top-bar .langs-row{justify-content:center}
+            .top-bar .lang-note{font-size:8px}
+            .top-bar .lang-btn{font-size:9.5px;padding:1px 7px}
+            .dark-toggle{width:20px;height:20px;font-size:9px}
             .banner-wrap img{max-height:280px}
             .menu-toggle{width:48px;height:48px;font-size:20px;top:10px;left:10px}
-            .search-bar-main{padding:10px 12px}
-            .search-bar-main input{padding:10px 14px;font-size:13px}
-            .search-bar-main button{padding:10px 18px;font-size:13px}
+            .search-bar-main{padding:6px 10px}
+            .search-bar-main .search-inner{max-width:100%}
+            .search-bar-main input{padding:6px 12px;font-size:12.5px}
+            .search-bar-main button{padding:6px 12px;font-size:12px}
             .articles-grid,.library-grid,.team-grid,.videos-grid{grid-template-columns:1fr;gap:14px}
             .section-header h2{font-size:1.1rem}
             .section-header h2::before{height:18px}
@@ -368,7 +372,6 @@
             .news-item{padding:16px 18px}
         }
         @media (max-width:480px){
-            .top-bar .social-icons{display:none}
             .banner-wrap img{max-height:220px}
             .menu-toggle{width:42px;height:42px;font-size:18px}
             .footer-contact-row{flex-direction:column;gap:8px}
@@ -379,28 +382,25 @@
 </head>
 <body>
 
-    <!-- الشريط العلوي -->
+    <!-- الشريط العلوي: الوقت - اللغات (مع ملاحظة) - الوضع الليلي -->
     <div class="top-bar">
         <div class="container">
-            <div class="langs-socials">
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/share/1Gcs92VeQ8/" target="_blank" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://x.com/mishkat_alnuwr" target="_blank" title="تويتر"><i class="fab fa-twitter"></i></a>
-                    <a href="https://youtube.com/@mishkat_alnuwr" target="_blank" title="يوتيوب"><i class="fab fa-youtube"></i></a>
-                </div>
-                <button class="lang-btn active" data-lang="ar">العربية</button>
-                <button class="lang-btn" data-lang="en">English</button>
-                <button class="lang-btn" data-lang="fa">فارسی</button>
-            </div>
-            <div class="lang-note" data-i18n="langNote">ستتوفر ميزة ترجمة المقال قريباً</div>
             <div class="clock-info">
-                <button class="dark-toggle" id="darkToggle" title="الوضع الليلي"><i class="fa-solid fa-moon"></i></button>
                 <span><i class="fa-regular fa-clock"></i> <span id="liveClock">--:--:--</span> <span id="clockPeriod">ص</span></span>
                 <span class="sep">|</span>
                 <span><i class="fa-regular fa-calendar"></i> <span id="gregorianDate">—</span></span>
                 <span class="sep">|</span>
                 <span><i class="fa-solid fa-moon"></i> <span id="hijriDate">—</span></span>
             </div>
+            <div class="langs-group">
+                <div class="langs-row">
+                    <button class="lang-btn active" data-lang="ar">العربية</button>
+                    <button class="lang-btn" data-lang="en">English</button>
+                    <button class="lang-btn" data-lang="fa">فارسی</button>
+                </div>
+                <div class="lang-note" data-i18n="langNote">ستتوفر ميزة ترجمة المقال قريباً</div>
+            </div>
+            <button class="dark-toggle" id="darkToggle" title="الوضع الليلي"><i class="fa-solid fa-moon"></i></button>
         </div>
     </div>
 
@@ -410,9 +410,9 @@
         <img src="/assets/images/file_00000000175082109123db13309793e5.png" alt="منصة مشكاة | للنور والوعي">
     </div>
 
-    <!-- شريط البحث -->
+    <!-- شريط البحث (يسار، صغير) -->
     <div class="search-bar-main">
-        <div class="container">
+        <div class="search-inner">
             <input type="search" id="mainSearchInput" placeholder="ابحث في الموقع...">
             <button type="button" id="mainSearchBtn"><i class="fa-solid fa-search"></i> بحث</button>
         </div>
@@ -1378,7 +1378,6 @@
             document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', function() { setLanguage(this.dataset.lang); }));
             setLanguage(localStorage.getItem('mishkat_lang') || 'ar');
 
-            // Menu toggle
             const menuBtn = document.getElementById('mobileMenuBtn');
             const closeBtn = document.getElementById('mobileCloseBtn');
             const overlay = document.getElementById('mobileOverlay');
@@ -1386,14 +1385,10 @@
             if (closeBtn) closeBtn.addEventListener('click', closeMobileMenu);
             if (overlay) overlay.addEventListener('click', closeMobileMenu);
 
-            // Sub-menu (dropdown)
             const dropToggle = document.getElementById('articlesDropdown');
             const dropMenu = document.getElementById('articlesDropdownMenu');
             if (dropToggle && dropMenu) {
-                dropToggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    dropMenu.classList.toggle('show');
-                });
+                dropToggle.addEventListener('click', function(e) { e.preventDefault(); dropMenu.classList.toggle('show'); });
                 dropMenu.querySelectorAll('.dropdown-item').forEach(item => {
                     item.addEventListener('click', function() { dropMenu.classList.remove('show'); });
                 });
@@ -1423,7 +1418,6 @@
                 });
             });
 
-            // Search
             const mainSearch = document.getElementById('mainSearchInput');
             if (mainSearch) mainSearch.addEventListener('input', function() { doSearch(this.value); });
             const mainSearchBtn = document.getElementById('mainSearchBtn');
