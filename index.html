@@ -13,7 +13,7 @@
         body{font-family:'Tajawal',sans-serif;background:var(--very-light-blue);color:var(--text-dark);line-height:1.7}
         a{text-decoration:none}
         .hidden-section{display:none!important}
-        .extras-hidden .hero-compact,.extras-hidden .breaking-bar{display:none!important}
+        .extras-hidden .breaking-bar{display:none!important}
         .top-bar{background:var(--primary-navy-dark);color:#b8c4d6;padding:6px 0;border-bottom:2px solid var(--gold-accent);font-size:12px}
         .top-bar .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
         .top-bar .contact-info{display:flex;align-items:center;gap:6px}
@@ -30,7 +30,7 @@
         .main-header .container{display:flex;justify-content:space-between;align-items:center;gap:15px}
         .main-header .brand{display:flex;align-items:center;gap:12px;cursor:pointer}
         .main-header .brand .logo-mark{width:55px;height:55px;background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold-accent);font-size:24px;border:2px solid var(--gold-accent);flex-shrink:0}
-        .main-header .brand-text{display:flex;flex-direction:column;line-height:1.15}
+        .main-header .brand-text{display:flex;flex-direction:column;line-height:1.2}
         .main-header .brand-text .main{font-size:1.6rem;color:var(--primary-navy);font-weight:800;letter-spacing:1px}
         .main-header .brand-text .sub{font-size:12px;color:var(--text-muted);font-weight:500}
         .main-header .header-clock{display:flex;flex-direction:column;align-items:flex-end;gap:3px;font-size:11.5px}
@@ -90,13 +90,6 @@
         .contact-tile h4{font-size:1rem;color:var(--primary-navy);font-weight:800;margin-bottom:8px}
         .contact-tile p{font-size:13.5px;color:var(--text-muted);margin:0;word-break:break-all}
         .contact-tile p.email-display{direction:ltr}
-        .hero-compact{background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));color:#fff;padding:25px 30px;border-radius:6px;margin-bottom:20px;border-right:5px solid var(--gold-accent);display:flex;align-items:center;gap:20px;position:relative;overflow:hidden}
-        .hero-compact::before{content:'';position:absolute;top:-50%;left:-20%;width:140%;height:200%;background:radial-gradient(circle,rgba(201,169,97,.15),transparent 60%)}
-        .hero-compact .hero-icon{font-size:45px;color:var(--gold-accent);flex-shrink:0;position:relative;z-index:2}
-        .hero-compact .hero-text{position:relative;z-index:2}
-        .hero-compact h1{font-size:1.6rem;font-weight:800;margin-bottom:6px}
-        .hero-compact h1 .gold-text{color:var(--gold-accent)}
-        .hero-compact p{font-size:13.5px;color:rgba(255,255,255,.85);margin:0}
         .news-grid{display:grid;grid-template-columns:1fr 320px;gap:25px}
         .content-area{min-width:0}
         .section-header{display:flex;align-items:center;gap:10px;border-bottom:3px solid var(--primary-navy);padding-bottom:8px;margin:0 0 18px}
@@ -119,7 +112,6 @@
         .featured-card{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 4px 15px rgba(26,43,74,.08);border:1px solid var(--border-color);cursor:pointer;position:relative}
         .featured-card:hover{border-color:var(--gold-accent);box-shadow:0 8px 25px rgba(26,43,74,.12)}
         .featured-card .featured-image{background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));min-height:250px;display:flex;align-items:center;justify-content:center;color:var(--gold-accent);font-size:60px;position:relative}
-        .featured-card .featured-image::after{content:attr(data-label);position:absolute;top:15px;right:15px;background:var(--gold-accent);color:var(--primary-navy);padding:4px 12px;font-size:11px;font-weight:800;border-radius:3px}
         .featured-card .featured-body{padding:30px;display:flex;flex-direction:column;justify-content:center}
         .featured-card .category-badge{background:var(--gold-light);color:var(--primary-navy);padding:4px 12px;border-radius:3px;font-size:11px;font-weight:700;align-self:flex-start;margin-bottom:12px}
         .featured-card h2{font-size:1.5rem;font-weight:800;color:var(--primary-navy);margin-bottom:12px;line-height:1.4}
@@ -347,10 +339,6 @@
             .breaking-bar{padding:8px 12px;margin-bottom:15px}
             .breaking-label{font-size:11px;padding:4px 10px}
             .breaking-ticker marquee{font-size:12.5px}
-            .hero-compact{padding:18px 20px;flex-direction:column;text-align:center;gap:10px;margin-bottom:15px}
-            .hero-compact .hero-icon{font-size:35px}
-            .hero-compact h1{font-size:1.3rem}
-            .hero-compact p{font-size:12.5px}
             .articles-grid,.library-grid,.team-grid,.videos-grid{grid-template-columns:1fr;gap:14px}
             .featured-card .featured-body{padding:20px}
             .featured-card h2{font-size:1.2rem}
@@ -380,6 +368,7 @@
             .audio-card .audio-info h3{font-size:1rem}
             .news-item{padding:16px 18px}
             .news-item h3{font-size:1.05rem}
+            .main-header .brand-text .sub{font-size:10.5px}
         }
         @media (max-width:480px){
             .top-bar .contact-info{display:none}
@@ -399,147 +388,6 @@
     </style>
 </head>
 <body>
-  <!-- ==== الوضع الليلي ==== -->
-<style>
-    .dark-toggle{position:fixed;top:12px;left:12px;z-index:9999;width:36px;height:36px;border-radius:50%;background:rgba(26,43,74,.92);color:#c9a961;border:2px solid #c9a961;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:.3s;box-shadow:0 2px 8px rgba(0,0,0,.25);padding:0}
-    .dark-toggle:hover{background:#c9a961;color:#1a2b4a;transform:scale(1.12)}
-    body.dark-mode{background:#0d1520;color:#e0e6ed}
-    body.dark-mode .top-bar{background:#050a12}
-    body.dark-mode .main-header{background:#1a2535;border-bottom-color:#2a3a52}
-    body.dark-mode .main-nav{background:#131d2e}
-    body.dark-mode .main-nav .nav-list li a{color:#c5cfe0}
-    body.dark-mode .main-nav .nav-list li a:hover,
-    body.dark-mode .main-nav .nav-list li a.active{background:rgba(201,169,97,.15)}
-    body.dark-mode .main-nav .nav-list .dropdown-menu{background:#1a2535;border-color:#2a3a52}
-    body.dark-mode .main-nav .nav-list .dropdown-item{color:#e0e6ed}
-    body.dark-mode .main-nav .nav-list .dropdown-item:hover{background:#131d2e;color:#c9a961}
-    body.dark-mode .main-nav .search-mini{background:rgba(255,255,255,.05)}
-    body.dark-mode .breaking-bar{background:#1a2535;border-color:#2a3a52}
-    body.dark-mode .breaking-ticker marquee a{color:#e0e6ed}
-    body.dark-mode .hero-compact{background:linear-gradient(135deg,#0f1a2e,#1a2b45)}
-    body.dark-mode .page-title-bar{background:linear-gradient(135deg,#0f1a2e,#1a2b45)}
-    body.dark-mode .content-card,
-    body.dark-mode .article-card,
-    body.dark-mode .featured-card,
-    body.dark-mode .sidebar-box,
-    body.dark-mode .submit-box,
-    body.dark-mode .article-full,
-    body.dark-mode .share-section,
-    body.dark-mode .comments-section,
-    body.dark-mode .book-card,
-    body.dark-mode .modal-box,
-    body.dark-mode .team-card,
-    body.dark-mode .search-results-header,
-    body.dark-mode .search-result-item,
-    body.dark-mode .search-empty,
-    body.dark-mode .audio-card,
-    body.dark-mode .video-card,
-    body.dark-mode .news-item,
-    body.dark-mode .section-tile,
-    body.dark-mode .contact-tile{background:#1a2535!important;color:#e0e6ed;border-color:#2a3a52}
-    body.dark-mode .article-card h3,
-    body.dark-mode .featured-card h2,
-    body.dark-mode .content-card h2,
-    body.dark-mode .section-header h2,
-    body.dark-mode .article-full h1,
-    body.dark-mode .page-title-bar h1,
-    body.dark-mode .news-item h3,
-    body.dark-mode .video-card .video-body h3,
-    body.dark-mode .audio-card .audio-info h3,
-    body.dark-mode .search-result-item h3,
-    body.dark-mode .book-body h3,
-    body.dark-mode .team-card h3,
-    body.dark-mode .contact-tile h4,
-    body.dark-mode .section-tile h4,
-    body.dark-mode .audio-card .audio-info h3{color:#e0e6ed!important}
-    body.dark-mode .article-card .excerpt,
-    body.dark-mode .featured-card .excerpt,
-    body.dark-mode .book-desc,
-    body.dark-mode .audio-card .audio-desc,
-    body.dark-mode .news-item .news-excerpt,
-    body.dark-mode .article-card .meta,
-    body.dark-mode .featured-card .meta,
-    body.dark-mode .article-meta,
-    body.dark-mode .news-item .news-date,
-    body.dark-mode .content-card p,
-    body.dark-mode .contact-tile p,
-    body.dark-mode .section-tile p{color:#9ca8bb}
-    body.dark-mode .brand-text .main{color:#c9a961}
-    body.dark-mode .header-clock .time-row{color:#e0e6ed}
-    body.dark-mode .header-clock .date-row{color:#9ca8bb}
-    body.dark-mode .footer-socials .admin-link{display:none!important}
-    body.dark-mode footer{background:#050a12}
-    body.dark-mode .footer-bottom{background:#000308}
-    body.dark-mode .mobile-clock-bar,
-    body.dark-mode .mobile-search-bar{background:#1a2535;border-color:#2a3a52;color:#e0e6ed}
-    body.dark-mode .mobile-search-bar input{background:#0d1520;color:#e0e6ed;border-color:#2a3a52}
-    body.dark-mode .category-tabs .cat-btn{background:#1a2535;color:#e0e6ed;border-color:#2a3a52}
-    body.dark-mode .category-tabs .cat-btn.active{background:#c9a961;color:#1a2b4a}
-    body.dark-mode .sidebar-box .box-header{background:#131d2e}
-    body.dark-mode .most-read-item .number{background:#c9a961;color:#1a2b4a}
-    body.dark-mode .sidebar-cat-item span:first-child,
-    body.dark-mode .most-read-item .text p{color:#e0e6ed}
-    body.dark-mode .sidebar-cat-item .count{background:#0d1520;color:#c9a961}
-    body.dark-mode .article-full .article-body{color:#d5dce6}
-    body.dark-mode .article-full .article-body blockquote{background:#131d2e;color:#e0e6ed}
-    body.dark-mode .article-full .article-body code{background:#131d2e;color:#c9a961}
-    body.dark-mode .article-full .article-body h1,
-    body.dark-mode .article-full .article-body h2,
-    body.dark-mode .article-full .article-body h3,
-    body.dark-mode .article-full .article-body h4{color:#c9a961}
-    body.dark-mode .article-full .article-body strong{color:#e0e6ed}
-    body.dark-mode .article-full .article-body table th{background:#131d2e;color:#c9a961}
-    body.dark-mode .article-full .article-body table td{color:#e0e6ed}
-    body.dark-mode .top-bar .lang-btn{color:#9ca8bb;border-color:#3a4a6a}
-    body.dark-mode .top-bar .lang-btn.active,
-    body.dark-mode .top-bar .lang-btn:hover{border-color:#c9a961;color:#c9a961}
-    body.dark-mode .lang-note{color:#8896b0}
-    body.dark-mode .section-tile{background:#131d2e}
-    body.dark-mode .section-tile:hover{background:#1a2535}
-    body.dark-mode .search-result-item .result-snippet mark,
-    body.dark-mode .search-result-item .result-snippet{color:#9ca8bb}
-    body.dark-mode .search-result-item .result-snippet mark{background:#c9a961;color:#1a2b4a}
-    body.dark-mode .comments-section h3,
-    body.dark-mode .comments-section p{color:#e0e6ed}
-    body.dark-mode .submit-box label{color:#c9a961}
-    body.dark-mode .submit-box input,
-    body.dark-mode .submit-box textarea{background:#0d1520;color:#e0e6ed;border-color:#2a3a52}
-    body.dark-mode .section-header{border-bottom-color:#c9a961}
-</style>
-
-<button class="dark-toggle" id="darkToggle" title="الوضع الليلي"><i class="fa-solid fa-moon"></i></button>
-
-<script>
-(function(){
-    try {
-        if (localStorage.getItem('mishkat_theme') === 'dark') {
-            document.body.classList.add('dark-mode');
-        }
-    } catch(e) {}
-    function initDarkToggle(){
-        const btn = document.getElementById('darkToggle');
-        if (!btn) return;
-        const setIcon = () => {
-            const isDark = document.body.classList.contains('dark-mode');
-            btn.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
-            btn.title = isDark ? 'الوضع النهاري' : 'الوضع الليلي';
-        };
-        setIcon();
-        btn.addEventListener('click', function(){
-            document.body.classList.toggle('dark-mode');
-            const isDark = document.body.classList.contains('dark-mode');
-            try { localStorage.setItem('mishkat_theme', isDark ? 'dark' : 'light'); } catch(e) {}
-            setIcon();
-        });
-    }
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initDarkToggle);
-    } else {
-        initDarkToggle();
-    }
-})();
-</script>
-<!-- ==== نهاية الوضع الليلي ==== -->
 
     <div class="top-bar">
         <div class="container">
@@ -569,7 +417,7 @@
                 <div class="logo-mark"><i class="fa-solid fa-lightbulb"></i></div>
                 <div class="brand-text">
                     <span class="main" data-i18n="brandName">مِشْكَاة</span>
-                    <span class="sub" data-i18n="brandSub">للنور والوعي</span>
+                    <span class="sub" data-i18n="brandSub">منصة فكرية توعوية لنشر المقالات والرؤى</span>
                 </div>
             </a>
             <div class="header-clock">
@@ -638,14 +486,6 @@
     <div class="main-container">
 
         <div class="page-view active" id="view-home">
-            <div class="hero-compact">
-                <div class="hero-icon"><i class="fa-solid fa-lightbulb"></i></div>
-                <div class="hero-text">
-                    <h1 data-i18n-html="heroTitle">مِشْكَاةُ <span class="gold-text">النُّورِ</span></h1>
-                    <p data-i18n="heroDesc">منصة فكرية توعوية لنشر المقالات والرؤى في بناء وعي مجتمعي متصل بكتاب الله وعترة رسوله</p>
-                </div>
-            </div>
-
             <div class="breaking-bar">
                 <div class="container">
                     <div class="breaking-label"><i class="fa-solid fa-circle"></i> <span data-i18n="breakingLabel">آخر الأخبار</span></div>
@@ -1046,7 +886,7 @@
 
         const translations = {
             ar: {
-                title: 'منصة مشكاة | للنور والوعي', brandName: 'مِشْكَاة', brandSub: 'للنور والوعي',
+                title: 'منصة مشكاة | للنور والوعي', brandName: 'مِشْكَاة', brandSub: 'منصة فكرية توعوية لنشر المقالات والرؤى',
                 topBarText: 'منصة مشكاة | للنور والوعي',
                 langNote: 'ستتوفر ميزة ترجمة المقال قريباً',
                 navHome: 'الرئيسية', navLibrary: 'المكتبة', navAbout: 'عن المنصة', navSections: 'الأقسام', navCats: 'التصنيفات',
@@ -1111,7 +951,7 @@
                 am: 'ص', pm: 'م', messageAlert: 'تم استلام رسالتك بنجاح!'
             },
             en: {
-                title: 'Mishkat Platform | For Light & Awareness', brandName: 'MISHKAT', brandSub: 'For Light & Awareness',
+                title: 'Mishkat Platform | For Light & Awareness', brandName: 'MISHKAT', brandSub: 'An intellectual platform for articles and insights',
                 topBarText: 'Mishkat Platform | For Light & Awareness',
                 langNote: 'Article translation feature coming soon',
                 navHome: 'Home', navLibrary: 'Library', navAbout: 'About', navSections: 'Sections', navCats: 'Categories',
@@ -1175,7 +1015,7 @@
                 am: 'AM', pm: 'PM', messageAlert: 'Your message has been received!'
             },
             fa: {
-                title: 'پلتفرم مشکاه | برای نور و آگاهی', brandName: 'مشکاه', brandSub: 'برای نور و آگاهی',
+                title: 'پلتفرم مشکاه | برای نور و آگاهی', brandName: 'مشکاه', brandSub: 'پلتفرم فکری برای مقالات و دیدگاه‌ها',
                 topBarText: 'پلتفرم مشکاه | برای نور و آگاهی',
                 langNote: 'قابلیت ترجمه مقالات به‌زودی',
                 navHome: 'صفحه اصلی', navLibrary: 'کتابخانه', navAbout: 'درباره', navSections: 'بخش‌ها', navCats: 'دسته‌بندی‌ها',
@@ -1366,7 +1206,6 @@
             if (mobilePeriodEl) mobilePeriodEl.textContent = period;
         }
 
-        // ===== تحويل Markdown إلى HTML =====
         function renderMarkdown(text) {
             if (!text) return '';
             if (typeof marked !== 'undefined') {
@@ -1380,7 +1219,6 @@
             return String(text).replace(/\n/g, '<br>');
         }
 
-        // ===== دوال نسخ الرابط =====
         function copyToClipboard(url, btnElement) {
             const showDone = () => {
                 if (!btnElement) return;
@@ -1577,7 +1415,7 @@
                 html += `
                     <div class="featured-card" onclick="openArticle(${idx})">
                         <button class="card-copy-btn" onclick="copyArticleCardLink(event, ${idx})" title="نسخ الرابط"><i class="fa-solid fa-link"></i></button>
-                        <div class="featured-image" data-label="${t.featured}"><i class="fa-solid fa-lightbulb"></i></div>
+                        <div class="featured-image"><i class="fa-solid fa-lightbulb"></i></div>
                         <div class="featured-body">
                             <span class="category-badge">${t[first.catKey] || ''}</span>
                             <h2>${first.title}</h2>
