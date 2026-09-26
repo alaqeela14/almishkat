@@ -15,19 +15,20 @@
         .hidden-section{display:none!important}
         .extras-hidden .breaking-bar{display:none!important}
 
-        /* ====== الشريط العلوي المدمج ====== */
+        /* ====== الشريط العلوي ====== */
         .top-bar{background:var(--primary-navy-dark);color:#b8c4d6;padding:3px 0;border-bottom:2px solid var(--gold-accent);font-size:10.5px}
         .top-bar .container{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding:0 12px;max-width:1400px;margin:0 auto}
         .top-bar .clock-info{display:flex;align-items:center;gap:6px;color:#b8c4d6;flex-wrap:wrap;font-size:10px}
         .top-bar .clock-info > span{display:flex;align-items:center;gap:3px}
         .top-bar .clock-info i{color:var(--gold-accent);font-size:10px}
         .top-bar .clock-info .sep{color:#3a4a6a}
-        .top-bar .langs-group{display:flex;flex-direction:column;align-items:center;gap:1px;flex:1;min-width:180px}
+        .top-bar .right-group{display:flex;align-items:flex-start;gap:8px}
+        .top-bar .langs-group{display:flex;flex-direction:column;align-items:center;gap:1px}
         .top-bar .langs-row{display:flex;gap:4px;align-items:center}
         .top-bar .lang-btn{background:transparent;border:1px solid #3a4a6a;color:#b8c4d6;padding:1px 8px;border-radius:3px;cursor:pointer;font-size:10px;font-weight:500;transition:.3s;font-family:'Tajawal',sans-serif;line-height:1.5}
         .top-bar .lang-btn:hover,.top-bar .lang-btn.active{border-color:var(--gold-accent);color:var(--gold-accent)}
         .top-bar .lang-note{font-size:8.5px;color:#8896b0;font-style:italic;text-align:center;white-space:nowrap;line-height:1.2}
-        .dark-toggle{background:transparent;border:1px solid #3a4a6a;color:#b8c4d6;width:22px;height:22px;border-radius:50%;cursor:pointer;font-size:10px;display:inline-flex;align-items:center;justify-content:center;transition:.3s;padding:0;flex-shrink:0}
+        .dark-toggle{background:transparent;border:1px solid #3a4a6a;color:#b8c4d6;width:22px;height:22px;border-radius:50%;cursor:pointer;font-size:10px;display:inline-flex;align-items:center;justify-content:center;transition:.3s;padding:0;flex-shrink:0;margin-top:1px}
         .dark-toggle:hover{background:var(--gold-accent);color:var(--primary-navy);border-color:var(--gold-accent)}
 
         /* ====== البانر ====== */
@@ -36,7 +37,7 @@
         .menu-toggle{position:absolute;top:14px;left:14px;z-index:20;background:rgba(255,255,255,.95);color:var(--primary-navy);border:none;width:56px;height:56px;border-radius:10px;font-size:22px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center;transition:.3s;padding:0}
         .menu-toggle:hover{background:var(--gold-accent);transform:scale(1.05)}
 
-        /* ====== شريط البحث (يسار، صغير) ====== */
+        /* ====== شريط البحث ====== */
         .search-bar-main{background:#fff;padding:8px 15px;border-bottom:1px solid var(--border-color);display:flex;justify-content:flex-end;max-width:1400px;margin:0 auto}
         .search-bar-main .search-inner{display:flex;max-width:360px;width:100%;border:1px solid var(--border-color);border-radius:6px;overflow:hidden;background:#fff}
         .search-bar-main input{flex:1;padding:7px 14px;border:none;outline:none;font-family:'Tajawal',sans-serif;font-size:13px;background:transparent;color:var(--text-dark);min-width:0}
@@ -334,10 +335,11 @@
         @media (max-width:900px){.news-grid{grid-template-columns:1fr}.sidebar{flex-direction:row;flex-wrap:wrap}.sidebar-box{flex:1;min-width:250px}.contact-grid{grid-template-columns:1fr}.videos-grid{grid-template-columns:1fr}.card-copy-btn{opacity:1;pointer-events:auto}}
         @media (max-width:768px){
             .top-bar{padding:3px 0}
-            .top-bar .container{flex-wrap:wrap;justify-content:center;gap:3px 8px;padding:0 8px}
-            .top-bar .clock-info{font-size:9px;gap:5px;width:100%;justify-content:center}
+            .top-bar .container{flex-wrap:wrap;justify-content:space-between;gap:4px 8px;padding:0 8px}
+            .top-bar .clock-info{font-size:9px;gap:5px}
             .top-bar .clock-info i{font-size:9px}
-            .top-bar .langs-group{min-width:0;width:100%}
+            .top-bar .right-group{gap:6px}
+            .top-bar .langs-group{min-width:0}
             .top-bar .langs-row{justify-content:center}
             .top-bar .lang-note{font-size:8px}
             .top-bar .lang-btn{font-size:9.5px;padding:1px 7px}
@@ -382,7 +384,7 @@
 </head>
 <body>
 
-    <!-- الشريط العلوي: الوقت - اللغات (مع ملاحظة) - الوضع الليلي -->
+    <!-- الشريط العلوي: الوقت والتاريخ يمين - اللغات والوضع الليلي يسار -->
     <div class="top-bar">
         <div class="container">
             <div class="clock-info">
@@ -392,15 +394,17 @@
                 <span class="sep">|</span>
                 <span><i class="fa-solid fa-moon"></i> <span id="hijriDate">—</span></span>
             </div>
-            <div class="langs-group">
-                <div class="langs-row">
-                    <button class="lang-btn active" data-lang="ar">العربية</button>
-                    <button class="lang-btn" data-lang="en">English</button>
-                    <button class="lang-btn" data-lang="fa">فارسی</button>
+            <div class="right-group">
+                <div class="langs-group">
+                    <div class="langs-row">
+                        <button class="lang-btn active" data-lang="ar">العربية</button>
+                        <button class="lang-btn" data-lang="en">English</button>
+                        <button class="lang-btn" data-lang="fa">فارسی</button>
+                    </div>
+                    <div class="lang-note" data-i18n="langNote">ستتوفر ميزة ترجمة المقال قريباً</div>
                 </div>
-                <div class="lang-note" data-i18n="langNote">ستتوفر ميزة ترجمة المقال قريباً</div>
+                <button class="dark-toggle" id="darkToggle" title="الوضع الليلي"><i class="fa-solid fa-moon"></i></button>
             </div>
-            <button class="dark-toggle" id="darkToggle" title="الوضع الليلي"><i class="fa-solid fa-moon"></i></button>
         </div>
     </div>
 
@@ -410,7 +414,7 @@
         <img src="/assets/images/file_00000000175082109123db13309793e5.png" alt="منصة مشكاة | للنور والوعي">
     </div>
 
-    <!-- شريط البحث (يسار، صغير) -->
+    <!-- شريط البحث -->
     <div class="search-bar-main">
         <div class="search-inner">
             <input type="search" id="mainSearchInput" placeholder="ابحث في الموقع...">
