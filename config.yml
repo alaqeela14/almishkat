@@ -116,6 +116,7 @@ collections:
               - { label: "نوع الخبر", name: "type", widget: "select", options: [{ label: "نصي", value: "text" }, { label: "فيديو", value: "video" }], default: "text" }
               - { label: "العنوان", name: "title", widget: "string" }
               - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
+              - { label: "صورة الخبر", name: "image", widget: "image", required: false, hint: "صورة رئيسية للخبر (اختياري - للأخبار النصية)" }
               - { label: "المقتطف (يظهر في القائمة)", name: "excerpt", widget: "text", required: false }
               - { label: "النص الكامل (للأخبار النصية)", name: "body", widget: "text", required: false, hint: "املأ هذا الحقل إذا كان الخبر نصيًا" }
               - { label: "معرّف يوتيوب (للأخبار المرئية)", name: "youtube_id", widget: "string", required: false, hint: "مثال: dQw4w9WgXcQ — املأ هذا الحقل إذا كان الخبر مرئيًا" }
