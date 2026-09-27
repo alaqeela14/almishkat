@@ -746,7 +746,7 @@
                 mostRead:'الأكثر قراءة',categoriesLabel:'التصنيفات',
                 backToArticles:'رجوع',shareTitle:'شارك',commentsTitle:'التعليقات',copyBtn:'نسخ النص',
                 copySuccess:'✅ تم نسخ المحتوى!',copyFail:'❌ فشل النسخ',
-                readMoreBtn:'أكمل القراءة',
+                readMoreBtn:'أكمل القراءة',readMoreViaLink:'أكمل القراءة عبر الرابط',
                 searchResultsTitle:'نتائج البحث',searchResultsFor:'نتائج البحث عن:',noSearchResults:'لا توجد نتائج مطابقة',
                 pageLibrary:'المكتبة',pageLibraryDesc:'كتب وملفات',noBooks:'لا توجد كتب في هذا التصنيف حالياً',
                 downloadBtn:'تحميل',shareBtn:'مشاركة',
@@ -789,7 +789,7 @@
                 mostRead:'Most Read',categoriesLabel:'Categories',
                 backToArticles:'Back',shareTitle:'Share',commentsTitle:'Comments',copyBtn:'Copy',
                 copySuccess:'✅ Copied!',copyFail:'❌ Failed',
-                readMoreBtn:'Read More',
+                readMoreBtn:'Read More',readMoreViaLink:'Read more via link',
                 searchResultsTitle:'Search Results',searchResultsFor:'Results for:',noSearchResults:'No results',
                 pageLibrary:'Library',pageLibraryDesc:'Books',noBooks:'No books in this category',
                 downloadBtn:'Download',shareBtn:'Share',
@@ -832,7 +832,7 @@
                 mostRead:'پربازدید',categoriesLabel:'دسته‌بندی',
                 backToArticles:'بازگشت',shareTitle:'اشتراک',commentsTitle:'نظرات',copyBtn:'کپی',
                 copySuccess:'✅ کپی شد!',copyFail:'❌ نشد',
-                readMoreBtn:'ادامه مطلب',
+                readMoreBtn:'ادامه مطلب',readMoreViaLink:'ادامه مطلب از طریق لینک',
                 searchResultsTitle:'نتایج',searchResultsFor:'نتایج برای:',noSearchResults:'نتیجه‌ای نیست',
                 pageLibrary:'کتابخانه',pageLibraryDesc:'کتاب‌ها',noBooks:'کتابی نیست',
                 downloadBtn:'دانلود',shareBtn:'اشتراک',
@@ -1156,16 +1156,17 @@
 
         function getShareText() {
             const a = getCurrentArticle(); if (!a) return '';
-            let text = '📄 ' + a.title + '\n\n👤 ' + a.author + '\n📅 ' + a.date + '\n🔗 ' + window.location.href + '\n\n';
+            const t = translations[currentLang];
+            let text = '📄 ' + a.title + '\n\n👤 ' + a.author + '\n📅 ' + a.date + '\n\n';
             if (a.body) text += a.body + '\n\n';
             else if (a.excerpt) text += a.excerpt + '\n\n';
-            text += 'تم النسخ من منصة مشكاة';
+            text += '....' + (t.readMoreViaLink || 'أكمل القراءة عبر الرابط') + '\n' + window.location.href;
             return text;
         }
 
-        function shareWhatsApp() { const a = getCurrentArticle(); if (!a) return; const text = '📄 ' + a.title + '\n\n👤 ' + a.author + '\n📅 ' + a.date + '\n\n' + a.excerpt + '\n\n' + window.location.href; window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank'); }
-        function shareTelegram() { const a = getCurrentArticle(); if (!a) return; const text = '📄 ' + a.title + '\n\n👤 ' + a.author + '\n📅 ' + a.date; window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(text), '_blank'); }
-        function shareTwitter() { const a = getCurrentArticle(); if (!a) return; window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent('📄 ' + a.title) + '&url=' + encodeURIComponent(window.location.href), '_blank'); }
+        function shareWhatsApp() { const a = getCurrentArticle(); if (!a) return; const t = translations[currentLang]; const text = '📄 ' + a.title + '\n\n👤 ' + a.author + '\n📅 ' + a.date + '\n\n' + (a.excerpt || '') + '\n\n....' + (t.readMoreViaLink || 'أكمل القراءة عبر الرابط') + '\n' + window.location.href; window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank'); }
+        function shareTelegram() { const a = getCurrentArticle(); if (!a) return; const t = translations[currentLang]; const text = '📄 ' + a.title + '\n\n👤 ' + a.author + '\n📅 ' + a.date + '\n\n' + (a.excerpt || '') + '\n\n....' + (t.readMoreViaLink || 'أكمل القراءة عبر الرابط'); window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(text), '_blank'); }
+        function shareTwitter() { const a = getCurrentArticle(); if (!a) return; const t = translations[currentLang]; const text = '📄 ' + a.title + '\n\n....' + (t.readMoreViaLink || 'أكمل القراءة عبر الرابط'); window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(window.location.href), '_blank'); }
         function shareFacebook() { window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank'); }
         async function copyArticleText() {
             const text = getShareText();
