@@ -363,7 +363,6 @@
 </head>
 <body>
 
-    <!-- الشريط العلوي -->
     <div class="top-bar">
         <div class="container">
             <div class="clock-info">
@@ -385,13 +384,11 @@
         </div>
     </div>
 
-    <!-- البانر -->
     <div class="banner-wrap">
         <button class="menu-toggle" id="mobileMenuBtn" title="القائمة"><i class="fa-solid fa-bars"></i></button>
         <img src="/assets/images/file_00000000175082109123db13309793e5.png" alt="منصة مشكاة | للنور والوعي">
     </div>
 
-    <!-- شريط البحث -->
     <div class="search-bar-main">
         <div class="search-inner">
             <input type="search" id="mainSearchInput" placeholder="ابحث في الموقع...">
@@ -399,7 +396,6 @@
         </div>
     </div>
 
-    <!-- القائمة الجانبية -->
     <nav class="main-nav" id="mainNav">
         <div class="container">
             <button class="mobile-close-btn" id="mobileCloseBtn"><i class="fa-solid fa-times"></i></button>
@@ -449,9 +445,7 @@
     </nav>
     <div class="mobile-overlay" id="mobileOverlay"></div>
 
-    <!-- الحاوية الرئيسية -->
     <div class="main-container">
-
         <div class="page-view active" id="view-home">
             <div class="breaking-bar">
                 <div class="container">
@@ -469,12 +463,9 @@
                     </div>
                 </div>
             </div>
-
             <div class="news-grid" id="articles">
                 <div class="content-area">
-                    <div class="section-header" id="sectionHeader">
-                        <h2 data-i18n="articlesTitle">المقالات والرؤى</h2>
-                    </div>
+                    <div class="section-header" id="sectionHeader"><h2 data-i18n="articlesTitle">المقالات والرؤى</h2></div>
                     <div class="category-tabs" id="mishkatCategories">
                         <button class="cat-btn active" data-cat="all" data-i18n="catAll">الكل</button>
                         <button class="cat-btn" data-cat="quran" data-i18n="catQuran">حول القرآن</button>
@@ -640,14 +631,11 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <footer>
         <div class="container">
-            <div class="footer-brand">
-                <span data-i18n="brandName">مِشْكَاة</span>
-            </div>
+            <div class="footer-brand"><span data-i18n="brandName">مِشْكَاة</span></div>
             <div class="footer-contact-row">
                 <a href="mailto:mishkat.alnuwr@gmail.com" class="footer-contact-item"><i class="fa-regular fa-envelope"></i><span>mishkat.alnuwr@gmail.com</span></a>
                 <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><span data-i18n="comingSoon">سيتم الإعلان قريباً</span></div>
@@ -712,12 +700,9 @@
             thought: 'كتب فكرية'
         };
 
-        function sortByDateDesc(items) {
-            return items.slice().sort((a, b) => {
-                const da = a.date ? new Date(a.date).getTime() : 0;
-                const db = b.date ? new Date(b.date).getTime() : 0;
-                return (db || 0) - (da || 0);
-            });
+        // 🔄 ترتيب عكسي: آخر عنصر في JSON يظهر أولاً
+        function sortNewestFirst(items) {
+            return items.slice().reverse();
         }
 
         const translations = {
@@ -854,7 +839,7 @@
                 if (!r.ok) return;
                 const data = await r.json();
                 let items = data.items || [];
-                items = sortByDateDesc(items);
+                items = sortNewestFirst(items);
                 const articlesAr = items.map(item => ({
                     catKey: categoryToKey[item.category] || 'general',
                     title: item.title_ar || item.title || '',
@@ -874,19 +859,19 @@
                 if (!r.ok) return;
                 const data = await r.json();
                 let items = data.items || [];
-                items = sortByDateDesc(items);
+                items = sortNewestFirst(items);
                 const booksAr = items.map(item => ({title:item.title||'',author:item.author||'',date:item.date||'',description:item.description||'',cover:item.cover||'',pdf_url:item.pdf_url||'',word_url:item.word_url||'',category:item.category||''}));
                 mishkatBooks.ar = booksAr; mishkatBooks.en = booksAr; mishkatBooks.fa = booksAr;
             } catch(e) { console.error(e); }
         }
         async function loadAudiosFromJSON() {
-            try { const r = await fetch('audios.json?t=' + Date.now()); if (!r.ok) return; const data = await r.json(); let items = data.items || []; mishkatAudios = sortByDateDesc(items); } catch(e) {}
+            try { const r = await fetch('audios.json?t=' + Date.now()); if (!r.ok) return; const data = await r.json(); let items = data.items || []; mishkatAudios = sortNewestFirst(items); } catch(e) {}
         }
         async function loadVideosFromJSON() {
-            try { const r = await fetch('videos.json?t=' + Date.now()); if (!r.ok) return; const data = await r.json(); let items = data.items || []; mishkatVideos = sortByDateDesc(items); } catch(e) {}
+            try { const r = await fetch('videos.json?t=' + Date.now()); if (!r.ok) return; const data = await r.json(); let items = data.items || []; mishkatVideos = sortNewestFirst(items); } catch(e) {}
         }
         async function loadNewsFromJSON() {
-            try { const r = await fetch('news.json?t=' + Date.now()); if (!r.ok) return; const data = await r.json(); let items = data.items || []; mishkatNews = sortByDateDesc(items); } catch(e) {}
+            try { const r = await fetch('news.json?t=' + Date.now()); if (!r.ok) return; const data = await r.json(); let items = data.items || []; mishkatNews = sortNewestFirst(items); } catch(e) {}
         }
 
         function updateDateTime() {
@@ -902,12 +887,10 @@
                 const hijriFmt = lang === 'ar' ? 'ar-SA-u-ca-' + HIJRI_CALENDAR :
                                  (lang === 'fa' ? 'fa-IR-u-ca-' + HIJRI_CALENDAR :
                                  'en-US-u-ca-' + HIJRI_CALENDAR);
-                const hijriText = new Intl.DateTimeFormat(hijriFmt, {
-                    weekday:'long', day:'numeric', month:'long', year:'numeric'
-                }).format(adjustedDate);
+                const hijriText = new Intl.DateTimeFormat(hijriFmt, { weekday:'long', day:'numeric', month:'long', year:'numeric' }).format(adjustedDate);
                 const hD = document.getElementById('hijriDate');
                 if (hD) hD.textContent = hijriText;
-            } catch(e) { console.error('Hijri error:', e); }
+            } catch(e) {}
             let h = now.getHours();
             const t = translations[lang];
             const period = h >= 12 ? t.pm : t.am;
