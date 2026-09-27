@@ -53,9 +53,9 @@ collections:
               - { label: "المؤلف", name: "author", widget: "string", required: false }
               - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
               - { label: "الوصف", name: "description", widget: "text", required: false }
-              - { label: "صورة الغلاف", name: "cover", widget: "image", required: false }
-              - { label: "رابط PDF", name: "pdf_url", widget: "string", required: false }
-              - { label: "رابط Word", name: "word_url", widget: "string", required: false }
+              - { label: "صورة الغلاف", name: "cover", widget: "image", required: false, media_folder: "assets/images", public_folder: "/assets/images" }
+              - { label: "ملف PDF", name: "pdf_url", widget: "file", required: false, media_folder: "assets/books", public_folder: "/assets/books", accept: ".pdf", hint: "ارفع ملف PDF مباشرة (الحد الأقصى الموصى به: 30 ميجابايت)" }
+              - { label: "ملف Word", name: "word_url", widget: "file", required: false, media_folder: "assets/books", public_folder: "/assets/books", accept: ".doc,.docx", hint: "ارفع ملف Word مباشرة (doc أو docx)" }
 
   - name: "audios"
     label: "الصوتيات"
