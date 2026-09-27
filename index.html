@@ -179,9 +179,6 @@
         .share-btn.copy:hover{background:var(--gold-accent);color:var(--primary-navy)}
         .copy-link-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:var(--gold-accent);color:var(--primary-navy);border:none;border-radius:5px;font-family:'Tajawal',sans-serif;font-weight:700;font-size:13.5px;cursor:pointer;transition:.3s}
         .copy-link-btn:hover{background:var(--primary-navy);color:#fff;transform:translateY(-2px)}
-        .card-copy-btn{position:absolute;top:10px;left:10px;background:rgba(26,43,74,.92);color:#fff;border:none;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:.3s;z-index:5;opacity:0;pointer-events:none}
-        .article-card:hover .card-copy-btn,.news-item:hover .card-copy-btn,.audio-card:hover .card-copy-btn,.video-card:hover .card-copy-btn,.book-card:hover .card-copy-btn{opacity:1;pointer-events:auto}
-        .card-copy-btn:hover{background:var(--gold-accent);color:var(--primary-navy);transform:scale(1.1)}
         .comments-section{background:#fff;border-radius:6px;padding:20px 25px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-top:4px solid var(--primary-navy);margin-bottom:20px}
         .comments-section h3{color:var(--primary-navy);font-size:1.2rem;font-weight:800;margin-bottom:15px;display:flex;align-items:center;gap:8px}
         .comments-section h3 i{color:var(--gold-accent)}
@@ -310,7 +307,7 @@
         body.dark-mode .submit-box label{color:#c9a961}
         body.dark-mode .submit-box input,body.dark-mode .submit-box textarea{background:#0d1520;color:#e0e6ed;border-color:#2a3a52}
         @media (max-width:1024px){.news-grid{grid-template-columns:1fr 280px;gap:18px}}
-        @media (max-width:900px){.news-grid{grid-template-columns:1fr}.sidebar{flex-direction:row;flex-wrap:wrap}.sidebar-box{flex:1;min-width:250px}.contact-grid{grid-template-columns:1fr}.videos-grid{grid-template-columns:1fr}.card-copy-btn{opacity:1;pointer-events:auto}}
+        @media (max-width:900px){.news-grid{grid-template-columns:1fr}.sidebar{flex-direction:row;flex-wrap:wrap}.sidebar-box{flex:1;min-width:250px}.contact-grid{grid-template-columns:1fr}.videos-grid{grid-template-columns:1fr}}
         @media (max-width:768px){
             .top-bar{padding:3px 0}
             .top-bar .container{flex-wrap:nowrap;justify-content:space-between;gap:5px;padding:0 6px}
@@ -690,8 +687,6 @@
         let currentLibraryCat = null;
 
         // ⚙️ إعدادات التقويم الهجري
-        // HIJRI_CALENDAR: طريقة الحساب. الخيارات: 'islamic-umalqura' (أم القرى)، 'islamic-civil'، 'islamic-tbla'، 'islamic'
-        // HIJRI_OFFSET: تعديل يدوي بالأيام. استخدم 0 أو 1 أو -1 حسب الحاجة
         const HIJRI_CALENDAR = 'islamic-umalqura';
         const HIJRI_OFFSET = 0;
 
@@ -715,6 +710,15 @@
             social: 'كتب اجتماعية',
             thought: 'كتب فكرية'
         };
+
+        // 🔄 دالة ترتيب العناصر حسب التاريخ (الأحدث أولاً)
+        function sortByDateDesc(items) {
+            return items.slice().sort((a, b) => {
+                const da = a.date ? new Date(a.date).getTime() : 0;
+                const db = b.date ? new Date(b.date).getTime() : 0;
+                return (db || 0) - (da || 0);
+            });
+        }
 
         const translations = {
             ar: {
@@ -849,7 +853,9 @@
                 const r = await fetch('articles.json?t=' + Date.now());
                 if (!r.ok) return;
                 const data = await r.json();
-                const items = data.items || [];
+                let items = data.items || [];
+                // 🔄 ترتيب المقالات حسب التاريخ (الأحدث أولاً)
+                items = sortByDateDesc(items);
                 const articlesAr = items.map(item => ({
                     catKey: categoryToKey[item.category] || 'general',
                     title: item.title_ar || item.title || '',
@@ -868,33 +874,31 @@
                 const r = await fetch('books.json?t=' + Date.now());
                 if (!r.ok) return;
                 const data = await r.json();
-                const items = data.items || [];
+                let items = data.items || [];
+                // 🔄 ترتيب الكتب حسب التاريخ (الأحدث أولاً)
+                items = sortByDateDesc(items);
                 const booksAr = items.map(item => ({title:item.title||'',author:item.author||'',date:item.date||'',description:item.description||'',cover:item.cover||'',pdf_url:item.pdf_url||'',word_url:item.word_url||'',category:item.category||''}));
                 mishkatBooks.ar = booksAr; mishkatBooks.en = booksAr; mishkatBooks.fa = booksAr;
             } catch(e) { console.error(e); }
         }
         async function loadAudiosFromJSON() {
-            try { const r = await fetch('audios.json?t=' + Date.now()); if (!r.ok) return; const data = await r.json(); mishkatAudios = data.items || []; } catch(e) {}
+            try { const r = await fetch('audios.json?t=' + Date.now()); if (!r.ok) return; const data = await r.json(); let items = data.items || []; mishkatAudios = sortByDateDesc(items); } catch(e) {}
         }
         async function loadVideosFromJSON() {
-            try { const r = await fetch('videos.json?t=' + Date.now()); if (!r.ok) return; const data = await r.json(); mishkatVideos = data.items || []; } catch(e) {}
+            try { const r = await fetch('videos.json?t=' + Date.now()); if (!r.ok) return; const data = await r.json(); let items = data.items || []; mishkatVideos = sortByDateDesc(items); } catch(e) {}
         }
         async function loadNewsFromJSON() {
-            try { const r = await fetch('news.json?t=' + Date.now()); if (!r.ok) return; const data = await r.json(); mishkatNews = data.items || []; } catch(e) {}
+            try { const r = await fetch('news.json?t=' + Date.now()); if (!r.ok) return; const data = await r.json(); let items = data.items || []; mishkatNews = sortByDateDesc(items); } catch(e) {}
         }
 
         function updateDateTime() {
             const now = new Date();
             const lang = currentLang || 'ar';
-
-            // التاريخ الميلادي
             const day = String(now.getDate()).padStart(2,'0');
             const month = String(now.getMonth()+1).padStart(2,'0');
             const year = now.getFullYear();
             const dateStr = `${day}/${month}/${year}`;
             const gD = document.getElementById('gregorianDate'); if (gD) gD.textContent = dateStr;
-
-            // التاريخ الهجري مع إمكانية التعديل
             try {
                 const adjustedDate = new Date(now.getTime() + (HIJRI_OFFSET * 24 * 60 * 60 * 1000));
                 const hijriFmt = lang === 'ar' ? 'ar-SA-u-ca-' + HIJRI_CALENDAR :
@@ -906,8 +910,6 @@
                 const hD = document.getElementById('hijriDate');
                 if (hD) hD.textContent = hijriText;
             } catch(e) { console.error('Hijri error:', e); }
-
-            // الوقت
             let h = now.getHours();
             const t = translations[lang];
             const period = h >= 12 ? t.pm : t.am;
@@ -947,9 +949,6 @@
                 navigator.clipboard.writeText(url).then(showDone).catch(fallback);
             } else { fallback(); }
         }
-        function copyArticleCardLink(e, index) { e.stopPropagation(); copyToClipboard(window.location.origin + window.location.pathname + '#article-' + index, e.currentTarget); }
-        function copyNewsCardLink(e, index) { e.stopPropagation(); copyToClipboard(window.location.origin + window.location.pathname + '#news-' + index, e.currentTarget); }
-        function copySectionLink(e, viewId) { e.stopPropagation(); copyToClipboard(window.location.origin + window.location.pathname + '#' + viewId, e.currentTarget); }
         function copyCurrentPageLink(e) { copyToClipboard(window.location.href, e.currentTarget); }
 
         function renderNews() {
@@ -962,7 +961,7 @@
             list.innerHTML = mishkatNews.map((n, i) => {
                 const typeLabel = n.type === 'video' ? (t.newsTypeVideo || 'فيديو') : (t.newsTypeText || 'نصي');
                 const typeIcon = n.type === 'video' ? 'fa-video' : 'fa-newspaper';
-                return `<div class="news-item" onclick="openNews(${i})"><button class="card-copy-btn" onclick="copyNewsCardLink(event, ${i})" title="نسخ الرابط"><i class="fa-solid fa-link"></i></button><span class="news-type"><i class="fa-solid ${typeIcon}"></i> ${typeLabel}</span><h3>${n.title}</h3>${n.date ? `<div class="news-date"><i class="fa-regular fa-calendar"></i> ${n.date}</div>` : ''}${n.excerpt ? `<p class="news-excerpt">${n.excerpt}</p>` : ''}<span class="news-more">${t.readMore || 'اقرأ المزيد'} <i class="fa-solid fa-arrow-left"></i></span></div>`;
+                return `<div class="news-item" onclick="openNews(${i})"><span class="news-type"><i class="fa-solid ${typeIcon}"></i> ${typeLabel}</span><h3>${n.title}</h3>${n.date ? `<div class="news-date"><i class="fa-regular fa-calendar"></i> ${n.date}</div>` : ''}${n.excerpt ? `<p class="news-excerpt">${n.excerpt}</p>` : ''}<span class="news-more">${t.readMore || 'اقرأ المزيد'} <i class="fa-solid fa-arrow-left"></i></span></div>`;
             }).join('');
         }
 
@@ -994,7 +993,7 @@
             list.innerHTML = mishkatAudios.map((a, i) => {
                 const src = '/audios/' + a.file;
                 const descHtml = a.description ? `<p class="audio-desc">${a.description}</p>` : '';
-                return `<div class="audio-card"><button class="card-copy-btn" onclick="copySectionLink(event, 'audios')" title="نسخ الرابط"><i class="fa-solid fa-link"></i></button><div class="audio-head"><div class="audio-icon"><i class="fa-solid fa-headphones"></i></div><div class="audio-info"><h3>${a.title}</h3><div class="audio-meta">${a.speaker ? `<span><i class="fa-solid fa-microphone"></i> ${a.speaker}</span>` : ''}${a.date ? `<span><i class="fa-regular fa-calendar"></i> ${a.date}</span>` : ''}</div></div></div>${descHtml}<audio controls preload="none"><source src="${src}" type="audio/mpeg"></audio><div class="audio-actions"><a class="dl" href="${src}" download><i class="fa-solid fa-download"></i> ${t.audioDownload}</a><button class="sh" onclick="shareAudio(${i})"><i class="fa-solid fa-share-nodes"></i> ${t.audioShare}</button></div></div>`;
+                return `<div class="audio-card"><div class="audio-head"><div class="audio-icon"><i class="fa-solid fa-headphones"></i></div><div class="audio-info"><h3>${a.title}</h3><div class="audio-meta">${a.speaker ? `<span><i class="fa-solid fa-microphone"></i> ${a.speaker}</span>` : ''}${a.date ? `<span><i class="fa-regular fa-calendar"></i> ${a.date}</span>` : ''}</div></div></div>${descHtml}<audio controls preload="none"><source src="${src}" type="audio/mpeg"></audio><div class="audio-actions"><a class="dl" href="${src}" download><i class="fa-solid fa-download"></i> ${t.audioDownload}</a><button class="sh" onclick="shareAudio(${i})"><i class="fa-solid fa-share-nodes"></i> ${t.audioShare}</button></div></div>`;
             }).join('');
         }
         async function shareAudio(index) {
@@ -1016,7 +1015,7 @@
                 const ytId = v.youtube_id || '';
                 const embedUrl = ytId ? 'https://www.youtube.com/embed/' + ytId : '';
                 const embedHtml = ytId ? `<div class="video-embed"><iframe src="${embedUrl}" loading="lazy" allowfullscreen></iframe></div>` : '';
-                return `<div class="video-card"><button class="card-copy-btn" onclick="copySectionLink(event, 'videos')" title="نسخ الرابط"><i class="fa-solid fa-link"></i></button>${embedHtml}<div class="video-body"><h3>${v.title}</h3><div class="video-meta">${v.channel ? `<span><i class="fa-brands fa-youtube"></i> ${v.channel}</span>` : ''}${v.date ? `<span><i class="fa-regular fa-calendar"></i> ${v.date}</span>` : ''}</div></div></div>`;
+                return `<div class="video-card">${embedHtml}<div class="video-body"><h3>${v.title}</h3><div class="video-meta">${v.channel ? `<span><i class="fa-brands fa-youtube"></i> ${v.channel}</span>` : ''}${v.date ? `<span><i class="fa-regular fa-calendar"></i> ${v.date}</span>` : ''}</div></div></div>`;
             }).join('');
         }
 
@@ -1033,7 +1032,7 @@
             empty.style.display = 'none';
             grid.innerHTML = filtered.map(a => {
                 const idx = articles.indexOf(a);
-                return `<div class="article-card" onclick="openArticle(${idx})"><button class="card-copy-btn" onclick="copyArticleCardLink(event, ${idx})" title="نسخ الرابط"><i class="fa-solid fa-link"></i></button><div class="card-top"></div><div class="card-body"><span class="category-badge">${t[a.catKey] || ''}</span><h3>${a.title}</h3><p class="excerpt">${a.excerpt}</p><div class="meta"><span><i class="fa-regular fa-user"></i> ${a.author}</span><span><i class="fa-regular fa-calendar"></i> ${a.date}</span></div></div></div>`;
+                return `<div class="article-card" onclick="openArticle(${idx})"><div class="card-top"></div><div class="card-body"><span class="category-badge">${t[a.catKey] || ''}</span><h3>${a.title}</h3><p class="excerpt">${a.excerpt}</p><div class="meta"><span><i class="fa-regular fa-user"></i> ${a.author}</span><span><i class="fa-regular fa-calendar"></i> ${a.date}</span></div></div></div>`;
             }).join('');
         }
 
@@ -1094,7 +1093,7 @@
             grid.innerHTML = books.map((b, i) => {
                 const coverHtml = b.cover ? `<img src="${b.cover}" alt="${b.title}">` : `<i class="fa-solid fa-book"></i>`;
                 const realIdx = (mishkatBooks[currentLang] || mishkatBooks.ar).indexOf(b);
-                return `<div class="book-card"><button class="card-copy-btn" onclick="copySectionLink(event, 'library')" title="نسخ الرابط"><i class="fa-solid fa-link"></i></button><div class="book-cover">${coverHtml}</div><div class="book-body"><h3>${b.title}</h3><div class="book-author"><i class="fa-solid fa-user-pen"></i> ${b.author}</div><p class="book-desc">${b.description}</p><div class="book-actions"><button class="book-btn download" onclick="showDownloadModal(${realIdx})"><i class="fa-solid fa-download"></i> ${t.downloadBtn}</button><button class="book-btn share" onclick="shareBook(${realIdx})"><i class="fa-solid fa-share-nodes"></i> ${t.shareBtn}</button></div></div></div>`;
+                return `<div class="book-card"><div class="book-cover">${coverHtml}</div><div class="book-body"><h3>${b.title}</h3><div class="book-author"><i class="fa-solid fa-user-pen"></i> ${b.author}</div><p class="book-desc">${b.description}</p><div class="book-actions"><button class="book-btn download" onclick="showDownloadModal(${realIdx})"><i class="fa-solid fa-download"></i> ${t.downloadBtn}</button><button class="book-btn share" onclick="shareBook(${realIdx})"><i class="fa-solid fa-share-nodes"></i> ${t.shareBtn}</button></div></div></div>`;
             }).join('');
         }
 
