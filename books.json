@@ -1,3 +1,14 @@
 {
-  "items": []
+  "items": [
+    {
+      "category": "كتب حول القرآن",
+      "title": "القرآن منهج وسلوك",
+      "author": "السيد محمد الحسيني الشيرازي",
+      "date": "2026-09-27",
+      "description": "",
+      "cover": "/assets/images/71CZpHXjUOL._UF1000,1000_QL80_.jpg",
+      "pdf_url": "",
+      "word_url": ""
+    }
+  ]
 }
