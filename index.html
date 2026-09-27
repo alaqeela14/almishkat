@@ -207,9 +207,8 @@
         .book-author{color:var(--gold-accent);font-size:12.5px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:5px}
         .book-desc{color:var(--text-muted);font-size:13px;flex-grow:1;margin-bottom:15px;line-height:1.7}
         .book-actions{display:flex;gap:6px;flex-wrap:wrap;border-top:1px solid var(--border-color);padding-top:12px}
-        .book-btn{flex:1;min-width:70px;border:none;padding:8px 6px;border-radius:5px;font-family:'Tajawal',sans-serif;font-weight:700;font-size:12.5px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;transition:.3s;text-decoration:none;color:#fff}
+        .book-btn{flex:1;min-width:80px;border:none;padding:9px 10px;border-radius:5px;font-family:'Tajawal',sans-serif;font-weight:700;font-size:12.5px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;transition:.3s;text-decoration:none;color:#fff}
         .book-btn:hover{transform:translateY(-2px);box-shadow:0 4px 10px rgba(0,0,0,.15)}
-        .book-btn.read{background:var(--secondary-blue)}
         .book-btn.download{background:var(--primary-navy)}
         .book-btn.share{background:var(--gold-accent);color:var(--primary-navy)!important}
         .library-empty{text-align:center;padding:60px 20px;color:var(--text-muted)}
@@ -737,8 +736,8 @@
                 copySuccess:'✅ تم نسخ المحتوى!',copyFail:'❌ فشل النسخ',
                 searchResultsTitle:'نتائج البحث',searchResultsFor:'نتائج البحث عن:',noSearchResults:'لا توجد نتائج مطابقة',
                 pageLibrary:'المكتبة',pageLibraryDesc:'كتب وملفات',noBooks:'لا توجد كتب في هذا التصنيف حالياً',
-                readBtn:'قراءة',downloadBtn:'تحميل',shareBtn:'مشاركة',
-                downloadTitle:'اختر صيغة التحميل',bookLinkCopied:'✅ تم نسخ الرابط!',bookNotFound:'هذا الملف غير متوفر',
+                downloadBtn:'تحميل',shareBtn:'مشاركة',
+                downloadTitle:'اختر صيغة التحميل',bookLinkCopied:'✅ تم نسخ الرابط!',bookNotFound:'هذا الملف غير متوفر حالياً',
                 pageAudios:'الصوتيات',pageAudiosDesc:'مقاطع صوتية',noAudios:'لا توجد مقاطع صوتية حالياً',
                 pageVideos:'المرئيات',pageVideosDesc:'مقاطع فيديو',noVideos:'لا توجد مقاطع مرئية حالياً',
                 audioDownload:'تحميل',audioShare:'مشاركة',audioLinkCopied:'✅ تم نسخ الرابط!',
@@ -778,8 +777,8 @@
                 copySuccess:'✅ Copied!',copyFail:'❌ Failed',
                 searchResultsTitle:'Search Results',searchResultsFor:'Results for:',noSearchResults:'No results',
                 pageLibrary:'Library',pageLibraryDesc:'Books',noBooks:'No books in this category',
-                readBtn:'Read',downloadBtn:'Download',shareBtn:'Share',
-                downloadTitle:'Choose format',bookLinkCopied:'✅ Copied!',bookNotFound:'Not available',
+                downloadBtn:'Download',shareBtn:'Share',
+                downloadTitle:'Choose format',bookLinkCopied:'✅ Copied!',bookNotFound:'Not available yet',
                 pageAudios:'Audios',pageAudiosDesc:'Audio',noAudios:'No audios',
                 pageVideos:'Videos',pageVideosDesc:'Videos',noVideos:'No videos',
                 audioDownload:'Download',audioShare:'Share',audioLinkCopied:'✅ Copied!',
@@ -819,8 +818,8 @@
                 copySuccess:'✅ کپی شد!',copyFail:'❌ نشد',
                 searchResultsTitle:'نتایج',searchResultsFor:'نتایج برای:',noSearchResults:'نتیجه‌ای نیست',
                 pageLibrary:'کتابخانه',pageLibraryDesc:'کتاب‌ها',noBooks:'کتابی نیست',
-                readBtn:'مطالعه',downloadBtn:'دانلود',shareBtn:'اشتراک',
-                downloadTitle:'انتخاب فرمت',bookLinkCopied:'✅ کپی شد!',bookNotFound:'موجود نیست',
+                downloadBtn:'دانلود',shareBtn:'اشتراک',
+                downloadTitle:'انتخاب فرمت',bookLinkCopied:'✅ کپی شد!',bookNotFound:'فعلاً موجود نیست',
                 pageAudios:'صوتی',pageAudiosDesc:'دروس',noAudios:'فایلی نیست',
                 pageVideos:'ویدیو',pageVideosDesc:'ویدیوها',noVideos:'ویدیویی نیست',
                 audioDownload:'دانلود',audioShare:'اشتراک',audioLinkCopied:'✅ کپی شد!',
@@ -1095,17 +1094,8 @@
             grid.innerHTML = books.map((b, i) => {
                 const coverHtml = b.cover ? `<img src="${b.cover}" alt="${b.title}">` : `<i class="fa-solid fa-book"></i>`;
                 const realIdx = (mishkatBooks[currentLang] || mishkatBooks.ar).indexOf(b);
-                return `<div class="book-card"><button class="card-copy-btn" onclick="copySectionLink(event, 'library')" title="نسخ الرابط"><i class="fa-solid fa-link"></i></button><div class="book-cover">${coverHtml}</div><div class="book-body"><h3>${b.title}</h3><div class="book-author"><i class="fa-solid fa-user-pen"></i> ${b.author}</div><p class="book-desc">${b.description}</p><div class="book-actions"><button class="book-btn read" onclick="readBook(${realIdx})"><i class="fa-solid fa-book-open"></i> ${t.readBtn}</button><button class="book-btn download" onclick="showDownloadModal(${realIdx})"><i class="fa-solid fa-download"></i> ${t.downloadBtn}</button><button class="book-btn share" onclick="shareBook(${realIdx})"><i class="fa-solid fa-share-nodes"></i> ${t.shareBtn}</button></div></div></div>`;
+                return `<div class="book-card"><button class="card-copy-btn" onclick="copySectionLink(event, 'library')" title="نسخ الرابط"><i class="fa-solid fa-link"></i></button><div class="book-cover">${coverHtml}</div><div class="book-body"><h3>${b.title}</h3><div class="book-author"><i class="fa-solid fa-user-pen"></i> ${b.author}</div><p class="book-desc">${b.description}</p><div class="book-actions"><button class="book-btn download" onclick="showDownloadModal(${realIdx})"><i class="fa-solid fa-download"></i> ${t.downloadBtn}</button><button class="book-btn share" onclick="shareBook(${realIdx})"><i class="fa-solid fa-share-nodes"></i> ${t.shareBtn}</button></div></div></div>`;
             }).join('');
-        }
-
-        function readBook(index) {
-            const t = translations[currentLang];
-            const books = mishkatBooks[currentLang] || mishkatBooks.ar;
-            const book = books[index]; if (!book) return;
-            if (book.pdf_url) window.open(book.pdf_url, '_blank');
-            else if (book.word_url) window.open(book.word_url, '_blank');
-            else alert(t.bookNotFound);
         }
 
         function showDownloadModal(index) {
