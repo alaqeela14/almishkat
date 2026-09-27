@@ -21,7 +21,7 @@ collections:
             widget: "list"
             summary: "{{fields.title_ar}} ({{fields.category}})"
             fields:
-              - { label: "التصنيف", name: "category", widget: "select", options: ["مقالات ورؤى", "أهل البيت", "وعي مجتمعي", "رؤى وحلول", "قضايا معاصرة", "حوارات ومقابلات", "شبهات وردود", "التوجيهات الأخلاقية"] }
+              - { label: "التصنيف", name: "category", widget: "select", options: ["حول القرآن", "أهل البيت", "رؤى وأفكار", "شبهات وردود", "قضايا معاصرة", "حوارات ومقابلات", "الأسرة والمجتمع", "مقالات عامة", "الطب"] }
               - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
               - { label: "العنوان (عربي)", name: "title_ar", widget: "string" }
               - { label: "الكاتب (عربي)", name: "author_ar", widget: "string", required: false }
@@ -35,10 +35,6 @@ collections:
               - { label: "الكاتب (فارسي)", name: "author_fa", widget: "string", required: false }
               - { label: "المقتطف (فارسي)", name: "excerpt_fa", widget: "text", required: false }
               - { label: "النص الكامل (فارسي)", name: "body_fa", widget: "markdown", required: false }
-              - { label: "العنوان (تركي)", name: "title_tr", widget: "string", required: false }
-              - { label: "الكاتب (تركي)", name: "author_tr", widget: "string", required: false }
-              - { label: "المقتطف (تركي)", name: "excerpt_tr", widget: "text", required: false }
-              - { label: "النص الكامل (تركي)", name: "body_tr", widget: "markdown", required: false }
 
   - name: "books"
     label: "الكتب"
@@ -50,8 +46,9 @@ collections:
           - label: "قائمة الكتب"
             name: "items"
             widget: "list"
-            summary: "{{fields.title}}"
+            summary: "{{fields.title}} ({{fields.category}})"
             fields:
+              - { label: "تصنيف الكتاب", name: "category", widget: "select", options: ["كتب حول القرآن", "كتب عقائدية", "كتب فقهية", "كتب أخلاقية", "كتب اجتماعية", "كتب فكرية"] }
               - { label: "عنوان الكتاب", name: "title", widget: "string" }
               - { label: "المؤلف", name: "author", widget: "string", required: false }
               - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
