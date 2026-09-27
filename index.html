@@ -690,6 +690,12 @@
         let mishkatNews = [];
         let currentLibraryCat = null;
 
+        // ⚙️ إعدادات التقويم الهجري
+        // HIJRI_CALENDAR: طريقة الحساب. الخيارات: 'islamic-umalqura' (أم القرى)، 'islamic-civil'، 'islamic-tbla'، 'islamic'
+        // HIJRI_OFFSET: تعديل يدوي بالأيام. استخدم 0 أو 1 أو -1 حسب الحاجة
+        const HIJRI_CALENDAR = 'islamic-umalqura';
+        const HIJRI_OFFSET = 0;
+
         const categoryToKey = {
             'حول القرآن': 'quran',
             'أهل البيت': 'ahlulbayt',
@@ -881,19 +887,28 @@
         function updateDateTime() {
             const now = new Date();
             const lang = currentLang || 'ar';
-            const localeMap = { ar: 'ar', en: 'en-US', fa: 'fa-IR' };
-            const locale = localeMap[lang] || 'ar';
+
+            // التاريخ الميلادي
             const day = String(now.getDate()).padStart(2,'0');
             const month = String(now.getMonth()+1).padStart(2,'0');
             const year = now.getFullYear();
             const dateStr = `${day}/${month}/${year}`;
             const gD = document.getElementById('gregorianDate'); if (gD) gD.textContent = dateStr;
+
+            // التاريخ الهجري مع إمكانية التعديل
             try {
-                // تم إزالة طرح 24 ساعة لتصحيح التاريخ الهجري (Remove the -24h offset)
-                const hijriFmt = lang === 'ar' ? 'ar-SA-u-ca-islamic' : (lang === 'fa' ? 'fa-IR-u-ca-islamic' : 'en-US-u-ca-islamic');
-                const hijriText = new Intl.DateTimeFormat(hijriFmt, { weekday:'long', day:'numeric', month:'long', year:'numeric' }).format(now);
-                const hD = document.getElementById('hijriDate'); if (hD) hD.textContent = hijriText;
-            } catch(e) {}
+                const adjustedDate = new Date(now.getTime() + (HIJRI_OFFSET * 24 * 60 * 60 * 1000));
+                const hijriFmt = lang === 'ar' ? 'ar-SA-u-ca-' + HIJRI_CALENDAR :
+                                 (lang === 'fa' ? 'fa-IR-u-ca-' + HIJRI_CALENDAR :
+                                 'en-US-u-ca-' + HIJRI_CALENDAR);
+                const hijriText = new Intl.DateTimeFormat(hijriFmt, {
+                    weekday:'long', day:'numeric', month:'long', year:'numeric'
+                }).format(adjustedDate);
+                const hD = document.getElementById('hijriDate');
+                if (hD) hD.textContent = hijriText;
+            } catch(e) { console.error('Hijri error:', e); }
+
+            // الوقت
             let h = now.getHours();
             const t = translations[lang];
             const period = h >= 12 ? t.pm : t.am;
