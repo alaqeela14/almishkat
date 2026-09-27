@@ -15,6 +15,7 @@
         .hidden-section{display:none!important}
         .extras-hidden .breaking-bar{display:none!important}
 
+        /* ====== الشريط العلوي ====== */
         .top-bar{background:var(--primary-navy-dark);color:#b8c4d6;padding:3px 0;border-bottom:2px solid var(--gold-accent);font-size:10.5px}
         .top-bar .container{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding:0 12px;max-width:1400px;margin:0 auto}
         .top-bar .clock-info{display:flex;align-items:center;gap:6px;color:#b8c4d6;flex-wrap:wrap;font-size:10px}
@@ -30,11 +31,13 @@
         .dark-toggle{background:transparent;border:1px solid #3a4a6a;color:#b8c4d6;width:22px;height:22px;border-radius:50%;cursor:pointer;font-size:10px;display:inline-flex;align-items:center;justify-content:center;transition:.3s;padding:0;flex-shrink:0;margin-top:1px}
         .dark-toggle:hover{background:var(--gold-accent);color:var(--primary-navy);border-color:var(--gold-accent)}
 
+        /* ====== البانر ====== */
         .banner-wrap{position:relative;width:100%;overflow:hidden;background:var(--primary-navy);line-height:0}
         .banner-wrap img{width:100%;height:auto;display:block;max-height:520px;object-fit:cover}
         .menu-toggle{position:absolute;top:14px;left:14px;z-index:20;background:rgba(255,255,255,.95);color:var(--primary-navy);border:none;width:56px;height:56px;border-radius:10px;font-size:22px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center;transition:.3s;padding:0}
         .menu-toggle:hover{background:var(--gold-accent);transform:scale(1.05)}
 
+        /* ====== شريط البحث ====== */
         .search-bar-main{background:#fff;padding:8px 15px;border-bottom:1px solid var(--border-color);display:flex;justify-content:flex-end;max-width:1400px;margin:0 auto}
         .search-bar-main .search-inner{display:flex;max-width:360px;width:100%;border:1px solid var(--border-color);border-radius:6px;overflow:hidden;background:#fff}
         .search-bar-main input{flex:1;padding:7px 14px;border:none;outline:none;font-family:'Tajawal',sans-serif;font-size:13px;background:transparent;color:var(--text-dark);min-width:0}
@@ -42,6 +45,7 @@
         .search-bar-main button{padding:7px 16px;background:var(--primary-navy);color:#fff;border:none;cursor:pointer;font-family:'Tajawal',sans-serif;font-weight:700;font-size:12.5px;display:flex;align-items:center;gap:5px;transition:.3s;white-space:nowrap}
         .search-bar-main button:hover{background:var(--gold-accent);color:var(--primary-navy)}
 
+        /* ====== القائمة الجانبية ====== */
         .main-nav{position:fixed;top:0;right:0;width:300px;max-width:85vw;height:100vh;z-index:2000;background:var(--primary-navy);overflow-y:auto;transform:translateX(100%);transition:transform .3s ease;box-shadow:-5px 0 20px rgba(0,0,0,.3)}
         .main-nav.mobile-open{transform:translateX(0)}
         .main-nav .container{padding:0;display:block}
@@ -60,6 +64,7 @@
         .mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1500;transition:.3s}
         .mobile-overlay.show{display:block}
 
+        /* ====== عام ====== */
         .main-container{max-width:1400px;margin:0 auto;padding:20px 15px}
         .page-view{display:none}
         .page-view.active{display:block}
@@ -205,11 +210,10 @@
         .breaking-label{background:var(--breaking-red);color:#fff;padding:5px 14px;border-radius:3px;font-size:12px;font-weight:700;white-space:nowrap;display:flex;align-items:center;gap:6px;flex-shrink:0}
         .breaking-label i{animation:pulse 1.5s infinite}
         @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
-        .breaking-ticker{flex:1;overflow:hidden;height:24px;position:relative}
-        .breaking-ticker .ticker-track{display:inline-flex;align-items:center;gap:0;white-space:nowrap;font-size:13.5px;animation:ticker-scroll 30s linear infinite;padding-left:20px}
-        .breaking-ticker .ticker-track a{color:var(--primary-navy);font-weight:600;margin:0 8px;flex-shrink:0}
-        .breaking-ticker .ticker-track span{color:var(--gold-accent);margin:0 4px;flex-shrink:0}
-        @keyframes ticker-scroll{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+        .breaking-ticker{flex:1;overflow:hidden;height:24px}
+        .breaking-ticker marquee{font-size:13.5px}
+        .breaking-ticker marquee a{color:var(--primary-navy);font-weight:600;margin:0 8px}
+        .breaking-ticker marquee span{color:var(--gold-accent)}
         .library-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
         .book-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 4px 15px rgba(26,43,74,.06);border:1px solid var(--border-color);display:flex;flex-direction:column;transition:.3s;position:relative}
         .book-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(26,43,74,.15);border-color:var(--gold-accent)}
@@ -299,6 +303,7 @@
         .news-item .news-excerpt{color:var(--text-muted);font-size:13.5px;line-height:1.8;margin:0 0 10px 0}
         .news-item .news-more{color:var(--gold-accent);font-size:13px;font-weight:700}
 
+        /* ====== الوضع الليلي ====== */
         body.dark-mode{background:#0d1520;color:#e0e6ed}
         body.dark-mode .top-bar{background:#050a12}
         body.dark-mode .banner-wrap{background:#0d1520}
@@ -306,7 +311,7 @@
         body.dark-mode .search-bar-main .search-inner{background:#0d1520;border-color:#2a3a52}
         body.dark-mode .search-bar-main input{color:#e0e6ed}
         body.dark-mode .breaking-bar{background:#1a2535;border-color:#2a3a52}
-        body.dark-mode .breaking-ticker .ticker-track a{color:#e0e6ed}
+        body.dark-mode .breaking-ticker marquee a{color:#e0e6ed}
         body.dark-mode .page-title-bar{background:linear-gradient(135deg,#0f1a2e,#1a2b45)}
         body.dark-mode .content-card,body.dark-mode .article-card,body.dark-mode .sidebar-box,body.dark-mode .submit-box,body.dark-mode .article-full,body.dark-mode .share-section,body.dark-mode .comments-section,body.dark-mode .book-card,body.dark-mode .modal-box,body.dark-mode .team-card,body.dark-mode .search-results-header,body.dark-mode .search-result-item,body.dark-mode .search-empty,body.dark-mode .audio-card,body.dark-mode .video-card,body.dark-mode .news-item,body.dark-mode .section-tile,body.dark-mode .contact-tile{background:#1a2535!important;color:#e0e6ed;border-color:#2a3a52}
         body.dark-mode .article-card h3,body.dark-mode .content-card h2,body.dark-mode .section-header h2,body.dark-mode .article-full h1,body.dark-mode .page-title-bar h1,body.dark-mode .news-item h3,body.dark-mode .video-card .video-body h3,body.dark-mode .audio-card .audio-info h3,body.dark-mode .search-result-item h3,body.dark-mode .book-body h3,body.dark-mode .team-card h3,body.dark-mode .contact-tile h4,body.dark-mode .section-tile h4{color:#e0e6ed!important}
@@ -325,6 +330,7 @@
         body.dark-mode .submit-box label{color:#c9a961}
         body.dark-mode .submit-box input,body.dark-mode .submit-box textarea{background:#0d1520;color:#e0e6ed;border-color:#2a3a52}
 
+        /* ====== استجابة الشاشات ====== */
         @media (max-width:1024px){.news-grid{grid-template-columns:1fr 280px;gap:18px}}
         @media (max-width:900px){.news-grid{grid-template-columns:1fr}.sidebar{flex-direction:row;flex-wrap:wrap}.sidebar-box{flex:1;min-width:250px}.contact-grid{grid-template-columns:1fr}.videos-grid{grid-template-columns:1fr}.card-copy-btn{opacity:1;pointer-events:auto}}
         @media (max-width:768px){
@@ -378,6 +384,7 @@
 </head>
 <body>
 
+    <!-- الشريط العلوي: الوقت والتاريخ يمين - اللغات والوضع الليلي يسار -->
     <div class="top-bar">
         <div class="container">
             <div class="clock-info">
@@ -401,11 +408,13 @@
         </div>
     </div>
 
+    <!-- البانر -->
     <div class="banner-wrap">
         <button class="menu-toggle" id="mobileMenuBtn" title="القائمة"><i class="fa-solid fa-bars"></i></button>
         <img src="/assets/images/file_00000000175082109123db13309793e5.png" alt="منصة مشكاة | للنور والوعي">
     </div>
 
+    <!-- شريط البحث -->
     <div class="search-bar-main">
         <div class="search-inner">
             <input type="search" id="mainSearchInput" placeholder="ابحث في الموقع...">
@@ -413,6 +422,7 @@
         </div>
     </div>
 
+    <!-- القائمة الجانبية -->
     <nav class="main-nav" id="mainNav">
         <div class="container">
             <button class="mobile-close-btn" id="mobileCloseBtn"><i class="fa-solid fa-times"></i></button>
@@ -441,6 +451,7 @@
     </nav>
     <div class="mobile-overlay" id="mobileOverlay"></div>
 
+    <!-- الحاوية الرئيسية -->
     <div class="main-container">
 
         <div class="page-view active" id="view-home">
@@ -448,10 +459,15 @@
                 <div class="container">
                     <div class="breaking-label"><i class="fa-solid fa-circle"></i> <span data-i18n="breakingLabel">آخر الأخبار</span></div>
                     <div class="breaking-ticker">
-                        <div class="ticker-track">
-                            <a data-i18n="news1">مرحباً بكم في منصة مشكاة</a><span>●</span><a data-i18n="news2">تابعوا جديد المقالات والرؤى</a><span>●</span><a data-i18n="news3">منصة فكرية توعوية</a><span>●</span><a data-i18n="news4">للنور والوعي</a><span>●</span>
-                            <a data-i18n="news1">مرحباً بكم في منصة مشكاة</a><span>●</span><a data-i18n="news2">تابعوا جديد المقالات والرؤى</a><span>●</span><a data-i18n="news3">منصة فكرية توعوية</a><span>●</span><a data-i18n="news4">للنور والوعي</a><span>●</span>
-                        </div>
+                        <marquee behavior="scroll" direction="right" scrollamount="3">
+                            <a data-i18n="news1">مرحباً بكم في منصة مشكاة</a>
+                            <span>●</span>
+                            <a data-i18n="news2">تابعوا جديد المقالات والرؤى</a>
+                            <span>●</span>
+                            <a data-i18n="news3">منصة فكرية توعوية</a>
+                            <span>●</span>
+                            <a data-i18n="news4">للنور والوعي</a>
+                        </marquee>
                     </div>
                 </div>
             </div>
@@ -1315,6 +1331,7 @@
             } catch(e) { list.innerHTML = '<p style="color:red;">تعذّر تحميل التعليقات.</p>'; }
         }
 
+        // ===== الوضع الليلي =====
         (function(){
             try { if (localStorage.getItem('mishkat_theme') === 'dark') document.body.classList.add('dark-mode'); } catch(e) {}
             function initDarkToggle(){
