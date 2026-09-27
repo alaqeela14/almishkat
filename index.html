@@ -231,6 +231,14 @@
         .team-avatar{width:90px;height:90px;margin:0 auto 15px;border-radius:50%;background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));display:flex;align-items:center;justify-content:center;color:var(--gold-accent);font-size:40px;border:3px solid var(--gold-accent)}
         .team-card h3{color:var(--primary-navy);font-size:1.1rem;font-weight:800;margin-bottom:5px}
         .team-role{color:var(--gold-accent);font-size:12.5px;font-weight:700;margin-bottom:12px}
+        .team-desc{color:var(--text-muted);font-size:13px;line-height:1.8;margin:0;padding-top:10px;border-top:1px dashed var(--border-color)}
+        .join-team-box{background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));color:#fff;border-radius:10px;padding:35px 30px;text-align:center;margin-top:30px;border-top:5px solid var(--gold-accent);position:relative;overflow:hidden}
+        .join-team-box::before{content:'';position:absolute;top:-50%;left:-20%;width:140%;height:200%;background:radial-gradient(circle,rgba(201,169,97,.15),transparent 60%)}
+        .join-team-box h3{font-size:1.4rem;font-weight:800;margin-bottom:10px;position:relative;z-index:2;display:flex;align-items:center;justify-content:center;gap:10px}
+        .join-team-box h3 i{color:var(--gold-accent)}
+        .join-team-box p{font-size:14.5px;line-height:1.9;margin-bottom:20px;color:rgba(255,255,255,.9);position:relative;z-index:2}
+        .join-team-btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold-accent);color:var(--primary-navy);padding:12px 32px;border-radius:6px;font-weight:800;font-size:15px;text-decoration:none;transition:.3s;position:relative;z-index:2;border:none;cursor:pointer;font-family:'Tajawal',sans-serif}
+        .join-team-btn:hover{background:#fff;color:var(--primary-navy);transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.2)}
         .lang-articles-empty{text-align:center;padding:60px 20px;color:var(--text-muted)}
         .lang-articles-empty i{font-size:60px;color:var(--gold-accent);margin-bottom:15px;display:block}
         .search-results-view{padding:20px 0}
@@ -294,7 +302,7 @@
         body.dark-mode .page-title-bar{background:linear-gradient(135deg,#0f1a2e,#1a2b45)}
         body.dark-mode .content-card,body.dark-mode .article-card,body.dark-mode .sidebar-box,body.dark-mode .submit-box,body.dark-mode .article-full,body.dark-mode .share-section,body.dark-mode .comments-section,body.dark-mode .book-card,body.dark-mode .modal-box,body.dark-mode .team-card,body.dark-mode .search-results-header,body.dark-mode .search-result-item,body.dark-mode .search-empty,body.dark-mode .audio-card,body.dark-mode .video-card,body.dark-mode .news-item,body.dark-mode .contact-tile{background:#1a2535!important;color:#e0e6ed;border-color:#2a3a52}
         body.dark-mode .article-card h3,body.dark-mode .content-card h2,body.dark-mode .section-header h2,body.dark-mode .article-full h1,body.dark-mode .page-title-bar h1,body.dark-mode .news-item h3,body.dark-mode .video-card .video-body h3,body.dark-mode .audio-card .audio-info h3,body.dark-mode .search-result-item h3,body.dark-mode .book-body h3,body.dark-mode .team-card h3,body.dark-mode .contact-tile h4{color:#e0e6ed!important}
-        body.dark-mode .article-card .excerpt,body.dark-mode .book-desc,body.dark-mode .audio-card .audio-desc,body.dark-mode .news-item .news-excerpt,body.dark-mode .article-card .meta,body.dark-mode .article-meta,body.dark-mode .news-item .news-date,body.dark-mode .content-card p,body.dark-mode .contact-tile p{color:#9ca8bb}
+        body.dark-mode .article-card .excerpt,body.dark-mode .book-desc,body.dark-mode .audio-card .audio-desc,body.dark-mode .news-item .news-excerpt,body.dark-mode .article-card .meta,body.dark-mode .article-meta,body.dark-mode .news-item .news-date,body.dark-mode .content-card p,body.dark-mode .contact-tile p,body.dark-mode .team-desc{color:#9ca8bb}
         body.dark-mode footer{background:#050a12}
         body.dark-mode .footer-bottom{background:#000308}
         body.dark-mode .category-tabs .cat-btn{background:#1a2535;color:#e0e6ed;border-color:#2a3a52}
@@ -308,6 +316,7 @@
         body.dark-mode .article-full .article-body h1,body.dark-mode .article-full .article-body h2,body.dark-mode .article-full .article-body h3,body.dark-mode .article-full .article-body h4{color:#c9a961}
         body.dark-mode .submit-box label{color:#c9a961}
         body.dark-mode .submit-box input,body.dark-mode .submit-box textarea{background:#0d1520;color:#e0e6ed;border-color:#2a3a52}
+        body.dark-mode .join-team-box{background:linear-gradient(135deg,#0f1a2e,#1a2b45)}
         @media (max-width:1024px){.news-grid{grid-template-columns:1fr 280px;gap:18px}}
         @media (max-width:900px){.news-grid{grid-template-columns:1fr}.sidebar{flex-direction:row;flex-wrap:wrap}.sidebar-box{flex:1;min-width:250px}.contact-grid{grid-template-columns:1fr}.videos-grid{grid-template-columns:1fr}}
         @media (max-width:768px){
@@ -348,6 +357,9 @@
             .search-result-item{padding:14px 16px}
             .audio-card{padding:16px 18px}
             .news-item{padding:16px 18px}
+            .join-team-box{padding:25px 20px}
+            .join-team-box h3{font-size:1.15rem}
+            .join-team-btn{padding:11px 24px;font-size:14px}
         }
         @media (max-width:480px){
             .banner-wrap img{max-height:220px}
@@ -529,6 +541,11 @@
         <div class="page-view" id="view-family">
             <div class="page-title-bar"><h1><i class="fa-solid fa-users"></i> <span data-i18n="pageFamily">أسرة المنصة</span></h1><p data-i18n="pageFamilyDesc">فريق العمل</p></div>
             <div class="content-card"><h2><i class="fa-solid fa-user-group"></i> <span data-i18n="familyIntroTitle">فريق مشكاة</span></h2><p data-i18n="familyIntroText">نعمل بروح الفريق الواحد.</p><div class="team-grid" id="teamGrid"></div></div>
+            <div class="join-team-box">
+                <h3><i class="fa-solid fa-handshake-angle"></i> <span data-i18n="joinTeamTitle">انضم إلى فريقنا</span></h3>
+                <p data-i18n="joinTeamText">هل ترغب بالمساهمة في نشر الوعي والمعرفة؟ نرحّب بكتّاب ومترجمين ومتطوعين للانضمام إلى فريق مشكاة.</p>
+                <a class="join-team-btn" href="mailto:mishkat.alnuwr@gmail.com?subject=طلب انضمام إلى فريق مشكاة"><i class="fa-solid fa-paper-plane"></i> <span data-i18n="joinTeamBtn">أرسل طلبك</span></a>
+            </div>
         </div>
 
         <div class="page-view" id="view-articles-en">
@@ -700,7 +717,6 @@
             thought: 'كتب فكرية'
         };
 
-        // 🔄 ترتيب عكسي: آخر عنصر في JSON يظهر أولاً
         function sortNewestFirst(items) {
             return items.slice().reverse();
         }
@@ -737,6 +753,7 @@
                 pageArticlesFa:'مقالات بالفارسية',pageArticlesFaDesc:'مقالات به زبان فارسی',
                 noArticlesEn:'لا توجد مقالات',noArticlesFa:'لا توجد مقالات',
                 pageFamily:'أسرة المنصة',pageFamilyDesc:'فريق العمل',familyIntroTitle:'فريق مشكاة',familyIntroText:'نعمل بروح الفريق الواحد.',
+                joinTeamTitle:'انضم إلى فريقنا',joinTeamText:'هل ترغب بالمساهمة في نشر الوعي والمعرفة؟ نرحّب بكتّاب ومترجمين ومتطوعين للانضمام إلى فريق مشكاة.',joinTeamBtn:'أرسل طلبك',
                 pageAbout:'عن المنصة',pageAboutDesc:'تعرّف على منصة مشكاة',
                 aboutIntro:'التعريف',aboutIntroText:'مشكاة منصة إلكترونية ثقافية توعوية.',
                 aboutVision:'الرؤية',aboutVisionText:'أن تكون مشكاة منارة رقمية موثوقة.',
@@ -778,6 +795,7 @@
                 pageArticlesFa:'Farsi Articles',pageArticlesFaDesc:'مقالات به زبان فارسی',
                 noArticlesEn:'No articles',noArticlesFa:'No articles',
                 pageFamily:'Family',pageFamilyDesc:'Meet the team',familyIntroTitle:'Mishkat Team',familyIntroText:'We work as one team.',
+                joinTeamTitle:'Join Our Team',joinTeamText:'Would you like to contribute to spreading awareness and knowledge? We welcome writers, translators, and volunteers to join Mishkat team.',joinTeamBtn:'Send Your Request',
                 pageAbout:'About',pageAboutDesc:'Learn about Mishkat',
                 aboutIntro:'Introduction',aboutIntroText:'Mishkat is a cultural platform.',
                 aboutVision:'Vision',aboutVisionText:'To be a trusted digital beacon.',
@@ -819,6 +837,7 @@
                 pageArticlesFa:'مقالات فارسی',pageArticlesFaDesc:'مقالات به زبان فارسی',
                 noArticlesEn:'نیست',noArticlesFa:'نیست',
                 pageFamily:'خانواده',pageFamilyDesc:'تیم',familyIntroTitle:'تیم مشکاه',familyIntroText:'با هم کار می‌کنیم.',
+                joinTeamTitle:'به تیم ما بپیوندید',joinTeamText:'آیا مایل به مشارکت در گسترش آگاهی و دانش هستید؟ از نویسندگان، مترجمان و داوطلبان برای پیوستن به تیم مشکاه استقبال می‌کنیم.',joinTeamBtn:'ارسال درخواست',
                 pageAbout:'درباره',pageAboutDesc:'با پلتفرم آشنا شوید',
                 aboutIntro:'معرفی',aboutIntroText:'مشکاه یک پلتفرم فرهنگی است.',
                 aboutVision:'چشم‌انداز',aboutVisionText:'مناره دیجیتال.',
@@ -1042,14 +1061,14 @@
         function renderTeam() {
             const grid = document.getElementById('teamGrid'); if (!grid) return;
             const members = [
-                { name: 'إدارة المنصة', role: 'الإشراف العام', icon: 'fa-user-tie' },
-                { name: 'فريق التحرير', role: 'مراجعة المقالات', icon: 'fa-pen-fancy' },
-                { name: 'فريق الكتابة', role: 'إعداد المقالات', icon: 'fa-feather-pointed' },
-                { name: 'فريق الترجمة', role: 'الترجمة للغات', icon: 'fa-language' },
-                { name: 'الدعم التقني', role: 'تطوير المنصة', icon: 'fa-code' },
-                { name: 'العلاقات العامة', role: 'التواصل والنشر', icon: 'fa-bullhorn' }
+                { name: 'إدارة المنصة', role: 'الإشراف العام', desc: 'تضع المنهج العام وتشرف على سير العمل', icon: 'fa-user-tie' },
+                { name: 'فريق التحرير', role: 'مراجعة المقالات', desc: 'يراجع المقالات ويدققها لغوياً وعلمياً', icon: 'fa-pen-fancy' },
+                { name: 'فريق الكتابة', role: 'إعداد المقالات', desc: 'يُعد المقالات والرؤى الفكرية', icon: 'fa-feather-pointed' },
+                { name: 'فريق الترجمة', role: 'الترجمة للغات', desc: 'ينقل المحتوى إلى اللغات الأخرى', icon: 'fa-language' },
+                { name: 'الدعم التقني', role: 'تطوير المنصة', desc: 'يطوّر المنصة ويصونها تقنياً', icon: 'fa-code' },
+                { name: 'العلاقات العامة', role: 'التواصل والنشر', desc: 'يدير الحسابات ويتواصل مع الجمهور', icon: 'fa-bullhorn' }
             ];
-            grid.innerHTML = members.map(m => `<div class="team-card"><div class="team-avatar"><i class="fa-solid ${m.icon}"></i></div><h3>${m.name}</h3><div class="team-role">${m.role}</div></div>`).join('');
+            grid.innerHTML = members.map(m => `<div class="team-card"><div class="team-avatar"><i class="fa-solid ${m.icon}"></i></div><h3>${m.name}</h3><div class="team-role">${m.role}</div><p class="team-desc">${m.desc}</p></div>`).join('');
         }
 
         function renderBooks(filterCat) {
