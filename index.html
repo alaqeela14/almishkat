@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>منصة مشكاة | للنور والوعي</title>
 
-    <!-- Open Graph Tags for Social Media Sharing -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="منصة مشكاة | للنور والوعي">
     <meta property="og:title" content="منصة مشكاة | للنور والوعي">
     <meta property="og:description" content="منصة فكرية توعوية لنشر المقالات والرؤى">
-    <meta property="og:image" content="https://mishkat-new.pages.dev/assets/images/file_00000000175082109123db13309793e5.png">
+    <meta property="og:image" content="https://mishkat-new.pages.dev/assets/images/og-share.jpg?v=2">
+    <meta property="og:image:secure_url" content="https://mishkat-new.pages.dev/assets/images/og-share.jpg?v=2">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:url" content="https://mishkat-new.pages.dev">
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="منصة مشكاة | للنور والوعي">
     <meta name="twitter:description" content="منصة فكرية توعوية لنشر المقالات والرؤى">
-    <meta name="twitter:image" content="https://mishkat-new.pages.dev/assets/images/file_00000000175082109123db13309793e5.png">
+    <meta name="twitter:image" content="https://mishkat-new.pages.dev/assets/images/og-share.jpg?v=2">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -191,16 +191,12 @@
         .share-section{background:#fff;border-radius:6px;padding:20px 25px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-top:4px solid var(--gold-accent);margin-bottom:20px}
         .share-section h3{color:var(--primary-navy);font-size:1.1rem;font-weight:800;margin-bottom:15px;display:flex;align-items:center;gap:8px}
         .share-section h3 i{color:var(--gold-accent)}
-        .share-buttons{display:flex;flex-wrap:wrap;gap:8px}
-        .share-btn{border:none;padding:10px 18px;border-radius:5px;color:#fff;font-family:'Tajawal',sans-serif;font-weight:700;font-size:13.5px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.3s}
+        .share-buttons{display:flex;flex-wrap:wrap;gap:10px}
+        .share-btn{border:none;padding:11px 24px;border-radius:6px;color:#fff;font-family:'Tajawal',sans-serif;font-weight:700;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:.3s}
         .share-btn:hover{transform:translateY(-2px);box-shadow:0 5px 15px rgba(0,0,0,.15)}
-        .share-btn.whatsapp{background:#25d366}
-        .share-btn.telegram{background:#0088cc}
-        .share-btn.twitter{background:#000}
-        .share-btn.facebook{background:#1877f2}
-        .share-btn.copy{background:var(--primary-navy)}
-        .share-btn.copy:hover{background:var(--gold-accent);color:var(--primary-navy)}
-        .copy-link-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:var(--gold-accent);color:var(--primary-navy);border:none;border-radius:5px;font-family:'Tajawal',sans-serif;font-weight:700;font-size:13.5px;cursor:pointer;transition:.3s}
+        .share-btn.native-share{background:var(--primary-navy)}
+        .share-btn.native-share:hover{background:var(--secondary-blue)}
+        .copy-link-btn{display:inline-flex;align-items:center;gap:7px;padding:11px 24px;background:var(--gold-accent);color:var(--primary-navy);border:none;border-radius:6px;font-family:'Tajawal',sans-serif;font-weight:700;font-size:14px;cursor:pointer;transition:.3s}
         .copy-link-btn:hover{background:var(--primary-navy);color:#fff;transform:translateY(-2px)}
         .comments-section{background:#fff;border-radius:6px;padding:20px 25px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-top:4px solid var(--primary-navy);margin-bottom:20px}
         .comments-section h3{color:var(--primary-navy);font-size:1.2rem;font-weight:800;margin-bottom:15px;display:flex;align-items:center;gap:8px}
@@ -321,6 +317,8 @@
         body.dark-mode .article-card .excerpt,body.dark-mode .book-desc,body.dark-mode .audio-card .audio-desc,body.dark-mode .news-item .news-excerpt,body.dark-mode .article-card .meta,body.dark-mode .article-meta,body.dark-mode .news-item .news-date,body.dark-mode .content-card p,body.dark-mode .contact-tile p{color:#9ca8bb}
         body.dark-mode .article-card .read-more-btn,body.dark-mode .news-item .news-more-btn{background:#c9a961;color:#1a2b4a}
         body.dark-mode .article-card .read-more-btn:hover,body.dark-mode .news-item .news-more-btn:hover{background:#e0c078;color:#1a2b4a}
+        body.dark-mode .share-btn.native-share{background:#c9a961;color:#1a2b4a}
+        body.dark-mode .copy-link-btn{background:#2c4a7c;color:#fff}
         body.dark-mode footer{background:#050a12}
         body.dark-mode .footer-bottom{background:#000308}
         body.dark-mode .category-tabs .cat-btn{background:#1a2535;color:#e0e6ed;border-color:#2a3a52}
@@ -370,7 +368,8 @@
             .article-full h1{font-size:1.4rem}
             .article-full .article-body{font-size:14.5px}
             .share-section{padding:16px 18px}
-            .share-btn{padding:8px 14px;font-size:12.5px}
+            .share-btn{padding:10px 20px;font-size:13px}
+            .copy-link-btn{padding:10px 20px;font-size:13px}
             .comments-section{padding:16px 18px}
             .search-result-item{padding:14px 16px}
             .audio-card{padding:16px 18px}
@@ -598,12 +597,8 @@
                 <div class="share-section">
                     <h3><i class="fa-solid fa-share-nodes"></i> <span data-i18n="shareTitle">شارك</span></h3>
                     <div class="share-buttons">
-                        <button class="share-btn whatsapp" onclick="shareWhatsApp()"><i class="fab fa-whatsapp"></i> واتساب</button>
-                        <button class="share-btn telegram" onclick="shareTelegram()"><i class="fab fa-telegram"></i> تيليجرام</button>
-                        <button class="share-btn twitter" onclick="shareTwitter()"><i class="fab fa-twitter"></i> X</button>
-                        <button class="share-btn facebook" onclick="shareFacebook()"><i class="fab fa-facebook-f"></i> فيسبوك</button>
-                        <button class="share-btn copy" onclick="copyArticleText()"><i class="fa-solid fa-copy"></i> <span data-i18n="copyBtn">نسخ النص</span></button>
-                        <button class="copy-link-btn" onclick="copyCurrentPageLink(event)"><i class="fa-solid fa-link"></i> نسخ الرابط</button>
+                        <button class="share-btn native-share" onclick="nativeShare()"><i class="fa-solid fa-share-nodes"></i> <span data-i18n="shareNative">مشاركة</span></button>
+                        <button class="copy-link-btn" onclick="copyCurrentPageLink(event)"><i class="fa-solid fa-link"></i> <span data-i18n="copyLinkBtn">نسخ الرابط</span></button>
                     </div>
                 </div>
                 <div class="comments-section">
@@ -755,7 +750,8 @@
                 articlesTitle:'المقالات والرؤى',noArticles:'لا توجد مقالات في هذا التصنيف حالياً',
                 mostRead:'الأكثر قراءة',categoriesLabel:'التصنيفات',
                 backToArticles:'رجوع',shareTitle:'شارك',commentsTitle:'التعليقات',copyBtn:'نسخ النص',
-                copySuccess:'✅ تم نسخ المحتوى!',copyFail:'❌ فشل النسخ',
+                copySuccess:'✅ تم نسخ الرابط!',copyFail:'❌ فشل النسخ',
+                shareNative:'مشاركة',copyLinkBtn:'نسخ الرابط',
                 readMoreBtn:'أكمل القراءة',readMoreViaLink:'أكمل القراءة عبر الرابط',
                 searchResultsTitle:'نتائج البحث',searchResultsFor:'نتائج البحث عن:',noSearchResults:'لا توجد نتائج مطابقة',
                 pageLibrary:'المكتبة',pageLibraryDesc:'كتب وملفات',noBooks:'لا توجد كتب في هذا التصنيف حالياً',
@@ -798,7 +794,8 @@
                 articlesTitle:'Articles & Insights',noArticles:'No articles in this category',
                 mostRead:'Most Read',categoriesLabel:'Categories',
                 backToArticles:'Back',shareTitle:'Share',commentsTitle:'Comments',copyBtn:'Copy',
-                copySuccess:'✅ Copied!',copyFail:'❌ Failed',
+                copySuccess:'✅ Link copied!',copyFail:'❌ Failed',
+                shareNative:'Share',copyLinkBtn:'Copy Link',
                 readMoreBtn:'Read More',readMoreViaLink:'Read more via link',
                 searchResultsTitle:'Search Results',searchResultsFor:'Results for:',noSearchResults:'No results',
                 pageLibrary:'Library',pageLibraryDesc:'Books',noBooks:'No books in this category',
@@ -841,7 +838,8 @@
                 articlesTitle:'مقالات و دیدگاه‌ها',noArticles:'مقاله‌ای نیست',
                 mostRead:'پربازدید',categoriesLabel:'دسته‌بندی',
                 backToArticles:'بازگشت',shareTitle:'اشتراک',commentsTitle:'نظرات',copyBtn:'کپی',
-                copySuccess:'✅ کپی شد!',copyFail:'❌ نشد',
+                copySuccess:'✅ لینک کپی شد!',copyFail:'❌ نشد',
+                shareNative:'اشتراک',copyLinkBtn:'کپی لینک',
                 readMoreBtn:'ادامه مطلب',readMoreViaLink:'ادامه مطلب از طریق لینک',
                 searchResultsTitle:'نتایج',searchResultsFor:'نتایج برای:',noSearchResults:'نتیجه‌ای نیست',
                 pageLibrary:'کتابخانه',pageLibraryDesc:'کتاب‌ها',noBooks:'کتابی نیست',
@@ -970,7 +968,33 @@
                 navigator.clipboard.writeText(url).then(showDone).catch(fallback);
             } else { fallback(); }
         }
-        function copyCurrentPageLink(e) { copyToClipboard(window.location.href, e.currentTarget); }
+        function copyCurrentPageLink(e) { e.stopPropagation(); copyToClipboard(window.location.href, e.currentTarget); }
+
+        async function nativeShare() {
+            const a = getCurrentArticle(); if (!a) return;
+            const t = translations[currentLang];
+            const url = window.location.href;
+            let text = '📄 ' + a.title + '\n\n👤 ' + a.author + '\n📅 ' + a.date + '\n\n';
+            if (a.excerpt) text += a.excerpt + '.....\n\n';
+            text += (t.readMoreViaLink || 'أكمل القراءة عبر الرابط') + '\n' + url;
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: a.title,
+                        text: text
+                    });
+                } catch(e) {
+                    // المستخدم أغلق نافذة المشاركة أو رفض
+                }
+            } else {
+                try {
+                    await navigator.clipboard.writeText(url);
+                    alert(t.copySuccess || '✅ تم نسخ الرابط!');
+                } catch(e) {
+                    alert(t.copyFail || '❌ فشل النسخ');
+                }
+            }
+        }
 
         function renderNews() {
             const list = document.getElementById('newsList');
@@ -1152,27 +1176,6 @@
             const index = match ? parseInt(match[1]) : 0;
             const articles = mishkatArticles[currentLang] || mishkatArticles.ar;
             return articles[index] || null;
-        }
-
-        function getShareText() {
-            const a = getCurrentArticle(); if (!a) return '';
-            const t = translations[currentLang];
-            let text = '📄 ' + a.title + '\n\n👤 ' + a.author + '\n📅 ' + a.date + '\n\n';
-            if (a.body) text += a.body + '.....\n\n';
-            else if (a.excerpt) text += a.excerpt + '.....\n\n';
-            text += (t.readMoreViaLink || 'أكمل القراءة عبر الرابط') + '\n' + window.location.href;
-            return text;
-        }
-
-        function shareWhatsApp() { const a = getCurrentArticle(); if (!a) return; const t = translations[currentLang]; const text = '📄 ' + a.title + '\n\n👤 ' + a.author + '\n📅 ' + a.date + '\n\n' + (a.excerpt || '') + '.....\n\n' + (t.readMoreViaLink || 'أكمل القراءة عبر الرابط') + '\n' + window.location.href; window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank'); }
-        function shareTelegram() { const a = getCurrentArticle(); if (!a) return; const t = translations[currentLang]; const text = '📄 ' + a.title + '\n\n👤 ' + a.author + '\n📅 ' + a.date + '\n\n' + (a.excerpt || '') + '.....\n\n' + (t.readMoreViaLink || 'أكمل القراءة عبر الرابط'); window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(text), '_blank'); }
-        function shareTwitter() { const a = getCurrentArticle(); if (!a) return; const t = translations[currentLang]; const text = '📄 ' + a.title + '.....\n\n' + (t.readMoreViaLink || 'أكمل القراءة عبر الرابط'); window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(window.location.href), '_blank'); }
-        function shareFacebook() { window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank'); }
-        async function copyArticleText() {
-            const text = getShareText();
-            const t = translations[currentLang];
-            try { await navigator.clipboard.writeText(text); alert(t.copySuccess); }
-            catch (err) { const ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); alert(t.copySuccess); } catch(e) { alert(t.copyFail); } document.body.removeChild(ta); }
         }
 
         function renderSidebar() {
