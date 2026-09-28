@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>منصة مشكاة | للنور والوعي</title>
+
+    <!-- Open Graph Tags for Social Media Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="منصة مشكاة | للنور والوعي">
+    <meta property="og:title" content="منصة مشكاة | للنور والوعي">
+    <meta property="og:description" content="منصة فكرية توعوية لنشر المقالات والرؤى">
+    <meta property="og:image" content="https://mishkat-new.pages.dev/assets/images/file_00000000175082109123db13309793e5.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://mishkat-new.pages.dev">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="منصة مشكاة | للنور والوعي">
+    <meta name="twitter:description" content="منصة فكرية توعوية لنشر المقالات والرؤى">
+    <meta name="twitter:image" content="https://mishkat-new.pages.dev/assets/images/file_00000000175082109123db13309793e5.png">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -148,6 +165,7 @@
         .article-full h1{color:var(--primary-navy);font-size:1.8rem;font-weight:800;margin-bottom:15px;line-height:1.4}
         .article-full .article-meta{display:flex;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--text-muted);border-bottom:2px solid var(--gold-light);padding-bottom:15px;margin-bottom:20px}
         .article-full .article-meta i{color:var(--gold-accent);margin-left:5px}
+        .article-full .article-image{width:100%;height:auto;border-radius:8px;margin:0 0 20px 0;display:block}
         .article-full .article-body{font-size:15.5px;line-height:2;color:var(--text-dark)}
         .article-full .article-body p{margin-bottom:15px}
         .article-full .article-body img{max-width:100%;height:auto;border-radius:8px;margin:10px 0;display:block}
@@ -228,13 +246,6 @@
         .download-option.pdf{background:#dc2626}
         .download-option.word{background:#2563eb}
         .download-option.unavailable{background:#9ca3af;cursor:not-allowed;opacity:.6}
-        .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;margin-top:20px}
-        .team-card{background:#fff;border-radius:10px;padding:25px 20px;text-align:center;box-shadow:0 4px 15px rgba(26,43,74,.06);border:1px solid var(--border-color);border-top:4px solid var(--gold-accent);transition:.3s}
-        .team-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(26,43,74,.15)}
-        .team-avatar{width:90px;height:90px;margin:0 auto 15px;border-radius:50%;background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));display:flex;align-items:center;justify-content:center;color:var(--gold-accent);font-size:40px;border:3px solid var(--gold-accent)}
-        .team-card h3{color:var(--primary-navy);font-size:1.1rem;font-weight:800;margin-bottom:5px}
-        .team-role{color:var(--gold-accent);font-size:12.5px;font-weight:700;margin-bottom:12px}
-        .team-desc{color:var(--text-muted);font-size:13px;line-height:1.8;margin:0;padding-top:10px;border-top:1px dashed var(--border-color)}
         .join-team-box{background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));color:#fff;border-radius:10px;padding:35px 30px;text-align:center;margin-top:30px;border-top:5px solid var(--gold-accent);position:relative;overflow:hidden}
         .join-team-box::before{content:'';position:absolute;top:-50%;left:-20%;width:140%;height:200%;background:radial-gradient(circle,rgba(201,169,97,.15),transparent 60%)}
         .join-team-box h3{font-size:1.4rem;font-weight:800;margin-bottom:10px;position:relative;z-index:2;display:flex;align-items:center;justify-content:center;gap:10px}
@@ -305,9 +316,9 @@
         body.dark-mode .breaking-bar{background:#1a2535;border-color:#2a3a52}
         body.dark-mode .breaking-ticker marquee a{color:#e0e6ed}
         body.dark-mode .page-title-bar{background:linear-gradient(135deg,#0f1a2e,#1a2b45)}
-        body.dark-mode .content-card,body.dark-mode .article-card,body.dark-mode .sidebar-box,body.dark-mode .submit-box,body.dark-mode .article-full,body.dark-mode .share-section,body.dark-mode .comments-section,body.dark-mode .book-card,body.dark-mode .modal-box,body.dark-mode .team-card,body.dark-mode .search-results-header,body.dark-mode .search-result-item,body.dark-mode .search-empty,body.dark-mode .audio-card,body.dark-mode .video-card,body.dark-mode .news-item,body.dark-mode .contact-tile{background:#1a2535!important;color:#e0e6ed;border-color:#2a3a52}
-        body.dark-mode .article-card h3,body.dark-mode .content-card h2,body.dark-mode .section-header h2,body.dark-mode .article-full h1,body.dark-mode .page-title-bar h1,body.dark-mode .news-item h3,body.dark-mode .video-card .video-body h3,body.dark-mode .audio-card .audio-info h3,body.dark-mode .search-result-item h3,body.dark-mode .book-body h3,body.dark-mode .team-card h3,body.dark-mode .contact-tile h4{color:#e0e6ed!important}
-        body.dark-mode .article-card .excerpt,body.dark-mode .book-desc,body.dark-mode .audio-card .audio-desc,body.dark-mode .news-item .news-excerpt,body.dark-mode .article-card .meta,body.dark-mode .article-meta,body.dark-mode .news-item .news-date,body.dark-mode .content-card p,body.dark-mode .contact-tile p,body.dark-mode .team-desc{color:#9ca8bb}
+        body.dark-mode .content-card,body.dark-mode .article-card,body.dark-mode .sidebar-box,body.dark-mode .submit-box,body.dark-mode .article-full,body.dark-mode .share-section,body.dark-mode .comments-section,body.dark-mode .book-card,body.dark-mode .modal-box,body.dark-mode .search-results-header,body.dark-mode .search-result-item,body.dark-mode .search-empty,body.dark-mode .audio-card,body.dark-mode .video-card,body.dark-mode .news-item,body.dark-mode .contact-tile{background:#1a2535!important;color:#e0e6ed;border-color:#2a3a52}
+        body.dark-mode .article-card h3,body.dark-mode .content-card h2,body.dark-mode .section-header h2,body.dark-mode .article-full h1,body.dark-mode .page-title-bar h1,body.dark-mode .news-item h3,body.dark-mode .video-card .video-body h3,body.dark-mode .audio-card .audio-info h3,body.dark-mode .search-result-item h3,body.dark-mode .book-body h3,body.dark-mode .contact-tile h4{color:#e0e6ed!important}
+        body.dark-mode .article-card .excerpt,body.dark-mode .book-desc,body.dark-mode .audio-card .audio-desc,body.dark-mode .news-item .news-excerpt,body.dark-mode .article-card .meta,body.dark-mode .article-meta,body.dark-mode .news-item .news-date,body.dark-mode .content-card p,body.dark-mode .contact-tile p{color:#9ca8bb}
         body.dark-mode .article-card .read-more-btn,body.dark-mode .news-item .news-more-btn{background:#c9a961;color:#1a2b4a}
         body.dark-mode .article-card .read-more-btn:hover,body.dark-mode .news-item .news-more-btn:hover{background:#e0c078;color:#1a2b4a}
         body.dark-mode footer{background:#050a12}
@@ -342,7 +353,7 @@
             .search-bar-main .search-inner{max-width:100%}
             .search-bar-main input{padding:6px 12px;font-size:12.5px}
             .search-bar-main button{padding:6px 12px;font-size:12px}
-            .articles-grid,.library-grid,.team-grid,.videos-grid{grid-template-columns:1fr;gap:14px}
+            .articles-grid,.library-grid,.videos-grid{grid-template-columns:1fr;gap:14px}
             .section-header h2{font-size:1.1rem}
             .section-header h2::before{height:18px}
             .sidebar{flex-direction:column}
@@ -421,7 +432,7 @@
             <ul class="nav-list">
                 <li><a data-view="home" class="active" data-i18n="navHome">الرئيسية</a></li>
                 <li><a data-cat="quran" data-i18n="catQuran">حول القرآن</a></li>
-                <li><a data-cat="ahlulbayt" data-i18n="catAhlulbayt">أهل البيت (عليهم السلام)</a></li>
+                <li><a data-cat="ahlulbayt" data-i18n="catAhlulbayt">أهل البيت (ع)</a></li>
                 <li><a data-cat="insights" data-i18n="catInsights">رؤى وأفكار</a></li>
                 <li><a data-cat="doubts" data-i18n="catDoubts">شبهات وردود</a></li>
                 <li><a data-cat="contemporary" data-i18n="catContemporary">قضايا معاصرة</a></li>
@@ -456,7 +467,7 @@
                         <li><a class="dropdown-item" data-view="articles-fa" data-i18n="navArticlesFa">المقالات بالفارسية</a></li>
                     </ul>
                 </li>
-                <li><a data-view="family" data-i18n="navTeam">فريق مشكاة</a></li>
+                <li><a data-view="family" data-i18n="navTeam">انضم إلينا</a></li>
                 <li><a data-view="about" data-i18n="navAbout">عن المنصة</a></li>
                 <li><a data-view="contact" data-i18n="navContact">تواصل معنا</a></li>
             </ul>
@@ -488,7 +499,7 @@
                     <div class="category-tabs" id="mishkatCategories">
                         <button class="cat-btn active" data-cat="all" data-i18n="catAll">الكل</button>
                         <button class="cat-btn" data-cat="quran" data-i18n="catQuran">حول القرآن</button>
-                        <button class="cat-btn" data-cat="ahlulbayt" data-i18n="catAhlulbayt">أهل البيت (عليهم السلام)</button>
+                        <button class="cat-btn" data-cat="ahlulbayt" data-i18n="catAhlulbayt">أهل البيت (ع)</button>
                         <button class="cat-btn" data-cat="insights" data-i18n="catInsights">رؤى وأفكار</button>
                         <button class="cat-btn" data-cat="doubts" data-i18n="catDoubts">شبهات وردود</button>
                         <button class="cat-btn" data-cat="contemporary" data-i18n="catContemporary">قضايا معاصرة</button>
@@ -546,8 +557,7 @@
         </div>
 
         <div class="page-view" id="view-family">
-            <div class="page-title-bar"><h1><i class="fa-solid fa-users"></i> <span data-i18n="pageFamily">أسرة المنصة</span></h1><p data-i18n="pageFamilyDesc">فريق العمل</p></div>
-            <div class="content-card"><h2><i class="fa-solid fa-user-group"></i> <span data-i18n="familyIntroTitle">فريق مشكاة</span></h2><p data-i18n="familyIntroText">نعمل بروح الفريق الواحد.</p><div class="team-grid" id="teamGrid"></div></div>
+            <div class="page-title-bar"><h1><i class="fa-solid fa-handshake-angle"></i> <span data-i18n="pageFamily">انضم إلينا</span></h1><p data-i18n="pageFamilyDesc">فرصة للانضمام إلى فريق مشكاة</p></div>
             <div class="join-team-box">
                 <h3><i class="fa-solid fa-handshake-angle"></i> <span data-i18n="joinTeamTitle">انضم إلى فريقنا</span></h3>
                 <p data-i18n="joinTeamText">هل ترغب بالمساهمة في نشر الوعي والمعرفة؟ نرحّب بكتّاب ومترجمين ومتطوعين للانضمام إلى فريق مشكاة.</p>
@@ -735,8 +745,8 @@
                 navHome:'الرئيسية',navLibrary:'المكتبة',navAbout:'عن المنصة',navNews:'الأخبار',navCompetitions:'مسابقات',
                 navVideos:'المرئيات',navAudios:'الصوتيات',navMedia:'المرئيات والصوتيات',navVideosOnly:'المرئيات',navAudiosOnly:'الصوتيات',
                 navOtherLangs:'مقالات بلغات أخرى',navArticlesEn:'المقالات بالإنجليزية',navArticlesFa:'المقالات بالفارسية',
-                navTeam:'فريق مشكاة',navContact:'تواصل معنا',
-                catAll:'الكل',catQuran:'حول القرآن',catAhlulbayt:'أهل البيت (عليهم السلام)',catInsights:'رؤى وأفكار',
+                navTeam:'انضم إلينا',navContact:'تواصل معنا',
+                catAll:'الكل',catQuran:'حول القرآن',catAhlulbayt:'أهل البيت (ع)',catInsights:'رؤى وأفكار',
                 catDoubts:'شبهات وردود',catContemporary:'قضايا معاصرة',catDialogues:'حوارات ومقابلات',
                 catFamily:'الأسرة والمجتمع',catGeneral:'مقالات عامة',catMedicine:'الطب',
                 libQuran:'كتب حول القرآن',libAqeedah:'كتب عقائدية',libFiqh:'كتب فقهية',libEthics:'كتب أخلاقية',libSocial:'كتب اجتماعية',libThought:'كتب فكرية',
@@ -760,7 +770,7 @@
                 pageArticlesEn:'مقالات بالإنجليزية',pageArticlesEnDesc:'Articles in English',
                 pageArticlesFa:'مقالات بالفارسية',pageArticlesFaDesc:'مقالات به زبان فارسی',
                 noArticlesEn:'لا توجد مقالات',noArticlesFa:'لا توجد مقالات',
-                pageFamily:'أسرة المنصة',pageFamilyDesc:'فريق العمل',familyIntroTitle:'فريق مشكاة',familyIntroText:'نعمل بروح الفريق الواحد.',
+                pageFamily:'انضم إلينا',pageFamilyDesc:'فرصة للانضمام إلى فريق مشكاة',
                 joinTeamTitle:'انضم إلى فريقنا',joinTeamText:'هل ترغب بالمساهمة في نشر الوعي والمعرفة؟ نرحّب بكتّاب ومترجمين ومتطوعين للانضمام إلى فريق مشكاة.',joinTeamBtn:'أرسل طلبك',
                 pageAbout:'عن المنصة',pageAboutDesc:'تعرّف على منصة مشكاة',
                 aboutIntro:'التعريف',aboutIntroText:'مشكاة منصة إلكترونية ثقافية توعوية.',
@@ -778,7 +788,7 @@
                 navHome:'Home',navLibrary:'Library',navAbout:'About',navNews:'News',navCompetitions:'Competitions',
                 navVideos:'Videos',navAudios:'Audios',navMedia:'Videos & Audios',navVideosOnly:'Videos',navAudiosOnly:'Audios',
                 navOtherLangs:'Articles in other languages',navArticlesEn:'English Articles',navArticlesFa:'Farsi Articles',
-                navTeam:'Mishkat Team',navContact:'Contact Us',
+                navTeam:'Join Us',navContact:'Contact Us',
                 catAll:'All',catQuran:'About Quran',catAhlulbayt:'Ahl al-Bayt',catInsights:'Insights',
                 catDoubts:'Doubts & Responses',catContemporary:'Contemporary',catDialogues:'Dialogues',
                 catFamily:'Family & Society',catGeneral:'General Articles',catMedicine:'Medicine',
@@ -803,7 +813,7 @@
                 pageArticlesEn:'English Articles',pageArticlesEnDesc:'Articles in English',
                 pageArticlesFa:'Farsi Articles',pageArticlesFaDesc:'مقالات به زبان فارسی',
                 noArticlesEn:'No articles',noArticlesFa:'No articles',
-                pageFamily:'Family',pageFamilyDesc:'Meet the team',familyIntroTitle:'Mishkat Team',familyIntroText:'We work as one team.',
+                pageFamily:'Join Us',pageFamilyDesc:'Opportunity to join Mishkat team',
                 joinTeamTitle:'Join Our Team',joinTeamText:'Would you like to contribute to spreading awareness and knowledge? We welcome writers, translators, and volunteers to join Mishkat team.',joinTeamBtn:'Send Your Request',
                 pageAbout:'About',pageAboutDesc:'Learn about Mishkat',
                 aboutIntro:'Introduction',aboutIntroText:'Mishkat is a cultural platform.',
@@ -821,7 +831,7 @@
                 navHome:'خانه',navLibrary:'کتابخانه',navAbout:'درباره',navNews:'اخبار',navCompetitions:'مسابقات',
                 navVideos:'ویدیو',navAudios:'صوتی',navMedia:'ویدیو و صوتی',navVideosOnly:'ویدیو',navAudiosOnly:'صوتی',
                 navOtherLangs:'مقالات به زبان‌های دیگر',navArticlesEn:'مقالات انگلیسی',navArticlesFa:'مقالات فارسی',
-                navTeam:'تیم مشکاه',navContact:'تماس',
+                navTeam:'به ما بپیوندید',navContact:'تماس',
                 catAll:'همه',catQuran:'درباره قرآن',catAhlulbayt:'اهل بیت',catInsights:'رؤیاها و ایده‌ها',
                 catDoubts:'شبهات',catContemporary:'مسائل معاصر',catDialogues:'گفتگوها',
                 catFamily:'خانواده و جامعه',catGeneral:'مقالات عمومی',catMedicine:'پزشکی',
@@ -846,7 +856,7 @@
                 pageArticlesEn:'مقالات انگلیسی',pageArticlesEnDesc:'Articles in English',
                 pageArticlesFa:'مقالات فارسی',pageArticlesFaDesc:'مقالات به زبان فارسی',
                 noArticlesEn:'نیست',noArticlesFa:'نیست',
-                pageFamily:'خانواده',pageFamilyDesc:'تیم',familyIntroTitle:'تیم مشکاه',familyIntroText:'با هم کار می‌کنیم.',
+                pageFamily:'به ما بپیوندید',pageFamilyDesc:'فرصتی برای پیوستن به تیم مشکاه',
                 joinTeamTitle:'به تیم ما بپیوندید',joinTeamText:'آیا مایل به مشارکت در گسترش آگاهی و دانش هستید؟ از نویسندگان، مترجمان و داوطلبان برای پیوستن به تیم مشکاه استقبال می‌کنیم.',joinTeamBtn:'ارسال درخواست',
                 pageAbout:'درباره',pageAboutDesc:'با پلتفرم آشنا شوید',
                 aboutIntro:'معرفی',aboutIntroText:'مشکاه یک پلتفرم فرهنگی است.',
@@ -874,12 +884,13 @@
                     title: item.title_ar || item.title || '',
                     author: item.author_ar || item.author || '',
                     date: item.date || '', excerpt: item.excerpt_ar || item.excerpt || '',
+                    image: item.image || '',
                     body: item.body_ar || item.body || '', category: item.category || ''
                 }));
                 mishkatArticles.ar = articlesAr; mishkatArticles.en = articlesAr; mishkatArticles.fa = articlesAr;
                 articlesByLang.ar = articlesAr;
-                articlesByLang.en = items.filter(i => i.title_en && i.title_en.trim()).map(i => ({catKey: categoryToKey[i.category] || 'general',title:i.title_en,author:i.author_en||'',date:i.date||'',excerpt:i.excerpt_en||'',body:i.body_en||''}));
-                articlesByLang.fa = items.filter(i => i.title_fa && i.title_fa.trim()).map(i => ({catKey: categoryToKey[i.category] || 'general',title:i.title_fa,author:i.author_fa||'',date:i.date||'',excerpt:i.excerpt_fa||'',body:i.body_fa||''}));
+                articlesByLang.en = items.filter(i => i.title_en && i.title_en.trim()).map(i => ({catKey: categoryToKey[i.category] || 'general',title:i.title_en,author:i.author_en||'',date:i.date||'',excerpt:i.excerpt_en||'',image:i.image||'',body:i.body_en||''}));
+                articlesByLang.fa = items.filter(i => i.title_fa && i.title_fa.trim()).map(i => ({catKey: categoryToKey[i.category] || 'general',title:i.title_fa,author:i.author_fa||'',date:i.date||'',excerpt:i.excerpt_fa||'',image:i.image||'',body:i.body_fa||''}));
             } catch(e) { console.error(e); }
         }
         async function loadBooksFromJSON() {
@@ -1062,24 +1073,12 @@
         function openLangArticle(lang, idx) {
             const article = articlesByLang[lang][idx]; if (!article) return;
             const container = document.getElementById('articleFullContent');
+            const imageHtml = article.image ? `<img src="${article.image}" alt="${article.title}" class="article-image">` : '';
             const bodyHtml = article.body ? renderMarkdown(article.body) : '<p>' + (article.excerpt || '') + '</p>';
-            container.innerHTML = `<h1>${article.title}</h1><div class="article-meta"><span><i class="fa-regular fa-user"></i> ${article.author}</span><span><i class="fa-regular fa-calendar"></i> ${article.date}</span></div><div class="article-body">${bodyHtml}</div>`;
+            container.innerHTML = `<h1>${article.title}</h1><div class="article-meta"><span><i class="fa-regular fa-user"></i> ${article.author}</span><span><i class="fa-regular fa-calendar"></i> ${article.date}</span></div>${imageHtml}<div class="article-body">${bodyHtml}</div>`;
             document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
             document.getElementById('view-article').classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function renderTeam() {
-            const grid = document.getElementById('teamGrid'); if (!grid) return;
-            const members = [
-                { name: 'إدارة المنصة', role: 'الإشراف العام', desc: 'تضع المنهج العام وتشرف على سير العمل', icon: 'fa-user-tie' },
-                { name: 'فريق التحرير', role: 'مراجعة المقالات', desc: 'يراجع المقالات ويدققها لغوياً وعلمياً', icon: 'fa-pen-fancy' },
-                { name: 'فريق الكتابة', role: 'إعداد المقالات', desc: 'يُعد المقالات والرؤى الفكرية', icon: 'fa-feather-pointed' },
-                { name: 'فريق الترجمة', role: 'الترجمة للغات', desc: 'ينقل المحتوى إلى اللغات الأخرى', icon: 'fa-language' },
-                { name: 'الدعم التقني', role: 'تطوير المنصة', desc: 'يطوّر المنصة ويصونها تقنياً', icon: 'fa-code' },
-                { name: 'العلاقات العامة', role: 'التواصل والنشر', desc: 'يدير الحسابات ويتواصل مع الجمهور', icon: 'fa-bullhorn' }
-            ];
-            grid.innerHTML = members.map(m => `<div class="team-card"><div class="team-avatar"><i class="fa-solid ${m.icon}"></i></div><h3>${m.name}</h3><div class="team-role">${m.role}</div><p class="team-desc">${m.desc}</p></div>`).join('');
         }
 
         function renderBooks(filterCat) {
@@ -1137,8 +1136,9 @@
             const article = articles[index]; if (!article) return;
             const t = translations[currentLang];
             const container = document.getElementById('articleFullContent');
+            const imageHtml = article.image ? `<img src="${article.image}" alt="${article.title}" class="article-image">` : '';
             const bodyHtml = article.body ? renderMarkdown(article.body) : '<p>' + (article.excerpt || '') + '</p>';
-            container.innerHTML = `<span class="category-badge" style="display:inline-block;background:var(--gold-light);color:var(--primary-navy);padding:5px 14px;border-radius:4px;font-size:12px;font-weight:700;margin-bottom:15px;">${t[article.catKey] || ''}</span><h1>${article.title}</h1><div class="article-meta"><span><i class="fa-regular fa-user"></i> ${article.author}</span><span><i class="fa-regular fa-calendar"></i> ${article.date}</span></div><div class="article-body">${bodyHtml}</div>`;
+            container.innerHTML = `<span class="category-badge" style="display:inline-block;background:var(--gold-light);color:var(--primary-navy);padding:5px 14px;border-radius:4px;font-size:12px;font-weight:700;margin-bottom:15px;">${t[article.catKey] || ''}</span><h1>${article.title}</h1><div class="article-meta"><span><i class="fa-regular fa-user"></i> ${article.author}</span><span><i class="fa-regular fa-calendar"></i> ${article.date}</span></div>${imageHtml}<div class="article-body">${bodyHtml}</div>`;
             window.history.replaceState(null, '', '#article-' + index);
             document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
             document.getElementById('view-article').classList.add('active');
@@ -1213,7 +1213,7 @@
             renderArticles(activeCat ? activeCat.dataset.cat : 'all');
             renderBooks(currentLibraryCat); renderAudios(); renderVideos(); renderNews(); renderSidebar();
             renderLangArticles('en'); renderLangArticles('fa');
-            renderTeam(); updateDateTime();
+            updateDateTime();
             if (document.getElementById('view-article').classList.contains('active')) loadComments();
             localStorage.setItem('mishkat_lang', lang);
         }
@@ -1234,7 +1234,6 @@
             else if (viewId === 'news') renderNews();
             else if (viewId === 'articles-en') renderLangArticles('en');
             else if (viewId === 'articles-fa') renderLangArticles('fa');
-            else if (viewId === 'family') renderTeam();
             closeMobileMenu();
         }
 
