@@ -9,8 +9,8 @@
     <meta property="og:site_name" content="منصة مشكاة | للنور والوعي">
     <meta property="og:title" content="منصة مشكاة | للنور والوعي">
     <meta property="og:description" content="منصة فكرية توعوية لنشر المقالات والرؤى">
-    <meta property="og:image" content="https://mishkat-new.pages.dev/assets/images/og-share.jpg?v=2">
-    <meta property="og:image:secure_url" content="https://mishkat-new.pages.dev/assets/images/og-share.jpg?v=2">
+    <meta property="og:image" content="https://mishkat-new.pages.dev/assets/images/og-share.jpg?v=3">
+    <meta property="og:image:secure_url" content="https://mishkat-new.pages.dev/assets/images/og-share.jpg?v=3">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/jpeg">
@@ -19,7 +19,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="منصة مشكاة | للنور والوعي">
     <meta name="twitter:description" content="منصة فكرية توعوية لنشر المقالات والرؤى">
-    <meta name="twitter:image" content="https://mishkat-new.pages.dev/assets/images/og-share.jpg?v=2">
+    <meta name="twitter:image" content="https://mishkat-new.pages.dev/assets/images/og-share.jpg?v=3">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -586,7 +586,7 @@
 
         <div class="page-view" id="view-article">
             <div class="container" style="max-width:900px;margin:0 auto;">
-                <button class="back-btn" onclick="showView('home')"><i class="fa-solid fa-arrow-right"></i> <span data-i18n="backToArticles">رجوع</span></button>
+                <button class="back-btn" onclick="backFromArticle()"><i class="fa-solid fa-arrow-right"></i> <span data-i18n="backToArticles">رجوع</span></button>
                 <div class="article-full" id="articleFullContent"></div>
                 <div class="share-section">
                     <h3><i class="fa-solid fa-share-nodes"></i> <span data-i18n="shareTitle">شارك</span></h3>
@@ -702,7 +702,6 @@
         const HIJRI_CALENDAR = 'islamic-umalqura';
         const HIJRI_OFFSET = 0;
 
-        // الملفات الستة للمقالات (كل تصنيف في ملف مستقل)
         const ARTICLE_FILES = [
             { file: 'articles-ahlulbayt.json', catKey: 'ahlulbayt' },
             { file: 'articles-insights.json', catKey: 'insights' },
@@ -721,9 +720,7 @@
             thought: 'كتب فكرية'
         };
 
-        function sortNewestFirst(items) {
-            return items.slice().reverse();
-        }
+        function sortNewestFirst(items) { return items.slice().reverse(); }
 
         const translations = {
             ar: {
@@ -869,10 +866,7 @@
                     const r = await fetch(file + '?t=' + Date.now());
                     if (!r.ok) continue;
                     const data = await r.json();
-                    const items = (data.items || []).map(item => ({
-                        ...item,
-                        _catKey: catKey
-                    }));
+                    const items = (data.items || []).map(item => ({ ...item, _catKey: catKey }));
                     allItems = allItems.concat(items);
                 } catch(e) { console.error(e); }
             }
@@ -944,7 +938,6 @@
 
         function renderMarkdown(text) {
             if (!text) return '';
-            // تحويل رموز الألوان إلى HTML
             let processed = String(text)
                 .replace(/\{red\}([\s\S]*?)\{\/red\}/g, '<span style="color:#dc2626;font-weight:700">$1</span>')
                 .replace(/\{gold\}([\s\S]*?)\{\/gold\}/g, '<span style="color:#c9a961;font-weight:700">$1</span>')
@@ -987,19 +980,10 @@
             if (a.excerpt) text += a.excerpt + '.....\n\n';
             text += (t.readMoreViaLink || 'أكمل القراءة عبر الرابط') + '\n' + url;
             if (navigator.share) {
-                try {
-                    await navigator.share({
-                        title: a.title,
-                        text: text
-                    });
-                } catch(e) {}
+                try { await navigator.share({ title: a.title, text: text }); } catch(e) {}
             } else {
-                try {
-                    await navigator.clipboard.writeText(url);
-                    alert(t.copySuccess || '✅ تم نسخ الرابط!');
-                } catch(e) {
-                    alert(t.copyFail || '❌ فشل النسخ');
-                }
+                try { await navigator.clipboard.writeText(url); alert(t.copySuccess || '✅ تم نسخ الرابط!'); }
+                catch(e) { alert(t.copyFail || '❌ فشل النسخ'); }
             }
         }
 
@@ -1029,7 +1013,7 @@
                 if (n.description) bodyHtml += `<p>${n.description.replace(/\n/g,'<br>')}</p>`;
             } else { bodyHtml += n.body ? renderMarkdown(n.body) : (n.excerpt || ''); }
             container.innerHTML = `<span class="category-badge" style="display:inline-block;background:var(--gold-light);color:var(--primary-navy);padding:5px 14px;border-radius:4px;font-size:12px;font-weight:700;margin-bottom:15px;">${t.pageNews}</span><h1>${n.title}</h1><div class="article-meta"><span><i class="fa-regular fa-calendar"></i> ${n.date || ''}</span></div><div class="article-body">${bodyHtml}</div>`;
-            window.history.replaceState(null, '', '#news-' + index);
+            window.history.replaceState(null, '', '/news/' + index);
             document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
             document.getElementById('view-article').classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1094,22 +1078,8 @@
             const grid = document.getElementById(gridId);
             const empty = document.getElementById(emptyId);
             if (!grid || !empty) return;
-            const articles = articlesByLang[lang] || [];
-            if (articles.length === 0) { grid.innerHTML = ''; empty.classList.remove('hidden-section'); return; }
-            empty.classList.add('hidden-section');
-            const t = translations[currentLang];
-            grid.innerHTML = articles.map((a, idx) => `<div class="article-card"><div class="card-top"></div><div class="card-body"><h3>${a.title}</h3><p class="excerpt">${a.excerpt}</p><button class="read-more-btn" onclick="openLangArticle('${lang}', ${idx})"><i class="fa-solid fa-arrow-left"></i> ${t.readMoreBtn || 'Read More'}</button><div class="meta"><span><i class="fa-regular fa-user"></i> ${a.author}</span><span><i class="fa-regular fa-calendar"></i> ${a.date}</span></div></div></div>`).join('');
-        }
-
-        function openLangArticle(lang, idx) {
-            const article = articlesByLang[lang][idx]; if (!article) return;
-            const container = document.getElementById('articleFullContent');
-            const imageHtml = article.image ? `<img src="${article.image}" alt="${article.title}" class="article-image">` : '';
-            const bodyHtml = article.body ? renderMarkdown(article.body) : '<p>' + (article.excerpt || '') + '</p>';
-            container.innerHTML = `<h1>${article.title}</h1><div class="article-meta"><span><i class="fa-regular fa-user"></i> ${article.author}</span><span><i class="fa-regular fa-calendar"></i> ${article.date}</span></div>${imageHtml}<div class="article-body">${bodyHtml}</div>`;
-            document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
-            document.getElementById('view-article').classList.add('active');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            grid.innerHTML = '';
+            empty.classList.remove('hidden-section');
         }
 
         function renderBooks(filterCat) {
@@ -1170,19 +1140,35 @@
             const imageHtml = article.image ? `<img src="${article.image}" alt="${article.title}" class="article-image">` : '';
             const bodyHtml = article.body ? renderMarkdown(article.body) : '<p>' + (article.excerpt || '') + '</p>';
             container.innerHTML = `<span class="category-badge" style="display:inline-block;background:var(--gold-light);color:var(--primary-navy);padding:5px 14px;border-radius:4px;font-size:12px;font-weight:700;margin-bottom:15px;">${t[article.catKey] || ''}</span><h1>${article.title}</h1><div class="article-meta"><span><i class="fa-regular fa-user"></i> ${article.author}</span><span><i class="fa-regular fa-calendar"></i> ${article.date}</span></div>${imageHtml}<div class="article-body">${bodyHtml}</div>`;
-            window.history.replaceState(null, '', '#article-' + index);
+            // Compute position within category
+            const catKey = article.catKey;
+            const catArticles = articles.filter(a => a.catKey === catKey);
+            const posInCat = catArticles.indexOf(article);
+            window.history.replaceState(null, '', '/article/' + catKey + '/' + posInCat);
             document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
             document.getElementById('view-article').classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
             setTimeout(loadComments, 200);
         }
 
+        function backFromArticle() {
+            window.history.replaceState(null, '', '/');
+            showView('home');
+        }
+
         function getCurrentArticle() {
-            const hash = window.location.hash;
-            const match = hash.match(/#article-(\d+)/);
-            const index = match ? parseInt(match[1]) : 0;
-            const articles = mishkatArticles[currentLang] || mishkatArticles.ar;
-            return articles[index] || null;
+            const path = window.location.pathname;
+            if (path.startsWith('/article/')) {
+                const parts = path.substring(9).split('/').filter(Boolean);
+                if (parts.length >= 2) {
+                    const catKey = parts[0];
+                    const posInCat = parseInt(parts[1]);
+                    const articles = mishkatArticles[currentLang] || mishkatArticles.ar;
+                    const catArticles = articles.filter(a => a.catKey === catKey);
+                    return catArticles[posInCat] || null;
+                }
+            }
+            return null;
         }
 
         function renderSidebar() {
@@ -1222,7 +1208,6 @@
             const activeCat = document.querySelector('#mishkatCategories .cat-btn.active');
             renderArticles(activeCat ? activeCat.dataset.cat : 'all');
             renderBooks(currentLibraryCat); renderAudios(); renderVideos(); renderNews(); renderSidebar();
-            renderLangArticles('en'); renderLangArticles('fa');
             updateDateTime();
             if (document.getElementById('view-article').classList.contains('active')) loadComments();
             localStorage.setItem('mishkat_lang', lang);
@@ -1242,8 +1227,6 @@
             else if (viewId === 'audios') renderAudios();
             else if (viewId === 'videos') renderVideos();
             else if (viewId === 'news') renderNews();
-            else if (viewId === 'articles-en') renderLangArticles('en');
-            else if (viewId === 'articles-fa') renderLangArticles('fa');
             closeMobileMenu();
         }
 
@@ -1482,6 +1465,29 @@
             updateDateTime();
             setInterval(updateDateTime, 1000);
 
+            // Handle direct URL paths (from Cloudflare Function)
+            const path = window.location.pathname;
+            if (path.startsWith('/article/')) {
+                const parts = path.substring(9).split('/').filter(Boolean);
+                if (parts.length >= 2) {
+                    const catKey = parts[0];
+                    const posInCat = parseInt(parts[1]);
+                    const articles = mishkatArticles[currentLang] || mishkatArticles.ar;
+                    const catArticles = articles.filter(a => a.catKey === catKey);
+                    if (catArticles[posInCat]) {
+                        const globalIdx = articles.indexOf(catArticles[posInCat]);
+                        if (globalIdx >= 0) openArticle(globalIdx);
+                    }
+                }
+            } else if (path.startsWith('/news/')) {
+                const idx = parseInt(path.substring(6));
+                if (!isNaN(idx)) { showView('news'); setTimeout(() => openNews(idx), 100); }
+            } else if (path.startsWith('/book/')) {
+                const idx = parseInt(path.substring(6));
+                if (!isNaN(idx)) showView('library');
+            }
+
+            // Handle hash-based URLs (for backward compatibility)
             if (window.location.hash) {
                 const hash = window.location.hash;
                 if (hash.match(/#article-\d+/)) {
