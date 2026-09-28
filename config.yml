@@ -12,20 +12,105 @@ collections:
   - name: "articles"
     label: "المقالات"
     files:
-      - name: "articles-list"
-        label: "قائمة المقالات"
-        file: "articles.json"
+      - name: "articles-ahlulbayt"
+        label: "أهل البيت (عليهم السلام)"
+        file: "articles-ahlulbayt.json"
         fields:
           - label: "قائمة المقالات"
             name: "items"
             widget: "list"
-            summary: "{{fields.title_ar}} ({{fields.category}})"
+            add_to_top: true
+            summary: "{{fields.title_ar}}"
             fields:
-              - { label: "التصنيف", name: "category", widget: "select", options: ["حول القرآن", "أهل البيت", "رؤى وأفكار", "شبهات وردود", "قضايا معاصرة", "حوارات ومقابلات", "الأسرة والمجتمع", "مقالات عامة", "الطب"] }
               - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
               - { label: "العنوان", name: "title_ar", widget: "string" }
               - { label: "الكاتب", name: "author_ar", widget: "string", required: false }
-              - { label: "صورة المقال", name: "image", widget: "image", required: false, media_folder: "assets/images", public_folder: "/assets/images", hint: "تظهر الصورة بعد العنوان مباشرة وقبل النص" }
+              - { label: "صورة المقال", name: "image", widget: "image", required: false, media_folder: "assets/images", public_folder: "/assets/images" }
+              - { label: "المقتطف", name: "excerpt_ar", widget: "text", required: false }
+              - { label: "النص الكامل", name: "body_ar", widget: "markdown", required: false }
+
+      - name: "articles-insights"
+        label: "رؤى وأفكار"
+        file: "articles-insights.json"
+        fields:
+          - label: "قائمة المقالات"
+            name: "items"
+            widget: "list"
+            add_to_top: true
+            summary: "{{fields.title_ar}}"
+            fields:
+              - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "العنوان", name: "title_ar", widget: "string" }
+              - { label: "الكاتب", name: "author_ar", widget: "string", required: false }
+              - { label: "صورة المقال", name: "image", widget: "image", required: false, media_folder: "assets/images", public_folder: "/assets/images" }
+              - { label: "المقتطف", name: "excerpt_ar", widget: "text", required: false }
+              - { label: "النص الكامل", name: "body_ar", widget: "markdown", required: false }
+
+      - name: "articles-doubts"
+        label: "شبهات وردود"
+        file: "articles-doubts.json"
+        fields:
+          - label: "قائمة المقالات"
+            name: "items"
+            widget: "list"
+            add_to_top: true
+            summary: "{{fields.title_ar}}"
+            fields:
+              - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "العنوان", name: "title_ar", widget: "string" }
+              - { label: "الكاتب", name: "author_ar", widget: "string", required: false }
+              - { label: "صورة المقال", name: "image", widget: "image", required: false, media_folder: "assets/images", public_folder: "/assets/images" }
+              - { label: "المقتطف", name: "excerpt_ar", widget: "text", required: false }
+              - { label: "النص الكامل", name: "body_ar", widget: "markdown", required: false }
+
+      - name: "articles-dialogues"
+        label: "حوارات ومقابلات"
+        file: "articles-dialogues.json"
+        fields:
+          - label: "قائمة المقالات"
+            name: "items"
+            widget: "list"
+            add_to_top: true
+            summary: "{{fields.title_ar}}"
+            fields:
+              - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "العنوان", name: "title_ar", widget: "string" }
+              - { label: "الكاتب", name: "author_ar", widget: "string", required: false }
+              - { label: "صورة المقال", name: "image", widget: "image", required: false, media_folder: "assets/images", public_folder: "/assets/images" }
+              - { label: "المقتطف", name: "excerpt_ar", widget: "text", required: false }
+              - { label: "النص الكامل", name: "body_ar", widget: "markdown", required: false }
+
+      - name: "articles-family"
+        label: "الأسرة والمجتمع"
+        file: "articles-family.json"
+        fields:
+          - label: "قائمة المقالات"
+            name: "items"
+            widget: "list"
+            add_to_top: true
+            summary: "{{fields.title_ar}}"
+            fields:
+              - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "العنوان", name: "title_ar", widget: "string" }
+              - { label: "الكاتب", name: "author_ar", widget: "string", required: false }
+              - { label: "صورة المقال", name: "image", widget: "image", required: false, media_folder: "assets/images", public_folder: "/assets/images" }
+              - { label: "المقتطف", name: "excerpt_ar", widget: "text", required: false }
+              - { label: "النص الكامل", name: "body_ar", widget: "markdown", required: false }
+
+      - name: "articles-general"
+        label: "مقالات عامة"
+        file: "articles-general.json"
+        fields:
+          - label: "قائمة المقالات"
+            name: "items"
+            widget: "list"
+            add_to_top: true
+            summary: "{{fields.title_ar}}"
+            fields:
+              - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "العنوان", name: "title_ar", widget: "string" }
+              - { label: "الكاتب", name: "author_ar", widget: "string", required: false }
+              - { label: "صورة المقال", name: "image", widget: "image", required: false, media_folder: "assets/images", public_folder: "/assets/images" }
               - { label: "المقتطف", name: "excerpt_ar", widget: "text", required: false }
               - { label: "النص الكامل", name: "body_ar", widget: "markdown", required: false }
 
@@ -39,6 +124,7 @@ collections:
           - label: "قائمة الكتب"
             name: "items"
             widget: "list"
+            add_to_top: true
             summary: "{{fields.title}} ({{fields.category}})"
             fields:
               - { label: "تصنيف الكتاب", name: "category", widget: "select", options: ["كتب حول القرآن", "كتب عقائدية", "كتب فقهية", "كتب أخلاقية", "كتب اجتماعية", "كتب فكرية"] }
@@ -47,8 +133,8 @@ collections:
               - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
               - { label: "الوصف", name: "description", widget: "text", required: false }
               - { label: "صورة الغلاف", name: "cover", widget: "image", required: false, media_folder: "assets/images", public_folder: "/assets/images" }
-              - { label: "ملف PDF", name: "pdf_url", widget: "file", required: false, media_folder: "assets/books", public_folder: "/assets/books", accept: ".pdf", hint: "ارفع ملف PDF مباشرة" }
-              - { label: "ملف Word", name: "word_url", widget: "file", required: false, media_folder: "assets/books", public_folder: "/assets/books", accept: ".doc,.docx", hint: "ارفع ملف Word مباشرة" }
+              - { label: "ملف PDF", name: "pdf_url", widget: "file", required: false, media_folder: "assets/books", public_folder: "/assets/books", accept: ".pdf" }
+              - { label: "ملف Word", name: "word_url", widget: "file", required: false, media_folder: "assets/books", public_folder: "/assets/books", accept: ".doc,.docx" }
 
   - name: "audios"
     label: "الصوتيات"
@@ -60,6 +146,7 @@ collections:
           - label: "قائمة المقاطع"
             name: "items"
             widget: "list"
+            add_to_top: true
             summary: "{{fields.title}} - {{fields.speaker}}"
             fields:
               - { label: "اسم الملف (بالإنجليزي)", name: "file", widget: "string", hint: "مثال: lesson-01.mp3" }
@@ -78,6 +165,7 @@ collections:
           - label: "قائمة المقاطع"
             name: "items"
             widget: "list"
+            add_to_top: true
             summary: "{{fields.title}}"
             fields:
               - { label: "عنوان الفيديو", name: "title", widget: "string" }
@@ -96,13 +184,14 @@ collections:
           - label: "قائمة الأخبار"
             name: "items"
             widget: "list"
+            add_to_top: true
             summary: "{{fields.title}} [{{fields.type}}]"
             fields:
               - { label: "نوع الخبر", name: "type", widget: "select", options: [{ label: "نصي", value: "text" }, { label: "فيديو", value: "video" }], default: "text" }
               - { label: "العنوان", name: "title", widget: "string" }
               - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
-              - { label: "صورة الخبر", name: "image", widget: "image", required: false, hint: "صورة رئيسية للخبر (اختياري - للأخبار النصية)" }
-              - { label: "المقتطف (يظهر في القائمة)", name: "excerpt", widget: "text", required: false }
-              - { label: "النص الكامل (للأخبار النصية)", name: "body", widget: "markdown", required: false, hint: "املأ هذا الحقل إذا كان الخبر نصيًا" }
-              - { label: "معرّف يوتيوب (للأخبار المرئية)", name: "youtube_id", widget: "string", required: false, hint: "مثال: dQw4w9WgXcQ — املأ هذا الحقل إذا كان الخبر مرئيًا" }
-              - { label: "وصف الفيديو (للأخبار المرئية)", name: "description", widget: "text", required: false }
+              - { label: "صورة الخبر", name: "image", widget: "image", required: false }
+              - { label: "المقتطف", name: "excerpt", widget: "text", required: false }
+              - { label: "النص الكامل", name: "body", widget: "markdown", required: false }
+              - { label: "معرّف يوتيوب", name: "youtube_id", widget: "string", required: false }
+              - { label: "وصف الفيديو", name: "description", widget: "text", required: false }
