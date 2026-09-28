@@ -102,6 +102,15 @@
         .section-header{display:flex;align-items:center;gap:10px;border-bottom:3px solid var(--primary-navy);padding-bottom:8px;margin:0 0 18px}
         .section-header h2{font-size:1.3rem;font-weight:800;color:var(--primary-navy);margin:0;display:flex;align-items:center;gap:8px}
         .section-header h2::before{content:'';width:5px;height:22px;background:var(--gold-accent);border-radius:2px}
+        .daily-box{background:linear-gradient(135deg,var(--primary-navy) 0%,var(--secondary-blue) 100%);color:#fff;border-radius:10px;padding:28px 25px;margin-bottom:22px;border-top:5px solid var(--gold-accent);position:relative;overflow:hidden;box-shadow:0 8px 25px rgba(26,43,74,.15)}
+        .daily-box::before{content:'\f10d';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;top:15px;right:20px;font-size:70px;color:rgba(201,169,97,.12);pointer-events:none}
+        .daily-box .daily-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:18px;position:relative;z-index:2}
+        .daily-box .daily-title{display:flex;align-items:center;gap:10px;font-size:1.15rem;font-weight:800;color:var(--gold-accent)}
+        .daily-box .daily-title i{font-size:22px}
+        .daily-box .daily-type{background:rgba(201,169,97,.25);color:var(--gold-accent);padding:4px 14px;border-radius:20px;font-size:11.5px;font-weight:700;border:1px solid rgba(201,169,97,.4)}
+        .daily-box .daily-text{font-size:1.15rem;line-height:2;font-weight:500;margin-bottom:16px;position:relative;z-index:2;text-align:center;padding:0 15px;color:#f5f8fc}
+        .daily-box .daily-source{text-align:left;font-size:13px;color:var(--gold-accent);font-weight:700;position:relative;z-index:2;padding-left:10px}
+        .daily-box .daily-source i{margin-left:6px}
         .category-tabs{display:flex;gap:6px;margin-bottom:18px;overflow-x:auto;padding-bottom:5px}
         .category-tabs .cat-btn{background:#fff;border:1px solid var(--border-color);color:var(--primary-navy);padding:6px 16px;border-radius:3px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;transition:.3s;font-family:'Tajawal',sans-serif}
         .category-tabs .cat-btn.active{background:var(--primary-navy);color:#fff;border-color:var(--primary-navy)}
@@ -136,6 +145,12 @@
         .sidebar-cat-item:hover{padding-right:5px}
         .sidebar-cat-item span:first-child{font-size:13px;font-weight:600;color:var(--text-dark)}
         .sidebar-cat-item .count{background:var(--very-light-blue);color:var(--primary-navy);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700}
+        .filter-notice{display:none;background:var(--gold-light);border:1px solid var(--gold-accent);border-radius:6px;padding:12px 18px;margin-bottom:18px;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+        .filter-notice.show{display:flex}
+        .filter-notice .filter-text{color:var(--primary-navy);font-weight:700;font-size:14px;display:flex;align-items:center;gap:8px}
+        .filter-notice .filter-text i{color:var(--gold-accent)}
+        .filter-notice .clear-filter{background:var(--primary-navy);color:#fff;border:none;padding:7px 16px;border-radius:5px;font-family:'Tajawal',sans-serif;font-weight:700;font-size:12.5px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.3s}
+        .filter-notice .clear-filter:hover{background:var(--gold-accent);color:var(--primary-navy)}
         .submit-box{background:#fff;border-radius:6px;padding:25px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-top:4px solid var(--gold-accent);margin-top:30px}
         .submit-box label{font-weight:700;color:var(--primary-navy);margin-bottom:6px;display:block;font-size:13px}
         .submit-box input,.submit-box select,.submit-box textarea{width:100%;padding:10px 14px;border:1px solid var(--border-color);border-radius:4px;font-family:'Tajawal',sans-serif;font-size:13.5px;outline:none;transition:.3s;margin-bottom:12px}
@@ -333,6 +348,9 @@
         body.dark-mode .submit-box label{color:#c9a961}
         body.dark-mode .submit-box input,body.dark-mode .submit-box textarea{background:#0d1520;color:#e0e6ed;border-color:#2a3a52}
         body.dark-mode .join-team-box{background:linear-gradient(135deg,#0f1a2e,#1a2b45)}
+        body.dark-mode .daily-box{background:linear-gradient(135deg,#0f1a2e 0%,#1a2b45 100%);border-top-color:var(--gold-accent)}
+        body.dark-mode .filter-notice{background:#131d2e;border-color:#2a3a52}
+        body.dark-mode .filter-notice .filter-text{color:#e0e6ed}
         @media (max-width:1024px){.news-grid{grid-template-columns:1fr 280px;gap:18px}}
         @media (max-width:900px){.news-grid{grid-template-columns:1fr}.sidebar{flex-direction:row;flex-wrap:wrap}.sidebar-box{flex:1;min-width:250px}.contact-grid{grid-template-columns:1fr}.videos-grid{grid-template-columns:1fr}}
         @media (max-width:768px){
@@ -377,6 +395,10 @@
             .join-team-box{padding:25px 20px}
             .join-team-box h3{font-size:1.15rem}
             .join-team-btn{padding:8px 18px;font-size:12.5px}
+            .daily-box{padding:22px 18px}
+            .daily-box .daily-text{font-size:1rem;padding:0 5px}
+            .daily-box::before{font-size:50px;top:10px;right:10px}
+            .daily-box .daily-title{font-size:1rem}
         }
         @media (max-width:480px){
             .banner-wrap img{max-height:220px}
@@ -387,6 +409,9 @@
             .top-bar .clock-info{font-size:8.5px;gap:3px}
             .top-bar .lang-btn{font-size:8.5px;padding:1px 4px}
             .top-bar .lang-note{font-size:7px}
+            .daily-box{padding:20px 15px}
+            .daily-box .daily-text{font-size:0.95rem;line-height:1.9}
+            .daily-box::before{font-size:40px}
         }
     </style>
 </head>
@@ -491,15 +516,20 @@
             </div>
             <div class="news-grid" id="articles">
                 <div class="content-area">
-                    <div class="category-tabs" id="mishkatCategories" style="margin-top:5px;margin-bottom:10px">
-                        <button class="cat-btn active" data-cat="all" data-i18n="catAll">الكل</button>
-                        <button class="cat-btn" data-cat="ahlulbayt" data-i18n="catAhlulbayt">أهل البيت (عليهم السلام)</button>
-                        <button class="cat-btn" data-cat="insights" data-i18n="catInsights">رؤى وأفكار</button>
-                        <button class="cat-btn" data-cat="doubts" data-i18n="catDoubts">شبهات وردود</button>
-                        <button class="cat-btn" data-cat="dialogues" data-i18n="catDialogues">حوارات ومقابلات</button>
-                        <button class="cat-btn" data-cat="family" data-i18n="catFamily">الأسرة والمجتمع</button>
-                        <button class="cat-btn" data-cat="general" data-i18n="catGeneral">مقالات عامة</button>
+                    <div class="daily-box" id="dailyBox">
+                        <div class="daily-header">
+                            <div class="daily-title"><i class="fa-solid fa-book-quran"></i> <span data-i18n="dailyTitle">حديث اليوم</span></div>
+                            <span class="daily-type" id="dailyType">آية</span>
+                        </div>
+                        <div class="daily-text" id="dailyText">﴿بسم الله الرحمن الرحيم﴾</div>
+                        <div class="daily-source" id="dailySource"><i class="fa-solid fa-bookmark"></i> منصة مشكاة</div>
                     </div>
+
+                    <div class="filter-notice" id="filterNotice">
+                        <div class="filter-text"><i class="fa-solid fa-filter"></i> <span data-i18n="filterLabel">تصفية حسب:</span> <strong id="filterCatName">—</strong></div>
+                        <button class="clear-filter" onclick="clearFilter()"><i class="fa-solid fa-times"></i> <span data-i18n="showAll">عرض الكل</span></button>
+                    </div>
+
                     <div class="section-header" id="sectionHeader" style="margin-top:15px;margin-bottom:18px"><h2 data-i18n="latestUpdatesTitle">آخر التحديثات</h2></div>
                     <div class="articles-grid" id="articlesGrid"></div>
                     <div id="articlesEmpty" class="text-center py-5" style="display:none;">
@@ -697,7 +727,9 @@
         let mishkatAudios = [];
         let mishkatVideos = [];
         let mishkatNews = [];
+        let mishkatDaily = null;
         let currentLibraryCat = null;
+        let currentFilterCat = null;
 
         const HIJRI_CALENDAR = 'islamic-umalqura';
         const HIJRI_OFFSET = 0;
@@ -720,7 +752,6 @@
             thought: 'كتب فكرية'
         };
 
-        // الترتيب: كما هو في الملف (add_to_top يضع الأحدث في الأعلى)
         function sortNewestFirst(items) { return items.slice(); }
 
         const translations = {
@@ -738,6 +769,7 @@
                 searchPh:'ابحث...',searchPhFull:'ابحث في الموقع...',searchBtn:'بحث',
                 breakingLabel:'آخر الأخبار',news1:'مرحباً بكم في منصة مشكاة',news2:'تابعوا جديد المقالات والرؤى',news3:'منصة فكرية توعوية',news4:'للنور والوعي',
                 articlesTitle:'المقالات والرؤى',latestUpdatesTitle:'آخر التحديثات',noArticles:'لا توجد مقالات في هذا التصنيف حالياً',
+                dailyTitle:'حديث اليوم',filterLabel:'تصفية حسب:',showAll:'عرض الكل',
                 mostRead:'الأكثر قراءة',categoriesLabel:'التصنيفات',
                 backToArticles:'رجوع',shareTitle:'شارك',commentsTitle:'التعليقات',copyBtn:'نسخ النص',
                 copySuccess:'✅ تم نسخ الرابط!',copyFail:'❌ فشل النسخ',
@@ -782,6 +814,7 @@
                 searchPh:'Search...',searchBtn:'Search',
                 breakingLabel:'Latest News',news1:'Welcome',news2:'Follow new articles',news3:'Intellectual platform',news4:'For Light',
                 articlesTitle:'Articles & Insights',latestUpdatesTitle:'Latest Updates',noArticles:'No articles in this category',
+                dailyTitle:'Today\'s Hadith',filterLabel:'Filter by:',showAll:'Show All',
                 mostRead:'Most Read',categoriesLabel:'Categories',
                 backToArticles:'Back',shareTitle:'Share',commentsTitle:'Comments',copyBtn:'Copy',
                 copySuccess:'✅ Link copied!',copyFail:'❌ Failed',
@@ -826,6 +859,7 @@
                 searchPh:'جستجو...',searchBtn:'جستجو',
                 breakingLabel:'آخرین اخبار',news1:'خوش آمدید',news2:'مقالات جدید',news3:'پلتفرم فکری',news4:'برای نور',
                 articlesTitle:'مقالات و دیدگاه‌ها',latestUpdatesTitle:'آخرین به‌روزرسانی‌ها',noArticles:'مقاله‌ای نیست',
+                dailyTitle:'حدیث امروز',filterLabel:'فیلتر بر اساس:',showAll:'نمایش همه',
                 mostRead:'پربازدید',categoriesLabel:'دسته‌بندی',
                 backToArticles:'بازگشت',shareTitle:'اشتراک',commentsTitle:'نظرات',copyBtn:'کپی',
                 copySuccess:'✅ لینک کپی شد!',copyFail:'❌ نشد',
@@ -859,6 +893,15 @@
         };
 
         let currentLang = 'ar';
+
+        async function loadDailyFromJSON() {
+            try {
+                const r = await fetch('daily.json?t=' + Date.now());
+                if (!r.ok) return;
+                const data = await r.json();
+                mishkatDaily = data;
+            } catch(e) { console.error(e); }
+        }
 
         async function loadArticlesFromJSON() {
             let allItems = [];
@@ -908,6 +951,24 @@
         }
         async function loadNewsFromJSON() {
             try { const r = await fetch('news.json?t=' + Date.now()); if (!r.ok) return; const data = await r.json(); let items = data.items || []; mishkatNews = sortNewestFirst(items); } catch(e) {}
+        }
+
+        function renderDaily() {
+            const box = document.getElementById('dailyBox');
+            if (!box) return;
+            if (!mishkatDaily || !mishkatDaily.text) {
+                box.style.display = 'none';
+                return;
+            }
+            box.style.display = 'block';
+            const typeEl = document.getElementById('dailyType');
+            const textEl = document.getElementById('dailyText');
+            const srcEl = document.getElementById('dailySource');
+            if (typeEl) typeEl.textContent = mishkatDaily.type || 'آية';
+            if (textEl) textEl.textContent = mishkatDaily.text || '';
+            if (srcEl) {
+                srcEl.innerHTML = '<i class="fa-solid fa-bookmark"></i> ' + (mishkatDaily.source || 'منصة مشكاة');
+            }
         }
 
         function updateDateTime() {
@@ -1056,7 +1117,6 @@
             }).join('');
         }
 
-        // 🌟 بناء قائمة آخر التحديثات (14 عنصرًا مختلطًا)
         function buildLatestUpdates() {
             const items = [];
             const articles = mishkatArticles[currentLang] || mishkatArticles.ar;
@@ -1090,14 +1150,6 @@
                 date: v.date, image: '', index: i
             }));
 
-            // الترتيب: حسب الإضافة (الترتيب في المصفوفة يعكس ترتيب الإضافة)
-            // المقالات أولًا (بحسب الملفات)، ثم الأخبار، ثم الكتب، ثم الصوتيات، ثم المرئيات.
-            // نأخذ 14 عنصرًا مع توزيع متساوٍ من كل نوع
-            const maxPer = Math.ceil(14 / 5) + 3;
-            const picked = [];
-            const seen = new Set();
-
-            // ندمج بالتناوب (round-robin) للحصول على تنوع
             const groups = {
                 article: items.filter(x => x.type === 'article'),
                 news: items.filter(x => x.type === 'news'),
@@ -1106,6 +1158,7 @@
                 video: items.filter(x => x.type === 'video')
             };
             const order = ['article', 'news', 'book', 'audio', 'video'];
+            const picked = [];
             let idx = 0;
             while (picked.length < 14) {
                 let added = false;
@@ -1130,15 +1183,35 @@
             else if (type === 'video') { showView('videos'); setTimeout(() => { const el = document.querySelectorAll('#videosList .video-card')[index]; if (el) el.scrollIntoView({ behavior:'smooth', block:'center' }); }, 300); }
         }
 
+        function clearFilter() {
+            currentFilterCat = null;
+            document.querySelectorAll('.sidebar-cat-item').forEach(i => i.style.background = '');
+            document.body.classList.remove('extras-hidden');
+            const fn = document.getElementById('filterNotice');
+            if (fn) fn.classList.remove('show');
+            renderArticles('all');
+            const sh = document.getElementById('sectionHeader');
+            if (sh) sh.querySelector('h2').textContent = translations[currentLang].latestUpdatesTitle || 'آخر التحديثات';
+        }
+
         function renderArticles(filterCat) {
             const grid = document.getElementById('articlesGrid');
             const empty = document.getElementById('articlesEmpty');
             const t = translations[currentLang];
             const articles = mishkatArticles[currentLang] || mishkatArticles.ar;
             const isFiltered = (filterCat && filterCat !== 'all');
-            if (isFiltered) document.body.classList.add('extras-hidden'); else document.body.classList.remove('extras-hidden');
+            currentFilterCat = isFiltered ? filterCat : null;
+
+            const filterNotice = document.getElementById('filterNotice');
+            const filterCatName = document.getElementById('filterCatName');
+            const sectionHeader = document.getElementById('sectionHeader');
 
             if (isFiltered) {
+                document.body.classList.add('extras-hidden');
+                if (filterNotice) filterNotice.classList.add('show');
+                if (filterCatName) filterCatName.textContent = t[filterCat] || filterCat;
+                if (sectionHeader) sectionHeader.querySelector('h2').textContent = t.articlesTitle || 'المقالات والرؤى';
+
                 let filtered = articles.filter(a => a.catKey === filterCat);
                 if (filtered.length === 0) { grid.innerHTML = ''; empty.style.display = 'block'; return; }
                 empty.style.display = 'none';
@@ -1147,6 +1220,10 @@
                     return `<div class="article-card"><div class="card-top"></div><div class="card-body"><span class="category-badge">${t[a.catKey] || ''}</span><h3>${a.title}</h3><p class="excerpt">${a.excerpt}</p><button class="read-more-btn" onclick="openArticle(${idx})"><i class="fa-solid fa-arrow-left"></i> ${t.readMoreBtn || 'أكمل القراءة'}</button><div class="meta"><span><i class="fa-regular fa-user"></i> ${a.author}</span><span><i class="fa-regular fa-calendar"></i> ${a.date}</span></div></div></div>`;
                 }).join('');
             } else {
+                document.body.classList.remove('extras-hidden');
+                if (filterNotice) filterNotice.classList.remove('show');
+                if (sectionHeader) sectionHeader.querySelector('h2').textContent = t.latestUpdatesTitle || 'آخر التحديثات';
+
                 const items = buildLatestUpdates();
                 if (items.length === 0) { grid.innerHTML = ''; empty.style.display = 'block'; return; }
                 empty.style.display = 'none';
@@ -1269,7 +1346,6 @@
                         const cat = this.dataset.cat;
                         showView('home');
                         setTimeout(() => {
-                            document.querySelectorAll('#mishkatCategories .cat-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
                             renderArticles(cat);
                             document.getElementById('articles').scrollIntoView({behavior: 'smooth'});
                         }, 100);
@@ -1288,9 +1364,9 @@
             else { html.dir = 'ltr'; document.body.style.direction = 'ltr'; }
             document.title = t.title;
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
-            const activeCat = document.querySelector('#mishkatCategories .cat-btn.active');
-            renderArticles(activeCat ? activeCat.dataset.cat : 'all');
+            renderArticles(currentFilterCat || 'all');
             renderBooks(currentLibraryCat); renderAudios(); renderVideos(); renderNews(); renderSidebar();
+            renderDaily();
             updateDateTime();
             if (document.getElementById('view-article').classList.contains('active')) loadComments();
             localStorage.setItem('mishkat_lang', lang);
@@ -1305,7 +1381,7 @@
             if (viewId === 'home') window.history.replaceState(null, '', window.location.pathname);
             else window.history.replaceState(null, '', '#' + viewId);
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            if (viewId === 'home') { const ac = document.querySelector('#mishkatCategories .cat-btn.active'); renderArticles(ac ? ac.dataset.cat : 'all'); }
+            if (viewId === 'home') { currentFilterCat = null; renderArticles('all'); }
             else if (viewId === 'library') { currentLibraryCat = null; renderBooks(); }
             else if (viewId === 'audios') renderAudios();
             else if (viewId === 'videos') renderVideos();
@@ -1316,7 +1392,6 @@
         function showCategory(catKey) {
             showView('home');
             setTimeout(() => {
-                document.querySelectorAll('#mishkatCategories .cat-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === catKey));
                 renderArticles(catKey);
                 document.getElementById('articles').scrollIntoView({behavior: 'smooth'});
             }, 100);
@@ -1485,6 +1560,7 @@
                 });
             }
 
+            await loadDailyFromJSON();
             await loadArticlesFromJSON();
             await loadBooksFromJSON();
             await loadAudiosFromJSON();
@@ -1527,14 +1603,6 @@
             });
             document.querySelectorAll('#otherLangsDropdownMenu .dropdown-item').forEach(item => {
                 item.addEventListener('click', function() { showView(this.dataset.view); });
-            });
-
-            document.querySelectorAll('#mishkatCategories .cat-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    document.querySelectorAll('#mishkatCategories .cat-btn').forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    renderArticles(this.dataset.cat);
-                });
             });
 
             const mainSearch = document.getElementById('mainSearchInput');
