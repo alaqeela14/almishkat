@@ -430,15 +430,12 @@
             <button class="mobile-close-btn" id="mobileCloseBtn"><i class="fa-solid fa-times"></i></button>
             <ul class="nav-list">
                 <li><a data-view="home" class="active" data-i18n="navHome">الرئيسية</a></li>
-                <li><a data-cat="quran" data-i18n="catQuran">حول القرآن</a></li>
-                <li><a data-cat="ahlulbayt" data-i18n="catAhlulbayt">أهل البيت (ع)</a></li>
+                <li><a data-cat="ahlulbayt" data-i18n="catAhlulbayt">أهل البيت (عليهم السلام)</a></li>
                 <li><a data-cat="insights" data-i18n="catInsights">رؤى وأفكار</a></li>
                 <li><a data-cat="doubts" data-i18n="catDoubts">شبهات وردود</a></li>
-                <li><a data-cat="contemporary" data-i18n="catContemporary">قضايا معاصرة</a></li>
                 <li><a data-cat="dialogues" data-i18n="catDialogues">حوارات ومقابلات</a></li>
                 <li><a data-cat="family" data-i18n="catFamily">الأسرة والمجتمع</a></li>
                 <li><a data-cat="general" data-i18n="catGeneral">مقالات عامة</a></li>
-                <li><a data-cat="medicine" data-i18n="catMedicine">الطب</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" id="libraryDropdown"><span data-i18n="navLibrary">المكتبة</span> <i class="fa-solid fa-chevron-down"></i></a>
                     <ul class="dropdown-menu" id="libraryDropdownMenu">
@@ -497,15 +494,12 @@
                     <div class="section-header" id="sectionHeader"><h2 data-i18n="articlesTitle">المقالات والرؤى</h2></div>
                     <div class="category-tabs" id="mishkatCategories">
                         <button class="cat-btn active" data-cat="all" data-i18n="catAll">الكل</button>
-                        <button class="cat-btn" data-cat="quran" data-i18n="catQuran">حول القرآن</button>
-                        <button class="cat-btn" data-cat="ahlulbayt" data-i18n="catAhlulbayt">أهل البيت (ع)</button>
+                        <button class="cat-btn" data-cat="ahlulbayt" data-i18n="catAhlulbayt">أهل البيت (عليهم السلام)</button>
                         <button class="cat-btn" data-cat="insights" data-i18n="catInsights">رؤى وأفكار</button>
                         <button class="cat-btn" data-cat="doubts" data-i18n="catDoubts">شبهات وردود</button>
-                        <button class="cat-btn" data-cat="contemporary" data-i18n="catContemporary">قضايا معاصرة</button>
                         <button class="cat-btn" data-cat="dialogues" data-i18n="catDialogues">حوارات ومقابلات</button>
                         <button class="cat-btn" data-cat="family" data-i18n="catFamily">الأسرة والمجتمع</button>
                         <button class="cat-btn" data-cat="general" data-i18n="catGeneral">مقالات عامة</button>
-                        <button class="cat-btn" data-cat="medicine" data-i18n="catMedicine">الطب</button>
                     </div>
                     <div class="articles-grid" id="articlesGrid"></div>
                     <div id="articlesEmpty" class="text-center py-5" style="display:none;">
@@ -708,17 +702,15 @@
         const HIJRI_CALENDAR = 'islamic-umalqura';
         const HIJRI_OFFSET = 0;
 
-        const categoryToKey = {
-            'حول القرآن': 'quran',
-            'أهل البيت': 'ahlulbayt',
-            'رؤى وأفكار': 'insights',
-            'شبهات وردود': 'doubts',
-            'قضايا معاصرة': 'contemporary',
-            'حوارات ومقابلات': 'dialogues',
-            'الأسرة والمجتمع': 'family',
-            'مقالات عامة': 'general',
-            'الطب': 'medicine'
-        };
+        // الملفات الستة للمقالات (كل تصنيف في ملف مستقل)
+        const ARTICLE_FILES = [
+            { file: 'articles-ahlulbayt.json', catKey: 'ahlulbayt' },
+            { file: 'articles-insights.json', catKey: 'insights' },
+            { file: 'articles-doubts.json', catKey: 'doubts' },
+            { file: 'articles-dialogues.json', catKey: 'dialogues' },
+            { file: 'articles-family.json', catKey: 'family' },
+            { file: 'articles-general.json', catKey: 'general' }
+        ];
 
         const libraryCatNames = {
             quran: 'كتب حول القرآن',
@@ -741,9 +733,9 @@
                 navVideos:'المرئيات',navAudios:'الصوتيات',navMedia:'المرئيات والصوتيات',navVideosOnly:'المرئيات',navAudiosOnly:'الصوتيات',
                 navOtherLangs:'مقالات بلغات أخرى',navArticlesEn:'المقالات بالإنجليزية',navArticlesFa:'المقالات بالفارسية',
                 navTeam:'انضم إلينا',navContact:'تواصل معنا',
-                catAll:'الكل',catQuran:'حول القرآن',catAhlulbayt:'أهل البيت (ع)',catInsights:'رؤى وأفكار',
-                catDoubts:'شبهات وردود',catContemporary:'قضايا معاصرة',catDialogues:'حوارات ومقابلات',
-                catFamily:'الأسرة والمجتمع',catGeneral:'مقالات عامة',catMedicine:'الطب',
+                catAll:'الكل',catAhlulbayt:'أهل البيت (عليهم السلام)',catInsights:'رؤى وأفكار',
+                catDoubts:'شبهات وردود',catDialogues:'حوارات ومقابلات',
+                catFamily:'الأسرة والمجتمع',catGeneral:'مقالات عامة',
                 libQuran:'كتب حول القرآن',libAqeedah:'كتب عقائدية',libFiqh:'كتب فقهية',libEthics:'كتب أخلاقية',libSocial:'كتب اجتماعية',libThought:'كتب فكرية',
                 searchPh:'ابحث...',searchPhFull:'ابحث في الموقع...',searchBtn:'بحث',
                 breakingLabel:'آخر الأخبار',news1:'مرحباً بكم في منصة مشكاة',news2:'تابعوا جديد المقالات والرؤى',news3:'منصة فكرية توعوية',news4:'للنور والوعي',
@@ -785,9 +777,9 @@
                 navVideos:'Videos',navAudios:'Audios',navMedia:'Videos & Audios',navVideosOnly:'Videos',navAudiosOnly:'Audios',
                 navOtherLangs:'Articles in other languages',navArticlesEn:'English Articles',navArticlesFa:'Farsi Articles',
                 navTeam:'Join Us',navContact:'Contact Us',
-                catAll:'All',catQuran:'About Quran',catAhlulbayt:'Ahl al-Bayt',catInsights:'Insights',
-                catDoubts:'Doubts & Responses',catContemporary:'Contemporary',catDialogues:'Dialogues',
-                catFamily:'Family & Society',catGeneral:'General Articles',catMedicine:'Medicine',
+                catAll:'All',catAhlulbayt:'Ahl al-Bayt',catInsights:'Insights',
+                catDoubts:'Doubts & Responses',catDialogues:'Dialogues',
+                catFamily:'Family & Society',catGeneral:'General Articles',
                 libQuran:'Quran Books',libAqeedah:'Aqeedah',libFiqh:'Fiqh',libEthics:'Ethics',libSocial:'Social',libThought:'Thought',
                 searchPh:'Search...',searchBtn:'Search',
                 breakingLabel:'Latest News',news1:'Welcome',news2:'Follow new articles',news3:'Intellectual platform',news4:'For Light',
@@ -829,9 +821,9 @@
                 navVideos:'ویدیو',navAudios:'صوتی',navMedia:'ویدیو و صوتی',navVideosOnly:'ویدیو',navAudiosOnly:'صوتی',
                 navOtherLangs:'مقالات به زبان‌های دیگر',navArticlesEn:'مقالات انگلیسی',navArticlesFa:'مقالات فارسی',
                 navTeam:'به ما بپیوندید',navContact:'تماس',
-                catAll:'همه',catQuran:'درباره قرآن',catAhlulbayt:'اهل بیت',catInsights:'رؤیاها و ایده‌ها',
-                catDoubts:'شبهات',catContemporary:'مسائل معاصر',catDialogues:'گفتگوها',
-                catFamily:'خانواده و جامعه',catGeneral:'مقالات عمومی',catMedicine:'پزشکی',
+                catAll:'همه',catAhlulbayt:'اهل بیت',catInsights:'رؤیاها و ایده‌ها',
+                catDoubts:'شبهات',catDialogues:'گفتگوها',
+                catFamily:'خانواده و جامعه',catGeneral:'مقالات عمومی',
                 libQuran:'کتب قرآن',libAqeedah:'عقائد',libFiqh:'فقه',libEthics:'اخلاق',libSocial:'اجتماعی',libThought:'فکری',
                 searchPh:'جستجو...',searchBtn:'جستجو',
                 breakingLabel:'آخرین اخبار',news1:'خوش آمدید',news2:'مقالات جدید',news3:'پلتفرم فکری',news4:'برای نور',
@@ -871,25 +863,36 @@
         let currentLang = 'ar';
 
         async function loadArticlesFromJSON() {
-            try {
-                const r = await fetch('articles.json?t=' + Date.now());
-                if (!r.ok) return;
-                const data = await r.json();
-                let items = data.items || [];
-                items = sortNewestFirst(items);
-                const articlesAr = items.map(item => ({
-                    catKey: categoryToKey[item.category] || 'general',
-                    title: item.title_ar || item.title || '',
-                    author: item.author_ar || item.author || '',
-                    date: item.date || '', excerpt: item.excerpt_ar || item.excerpt || '',
-                    image: item.image || '',
-                    body: item.body_ar || item.body || '', category: item.category || ''
-                }));
-                mishkatArticles.ar = articlesAr; mishkatArticles.en = articlesAr; mishkatArticles.fa = articlesAr;
-                articlesByLang.ar = articlesAr;
-                articlesByLang.en = items.filter(i => i.title_en && i.title_en.trim()).map(i => ({catKey: categoryToKey[i.category] || 'general',title:i.title_en,author:i.author_en||'',date:i.date||'',excerpt:i.excerpt_en||'',image:i.image||'',body:i.body_en||''}));
-                articlesByLang.fa = items.filter(i => i.title_fa && i.title_fa.trim()).map(i => ({catKey: categoryToKey[i.category] || 'general',title:i.title_fa,author:i.author_fa||'',date:i.date||'',excerpt:i.excerpt_fa||'',image:i.image||'',body:i.body_fa||''}));
-            } catch(e) { console.error(e); }
+            let allItems = [];
+            for (const { file, catKey } of ARTICLE_FILES) {
+                try {
+                    const r = await fetch(file + '?t=' + Date.now());
+                    if (!r.ok) continue;
+                    const data = await r.json();
+                    const items = (data.items || []).map(item => ({
+                        ...item,
+                        _catKey: catKey
+                    }));
+                    allItems = allItems.concat(items);
+                } catch(e) { console.error(e); }
+            }
+            allItems = sortNewestFirst(allItems);
+            const articlesAr = allItems.map(item => ({
+                catKey: item._catKey,
+                title: item.title_ar || '',
+                author: item.author_ar || '',
+                date: item.date || '',
+                excerpt: item.excerpt_ar || '',
+                image: item.image || '',
+                body: item.body_ar || '',
+                category: item._catKey
+            }));
+            mishkatArticles.ar = articlesAr;
+            mishkatArticles.en = articlesAr;
+            mishkatArticles.fa = articlesAr;
+            articlesByLang.ar = articlesAr;
+            articlesByLang.en = [];
+            articlesByLang.fa = [];
         }
         async function loadBooksFromJSON() {
             try {
@@ -941,11 +944,17 @@
 
         function renderMarkdown(text) {
             if (!text) return '';
+            // تحويل رموز الألوان إلى HTML
+            let processed = String(text)
+                .replace(/\{red\}([\s\S]*?)\{\/red\}/g, '<span style="color:#dc2626;font-weight:700">$1</span>')
+                .replace(/\{gold\}([\s\S]*?)\{\/gold\}/g, '<span style="color:#c9a961;font-weight:700">$1</span>')
+                .replace(/\{blue\}([\s\S]*?)\{\/blue\}/g, '<span style="color:#2c4a7c;font-weight:700">$1</span>')
+                .replace(/\{green\}([\s\S]*?)\{\/green\}/g, '<span style="color:#16a34a;font-weight:700">$1</span>');
             if (typeof marked !== 'undefined') {
-                try { marked.setOptions({ breaks: true, gfm: true }); return marked.parse(text); }
-                catch(e) { return String(text).replace(/\n/g, '<br>'); }
+                try { marked.setOptions({ breaks: true, gfm: true }); return marked.parse(processed); }
+                catch(e) { return processed.replace(/\n/g, '<br>'); }
             }
-            return String(text).replace(/\n/g, '<br>');
+            return processed.replace(/\n/g, '<br>');
         }
 
         function copyToClipboard(url, btnElement) {
@@ -983,9 +992,7 @@
                         title: a.title,
                         text: text
                     });
-                } catch(e) {
-                    // المستخدم أغلق نافذة المشاركة أو رفض
-                }
+                } catch(e) {}
             } else {
                 try {
                     await navigator.clipboard.writeText(url);
