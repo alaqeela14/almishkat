@@ -9,6 +9,17 @@ media_folder: "assets/images"
 public_folder: "/assets/images"
 
 collections:
+  - name: "daily"
+    label: "حديث اليوم"
+    files:
+      - name: "daily-file"
+        label: "المحتوى اليومي"
+        file: "daily.json"
+        fields:
+          - { label: "النوع", name: "type", widget: "select", options: ["آية", "حديث", "حكمة"], default: "آية" }
+          - { label: "النص", name: "text", widget: "text" }
+          - { label: "المصدر", name: "source", widget: "string", required: false }
+
   - name: "articles"
     label: "المقالات"
     files:
