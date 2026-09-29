@@ -10,15 +10,50 @@ public_folder: "/assets/images"
 
 collections:
   - name: "daily"
-    label: "حديث اليوم"
+    label: "المحتوى اليومي"
     files:
       - name: "daily-file"
-        label: "المحتوى اليومي"
+        label: "نص اليوم"
         file: "daily.json"
         fields:
           - { label: "النوع", name: "type", widget: "select", options: ["آية", "حديث", "حكمة"], default: "آية" }
           - { label: "النص", name: "text", widget: "text" }
           - { label: "المصدر", name: "source", widget: "string", required: false }
+
+  - name: "fiqh_qa"
+    label: "مسائل فقهية"
+    files:
+      - name: "fiqh-qa-list"
+        label: "قائمة المسائل الفقهية"
+        file: "fiqh-qa.json"
+        fields:
+          - label: "الأسئلة والأجوبة"
+            name: "items"
+            widget: "list"
+            add_to_top: true
+            summary: "{{fields.question}}"
+            fields:
+              - { label: "السؤال", name: "question", widget: "string" }
+              - { label: "الجواب", name: "answer", widget: "markdown" }
+              - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
+
+  - name: "weekly"
+    label: "نور الأسبوع"
+    files:
+      - name: "weekly-list"
+        label: "قائمة الأدعية والزيارات"
+        file: "weekly.json"
+        fields:
+          - label: "المحتوى"
+            name: "items"
+            widget: "list"
+            add_to_top: true
+            summary: "{{fields.title}} ({{fields.type}})"
+            fields:
+              - { label: "النوع", name: "type", widget: "select", options: ["دعاء", "زيارة", "حديث", "مناجاة"], default: "دعاء" }
+              - { label: "العنوان", name: "title", widget: "string" }
+              - { label: "النص الكامل", name: "body", widget: "markdown" }
+              - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
 
   - name: "articles"
     label: "المقالات"
@@ -111,6 +146,23 @@ collections:
       - name: "articles-general"
         label: "مقالات عامة"
         file: "articles-general.json"
+        fields:
+          - label: "قائمة المقالات"
+            name: "items"
+            widget: "list"
+            add_to_top: true
+            summary: "{{fields.title_ar}}"
+            fields:
+              - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "العنوان", name: "title_ar", widget: "string" }
+              - { label: "الكاتب", name: "author_ar", widget: "string", required: false }
+              - { label: "صورة المقال", name: "image", widget: "image", required: false, media_folder: "assets/images", public_folder: "/assets/images" }
+              - { label: "المقتطف", name: "excerpt_ar", widget: "text", required: false }
+              - { label: "النص الكامل", name: "body_ar", widget: "markdown", required: false }
+
+      - name: "articles-rights"
+        label: "حقوق"
+        file: "articles-rights.json"
         fields:
           - label: "قائمة المقالات"
             name: "items"
