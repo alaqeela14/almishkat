@@ -1023,6 +1023,24 @@
             } catch(e) { console.error(e); }
         }
 
+        async function loadFiqhFromAPI() {
+            try {
+                const r = await fetch('/api/fiqh?t=' + Date.now());
+                if (!r.ok) return;
+                const data = await r.json();
+                if (data.success && Array.isArray(data.questions) && data.questions.length > 0) {
+                    const apiItems = data.questions.map(q => ({
+                        question: q.question,
+                        answer: q.answer || '',
+                        category: q.category || '',
+                        date: (q.answered_at || q.created_at || '').split(' ')[0],
+                        name: q.name || ''
+                    }));
+                    mishkatFiqhQA = apiItems.concat(mishkatFiqhQA);
+                }
+            } catch(e) { console.error('Fiqh API:', e); }
+        }
+
         async function loadWeeklyFromJSON() {
             try {
                 const r = await fetch('weekly.json?t=' + Date.now());
@@ -1820,9 +1838,9 @@
                     const question = document.getElementById('fiqh-question').value.trim();
                     msg.textContent = 'جاري الإرسال...'; msg.style.color = 'var(--primary-navy)';
                     try {
-                        const r = await fetch('/api/comments', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ post_slug: '__fiqh_question__', author: name, body: question }) });
+                        const r = await fetch('/api/fiqh', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: name, question: question }) });
                         const data = await r.json();
-                        if (r.ok) { msg.textContent = t.fiqhSuccess; msg.style.color = 'green'; fiqhForm.reset(); }
+                        if (r.ok && data.success) { msg.textContent = t.fiqhSuccess; msg.style.color = 'green'; fiqhForm.reset(); }
                         else throw new Error(data.error || 'خطأ');
                     } catch(err) { msg.textContent = t.fiqhFail; msg.style.color = 'red'; }
                 });
@@ -1830,6 +1848,7 @@
 
             await loadDailyFromJSON();
             await loadFiqhQAFromJSON();
+            await loadFiqhFromAPI();
             await loadWeeklyFromJSON();
             await loadArticlesFromJSON();
             await loadBooksFromJSON();
@@ -1875,7 +1894,6 @@
                 item.addEventListener('click', function() { showView(this.dataset.view); });
             });
 
-            // تبويبات الفقه
             document.querySelectorAll('#fiqhCategories .cat-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     document.querySelectorAll('#fiqhCategories .cat-btn').forEach(b => b.classList.remove('active'));
