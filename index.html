@@ -622,7 +622,11 @@
                 <button class="cat-btn" data-fiqh-cat="أخرى">أخرى</button>
             </div>
 
-            <div class="content-card" style="border-top-color:var(--gold-accent)">
+            <div class="section-header" style="margin-top:5px"><h2 data-i18n="fiqhQaTitle">الأسئلة والأجوبة</h2></div>
+            <div id="fiqhQaList"></div>
+            <div class="library-empty hidden-section" id="fiqhQaEmpty"><i class="fa-solid fa-scale-balanced"></i><h3 data-i18n="noFiqhQa">لا توجد أسئلة وأجوبة حالياً</h3></div>
+
+            <div class="content-card" style="border-top-color:var(--gold-accent);margin-top:30px">
                 <h2><i class="fa-regular fa-circle-question"></i> <span data-i18n="askQuestionTitle">أرسل سؤالك الفقهي</span></h2>
                 <p data-i18n="askQuestionDesc">هل لديك سؤال فقهي؟ أرسله إلينا وسنجيب عليه في أقرب وقت بإذن الله.</p>
                 <form id="fiqh-question-form">
@@ -634,10 +638,6 @@
                     <p id="fiqh-question-message" style="margin-top: 10px; font-weight: bold;"></p>
                 </form>
             </div>
-
-            <div class="section-header" style="margin-top:25px"><h2 data-i18n="fiqhQaTitle">الأسئلة والأجوبة</h2></div>
-            <div id="fiqhQaList"></div>
-            <div class="library-empty hidden-section" id="fiqhQaEmpty"><i class="fa-solid fa-scale-balanced"></i><h3 data-i18n="noFiqhQa">لا توجد أسئلة وأجوبة حالياً</h3></div>
         </div>
 
         <div class="page-view" id="view-weekly">
