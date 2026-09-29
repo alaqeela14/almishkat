@@ -13,13 +13,14 @@
     body { font-family: 'Tajawal', sans-serif; margin: 0; background: #f5f8fc; }
     .admin-topbar { background: #1a2b4a; color: white; padding: 12px 20px; display: flex; align-items: center; gap: 15px; border-bottom: 4px solid #c9a961; flex-wrap: wrap; }
     .admin-topbar .brand { font-size: 1.1rem; font-weight: 800; color: #c9a961; }
-    .admin-topbar .tabs { display: flex; gap: 8px; margin-right: auto; }
+    .admin-topbar .tabs { display: flex; gap: 8px; margin-right: auto; flex-wrap: wrap; }
     .admin-topbar .tab-btn { background: transparent; border: 1px solid rgba(255,255,255,0.3); color: white; padding: 8px 20px; border-radius: 6px; cursor: pointer; font-family: 'Tajawal', sans-serif; font-weight: 700; font-size: 14px; transition: 0.3s; }
     .admin-topbar .tab-btn:hover { background: rgba(255,255,255,0.1); }
     .admin-topbar .tab-btn.active { background: #c9a961; color: #1a2b4a; border-color: #c9a961; }
     .tab-content { display: none; }
     .tab-content.active { display: block; }
-    #tab-cms iframe { width: 100%; height: calc(100vh - 65px); border: none; display: block; }
+    #tab-cms iframe,
+    #tab-fiqh iframe { width: 100%; height: calc(100vh - 65px); border: none; display: block; }
 
     .comments-wrap { max-width: 900px; margin: 30px auto; padding: 0 15px; }
     .login-card { max-width: 400px; margin: 80px auto; background: white; border-radius: 12px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 5px solid #c9a961; }
@@ -52,7 +53,7 @@
     @media (max-width: 600px) {
       .admin-topbar { padding: 10px; }
       .admin-topbar .tabs { width: 100%; order: 3; }
-      .admin-topbar .tab-btn { flex: 1; font-size: 13px; padding: 8px 10px; }
+      .admin-topbar .tab-btn { flex: 1; font-size: 12px; padding: 8px 6px; }
     }
   </style>
 </head>
@@ -63,6 +64,7 @@
     <div class="tabs">
       <button class="tab-btn active" onclick="switchTab('cms', this)"><i class="fa-solid fa-pen-to-square"></i> المقالات والكتب</button>
       <button class="tab-btn" onclick="switchTab('comments', this)"><i class="fa-solid fa-comments"></i> التعليقات</button>
+      <button class="tab-btn" onclick="switchTab('fiqh', this)"><i class="fa-solid fa-book-open"></i> الأسئلة الفقهية</button>
     </div>
   </div>
 
@@ -93,6 +95,10 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="tab-content" id="tab-fiqh">
+    <iframe src="/admin/fiqh.html"></iframe>
   </div>
 
   <script>
