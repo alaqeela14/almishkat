@@ -164,6 +164,22 @@
         .fiqh-qa-card .qa-actions .qa-copy:hover{background:var(--secondary-blue)}
         .fiqh-qa-card .qa-actions .qa-share{background:var(--gold-accent);color:var(--primary-navy)}
         .fiqh-qa-card .qa-actions .qa-share:hover{background:#e0c078}
+        /* ===== تحسينات بطاقة السؤال والجواب ===== */
+        .fiqh-qa-card .qa-section-label{display:inline-flex;align-items:center;gap:6px;background:var(--primary-navy);color:#fff;padding:4px 14px;border-radius:4px;font-size:11.5px;font-weight:700;margin-bottom:10px}
+        .fiqh-qa-card .qa-section-label.answer-label{background:var(--gold-accent);color:var(--primary-navy)}
+        .fiqh-qa-card .qa-section-label i{font-size:11px}
+        .fiqh-qa-card .qa-divider{border:none;border-top:2px dashed var(--gold-accent);margin:16px 0;opacity:.55}
+        .fiqh-qa-card .qa-question{display:block!important;padding-right:0!important;margin-bottom:0!important;font-size:1.05rem;font-weight:800;color:var(--primary-navy);line-height:1.7}
+        .fiqh-qa-card .qa-answer{padding-right:0!important;margin-top:0!important}
+        .fiqh-qa-card .qa-meta{padding-right:0!important}
+        .fiqh-qa-card .qa-actions{padding-right:0!important}
+        /* ===== تحسينات نموذج السؤال ===== */
+        #fiqh-question-form label{font-weight:700;color:var(--primary-navy);margin-bottom:6px;display:block;font-size:13px}
+        #fiqh-question-form input[type="text"],#fiqh-question-form textarea{width:100%;padding:10px 14px;border:1px solid var(--border-color);border-radius:4px;font-family:'Tajawal',sans-serif;font-size:13.5px;outline:none;transition:.3s;margin-bottom:18px;background:#fff}
+        #fiqh-question-form input[type="text"]:focus,#fiqh-question-form textarea:focus{border-color:var(--secondary-blue);box-shadow:0 0 0 3px rgba(44,74,124,.08)}
+        #fiqh-question-form input[type="text"]{max-width:100%}
+        body.dark-mode #fiqh-question-form input[type="text"],body.dark-mode #fiqh-question-form textarea{background:#0d1520;color:#e0e6ed;border-color:#2a3a52}
+        body.dark-mode #fiqh-question-form label{color:#c9a961}
         .weekly-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
         .weekly-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 4px 15px rgba(26,43,74,.06);border:1px solid var(--border-color);border-top:5px solid var(--gold-accent);transition:.3s}
         .weekly-card:hover{box-shadow:0 12px 30px rgba(26,43,74,.15);transform:translateY(-4px)}
@@ -384,6 +400,8 @@
         body.dark-mode .daily-box{background:linear-gradient(135deg,#0f1a2e 0%,#1a2b45 100%);border-top-color:var(--gold-accent)}
         body.dark-mode .filter-notice{background:#131d2e;border-color:#2a3a52}
         body.dark-mode .filter-notice .filter-text{color:#e0e6ed}
+        body.dark-mode .fiqh-qa-card .qa-section-label{background:#c9a961;color:#1a2b4a}
+        body.dark-mode .fiqh-qa-card .qa-section-label.answer-label{background:#2c4a7c;color:#fff}
         @media (max-width:1024px){.news-grid{grid-template-columns:1fr 280px;gap:18px}}
         @media (max-width:900px){.news-grid{grid-template-columns:1fr}.sidebar{flex-direction:row;flex-wrap:wrap}.sidebar-box{flex:1;min-width:250px}.contact-grid{grid-template-columns:1fr}.videos-grid{grid-template-columns:1fr}}
         @media (max-width:768px){
@@ -1136,11 +1154,13 @@
             list.innerHTML = items.map((qa) => {
                 const realIdx = mishkatFiqhQA.indexOf(qa);
                 const answerHtml = qa.answer ? renderMarkdown(qa.answer) : '';
+                const hasAnswer = answerHtml && answerHtml.trim().length > 0;
                 return `<div class="fiqh-qa-card">
                     ${qa.category ? `<span class="category-badge" style="display:inline-block;background:var(--gold-light);color:var(--primary-navy);padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700;margin-bottom:10px">${qa.category}</span>` : ''}
-                    <div class="qa-question"><i class="fa-solid fa-circle-question"></i> <span>${qa.question || ''}</span></div>
-                    <div class="qa-answer">${answerHtml}</div>
-                    ${qa.date ? `<div class="qa-meta"><i class="fa-regular fa-calendar"></i> ${qa.date}</div>` : ''}
+                    <div class="qa-section-label"><i class="fa-solid fa-circle-question"></i> سؤال</div>
+                    <div class="qa-question">${qa.question || ''}</div>
+                    ${hasAnswer ? `<hr class="qa-divider"><div class="qa-section-label answer-label"><i class="fa-solid fa-check"></i> الجواب</div><div class="qa-answer">${answerHtml}</div>` : ''}
+                    ${qa.date ? `<div class="qa-meta" style="margin-top:14px"><i class="fa-regular fa-calendar"></i> ${qa.date}</div>` : ''}
                     <div class="qa-actions">
                         <button class="qa-copy" onclick="copyQaText(${realIdx})"><i class="fa-solid fa-copy"></i> <span data-i18n="qaCopyBtn">نسخ</span></button>
                         <button class="qa-share" onclick="shareQaText(${realIdx})"><i class="fa-solid fa-share-nodes"></i> <span data-i18n="qaShareBtn">مشاركة</span></button>
