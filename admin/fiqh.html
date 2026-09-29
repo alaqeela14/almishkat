@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة المسائل الفقهية - مشكاة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:'Tajawal',sans-serif;background:#f5f8fc;color:#1a1a1a;line-height:1.7;padding:20px}
+        .container{max-width:900px;margin:0 auto}
+        .header{background:linear-gradient(135deg,#1a2b4a,#2c4a7c);color:#fff;padding:25px 20px;border-radius:10px;margin-bottom:20px;border-top:5px solid #c9a961;text-align:center}
+        .header h1{font-size:1.5rem;font-weight:800;display:flex;align-items:center;justify-content:center;gap:10px}
+        .header h1 i{color:#c9a961}
+        .header p{margin-top:8px;font-size:13px;opacity:.9}
+        .login-box{background:#fff;border-radius:10px;padding:25px;box-shadow:0 4px 15px rgba(26,43,74,.08);border-top:4px solid #c9a961;max-width:400px;margin:50px auto}
+        .login-box h2{color:#1a2b4a;font-size:1.2rem;font-weight:800;margin-bottom:15px;text-align:center}
+        .login-box input{width:100%;padding:12px 14px;border:1px solid #e0e6ed;border-radius:6px;font-family:'Tajawal',sans-serif;font-size:14px;margin-bottom:12px;outline:none}
+        .login-box input:focus{border-color:#2c4a7c}
+        .login-box button{width:100%;background:#1a2b4a;color:#fff;border:none;padding:12px;border-radius:6px;font-family:'Tajawal',sans-serif;font-weight:700;font-size:14px;cursor:pointer}
+        .login-box button:hover{background:#c9a961;color:#1a2b4a}
+        .error{color:#dc2626;font-size:13px;text-align:center;margin-top:8px}
+        .tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+        .tab{background:#fff;border:1px solid #e0e6ed;color:#1a2b4a;padding:9px 18px;border-radius:6px;font-family:'Tajawal',sans-serif;font-weight:700;font-size:13px;cursor:pointer;transition:.3s}
+        .tab.active{background:#1a2b4a;color:#fff;border-color:#1a2b4a}
+        .tab .count{background:#c9a961;color:#1a2b4a;padding:1px 8px;border-radius:10px;font-size:11px;margin-right:6px}
+        .qa-card{background:#fff;border-radius:10px;padding:20px;margin-bottom:15px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid #e0e6ed;border-right:5px solid #c9a961}
+        .qa-card.answered{border-right-color:#16a34a}
+        .qa-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+        .qa-author{font-size:13px;color:#6B7280}
+        .qa-author i{color:#2c4a7c;margin-left:4px}
+        .qa-date{font-size:12px;color:#6B7280}
+        .qa-status{padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700}
+        .qa-status.pending{background:#fef3c7;color:#92400e}
+        .qa-status.done{background:#d1fae5;color:#065f46}
+        .question{color:#1a2b4a;font-size:1.05rem;font-weight:800;margin-bottom:14px;line-height:1.6;padding:12px 15px;background:#f5f8fc;border-radius:6px;border-right:3px solid #1a2b4a}
+        .answer-box label{display:block;font-weight:700;color:#1a2b4a;font-size:13px;margin-bottom:6px}
+        .answer-box select,.answer-box textarea{width:100%;padding:10px 14px;border:1px solid #e0e6ed;border-radius:6px;font-family:'Tajawal',sans-serif;font-size:14px;outline:none;margin-bottom:10px}
+        .answer-box select:focus,.answer-box textarea:focus{border-color:#2c4a7c;box-shadow:0 0 0 3px rgba(44,74,124,.08)}
+        .answer-box textarea{min-height:120px;resize:vertical;line-height:1.8}
+        .actions{display:flex;gap:8px;flex-wrap:wrap}
+        .btn{border:none;padding:10px 20px;border-radius:6px;font-family:'Tajawal',sans-serif;font-weight:700;font-size:13px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.3s}
+        .btn.save{background:#16a34a;color:#fff}
+        .btn.save:hover{background:#15803d}
+        .btn.delete{background:#dc2626;color:#fff}
+        .btn.delete:hover{background:#b91c1c}
+        .btn.update{background:#2c4a7c;color:#fff}
+        .btn.update:hover{background:#1a2b4a}
+        .btn:disabled{opacity:.6;cursor:not-allowed}
+        .empty{text-align:center;padding:50px 20px;color:#6B7280;background:#fff;border-radius:10px;border:1px dashed #e0e6ed}
+        .empty i{font-size:50px;color:#c9a961;margin-bottom:15px;display:block}
+        .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#1a2b4a;color:#fff;padding:12px 24px;border-radius:8px;font-weight:700;font-size:14px;opacity:0;transition:.3s;z-index:9999;pointer-events:none}
+        .toast.show{opacity:1;transform:translateX(-50%) translateY(-10px)}
+        .toast.success{background:#16a34a}
+        .toast.error{background:#dc2626}
+        .answered-preview{background:#f0fdf4;border:1px solid #86efac;border-radius:6px;padding:12px 15px;margin-top:12px;font-size:14px;line-height:1.8;color:#166534}
+        .answered-preview strong{display:block;color:#15803d;margin-bottom:6px;font-size:13px}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1><i class="fa-solid fa-scale-balanced"></i> إدارة المسائل الفقهية</h1>
+        <p>راجع أسئلة الزوار وأجب عليها</p>
+    </div>
+
+    <!-- Login -->
+    <div id="loginSection" class="login-box">
+        <h2><i class="fa-solid fa-lock"></i> أدخل كلمة المرور</h2>
+        <input type="password" id="passwordInput" placeholder="كلمة المرور" autocomplete="current-password">
+        <button onclick="login()"><i class="fa-solid fa-sign-in-alt"></i> دخول</button>
+        <p id="loginError" class="error" style="display:none"></p>
+    </div>
+
+    <!-- Main -->
+    <div id="mainSection" style="display:none">
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('pending', this)">
+                <i class="fa-regular fa-clock"></i> بانتظار الجواب
+                <span class="count" id="pendingCount">0</span>
+            </button>
+            <button class="tab" onclick="switchTab('answered', this)">
+                <i class="fa-solid fa-check"></i> تمت الإجابة
+                <span class="count" id="answeredCount">0</span>
+            </button>
+            <button class="tab" onclick="loadQuestions()">
+                <i class="fa-solid fa-rotate"></i> تحديث
+            </button>
+        </div>
+
+        <div id="questionsList"></div>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+    let adminPassword = '';
+    let allQuestions = [];
+    let currentTab = 'pending';
+
+    function showToast(msg, type = 'success') {
+        const t = document.getElementById('toast');
+        t.textContent = msg;
+        t.className = 'toast show ' + type;
+        setTimeout(() => t.className = 'toast ' + type, 3000);
+    }
+
+    function login() {
+        const pwd = document.getElementById('passwordInput').value.trim();
+        if (!pwd) return;
+        adminPassword = pwd;
+        sessionStorage.setItem('mishkat_admin_pwd', pwd);
+        loadQuestions();
+    }
+
+    async function loadQuestions() {
+        try {
+            const r = await fetch('/api/fiqh?admin=true&password=' + encodeURIComponent(adminPassword));
+            if (r.status === 401) {
+                document.getElementById('loginError').textContent = 'كلمة المرور غير صحيحة';
+                document.getElementById('loginError').style.display = 'block';
+                sessionStorage.removeItem('mishkat_admin_pwd');
+                document.getElementById('loginSection').style.display = 'block';
+                document.getElementById('mainSection').style.display = 'none';
+                return;
+            }
+            const data = await r.json();
+            if (!Array.isArray(data)) {
+                showToast('خطأ في تحميل البيانات', 'error');
+                return;
+            }
+            allQuestions = data;
+            document.getElementById('loginSection').style.display = 'none';
+            document.getElementById('mainSection').style.display = 'block';
+
+            const pending = data.filter(q => !q.answer || !q.answer.trim());
+            const answered = data.filter(q => q.answer && q.answer.trim());
+            document.getElementById('pendingCount').textContent = pending.length;
+            document.getElementById('answeredCount').textContent = answered.length;
+
+            renderQuestions();
+        } catch(e) {
+            showToast('تعذّر الاتصال بالخادم', 'error');
+            console.error(e);
+        }
+    }
+
+    function switchTab(tab, btn) {
+        currentTab = tab;
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        if (btn) btn.classList.add('active');
+        renderQuestions();
+    }
+
+    function renderQuestions() {
+        const list = document.getElementById('questionsList');
+        let items = currentTab === 'pending'
+            ? allQuestions.filter(q => !q.answer || !q.answer.trim())
+            : allQuestions.filter(q => q.answer && q.answer.trim());
+
+        if (items.length === 0) {
+            list.innerHTML = `<div class="empty">
+                <i class="fa-regular fa-circle-check"></i>
+                <h3>${currentTab === 'pending' ? 'لا توجد أسئلة بانتظار الجواب' : 'لا توجد أسئلة تمت الإجابة عليها'}</h3>
+            </div>`;
+            return;
+        }
+
+        const categories = ['حول الطهارة','حول الصلاة','حول الصيام','حول الزكاة والخمس','حول الحج','حول الزواج','حول النساء','حول المعاملات','حول العقائد','أخرى'];
+
+        list.innerHTML = items.map(q => {
+            const isAnswered = q.answer && q.answer.trim();
+            const date = q.created_at ? new Date(q.created_at * 1000).toLocaleDateString('ar-EG') : '';
+            const catOptions = categories.map(c => `<option value="${c}" ${q.category === c ? 'selected' : ''}>${c}</option>`).join('');
+            return `
+                <div class="qa-card ${isAnswered ? 'answered' : ''}">
+                    <div class="qa-head">
+                        <div class="qa-author"><i class="fa-regular fa-user"></i> ${q.author || 'زائر'}</div>
+                        <div style="display:flex;gap:8px;align-items:center">
+                            <span class="qa-date">${date}</span>
+                            <span class="qa-status ${isAnswered ? 'done' : 'pending'}">${isAnswered ? 'تمت الإجابة' : 'بانتظار الجواب'}</span>
+                        </div>
+                    </div>
+                    <div class="question">${q.question || ''}</div>
+                    ${isAnswered ? `<div class="answered-preview"><strong>الجواب الحالي:</strong>${q.answer}</div>` : ''}
+                    <div class="answer-box" style="margin-top:14px">
+                        <label><i class="fa-solid fa-tags"></i> التصنيف</label>
+                        <select id="cat-${q.id}">
+                            <option value="">— اختر تصنيفًا —</option>
+                            ${catOptions}
+                        </select>
+                        <label><i class="fa-solid fa-reply"></i> ${isAnswered ? 'تعديل الجواب' : 'الجواب'}</label>
+                        <textarea id="ans-${q.id}" placeholder="اكتب الجواب هنا... (يدعم Markdown)">${q.answer || ''}</textarea>
+                        <div class="actions">
+                            <button class="btn ${isAnswered ? 'update' : 'save'}" onclick="saveAnswer(${q.id})">
+                                <i class="fa-solid fa-save"></i> ${isAnswered ? 'تحديث الجواب' : 'حفظ ونشر'}
+                            </button>
+                            <button class="btn delete" onclick="deleteQuestion(${q.id})">
+                                <i class="fa-solid fa-trash"></i> حذف
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    async function saveAnswer(id) {
+        const answer = document.getElementById('ans-' + id).value.trim();
+        const category = document.getElementById('cat-' + id).value;
+        if (!answer) { showToast('اكتب الجواب أولاً', 'error'); return; }
+        try {
+            const r = await fetch('/api/fiqh', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Admin-Password': adminPassword
+                },
+                body: JSON.stringify({ id, answer, category })
+            });
+            if (!r.ok) throw new Error('فشل الحفظ');
+            showToast('✅ تم حفظ الجواب ونشره', 'success');
+            await loadQuestions();
+        } catch(e) {
+            showToast('❌ ' + e.message, 'error');
+        }
+    }
+
+    async function deleteQuestion(id) {
+        if (!confirm('هل تريد حذف هذا السؤال نهائيًا؟')) return;
+        try {
+            const r = await fetch('/api/fiqh', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Admin-Password': adminPassword
+                },
+                body: JSON.stringify({ id })
+            });
+            if (!r.ok) throw new Error('فشل الحذف');
+            showToast('✅ تم الحذف', 'success');
+            await loadQuestions();
+        } catch(e) {
+            showToast('❌ ' + e.message, 'error');
+        }
+    }
+
+    // Auto-login if session exists
+    window.addEventListener('DOMContentLoaded', function() {
+        const saved = sessionStorage.getItem('mishkat_admin_pwd');
+        if (saved) {
+            adminPassword = saved;
+            loadQuestions();
+        }
+    });
+</script>
+
+</body>
+</html>
