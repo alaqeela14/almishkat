@@ -1,66 +1,94 @@
+// ============================================
+// API الأسئلة الفقهية | Fiqh Questions API
+// ============================================
+
 export async function onRequest(context) {
   const { request, env } = context;
-  const url = new URL(request.url);
   const method = request.method;
+  const url = new URL(request.url);
+  const id = url.searchParams.get('id');
 
   const corsHeaders = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type, X-Admin-Password',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
   };
 
   if (method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
 
-  const password = request.headers.get('X-Admin-Password') || url.searchParams.get('password');
-  const isAdmin = password && env.ADMIN_PASSWORD && password === env.ADMIN_PASSWORD;
+  // التحقق من المدير عبر كلمة المرور في الترويسة
+  const authHeader = request.headers.get('Authorization') || '';
+  const isAdmin = authHeader === `Bearer ${env.ADMIN_PASSWORD}`;
+
+  const json = (data, status = 200) =>
+    new Response(JSON.stringify(data), {
+      status,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json; charset=utf-8' },
+    });
 
   try {
-    // GET: قائمة الأسئلة
+    // GET — قائمة الأسئلة
     if (method === 'GET') {
-      let query = "SELECT id, author, body AS question, answer, category, created_at FROM comments WHERE post_slug = '__fiqh_question__'";
-      if (!isAdmin) {
-        query += " AND answer IS NOT NULL AND answer != ''";
-      }
-      query += " ORDER BY created_at DESC";
+      const showAll = url.searchParams.get('all') === '1';
+      if (showAll && !isAdmin) return json({ success: false, error: 'غير مصرح' }, 401);
+
+      let query = 'SELECT * FROM fiqh_questions';
+      if (!showAll) query += " WHERE status = 'published'";
+      query += ' ORDER BY created_at DESC';
+
       const result = await env.DB.prepare(query).all();
-      return new Response(JSON.stringify(result.results || []), {
-        headers: { 'Content-Type': 'application/json', ...corsHeaders }
-      });
+      return json({ success: true, questions: result.results || [] });
     }
 
-    // PUT: حفظ الجواب
-    if (method === 'PUT' || method === 'POST') {
-      if (!isAdmin) {
-        return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401, headers: { 'Content-Type': 'application/json', ...corsHeaders } });
+    // POST — إرسال سؤال جديد (من الزوار)
+    if (method === 'POST') {
+      const body = await request.json();
+      const name = (body.name || 'زائر').toString().trim().slice(0, 100);
+      const email = (body.email || '').toString().trim().slice(0, 150);
+      const question = (body.question || '').toString().trim();
+
+      if (question.length < 5) {
+        return json({ success: false, error: 'السؤال قصير جدًا' }, 400);
       }
-      const data = await request.json();
-      const { id, answer, category } = data;
-      if (!id || !answer) {
-        return new Response(JSON.stringify({ error: 'Missing id or answer' }), { status: 400, headers: { 'Content-Type': 'application/json', ...corsHeaders } });
-      }
+
+      const result = await env.DB.prepare(
+        "INSERT INTO fiqh_questions (name, email, question, status) VALUES (?, ?, ?, 'pending')"
+      ).bind(name, email, question).run();
+
+      return json({ success: true, id: result.meta.last_row_id });
+    }
+
+    // PUT — الرد + التصنيف (للمدير فقط)
+    if (method === 'PUT') {
+      if (!isAdmin) return json({ success: false, error: 'غير مصرح' }, 401);
+      if (!id) return json({ success: false, error: 'معرف مفقود' }, 400);
+
+      const body = await request.json();
+      const answer = (body.answer || '').toString().trim();
+      const category = (body.category || '').toString().trim();
+      const status = (body.status || 'answered').toString().trim();
+
       await env.DB.prepare(
-        "UPDATE comments SET answer = ?, category = ? WHERE id = ? AND post_slug = '__fiqh_question__'"
-      ).bind(answer, category || null, id).run();
-      return new Response(JSON.stringify({ success: true }), { headers: { 'Content-Type': 'application/json', ...corsHeaders } });
+        'UPDATE fiqh_questions SET answer = ?, category = ?, status = ?, answered_at = CURRENT_TIMESTAMP WHERE id = ?'
+      ).bind(answer, category, status, id).run();
+
+      return json({ success: true });
     }
 
-    // DELETE: حذف سؤال
+    // DELETE — حذف سؤال (للمدير فقط)
     if (method === 'DELETE') {
-      if (!isAdmin) {
-        return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401, headers: { 'Content-Type': 'application/json', ...corsHeaders } });
-      }
-      const { id } = await request.json();
-      if (!id) return new Response(JSON.stringify({ error: 'Missing id' }), { status: 400, headers: { 'Content-Type': 'application/json', ...corsHeaders } });
-      await env.DB.prepare(
-        "DELETE FROM comments WHERE id = ? AND post_slug = '__fiqh_question__'"
-      ).bind(id).run();
-      return new Response(JSON.stringify({ success: true }), { headers: { 'Content-Type': 'application/json', ...corsHeaders } });
+      if (!isAdmin) return json({ success: false, error: 'غير مصرح' }, 401);
+      if (!id) return json({ success: false, error: 'معرف مفقود' }, 400);
+
+      await env.DB.prepare('DELETE FROM fiqh_questions WHERE id = ?').bind(id).run();
+      return json({ success: true });
     }
 
-    return new Response('Method not allowed', { status: 405, headers: corsHeaders });
-  } catch(e) {
-    return new Response(JSON.stringify({ error: e.message }), { status: 500, headers: { 'Content-Type': 'application/json', ...corsHeaders } });
+    return json({ success: false, error: 'طريقة غير مدعومة' }, 405);
+
+  } catch (error) {
+    return json({ success: false, error: error.message }, 500);
   }
 }
