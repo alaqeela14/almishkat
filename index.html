@@ -1539,6 +1539,26 @@
             else if (path === '/weekly' || path === '/weekly/') showView('weekly');
         });
     </script>
-
+<script>
+/* إصلاح احتياطي: ضمان ظهور نور اليوم دائماً */
+setTimeout(function() {
+    try {
+        if (typeof mishkatDaily !== 'undefined' && mishkatDaily && mishkatDaily.text) {
+            var box = document.getElementById('dailyBox');
+            if (box) {
+                box.style.display = 'block';
+                box.style.visibility = 'visible';
+                box.style.opacity = '1';
+                var t = document.getElementById('dailyType');
+                var tx = document.getElementById('dailyText');
+                var s = document.getElementById('dailySource');
+                if (t) t.textContent = mishkatDaily.type || 'آية';
+                if (tx) tx.textContent = mishkatDaily.text || '';
+                if (s) s.innerHTML = '<i class="fa-solid fa-bookmark"></i> ' + (mishkatDaily.source || 'منصة مشكاة');
+            }
+        }
+    } catch(e) { console.log('Daily fix error:', e); }
+}, 2500);
+</script>
 </body>
 </html>
