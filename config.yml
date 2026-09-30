@@ -56,6 +56,28 @@ collections:
               - { label: "النص الكامل", name: "body", widget: "markdown" }
               - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
 
+  - name: "greats"
+    label: "عظماؤنا"
+    files:
+      - name: "greats-list"
+        label: "قائمة العظماء"
+        file: "greats.json"
+        fields:
+          - label: "الشخصيات"
+            name: "items"
+            widget: "list"
+            add_to_top: true
+            summary: "{{fields.name}} - {{fields.title}}"
+            fields:
+              - { label: "الاسم", name: "name", widget: "string" }
+              - { label: "اللقب / الصفة", name: "title", widget: "string", required: false, hint: "مثال: الإمام، العلامة، الشيخ" }
+              - { label: "الصورة الشخصية", name: "image", widget: "image", required: false, media_folder: "assets/images", public_folder: "/assets/images" }
+              - { label: "نبذة مختصرة", name: "excerpt", widget: "text", required: false }
+              - { label: "السيرة الكاملة", name: "body", widget: "markdown", required: false }
+              - { label: "من أقواله", name: "quote", widget: "text", required: false }
+              - { label: "التصنيف", name: "category", widget: "select", required: false, options: ["علماء", "فلاسفة", "شعراء", "قادة", "مصلحون", "أخرى"] }
+              - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
+
   - name: "articles"
     label: "المقالات"
     files:
@@ -216,6 +238,7 @@ collections:
               - { label: "اسم الملف (بالإنجليزي)", name: "file", widget: "string", hint: "مثال: lesson-01.mp3" }
               - { label: "العنوان", name: "title", widget: "string" }
               - { label: "المتحدث", name: "speaker", widget: "string", required: false }
+              - { label: "السلسلة / التصنيف", name: "series", widget: "string", required: false, hint: "مثال: محاضرات حول الأخلاق" }
               - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
               - { label: "الوصف", name: "description", widget: "text", required: false }
 
@@ -230,9 +253,10 @@ collections:
             name: "items"
             widget: "list"
             add_to_top: true
-            summary: "{{fields.title}} [{{fields.source_type}}]"
+            summary: "{{fields.title}} [{{fields.series}}]"
             fields:
               - { label: "عنوان الفيديو", name: "title", widget: "string" }
+              - { label: "السلسلة / التصنيف", name: "series", widget: "string", required: false, hint: "مثال: محاضرات حول الأخلاق، سلسلة العقائد، إلخ" }
               - label: "نوع المصدر"
                 name: "source_type"
                 widget: "select"
@@ -262,6 +286,7 @@ collections:
             summary: "{{fields.title}} [{{fields.type}}]"
             fields:
               - { label: "نوع الخبر", name: "type", widget: "select", options: [{ label: "نصي", value: "text" }, { label: "فيديو", value: "video" }], default: "text" }
+              - { label: "خبر عاجل؟", name: "urgent", widget: "boolean", default: false, hint: "سيظهر في تبويب الأخبار العاجلة" }
               - { label: "العنوان", name: "title", widget: "string" }
               - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
               - { label: "صورة الخبر", name: "image", widget: "image", required: false }
@@ -269,3 +294,22 @@ collections:
               - { label: "النص الكامل", name: "body", widget: "markdown", required: false }
               - { label: "معرّف يوتيوب", name: "youtube_id", widget: "string", required: false }
               - { label: "وصف الفيديو", name: "description", widget: "text", required: false }
+
+  - name: "useful_sites"
+    label: "مواقع مفيدة"
+    files:
+      - name: "useful-sites-list"
+        label: "قائمة المواقع"
+        file: "useful-sites.json"
+        fields:
+          - label: "المواقع"
+            name: "items"
+            widget: "list"
+            add_to_top: true
+            summary: "{{fields.name}} - {{fields.category}}"
+            fields:
+              - { label: "الاسم", name: "name", widget: "string" }
+              - { label: "الرابط", name: "url", widget: "string", hint: "https://example.com" }
+              - { label: "الوصف المختصر", name: "description", widget: "text", required: false }
+              - { label: "الأيقونة", name: "icon", widget: "string", required: false, default: "fa-globe", hint: "مثال: fa-book, fa-mosque, fa-graduation-cap" }
+              - { label: "التصنيف", name: "category", widget: "select", required: false, options: ["مراجع دينية", "مكتبات", "مراكز بحثية", "أدوات", "أخرى"], default: "مراجع دينية" }
