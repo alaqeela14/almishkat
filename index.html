@@ -10,16 +10,8 @@
     <meta property="og:title" content="منصة مشكاة | للنور والوعي">
     <meta property="og:description" content="منصة فكرية توعوية لنشر المقالات والرؤى">
     <meta property="og:image" content="https://mishkat-new.pages.dev/assets/images/og-share.jpg?v=5">
-    <meta property="og:image:secure_url" content="https://mishkat-new.pages.dev/assets/images/og-share.jpg?v=5">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:url" content="https://mishkat-new.pages.dev">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="منصة مشكاة | للنور والوعي">
-    <meta name="twitter:description" content="منصة فكرية توعوية لنشر المقالات والرؤى">
-    <meta name="twitter:image" content="https://mishkat-new.pages.dev/assets/images/og-share.jpg?v=5">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
@@ -89,7 +81,6 @@
         .content-card ul{list-style:none;padding:0;margin-bottom:15px}
         .content-card ul li{padding:8px 28px 8px 0;position:relative;font-size:15.5px;border-bottom:1px dashed var(--border-color)}
         .content-card ul li:last-child{border-bottom:none}
-        .content-card ul li::before{content:'\f058';font-family:'Font Awesome 6 Free';font-weight:900;color:var(--secondary-blue);position:absolute;right:0;top:8px;font-size:14px}
         .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
         .contact-tile{background:#fff;border:1px solid var(--border-color);border-radius:6px;padding:22px;text-align:center;border-top:4px solid var(--gold-accent);transition:.3s}
         .contact-tile:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(26,43,74,.1)}
@@ -124,7 +115,6 @@
         .article-card .excerpt{color:var(--text-muted);font-size:14.5px;flex-grow:1;margin-bottom:12px;line-height:1.9}
         .article-card .read-more-btn{display:inline-flex;align-items:center;gap:5px;background:var(--primary-navy);color:#fff;padding:5px 12px;border:none;border-radius:4px;font-family:'Cairo',sans-serif;font-weight:700;font-size:11.5px;cursor:pointer;transition:.3s;margin-bottom:12px;align-self:flex-start}
         .article-card .read-more-btn:hover{background:var(--gold-accent);color:var(--primary-navy);transform:translateX(-3px)}
-        .article-card .read-more-btn i{font-size:10px}
         .article-card .meta{border-top:1px solid var(--border-color);padding-top:8px;display:flex;justify-content:space-between;font-size:11.5px;color:var(--text-muted);font-family:'Cairo',sans-serif}
         .article-card .meta i{color:var(--secondary-blue)}
         .sidebar{display:flex;flex-direction:column;gap:20px}
@@ -147,31 +137,21 @@
         .filter-notice{display:none;background:var(--gold-light);border:1px solid var(--gold-accent);border-radius:6px;padding:12px 18px;margin-bottom:18px;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
         .filter-notice.show{display:flex}
         .filter-notice .filter-text{color:var(--primary-navy);font-weight:700;font-size:14.5px;display:flex;align-items:center;gap:8px;font-family:'Cairo',sans-serif}
-        .filter-notice .filter-text i{color:var(--gold-accent)}
-        .filter-notice .clear-filter{background:var(--primary-navy);color:#fff;border:none;padding:7px 16px;border-radius:5px;font-family:'Cairo',sans-serif;font-weight:700;font-size:12.5px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.3s}
-        .filter-notice .clear-filter:hover{background:var(--gold-accent);color:var(--primary-navy)}
+        .filter-notice .clear-filter{background:var(--primary-navy);color:#fff;border:none;padding:7px 16px;border-radius:5px;font-family:'Cairo',sans-serif;font-weight:700;font-size:12.5px;cursor:pointer;transition:.3s}
         .fiqh-category-tabs{display:flex;gap:6px;margin-bottom:18px;overflow-x:auto;padding-bottom:5px}
         .fiqh-category-tabs .cat-btn{background:#fff;border:1px solid var(--border-color);color:var(--primary-navy);padding:6px 14px;border-radius:3px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;transition:.3s;font-family:'Cairo',sans-serif}
         .fiqh-category-tabs .cat-btn.active{background:var(--primary-navy);color:#fff;border-color:var(--primary-navy)}
         .fiqh-qa-card{background:#fff;border-radius:8px;padding:20px 22px;margin-bottom:16px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-right:5px solid var(--gold-accent)}
-        .fiqh-qa-card .qa-question{color:var(--primary-navy);font-size:1.15rem;font-weight:700;margin-bottom:12px;display:flex;gap:8px;align-items:flex-start;line-height:1.7}
-        .fiqh-qa-card .qa-question i{color:var(--gold-accent);margin-top:6px;flex-shrink:0}
-        .fiqh-qa-card .qa-answer{color:var(--text-dark);font-size:16px;line-height:2;padding-right:26px}
-        .fiqh-qa-card .qa-answer strong{color:var(--primary-navy)}
-        .fiqh-qa-card .qa-meta{font-size:12px;color:var(--text-muted);margin-top:12px;padding-right:26px;font-family:'Cairo',sans-serif}
-        .fiqh-qa-card .qa-meta i{color:var(--secondary-blue);margin-left:3px}
-        .fiqh-qa-card .qa-actions{display:flex;gap:8px;margin-top:14px;padding-top:12px;border-top:1px solid var(--border-color);padding-right:26px;flex-wrap:wrap}
+        .fiqh-qa-card .qa-question{color:var(--primary-navy);font-size:1.15rem;font-weight:700;margin-bottom:12px;display:block;line-height:1.8}
+        .fiqh-qa-card .qa-answer{color:var(--text-dark);font-size:16px;line-height:2}
+        .fiqh-qa-card .qa-meta{font-size:12px;color:var(--text-muted);margin-top:12px;font-family:'Cairo',sans-serif}
+        .fiqh-qa-card .qa-actions{display:flex;gap:8px;margin-top:14px;padding-top:12px;border-top:1px solid var(--border-color);flex-wrap:wrap}
         .fiqh-qa-card .qa-actions button{border:none;padding:7px 14px;border-radius:5px;font-family:'Cairo',sans-serif;font-weight:700;font-size:12.5px;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:.3s}
         .fiqh-qa-card .qa-actions .qa-copy{background:var(--primary-navy);color:#fff}
         .fiqh-qa-card .qa-actions .qa-share{background:var(--gold-accent);color:var(--primary-navy)}
         .fiqh-qa-card .qa-section-label{display:inline-flex;align-items:center;gap:6px;background:var(--primary-navy);color:#fff;padding:4px 14px;border-radius:4px;font-size:12px;font-weight:700;margin-bottom:10px;font-family:'Cairo',sans-serif}
         .fiqh-qa-card .qa-section-label.answer-label{background:var(--gold-accent);color:var(--primary-navy)}
-        .fiqh-qa-card .qa-section-label i{font-size:11px}
         .fiqh-qa-card .qa-divider{border:none;border-top:2px dashed var(--gold-accent);margin:16px 0;opacity:.55}
-        .fiqh-qa-card .qa-question{display:block!important;padding-right:0!important;margin-bottom:0!important;font-size:1.15rem;font-weight:700;color:var(--primary-navy);line-height:1.8}
-        .fiqh-qa-card .qa-answer{padding-right:0!important;margin-top:0!important}
-        .fiqh-qa-card .qa-meta{padding-right:0!important}
-        .fiqh-qa-card .qa-actions{padding-right:0!important}
         #fiqh-question-form label{font-weight:700;color:var(--primary-navy);margin-bottom:6px;display:block;font-size:14px;font-family:'Cairo',sans-serif}
         #fiqh-question-form input[type="text"],#fiqh-question-form textarea{width:100%;padding:10px 14px;border:1px solid var(--border-color);border-radius:4px;font-family:'Amiri','Cairo',serif;font-size:16px;outline:none;transition:.3s;margin-bottom:18px;background:#fff;line-height:1.8}
         #fiqh-question-form input[type="text"]:focus,#fiqh-question-form textarea:focus{border-color:var(--secondary-blue);box-shadow:0 0 0 3px rgba(44,74,124,.08)}
@@ -179,29 +159,25 @@
         .weekly-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 4px 15px rgba(26,43,74,.06);border:1px solid var(--border-color);border-top:5px solid var(--gold-accent);transition:.3s}
         .weekly-card:hover{box-shadow:0 12px 30px rgba(26,43,74,.15);transform:translateY(-4px)}
         .weekly-card .weekly-head{padding:16px 20px;background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));color:#fff;position:relative;overflow:hidden}
-        .weekly-card .weekly-head::before{content:'';position:absolute;top:-40%;left:-20%;width:140%;height:200%;background:radial-gradient(circle,rgba(201,169,97,.2),transparent 60%)}
         .weekly-card .weekly-type{display:inline-block;background:rgba(201,169,97,.25);color:var(--gold-accent);padding:3px 12px;border-radius:12px;font-size:11.5px;font-weight:700;margin-bottom:8px;border:1px solid rgba(201,169,97,.4);position:relative;z-index:2;font-family:'Cairo',sans-serif}
         .weekly-card .weekly-head h3{font-size:1.2rem;font-weight:700;margin:0;line-height:1.5;position:relative;z-index:2}
         .weekly-card .weekly-head .weekly-date{font-size:11.5px;color:rgba(255,255,255,.75);margin-top:6px;position:relative;z-index:2;font-family:'Cairo',sans-serif}
         .weekly-card .weekly-body{padding:18px 20px;color:var(--text-dark);font-size:16px;line-height:2.1;max-height:400px;overflow-y:auto}
-        .weekly-card .weekly-body p{margin-bottom:12px}
-        .weekly-card .weekly-body blockquote{background:var(--gold-light);border-right:4px solid var(--gold-accent);padding:12px 16px;margin:12px 0;border-radius:6px;color:var(--primary-navy);font-style:italic}
         .weekly-card .weekly-actions{display:flex;gap:8px;padding:12px 20px;border-top:1px solid var(--border-color);background:var(--very-light-blue);flex-wrap:wrap}
-        .weekly-card .weekly-actions button{border:none;padding:7px 14px;border-radius:5px;font-family:'Cairo',sans-serif;font-weight:700;font-size:12.5px;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:.3s}
+        .weekly-card .weekly-actions button{border:none;padding:7px 14px;border-radius:5px;font-family:'Cairo',sans-serif;font-weight:700;font-size:12.5px;cursor:pointer;display:inline-flex;align-items:center;gap:5px}
         .weekly-card .weekly-actions .w-copy{background:var(--primary-navy);color:#fff}
         .weekly-card .weekly-actions .w-share{background:var(--gold-accent);color:var(--primary-navy)}
         .submit-box{background:#fff;border-radius:6px;padding:25px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-top:4px solid var(--gold-accent);margin-top:30px}
         .submit-box label{font-weight:700;color:var(--primary-navy);margin-bottom:6px;display:block;font-size:14px;font-family:'Cairo',sans-serif}
-        .submit-box input,.submit-box select,.submit-box textarea{width:100%;padding:10px 14px;border:1px solid var(--border-color);border-radius:4px;font-family:'Amiri','Cairo',serif;font-size:15px;outline:none;transition:.3s;margin-bottom:12px;line-height:1.8}
+        .submit-box input,.submit-box select,.submit-box textarea{width:100%;padding:10px 14px;border:1px solid var(--border-color);border-radius:4px;font-family:'Amiri','Cairo',serif;font-size:15px;outline:none;margin-bottom:12px;line-height:1.8}
         .btn-submit{background:var(--primary-navy);color:#fff;border:none;padding:11px 30px;border-radius:4px;font-weight:700;font-family:'Cairo',sans-serif;cursor:pointer;transition:.3s;font-size:14.5px}
         .btn-submit:hover{background:var(--gold-accent);color:var(--primary-navy)}
         footer{background:var(--primary-navy);color:#b8c4d6;padding:30px 0 0;border-top:4px solid var(--gold-accent);margin-top:40px}
         footer .footer-brand{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:20px}
         footer .footer-brand span{color:#fff;font-size:1.7rem;font-weight:700}
         .footer-contact-row{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:15px 35px;padding:15px 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
-        .footer-contact-item{display:flex;align-items:center;gap:8px;color:#b8c4d6;font-size:13.5px;transition:.3s;text-decoration:none;font-family:'Cairo',sans-serif}
+        .footer-contact-item{display:flex;align-items:center;gap:8px;color:#b8c4d6;font-size:13.5px;text-decoration:none;font-family:'Cairo',sans-serif}
         .footer-contact-item i{color:var(--gold-accent);font-size:15px}
-        .footer-contact-item:hover{color:var(--gold-accent)}
         .footer-socials{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;padding:18px 0 20px}
         .footer-socials a{width:42px;height:42px;display:flex;align-items:center;justify-content:center;border-radius:50%;color:#fff;font-size:17px;transition:.3s;text-decoration:none}
         .footer-socials a:hover{transform:translateY(-4px)}
@@ -216,44 +192,33 @@
         .article-full .article-image{width:100%;height:auto;border-radius:8px;margin:0 0 20px 0;display:block}
         .article-full .article-body{font-size:17px;line-height:2.1;color:var(--text-dark)}
         .article-full .article-body p{margin-bottom:15px}
-        .article-full .article-body img{max-width:100%;height:auto;border-radius:8px;margin:10px 0;display:block}
-        .article-full .article-body h1,.article-full .article-body h2,.article-full .article-body h3{color:var(--primary-navy);font-weight:700;margin:22px 0 12px;line-height:1.5;font-family:'Cairo',sans-serif}
         .article-full .article-body blockquote{background:var(--gold-light);border-right:5px solid var(--gold-accent);padding:16px 22px;margin:18px 0;border-radius:6px;font-style:italic;font-size:1.2rem;color:var(--primary-navy);line-height:2.1}
         .back-btn{background:var(--primary-navy);color:white;border:none;padding:10px 25px;border-radius:4px;font-family:'Cairo',sans-serif;font-weight:700;cursor:pointer;margin-bottom:20px;display:inline-flex;align-items:center;gap:8px}
         .share-section{background:#fff;border-radius:6px;padding:20px 25px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-top:4px solid var(--gold-accent);margin-bottom:20px}
         .share-section h3{color:var(--primary-navy);font-size:1.2rem;font-weight:700;margin-bottom:15px;display:flex;align-items:center;gap:8px;font-family:'Cairo',sans-serif}
-        .share-section h3 i{color:var(--gold-accent)}
-        .share-buttons{display:flex;flex-wrap:wrap;gap:10px}
-        .share-btn{border:none;padding:11px 24px;border-radius:6px;color:#fff;font-family:'Cairo',sans-serif;font-weight:700;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:.3s}
-        .share-btn:hover{transform:translateY(-2px);box-shadow:0 5px 15px rgba(0,0,0,.15)}
+        .share-btn{border:none;padding:11px 24px;border-radius:6px;color:#fff;font-family:'Cairo',sans-serif;font-weight:700;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
         .share-btn.native-share{background:var(--primary-navy)}
-        .copy-link-btn{display:inline-flex;align-items:center;gap:7px;padding:11px 24px;background:var(--gold-accent);color:var(--primary-navy);border:none;border-radius:6px;font-family:'Cairo',sans-serif;font-weight:700;font-size:14px;cursor:pointer;transition:.3s}
-        .copy-link-btn:hover{background:var(--primary-navy);color:#fff}
+        .copy-link-btn{display:inline-flex;align-items:center;gap:7px;padding:11px 24px;background:var(--gold-accent);color:var(--primary-navy);border:none;border-radius:6px;font-family:'Cairo',sans-serif;font-weight:700;font-size:14px;cursor:pointer}
         .comments-section{background:#fff;border-radius:6px;padding:20px 25px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-top:4px solid var(--primary-navy);margin-bottom:20px}
         .comments-section h3{color:var(--primary-navy);font-size:1.3rem;font-weight:700;margin-bottom:15px;display:flex;align-items:center;gap:8px;font-family:'Cairo',sans-serif}
-        .comments-section h3 i{color:var(--gold-accent)}
-        #comments-list{min-height:60px}
         .breaking-bar{background:#fff;border:1px solid var(--border-color);border-radius:4px;padding:10px 15px;display:flex;align-items:center;margin-bottom:20px}
         .breaking-bar .container{display:flex;align-items:center;gap:12px;overflow:hidden;width:100%;padding:0}
         .breaking-label{background:var(--breaking-red);color:#fff;padding:5px 14px;border-radius:3px;font-size:12.5px;font-weight:700;white-space:nowrap;display:flex;align-items:center;gap:6px;flex-shrink:0;font-family:'Cairo',sans-serif}
-        .breaking-label i{animation:pulse 1.5s infinite}
-        @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
         .breaking-ticker{flex:1;overflow:hidden;height:24px}
         .breaking-ticker marquee{font-size:14.5px}
         .breaking-ticker marquee a{color:var(--primary-navy);font-weight:600;margin:0 8px}
         .breaking-ticker marquee span{color:var(--gold-accent)}
         .library-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
-        .book-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 4px 15px rgba(26,43,74,.06);border:1px solid var(--border-color);display:flex;flex-direction:column;transition:.3s;position:relative}
+        .book-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 4px 15px rgba(26,43,74,.06);border:1px solid var(--border-color);display:flex;flex-direction:column;transition:.3s}
         .book-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(26,43,74,.15);border-color:var(--gold-accent)}
-        .book-cover{background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));height:180px;display:flex;align-items:center;justify-content:center;color:var(--gold-accent);font-size:55px;position:relative;overflow:hidden}
+        .book-cover{background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));height:180px;display:flex;align-items:center;justify-content:center;color:var(--gold-accent);font-size:55px;overflow:hidden}
         .book-cover img{width:100%;height:100%;object-fit:cover}
         .book-body{padding:18px;display:flex;flex-direction:column;flex-grow:1}
         .book-body h3{color:var(--primary-navy);font-size:1.2rem;font-weight:700;margin-bottom:6px;line-height:1.5}
         .book-author{color:var(--gold-accent);font-size:13px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:5px;font-family:'Cairo',sans-serif}
         .book-desc{color:var(--text-muted);font-size:14.5px;flex-grow:1;margin-bottom:15px;line-height:1.9}
         .book-actions{display:flex;gap:6px;flex-wrap:wrap;border-top:1px solid var(--border-color);padding-top:12px}
-        .book-btn{flex:1;min-width:80px;border:none;padding:9px 10px;border-radius:5px;font-family:'Cairo',sans-serif;font-weight:700;font-size:12.5px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;transition:.3s;text-decoration:none;color:#fff}
-        .book-btn:hover{transform:translateY(-2px);box-shadow:0 4px 10px rgba(0,0,0,.15)}
+        .book-btn{flex:1;min-width:80px;border:none;padding:9px 10px;border-radius:5px;font-family:'Cairo',sans-serif;font-weight:700;font-size:12.5px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;text-decoration:none;color:#fff}
         .book-btn.download{background:var(--primary-navy)}
         .book-btn.share{background:var(--gold-accent);color:var(--primary-navy)!important}
         .library-empty{text-align:center;padding:60px 20px;color:var(--text-muted)}
@@ -261,39 +226,31 @@
         .modal-overlay{display:none;position:fixed;inset:0;background:rgba(15,30,61,.7);z-index:3000;align-items:center;justify-content:center;padding:20px}
         .modal-overlay.show{display:flex}
         .modal-box{background:#fff;border-radius:12px;padding:30px;max-width:400px;width:100%;position:relative;box-shadow:0 20px 50px rgba(0,0,0,.3);border-top:5px solid var(--gold-accent)}
-        .modal-close{position:absolute;top:10px;left:10px;background:transparent;border:none;font-size:26px;color:var(--text-muted);cursor:pointer;line-height:1}
-        .modal-box h3{color:var(--primary-navy);font-size:1.25rem;font-weight:700;margin-bottom:20px;text-align:center;display:flex;align-items:center;justify-content:center;gap:8px;font-family:'Cairo',sans-serif}
+        .modal-close{position:absolute;top:10px;left:10px;background:transparent;border:none;font-size:26px;color:var(--text-muted);cursor:pointer}
+        .modal-box h3{color:var(--primary-navy);font-size:1.25rem;font-weight:700;margin-bottom:20px;text-align:center;font-family:'Cairo',sans-serif}
         .download-options{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-        .download-option{display:flex;flex-direction:column;align-items:center;gap:10px;padding:22px 15px;border-radius:10px;text-decoration:none;color:#fff;font-weight:800;font-size:1rem;transition:.3s;font-family:'Cairo',sans-serif}
-        .download-option:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.2)}
+        .download-option{display:flex;flex-direction:column;align-items:center;gap:10px;padding:22px 15px;border-radius:10px;text-decoration:none;color:#fff;font-weight:800;font-size:1rem;font-family:'Cairo',sans-serif}
         .download-option i{font-size:40px}
         .download-option.pdf{background:#dc2626}
         .download-option.word{background:#2563eb}
         .download-option.unavailable{background:#9ca3af;cursor:not-allowed;opacity:.6}
-        .join-team-box{background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));color:#fff;border-radius:10px;padding:35px 30px;text-align:center;margin-top:30px;border-top:5px solid var(--gold-accent);position:relative;overflow:hidden}
-        .join-team-box::before{content:'';position:absolute;top:-50%;left:-20%;width:140%;height:200%;background:radial-gradient(circle,rgba(201,169,97,.15),transparent 60%)}
-        .join-team-box h3{font-size:1.5rem;font-weight:700;margin-bottom:10px;position:relative;z-index:2;display:flex;align-items:center;justify-content:center;gap:10px;font-family:'Cairo',sans-serif}
+        .join-team-box{background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));color:#fff;border-radius:10px;padding:35px 30px;text-align:center;margin-top:30px;border-top:5px solid var(--gold-accent)}
+        .join-team-box h3{font-size:1.5rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:10px;font-family:'Cairo',sans-serif}
         .join-team-box h3 i{color:var(--gold-accent)}
-        .join-team-box p{font-size:15.5px;line-height:2;margin-bottom:20px;color:rgba(255,255,255,.9);position:relative;z-index:2}
-        .join-team-btn{display:inline-flex;align-items:center;gap:6px;background:var(--gold-accent);color:var(--primary-navy);padding:9px 22px;border-radius:6px;font-weight:700;font-size:14px;text-decoration:none;transition:.3s;position:relative;z-index:2;border:none;cursor:pointer;font-family:'Cairo',sans-serif}
+        .join-team-box p{font-size:15.5px;line-height:2;margin-bottom:20px;color:rgba(255,255,255,.9)}
+        .join-team-btn{display:inline-flex;align-items:center;gap:6px;background:var(--gold-accent);color:var(--primary-navy);padding:9px 22px;border-radius:6px;font-weight:700;font-size:14px;text-decoration:none;font-family:'Cairo',sans-serif}
         .lang-articles-empty{text-align:center;padding:60px 20px;color:var(--text-muted)}
-        .lang-articles-empty i{font-size:60px;color:var(--gold-accent);margin-bottom:15px;display:block}
         .search-results-view{padding:20px 0}
         .search-results-header{background:#fff;border-radius:6px;padding:20px 25px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-top:4px solid var(--gold-accent);margin-bottom:20px}
-        .search-results-header h2{color:var(--primary-navy);font-size:1.4rem;font-weight:700;margin:0 0 5px 0;display:flex;align-items:center;gap:10px;font-family:'Cairo',sans-serif}
-        .search-results-header h2 i{color:var(--gold-accent)}
-        .search-result-item{background:#fff;border-radius:8px;padding:18px 22px;margin-bottom:14px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-right:5px solid var(--secondary-blue);cursor:pointer;transition:.3s}
-        .search-result-item:hover{transform:translateX(-5px);box-shadow:0 8px 20px rgba(26,43,74,.12);border-right-color:var(--gold-accent)}
-        .search-result-item .result-type{display:inline-flex;align-items:center;gap:6px;background:var(--very-light-blue);color:var(--primary-navy);padding:3px 10px;border-radius:12px;font-size:11.5px;font-weight:700;margin-bottom:10px;border:1px solid var(--border-color);font-family:'Cairo',sans-serif}
-        .search-result-item .result-type i{color:var(--gold-accent)}
-        .search-result-item h3{color:var(--primary-navy);font-size:1.2rem;font-weight:700;margin:0 0 8px 0;line-height:1.5}
-        .search-result-item .result-snippet{color:var(--text-muted);font-size:15px;line-height:1.9;margin-bottom:10px}
+        .search-results-header h2{color:var(--primary-navy);font-size:1.4rem;font-weight:700;margin:0 0 5px 0;font-family:'Cairo',sans-serif}
+        .search-result-item{background:#fff;border-radius:8px;padding:18px 22px;margin-bottom:14px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-right:5px solid var(--secondary-blue);cursor:pointer}
+        .search-result-item .result-type{display:inline-flex;align-items:center;gap:6px;background:var(--very-light-blue);color:var(--primary-navy);padding:3px 10px;border-radius:12px;font-size:11.5px;font-weight:700;margin-bottom:10px;font-family:'Cairo',sans-serif}
+        .search-result-item h3{color:var(--primary-navy);font-size:1.2rem;font-weight:700;margin:0 0 8px 0}
+        .search-result-item .result-snippet{color:var(--text-muted);font-size:15px;line-height:1.9}
         .search-result-item .result-snippet mark{background:var(--gold-light);color:var(--primary-navy);padding:2px 4px;border-radius:3px;font-weight:700}
-        .search-result-item .result-meta{font-size:12px;color:var(--text-muted);border-top:1px solid var(--border-color);padding-top:8px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-family:'Cairo',sans-serif}
         .search-empty{text-align:center;padding:60px 20px;color:var(--text-muted);background:#fff;border-radius:8px;border:1px solid var(--border-color)}
         .search-empty i{font-size:60px;color:var(--gold-accent);margin-bottom:15px;display:block}
-        .search-empty h3{color:var(--primary-navy);font-size:1.3rem;font-weight:700;margin-bottom:8px;font-family:'Cairo',sans-serif}
-        .audio-card{background:#fff;border-radius:8px;padding:20px 22px;margin-bottom:16px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-right:5px solid var(--gold-accent);transition:.3s;position:relative}
+        .audio-card{background:#fff;border-radius:8px;padding:20px 22px;margin-bottom:16px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-right:5px solid var(--gold-accent);transition:.3s}
         .audio-card:hover{box-shadow:0 8px 20px rgba(26,43,74,.12);border-right-color:var(--primary-navy)}
         .audio-card .audio-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px}
         .audio-card .audio-icon{width:52px;height:52px;background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold-accent);font-size:22px;flex-shrink:0}
@@ -304,38 +261,66 @@
         .audio-card .audio-desc{color:var(--text-muted);font-size:15px;line-height:1.9;margin:0 0 12px 0}
         .audio-card audio{width:100%;height:40px;outline:none;border-radius:6px}
         .audio-card .audio-actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
-        .audio-card .audio-actions a,.audio-card .audio-actions button{border:none;padding:8px 16px;border-radius:5px;font-family:'Cairo',sans-serif;font-weight:700;font-size:12.5px;cursor:pointer;display:inline-flex;align-items:center;gap:5px;text-decoration:none;color:#fff;transition:.3s}
+        .audio-card .audio-actions a,.audio-card .audio-actions button{border:none;padding:8px 16px;border-radius:5px;font-family:'Cairo',sans-serif;font-weight:700;font-size:12.5px;cursor:pointer;display:inline-flex;align-items:center;gap:5px;text-decoration:none;color:#fff}
         .audio-card .audio-actions .dl{background:var(--primary-navy)}
         .audio-card .audio-actions .sh{background:var(--gold-accent);color:var(--primary-navy)}
-        .videos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
-        .video-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);transition:.3s;position:relative}
-        .video-card:hover{box-shadow:0 8px 20px rgba(26,43,74,.12);border-color:var(--gold-accent)}
-        .video-card .video-embed{position:relative;width:100%;padding-bottom:56.25%;background:#000}
-        .video-card .video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
-        .video-card .video-body{padding:16px 18px}
-        .video-card .video-body h3{color:var(--primary-navy);font-size:1.2rem;font-weight:700;margin:0 0 8px 0;line-height:1.5}
-        .video-card .video-meta{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--text-muted);font-family:'Cairo',sans-serif}
-        .video-card .video-meta i{color:var(--secondary-blue);margin-left:3px}
-        .video-card .video-embed-local{position:relative;width:100%;padding-bottom:56.25%;background:#000}
-        .video-card .video-embed-local video{position:absolute;top:0;left:0;width:100%;height:100%;border:none;object-fit:contain;background:#000}
-        .video-card .video-source-badge{position:absolute;top:10px;right:10px;background:rgba(26,43,74,.85);color:var(--gold-accent);padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700;z-index:5;font-family:'Cairo',sans-serif;display:flex;align-items:center;gap:5px;backdrop-filter:blur(4px)}
-        .video-card .video-source-badge i{font-size:10px}
-        .video-card .video-series-badge{display:inline-flex;align-items:center;gap:5px;background:var(--gold-light);color:var(--primary-navy);padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700;margin-bottom:8px;font-family:'Cairo',sans-serif}
-        .video-card .video-series-badge i{color:var(--gold-accent);font-size:10px}
-        .news-item{background:#fff;border-radius:8px;padding:20px 22px;margin-bottom:16px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-right:5px solid var(--gold-accent);cursor:default;transition:.3s;position:relative}
-        .news-item:hover{transform:translateX(-5px);box-shadow:0 8px 20px rgba(26,43,74,.12);border-right-color:var(--primary-navy)}
-        .news-item.is-urgent{border-right-color:#dc2626!important}
-        .news-item .news-type{display:inline-flex;align-items:center;gap:6px;background:var(--very-light-blue);color:var(--primary-navy);padding:3px 10px;border-radius:12px;font-size:11.5px;font-weight:700;margin-bottom:10px;border:1px solid var(--border-color);font-family:'Cairo',sans-serif}
-        .news-item .news-type i{color:var(--gold-accent)}
-        .urgent-badge{display:inline-flex;align-items:center;gap:5px;background:#dc2626;color:#fff;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700;margin-bottom:10px;font-family:'Cairo',sans-serif;margin-right:6px}
-        .urgent-badge i{animation:pulse 1.5s infinite;font-size:9px}
-        .news-item h3{color:var(--primary-navy);font-size:1.3rem;font-weight:700;margin:0 0 8px 0;line-height:1.5}
-        .news-item .news-date{font-size:12.5px;color:var(--text-muted);margin-bottom:8px;font-family:'Cairo',sans-serif}
-        .news-item .news-date i{color:var(--secondary-blue);margin-left:4px}
-        .news-item .news-excerpt{color:var(--text-muted);font-size:15px;line-height:1.9;margin:0 0 10px 0}
-        .news-item .news-more-btn{display:inline-flex;align-items:center;gap:5px;background:var(--primary-navy);color:#fff;padding:5px 12px;border:none;border-radius:4px;font-family:'Cairo',sans-serif;font-weight:700;font-size:11.5px;cursor:pointer;transition:.3s;margin-top:5px}
-        .news-item .news-more-btn:hover{background:var(--gold-accent);color:var(--primary-navy);transform:translateX(-3px)}
-        /* Greats */
+
+        /* ===== videos layout جديد ===== */
+        .videos-layout{display:grid;grid-template-columns:1fr 280px;gap:20px;align-items:start}
+        .series-sidebar{background:#fff;border-radius:8px;border:1px solid var(--border-color);overflow:hidden;box-shadow:0 2px 10px rgba(26,43,74,.06);position:sticky;top:20px}
+        .series-sidebar .series-header{background:var(--primary-navy);color:#fff;padding:12px 16px;font-weight:700;font-size:14px;display:flex;align-items:center;gap:8px;border-bottom:2px solid var(--gold-accent);font-family:'Cairo',sans-serif}
+        .series-sidebar .series-header i{color:var(--gold-accent)}
+        .series-sidebar #seriesList{max-height:70vh;overflow-y:auto}
+        .series-item{padding:12px 16px;border-bottom:1px solid var(--border-color);cursor:pointer;transition:.2s;border-right:4px solid transparent}
+        .series-item:last-child{border-bottom:none}
+        .series-item:hover{background:var(--very-light-blue)}
+        .series-item.active{background:var(--gold-light);border-right-color:var(--gold-accent)}
+        .series-item .series-name{color:var(--primary-navy);font-weight:700;font-size:14px;line-height:1.4;margin-bottom:3px;font-family:'Cairo',sans-serif}
+        .series-item .series-speaker{color:var(--text-muted);font-size:11px;font-family:'Cairo',sans-serif}
+        .series-item .series-count{color:var(--gold-accent);font-size:10.5px;font-family:'Cairo',sans-serif;font-weight:700;margin-top:3px}
+
+        .videos-list{display:flex;flex-direction:column;gap:16px}
+        .video-list-item{background:#fff;border-radius:8px;overflow:hidden;border:1px solid var(--border-color);display:flex;gap:0;transition:.3s;box-shadow:0 2px 8px rgba(26,43,74,.04)}
+        .video-list-item:hover{box-shadow:0 8px 20px rgba(26,43,74,.1);border-color:var(--gold-accent)}
+        .video-list-item .video-poster{position:relative;width:240px;min-height:135px;flex-shrink:0;background:#000;cursor:pointer;overflow:hidden;aspect-ratio:16/9}
+        .video-list-item .video-poster img{width:100%;height:100%;object-fit:cover;display:block}
+        .video-list-item .video-poster iframe,.video-list-item .video-poster video{position:absolute;top:0;left:0;width:100%;height:100%;border:none;display:block;background:#000}
+        .video-list-item .video-poster.playing{cursor:default}
+        .video-list-item .video-poster .play-overlay{position:absolute;inset:0;background:rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;transition:.3s;pointer-events:none}
+        .video-list-item .video-poster:hover .play-overlay{background:rgba(0,0,0,.5)}
+        .video-list-item .video-poster .play-overlay i{color:#fff;font-size:44px;text-shadow:0 4px 12px rgba(0,0,0,.6);transition:.3s}
+        .video-list-item .video-poster:hover .play-overlay i{transform:scale(1.15);color:var(--gold-accent)}
+        .video-list-item .video-info{flex:1;padding:14px 18px;min-width:0}
+        .video-list-item .video-info h3{color:var(--primary-navy);font-size:1.15rem;font-weight:700;margin:0 0 8px 0;line-height:1.5}
+        .video-list-item .video-meta{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--text-muted);font-family:'Cairo',sans-serif;margin-bottom:8px}
+        .video-list-item .video-meta i{color:var(--secondary-blue);margin-left:3px}
+        .video-list-item .video-info p{color:var(--text-muted);font-size:14px;line-height:1.8;margin:0}
+        .video-list-item .series-pill{display:inline-block;background:var(--gold-light);color:var(--primary-navy);padding:2px 10px;border-radius:12px;font-size:11px;font-weight:700;margin-bottom:8px;font-family:'Cairo',sans-serif}
+        @media (max-width:900px){
+            .videos-layout{grid-template-columns:1fr}
+            .series-sidebar{position:static;order:-1}
+            .series-sidebar #seriesList{max-height:300px;display:flex;flex-wrap:wrap;gap:0}
+            .series-item{width:100%}
+        }
+        @media (max-width:600px){
+            .video-list-item{flex-direction:column}
+            .video-list-item .video-poster{width:100%;aspect-ratio:16/9}
+            .video-list-item .video-info{padding:14px 16px}
+        }
+
+        /* ===== قسم مواقع مفيدة ===== */
+        .useful-sites-section{background:#fff;border-radius:8px;padding:25px 30px;margin:30px 0 20px;box-shadow:0 4px 15px rgba(26,43,74,.06);border:1px solid var(--border-color);border-top:5px solid var(--gold-accent)}
+        .useful-sites-section h2{color:var(--primary-navy);font-size:1.5rem;font-weight:700;margin:0 0 20px 0;display:flex;align-items:center;gap:10px;padding-bottom:12px;border-bottom:2px solid var(--gold-light);font-family:'Cairo',sans-serif}
+        .useful-sites-section h2 i{color:var(--gold-accent)}
+        .useful-sites-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+        .useful-site-card{display:flex;align-items:flex-start;gap:12px;padding:14px;border-radius:8px;background:var(--very-light-blue);border:1px solid var(--border-color);transition:.3s;text-decoration:none;color:inherit}
+        .useful-site-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(26,43,74,.1);background:#fff;border-color:var(--gold-accent)}
+        .useful-site-card .us-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold-accent);font-size:18px;flex-shrink:0}
+        .useful-site-card .us-info{flex:1;min-width:0}
+        .useful-site-card .us-info h4{margin:0 0 4px 0;color:var(--primary-navy);font-size:1rem;font-weight:700;font-family:'Cairo',sans-serif}
+        .useful-site-card .us-info p{margin:0;color:var(--text-muted);font-size:12.5px;line-height:1.6;font-family:'Cairo',sans-serif}
+
+        /* ===== greats ===== */
         .greats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
         .great-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);transition:.3s;cursor:pointer;display:flex;flex-direction:column}
         .great-card:hover{transform:translateY(-4px);box-shadow:0 10px 25px rgba(26,43,74,.15);border-color:var(--gold-accent)}
@@ -347,18 +332,18 @@
         .great-card .great-title-text{color:var(--gold-accent);font-size:13px;font-weight:700;margin-bottom:10px;font-family:'Cairo',sans-serif}
         .great-card .great-excerpt{color:var(--text-muted);font-size:14px;line-height:1.9;flex-grow:1;margin-bottom:12px}
         .great-card .great-quote{background:var(--gold-light);border-right:3px solid var(--gold-accent);padding:8px 12px;border-radius:6px;color:var(--primary-navy);font-style:italic;font-size:13.5px;line-height:1.7;margin-top:8px}
-        /* Useful sites */
-        .useful-sites-section{background:#fff;border-radius:8px;padding:25px 30px;margin:30px 0 20px;box-shadow:0 4px 15px rgba(26,43,74,.06);border:1px solid var(--border-color);border-top:5px solid var(--gold-accent)}
-        .useful-sites-section h2{color:var(--primary-navy);font-size:1.5rem;font-weight:700;margin:0 0 20px 0;display:flex;align-items:center;gap:10px;padding-bottom:12px;border-bottom:2px solid var(--gold-light);font-family:'Cairo',sans-serif}
-        .useful-sites-section h2 i{color:var(--gold-accent)}
-        .useful-sites-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
-        .useful-site-card{display:flex;align-items:flex-start;gap:12px;padding:14px;border-radius:8px;background:var(--very-light-blue);border:1px solid var(--border-color);transition:.3s;text-decoration:none;color:inherit}
-        .useful-site-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(26,43,74,.1);background:#fff;border-color:var(--gold-accent)}
-        .useful-site-card .us-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue));border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold-accent);font-size:18px;flex-shrink:0}
-        .useful-site-card .us-info{flex:1;min-width:0}
-        .useful-site-card .us-info h4{margin:0 0 4px 0;color:var(--primary-navy);font-size:1rem;font-weight:700;font-family:'Cairo',sans-serif}
-        .useful-site-card .us-info p{margin:0;color:var(--text-muted);font-size:12.5px;line-height:1.6;font-family:'Cairo',sans-serif}
-        /* Dark mode */
+
+        /* ===== News ===== */
+        .news-item{background:#fff;border-radius:8px;padding:20px 22px;margin-bottom:16px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-right:5px solid var(--gold-accent);transition:.3s;position:relative}
+        .news-item.is-urgent{border-right-color:#dc2626!important}
+        .news-item .news-type{display:inline-flex;align-items:center;gap:6px;background:var(--very-light-blue);color:var(--primary-navy);padding:3px 10px;border-radius:12px;font-size:11.5px;font-weight:700;margin-bottom:10px;border:1px solid var(--border-color);font-family:'Cairo',sans-serif}
+        .urgent-badge{display:inline-flex;align-items:center;gap:5px;background:#dc2626;color:#fff;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700;margin-bottom:10px;font-family:'Cairo',sans-serif;margin-left:6px}
+        .news-item h3{color:var(--primary-navy);font-size:1.3rem;font-weight:700;margin:0 0 8px 0;line-height:1.5}
+        .news-item .news-date{font-size:12.5px;color:var(--text-muted);margin-bottom:8px;font-family:'Cairo',sans-serif}
+        .news-item .news-excerpt{color:var(--text-muted);font-size:15px;line-height:1.9;margin:0 0 10px 0}
+        .news-item .news-more-btn{display:inline-flex;align-items:center;gap:5px;background:var(--primary-navy);color:#fff;padding:5px 12px;border:none;border-radius:4px;font-family:'Cairo',sans-serif;font-weight:700;font-size:11.5px;cursor:pointer;margin-top:5px}
+
+        /* ===== Dark mode ===== */
         body.dark-mode{background:#0d1520;color:#e0e6ed}
         body.dark-mode .top-bar{background:#050a12}
         body.dark-mode .banner-wrap{background:#0d1520}
@@ -368,63 +353,35 @@
         body.dark-mode .breaking-bar{background:#1a2535;border-color:#2a3a52}
         body.dark-mode .breaking-ticker marquee a{color:#e0e6ed}
         body.dark-mode .page-title-bar{background:linear-gradient(135deg,#0f1a2e,#1a2b45)}
-        body.dark-mode .content-card,body.dark-mode .article-card,body.dark-mode .sidebar-box,body.dark-mode .submit-box,body.dark-mode .article-full,body.dark-mode .share-section,body.dark-mode .comments-section,body.dark-mode .book-card,body.dark-mode .modal-box,body.dark-mode .search-results-header,body.dark-mode .search-result-item,body.dark-mode .search-empty,body.dark-mode .audio-card,body.dark-mode .video-card,body.dark-mode .news-item,body.dark-mode .contact-tile,body.dark-mode .fiqh-qa-card,body.dark-mode .weekly-card,body.dark-mode .great-card,body.dark-mode .useful-sites-section{background:#1a2535!important;color:#e0e6ed;border-color:#2a3a52}
-        body.dark-mode .article-card h3,body.dark-mode .content-card h2,body.dark-mode .section-header h2,body.dark-mode .article-full h1,body.dark-mode .page-title-bar h1,body.dark-mode .news-item h3,body.dark-mode .video-card .video-body h3,body.dark-mode .audio-card .audio-info h3,body.dark-mode .search-result-item h3,body.dark-mode .book-body h3,body.dark-mode .contact-tile h4,body.dark-mode .fiqh-qa-card .qa-question,body.dark-mode .great-card h3,body.dark-mode .useful-sites-section h2,body.dark-mode .useful-site-card .us-info h4{color:#e0e6ed!important}
-        body.dark-mode .article-card .excerpt,body.dark-mode .book-desc,body.dark-mode .audio-card .audio-desc,body.dark-mode .news-item .news-excerpt,body.dark-mode .article-card .meta,body.dark-mode .article-meta,body.dark-mode .news-item .news-date,body.dark-mode .content-card p,body.dark-mode .contact-tile p,body.dark-mode .fiqh-qa-card .qa-answer,body.dark-mode .great-card .great-excerpt,body.dark-mode .useful-site-card .us-info p{color:#9ca8bb}
-        body.dark-mode .article-card .read-more-btn,body.dark-mode .news-item .news-more-btn{background:#c9a961;color:#1a2b4a}
-        body.dark-mode .share-btn.native-share{background:#c9a961;color:#1a2b4a}
-        body.dark-mode .copy-link-btn{background:#2c4a7c;color:#fff}
-        body.dark-mode .fiqh-qa-card .qa-actions .qa-copy{background:#c9a961;color:#1a2b4a}
-        body.dark-mode .weekly-card .weekly-actions .w-copy{background:#c9a961;color:#1a2b4a}
-        body.dark-mode footer{background:#050a12}
-        body.dark-mode .footer-bottom{background:#000308}
+        body.dark-mode .content-card,body.dark-mode .article-card,body.dark-mode .sidebar-box,body.dark-mode .submit-box,body.dark-mode .article-full,body.dark-mode .share-section,body.dark-mode .comments-section,body.dark-mode .book-card,body.dark-mode .modal-box,body.dark-mode .search-results-header,body.dark-mode .search-result-item,body.dark-mode .search-empty,body.dark-mode .audio-card,body.dark-mode .news-item,body.dark-mode .contact-tile,body.dark-mode .fiqh-qa-card,body.dark-mode .weekly-card,body.dark-mode .great-card,body.dark-mode .useful-sites-section,body.dark-mode .series-sidebar,body.dark-mode .video-list-item{background:#1a2535!important;color:#e0e6ed;border-color:#2a3a52}
+        body.dark-mode .article-card h3,body.dark-mode .content-card h2,body.dark-mode .section-header h2,body.dark-mode .article-full h1,body.dark-mode .page-title-bar h1,body.dark-mode .news-item h3,body.dark-mode .audio-card .audio-info h3,body.dark-mode .search-result-item h3,body.dark-mode .book-body h3,body.dark-mode .fiqh-qa-card .qa-question,body.dark-mode .great-card h3,body.dark-mode .useful-sites-section h2,body.dark-mode .useful-site-card .us-info h4,body.dark-mode .video-list-item .video-info h3,body.dark-mode .series-item .series-name{color:#e0e6ed!important}
+        body.dark-mode .article-card .excerpt,body.dark-mode .book-desc,body.dark-mode .audio-card .audio-desc,body.dark-mode .news-item .news-excerpt,body.dark-mode .content-card p,body.dark-mode .fiqh-qa-card .qa-answer,body.dark-mode .great-card .great-excerpt,body.dark-mode .useful-site-card .us-info p,body.dark-mode .video-list-item .video-info p,body.dark-mode .series-item .series-speaker{color:#9ca8bb}
         body.dark-mode .category-tabs .cat-btn,body.dark-mode .fiqh-category-tabs .cat-btn{background:#1a2535;color:#e0e6ed;border-color:#2a3a52}
         body.dark-mode .category-tabs .cat-btn.active,body.dark-mode .fiqh-category-tabs .cat-btn.active{background:#c9a961;color:#1a2b4a}
-        body.dark-mode .sidebar-box .box-header{background:#131d2e}
-        body.dark-mode .most-read-item .number{background:#c9a961;color:#1a2b4a}
-        body.dark-mode .sidebar-cat-item span:first-child,body.dark-mode .most-read-item .text p{color:#e0e6ed}
-        body.dark-mode .sidebar-cat-item .count{background:#0d1520;color:#c9a961}
-        body.dark-mode .article-full .article-body{color:#d5dce6}
-        body.dark-mode .article-full .article-body h1,body.dark-mode .article-full .article-body h2,body.dark-mode .article-full .article-body h3,body.dark-mode .article-full .article-body h4{color:#c9a961}
+        body.dark-mode .series-item:hover{background:#0d1520}
+        body.dark-mode .series-item.active{background:#131d2e}
+        body.dark-mode .series-sidebar .series-header{background:#131d2e}
+        body.dark-mode footer{background:#050a12}
+        body.dark-mode .footer-bottom{background:#000308}
         body.dark-mode .submit-box label{color:#c9a961}
         body.dark-mode .submit-box input,body.dark-mode .submit-box textarea{background:#0d1520;color:#e0e6ed;border-color:#2a3a52}
         body.dark-mode .join-team-box{background:linear-gradient(135deg,#0f1a2e,#1a2b45)}
         body.dark-mode .daily-box{background:linear-gradient(135deg,#0f1a2e 0%,#1a2b45 100%)}
-        body.dark-mode .filter-notice{background:#131d2e;border-color:#2a3a52}
-        body.dark-mode .fiqh-qa-card .qa-section-label{background:#c9a961;color:#1a2b4a}
-        body.dark-mode .fiqh-qa-card .qa-section-label.answer-label{background:#2c4a7c;color:#fff}
         body.dark-mode .useful-site-card{background:#131d2e;border-color:#2a3a52}
-        body.dark-mode .useful-site-card:hover{background:#1a2535}
         body.dark-mode .great-card .great-quote{background:#131d2e;color:#e0e6ed}
-        @media (max-width:1024px){.news-grid{grid-template-columns:1fr 280px;gap:18px}}
-        @media (max-width:900px){.news-grid{grid-template-columns:1fr}.sidebar{flex-direction:row;flex-wrap:wrap}.sidebar-box{flex:1;min-width:250px}.contact-grid{grid-template-columns:1fr}.videos-grid{grid-template-columns:1fr}.greats-grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}}
+        @media (max-width:900px){.news-grid{grid-template-columns:1fr}.sidebar{flex-direction:row;flex-wrap:wrap}.sidebar-box{flex:1;min-width:250px}.contact-grid{grid-template-columns:1fr}}
         @media (max-width:768px){
-            .top-bar{padding:3px 0}
-            .top-bar .container{flex-wrap:nowrap;justify-content:space-between;gap:5px;padding:0 6px}
-            .top-bar .clock-info{font-size:9px;gap:4px}
-            .top-bar .clock-info i{font-size:9px}
+            .top-bar .clock-info{font-size:9px}
             .top-bar .lang-note{font-size:7.5px}
-            .top-bar .lang-btn{font-size:9px;padding:1px 5px}
-            .dark-toggle{width:20px;height:20px;font-size:9px}
+            .top-bar .lang-btn{font-size:9px}
             .banner-wrap img{max-height:220px}
-            .menu-toggle{width:48px;height:48px;font-size:20px;top:10px;left:10px}
-            .search-bar-main{padding:6px 10px}
-            .search-bar-main .search-inner{max-width:100%}
-            .search-bar-main input{padding:6px 12px;font-size:12.5px}
-            .search-bar-main button{padding:6px 12px;font-size:12px}
-            .articles-grid,.library-grid,.videos-grid,.weekly-grid,.greats-grid{grid-template-columns:1fr;gap:14px}
-            .section-header h2{font-size:1.2rem}
-            .sidebar{flex-direction:column}
+            .menu-toggle{width:48px;height:48px;font-size:20px}
+            .articles-grid,.library-grid,.weekly-grid,.greats-grid{grid-template-columns:1fr}
             .main-container{padding:15px 12px}
-            .submit-box{padding:18px 20px}
-            .content-card{padding:20px}
             .page-title-bar h1{font-size:1.55rem}
             .page-title-bar{padding:22px 20px}
-            .footer-socials a{width:38px;height:38px;font-size:15px}
             .article-full{padding:20px}
             .article-full h1{font-size:1.55rem}
-            .article-full .article-body{font-size:16px}
-            .news-item{padding:16px 18px}
             .useful-sites-section{padding:18px 20px}
             .useful-sites-grid{grid-template-columns:1fr}
             .great-card .great-img{height:180px;font-size:55px}
@@ -492,13 +449,8 @@
                         <li><a class="dropdown-item" data-lib-cat="thought" data-i18n="libThought">كتب فكرية</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" id="mediaDropdown"><span data-i18n="navMedia">المرئيات والصوتيات</span> <i class="fa-solid fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu" id="mediaDropdownMenu">
-                        <li><a class="dropdown-item" data-view="videos" data-i18n="navVideosOnly">المرئيات</a></li>
-                        <li><a class="dropdown-item" data-view="audios" data-i18n="navAudiosOnly">الصوتيات</a></li>
-                    </ul>
-                </li>
+                <li><a data-view="videos" data-i18n="navVideosOnly">المرئيات</a></li>
+                <li><a data-view="audios" data-i18n="navAudiosOnly">الصوتيات</a></li>
                 <li><a data-view="news" data-i18n="navNews">الأخبار</a></li>
                 <li><a data-view="competitions" data-i18n="navCompetitions">مسابقات</a></li>
                 <li><a data-view="family" data-i18n="navTeam">انضم إلينا</a></li>
@@ -515,7 +467,7 @@
                 <div class="container">
                     <div class="breaking-label"><i class="fa-solid fa-circle"></i> <span data-i18n="breakingLabel">آخر الأخبار</span></div>
                     <div class="breaking-ticker">
-                        <marquee behavior="scroll" direction="right" scrollamount="3" id="breakingTicker">
+                        <marquee behavior="scroll" direction="right" scrollamount="3">
                             <a data-i18n="news1">مرحباً بكم في منصة مشكاة</a>
                             <span>●</span>
                             <a data-i18n="news2">تابعوا جديد المقالات والرؤى</a>
@@ -530,18 +482,14 @@
             <div class="news-grid" id="articles">
                 <div class="content-area">
                     <div class="daily-box" id="dailyBox">
-                        <div class="daily-header">
-                            <span class="daily-type" id="dailyType">آية</span>
-                        </div>
+                        <div class="daily-header"><span class="daily-type" id="dailyType">آية</span></div>
                         <div class="daily-text" id="dailyText">﴿بسم الله الرحمن الرحيم﴾</div>
                         <div class="daily-source" id="dailySource"><i class="fa-solid fa-bookmark"></i> منصة مشكاة</div>
                     </div>
-
                     <div class="filter-notice" id="filterNotice">
                         <div class="filter-text"><i class="fa-solid fa-filter"></i> <span data-i18n="filterLabel">تصفية حسب:</span> <strong id="filterCatName">—</strong></div>
                         <button class="clear-filter" onclick="clearFilter()"><i class="fa-solid fa-times"></i> <span data-i18n="showAll">عرض الكل</span></button>
                     </div>
-
                     <div class="section-header" id="sectionHeader" style="margin-top:15px;margin-bottom:18px"><h2 data-i18n="latestUpdatesTitle">آخر التحديثات</h2></div>
                     <div class="articles-grid" id="articlesGrid"></div>
                     <div id="articlesEmpty" class="text-center py-5" style="display:none;">
@@ -550,14 +498,8 @@
                     </div>
                 </div>
                 <aside class="sidebar">
-                    <div class="sidebar-box">
-                        <div class="box-header"><i class="fa-solid fa-fire"></i> <span data-i18n="mostRead">الأكثر قراءة</span></div>
-                        <div class="box-body" id="mostReadBox"></div>
-                    </div>
-                    <div class="sidebar-box">
-                        <div class="box-header"><i class="fa-solid fa-tags"></i> <span data-i18n="categoriesLabel">التصنيفات</span></div>
-                        <div class="box-body" id="sidebarCatsBox"></div>
-                    </div>
+                    <div class="sidebar-box"><div class="box-header"><i class="fa-solid fa-fire"></i> <span data-i18n="mostRead">الأكثر قراءة</span></div><div class="box-body" id="mostReadBox"></div></div>
+                    <div class="sidebar-box"><div class="box-header"><i class="fa-solid fa-tags"></i> <span data-i18n="categoriesLabel">التصنيفات</span></div><div class="box-body" id="sidebarCatsBox"></div></div>
                 </aside>
             </div>
         </div>
@@ -565,7 +507,7 @@
         <div class="page-view" id="view-greats">
             <div class="page-title-bar"><h1><i class="fa-solid fa-star"></i> <span data-i18n="pageGreats">عظماؤنا</span></h1><p data-i18n="pageGreatsDesc">شخصيات خالدة أثرت في التاريخ</p></div>
             <div class="category-tabs" id="greatsCategories">
-                <button class="cat-btn active" data-greats-cat="all" data-i18n="catAll">الكل</button>
+                <button class="cat-btn active" data-greats-cat="all">الكل</button>
                 <button class="cat-btn" data-greats-cat="علماء">علماء</button>
                 <button class="cat-btn" data-greats-cat="فلاسفة">فلاسفة</button>
                 <button class="cat-btn" data-greats-cat="شعراء">شعراء</button>
@@ -580,7 +522,7 @@
         <div class="page-view" id="view-fiqh">
             <div class="page-title-bar"><h1><i class="fa-solid fa-scale-balanced"></i> <span data-i18n="pageFiqh">مسائل فقهية</span></h1><p data-i18n="pageFiqhDesc">أسئلة وأجوبة فقهية</p></div>
             <div class="fiqh-category-tabs" id="fiqhCategories">
-                <button class="cat-btn active" data-fiqh-cat="all" data-i18n="catAll">الكل</button>
+                <button class="cat-btn active" data-fiqh-cat="all">الكل</button>
                 <button class="cat-btn" data-fiqh-cat="حول الطهارة">حول الطهارة</button>
                 <button class="cat-btn" data-fiqh-cat="حول الصلاة">حول الصلاة</button>
                 <button class="cat-btn" data-fiqh-cat="حول الصيام">حول الصيام</button>
@@ -624,9 +566,16 @@
 
         <div class="page-view" id="view-videos">
             <div class="page-title-bar"><h1><i class="fa-solid fa-video"></i> <span data-i18n="pageVideos">المرئيات</span></h1><p data-i18n="pageVideosDesc">مقاطع فيديو</p></div>
-            <div class="category-tabs" id="videoSeriesTabs"></div>
-            <div class="videos-grid" id="videosList"></div>
-            <div class="library-empty hidden-section" id="videosEmpty"><i class="fa-solid fa-video"></i><h3 data-i18n="noVideos">لا توجد مقاطع مرئية حالياً</h3></div>
+            <div class="videos-layout">
+                <div class="videos-main-content">
+                    <div class="videos-list" id="videosList"></div>
+                    <div class="library-empty hidden-section" id="videosEmpty"><i class="fa-solid fa-video"></i><h3 data-i18n="noVideos">لا توجد مقاطع مرئية حالياً</h3></div>
+                </div>
+                <aside class="series-sidebar">
+                    <div class="series-header"><i class="fa-solid fa-layer-group"></i> <span data-i18n="seriesHeader">سلاسل</span></div>
+                    <div id="seriesList"></div>
+                </aside>
+            </div>
         </div>
 
         <div class="page-view" id="view-news">
@@ -709,15 +658,6 @@
             <div class="content-card"><h2><i class="fa-solid fa-lightbulb"></i> <span data-i18n="aboutIntro">التعريف</span></h2><p data-i18n="aboutIntroText">مشكاة منصة إلكترونية ثقافية توعوية.</p></div>
             <div class="content-card"><h2><i class="fa-solid fa-eye"></i> <span data-i18n="aboutVision">الرؤية</span></h2><p data-i18n="aboutVisionText">أن تكون مشكاة منارة رقمية موثوقة.</p></div>
             <div class="content-card"><h2><i class="fa-solid fa-bullhorn"></i> <span data-i18n="aboutMission">الرسالة</span></h2><p data-i18n="aboutMissionText">تقديم محتوى فكري وثقافي رصين.</p></div>
-            <div class="content-card"><h2><i class="fa-solid fa-star"></i> <span data-i18n="aboutFeatures">ما يميز مشكاة</span></h2>
-                <ul>
-                    <li data-i18n="feat1">محتوى منتقى.</li>
-                    <li data-i18n="feat2">هوية بصرية أنيقة.</li>
-                    <li data-i18n="feat3">إدارة سهلة.</li>
-                    <li data-i18n="feat4">دعم متعدد اللغات.</li>
-                    <li data-i18n="feat5">مجانية بالكامل.</li>
-                </ul>
-            </div>
         </div>
 
         <div class="page-view" id="view-contact">
@@ -727,20 +667,6 @@
                 <div class="contact-grid">
                     <div class="contact-tile"><i class="fa-regular fa-envelope"></i><h4 data-i18n="contactEmailLabel">البريد الإلكتروني</h4><p class="email-display">mishkat.alnuwr@gmail.com</p></div>
                     <div class="contact-tile"><i class="fa-solid fa-phone"></i><h4 data-i18n="contactPhoneLabel">الهاتف</h4><p data-i18n="comingSoon">سيتم الإعلان قريباً</p></div>
-                </div>
-            </div>
-            <div class="content-card">
-                <h2><i class="fa-regular fa-paper-plane"></i> <span data-i18n="contactSendTitle">أرسل رسالة</span></h2>
-                <div class="submit-box" style="margin-top:0;">
-                    <form onsubmit="event.preventDefault(); alert(translations[currentLang].messageAlert); this.reset();">
-                        <div class="row g-3">
-                            <div class="col-md-6"><label data-i18n="formNameOnly">الاسم</label><input type="text" required></div>
-                            <div class="col-md-6"><label data-i18n="formEmail">البريد الإلكتروني</label><input type="email" required></div>
-                            <div class="col-12"><label data-i18n="formSubject">الموضوع</label><input type="text" required></div>
-                            <div class="col-12"><label data-i18n="formMessage">الرسالة</label><textarea rows="4" required></textarea></div>
-                            <div class="col-12 text-start"><button type="submit" class="btn-submit"><i class="fa-regular fa-paper-plane"></i> <span data-i18n="formSend">إرسال</span></button></div>
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>
@@ -817,27 +743,19 @@
             { file: 'articles-rights.json', catKey: 'rights' }
         ];
 
-        const libraryCatNames = {
-            quran: 'كتب حول القرآن',
-            aqeedah: 'كتب عقائدية',
-            fiqh: 'كتب فقهية',
-            ethics: 'كتب أخلاقية',
-            social: 'كتب اجتماعية',
-            thought: 'كتب فكرية'
-        };
+        const libraryCatNames = { quran:'كتب حول القرآن', aqeedah:'كتب عقائدية', fiqh:'كتب فقهية', ethics:'كتب أخلاقية', social:'كتب اجتماعية', thought:'كتب فكرية' };
 
         function sortNewestFirst(items) { return items.slice(); }
 
         const translations = {
             ar: {
-                title: 'منصة مشكاة | للنور والوعي', brandName: 'مِشْكَاة',
-                langNote: 'ستتوفر ميزة ترجمة المقال قريباً',
+                title:'منصة مشكاة | للنور والوعي', brandName:'مِشْكَاة',
+                langNote:'ستتوفر ميزة ترجمة المقال قريباً',
                 navHome:'الرئيسية',navLibrary:'المكتبة',navAbout:'عن المنصة',navNews:'الأخبار',navCompetitions:'مسابقات',
-                navVideos:'المرئيات',navAudios:'الصوتيات',navMedia:'المرئيات والصوتيات',navVideosOnly:'المرئيات',navAudiosOnly:'الصوتيات',
+                navVideosOnly:'المرئيات',navAudiosOnly:'الصوتيات',
                 navFiqh:'مسائل فقهية',navWeekly:'نور الأسبوع',navGreats:'عظماؤنا',
                 navTeam:'انضم إلينا',navContact:'تواصل معنا',
-                catAll:'الكل',catAhlulbayt:'أهل البيت (عليهم السلام)',catInsights:'رؤى وأفكار',
-                catDoubts:'شبهات وردود',catDialogues:'حوارات ومقابلات',
+                catAll:'الكل',catAhlulbayt:'أهل البيت (عليهم السلام)',catInsights:'رؤى وأفكار',catDoubts:'شبهات وردود',catDialogues:'حوارات ومقابلات',
                 catFamily:'الأسرة والمجتمع',catGeneral:'مقالات عامة',catRights:'حقوق',
                 libQuran:'كتب حول القرآن',libAqeedah:'كتب عقائدية',libFiqh:'كتب فقهية',libEthics:'كتب أخلاقية',libSocial:'كتب اجتماعية',libThought:'كتب فكرية',
                 searchBtn:'بحث',breakingLabel:'آخر الأخبار',
@@ -851,58 +769,45 @@
                 readMoreBtn:'أكمل القراءة',readMoreViaLink:'أكمل القراءة عبر الرابط',
                 searchResultsTitle:'نتائج البحث',searchResultsFor:'نتائج البحث عن:',noSearchResults:'لا توجد نتائج مطابقة',
                 pageLibrary:'المكتبة',pageLibraryDesc:'كتب وملفات',noBooks:'لا توجد كتب في هذا التصنيف حالياً',
-                downloadBtn:'تحميل',shareBtn:'مشاركة',
-                downloadTitle:'اختر صيغة التحميل',bookLinkCopied:'✅ تم نسخ الرابط!',bookNotFound:'هذا الملف غير متوفر حالياً',
+                downloadBtn:'تحميل',shareBtn:'مشاركة',downloadTitle:'اختر صيغة التحميل',bookLinkCopied:'✅ تم نسخ الرابط!',bookNotFound:'هذا الملف غير متوفر حالياً',
                 pageAudios:'الصوتيات',pageAudiosDesc:'مقاطع صوتية',noAudios:'لا توجد مقاطع صوتية حالياً',
                 pageVideos:'المرئيات',pageVideosDesc:'مقاطع فيديو',noVideos:'لا توجد مقاطع مرئية حالياً',
                 audioDownload:'تحميل',audioShare:'مشاركة',audioLinkCopied:'✅ تم نسخ الرابط!',
                 pageNews:'الأخبار',pageNewsDesc:'آخر الأخبار',noNews:'لا توجد أخبار حالياً',
                 newsTypeText:'نصي',newsTypeVideo:'فيديو',readMore:'اقرأ المزيد',
-                newsTabAll:'جميع الأخبار',newsTabUrgent:'عاجل',newsTabNormal:'عادي',
-                urgentBadge:'عاجل',
+                newsTabAll:'جميع الأخبار',newsTabUrgent:'عاجل',newsTabNormal:'عادي',urgentBadge:'عاجل',
                 pageCompetitions:'مسابقات',pageCompetitionsDesc:'مسابقات ثقافية',competitionsSoon:'يجري الترتيب',competitionsSoonDesc:'سيتم الإعلان قريباً',
                 pageFiqh:'مسائل فقهية',pageFiqhDesc:'أسئلة وأجوبة فقهية',
                 askQuestionTitle:'أرسل سؤالك الفقهي',askQuestionDesc:'هل لديك سؤال فقهي؟ أرسله إلينا وسنجيب عليه في أقرب وقت بإذن الله.',
-                fiqhQuestionLabel:'السؤال',fiqhSendBtn:'إرسال السؤال',
-                fiqhSuccess:'✅ تم إرسال سؤالك، سنقوم بالرد عليه قريبًا',
-                fiqhFail:'❌ فشل الإرسال، حاول مرة أخرى',
-                fiqhQaTitle:'الأسئلة والأجوبة',noFiqhQa:'لا توجد أسئلة وأجوبة حالياً',
-                qaCopyBtn:'نسخ',qaShareBtn:'مشاركة',
+                fiqhQuestionLabel:'السؤال',fiqhSendBtn:'إرسال السؤال',fiqhSuccess:'✅ تم إرسال سؤالك، سنقوم بالرد عليه قريبًا',fiqhFail:'❌ فشل الإرسال، حاول مرة أخرى',
+                fiqhQaTitle:'الأسئلة والأجوبة',noFiqhQa:'لا توجد أسئلة وأجوبة حالياً',qaCopyBtn:'نسخ',qaShareBtn:'مشاركة',
                 pageWeekly:'نور الأسبوع',pageWeeklyDesc:'أدعية وزيارات مكتوبة',noWeekly:'لا يوجد محتوى حالياً',
                 weeklyCopyBtn:'نسخ',weeklyShareBtn:'مشاركة',
                 pageGreats:'عظماؤنا',pageGreatsDesc:'شخصيات خالدة أثرت في التاريخ',noGreats:'لا توجد شخصيات حالياً',
-                readBio:'اقرأ السيرة',
                 pageFamily:'انضم إلينا',pageFamilyDesc:'فرصة للانضمام إلى فريق مشكاة',
                 joinTeamTitle:'انضم إلى فريقنا',joinTeamText:'هل ترغب بالمساهمة في نشر الوعي والمعرفة؟ نرحّب بكتّاب ومترجمين ومتطوعين للانضمام إلى فريق مشكاة.',joinTeamBtn:'أرسل طلبك',
                 pageAbout:'عن المنصة',pageAboutDesc:'تعرّف على منصة مشكاة',
                 aboutIntro:'التعريف',aboutIntroText:'مشكاة منصة إلكترونية ثقافية توعوية.',
                 aboutVision:'الرؤية',aboutVisionText:'أن تكون مشكاة منارة رقمية موثوقة.',
                 aboutMission:'الرسالة',aboutMissionText:'تقديم محتوى فكري وثقافي رصين.',
-                aboutFeatures:'ما يميز مشكاة',feat1:'محتوى منتقى.',feat2:'هوية بصرية أنيقة.',feat3:'إدارة سهلة.',feat4:'دعم متعدد اللغات.',feat5:'مجانية بالكامل.',
                 pageContact:'تواصل معنا',pageContactDesc:'نحن هنا',contactInfo:'معلومات التواصل',contactEmailLabel:'البريد الإلكتروني',contactPhoneLabel:'الهاتف',
-                contactSendTitle:'أرسل رسالة',formNameOnly:'الاسم',formEmail:'البريد الإلكتروني',formSubject:'الموضوع',formMessage:'الرسالة',formSend:'إرسال',
                 comingSoon:'سيتم الإعلان قريباً',footerRights:'جميع الحقوق محفوظة © 2026 منصة مشكاة | للنور والوعي',
                 am:'ص',pm:'م',messageAlert:'تم استلام رسالتك!',
-                usefulSitesTitle:'مواقع مفيدة',seriesLabel:'السلسلة:',allSeries:'كل السلاسل'
+                usefulSitesTitle:'مواقع مفيدة',seriesHeader:'سلاسل',allSeries:'كل المرئيات'
             },
             en: {
-                title:'Mishkat Platform',brandName:'MISHKAT',
-                langNote:'Translation coming soon',
+                title:'Mishkat Platform',brandName:'MISHKAT',langNote:'Translation coming soon',
                 navHome:'Home',navLibrary:'Library',navAbout:'About',navNews:'News',navCompetitions:'Competitions',
-                navVideos:'Videos',navAudios:'Audios',navMedia:'Videos & Audios',navVideosOnly:'Videos',navAudiosOnly:'Audios',
+                navVideosOnly:'Videos',navAudiosOnly:'Audios',
                 navFiqh:'Fiqh Issues',navWeekly:'Weekly Light',navGreats:'Our Greats',
                 navTeam:'Join Us',navContact:'Contact Us',
-                catAll:'All',catAhlulbayt:'Ahl al-Bayt',catInsights:'Insights',catDoubts:'Doubts & Responses',
-                catDialogues:'Dialogues',catFamily:'Family & Society',catGeneral:'General Articles',catRights:'Rights',
+                catAll:'All',catAhlulbayt:'Ahl al-Bayt',catInsights:'Insights',catDoubts:'Doubts',catDialogues:'Dialogues',catFamily:'Family',catGeneral:'General',catRights:'Rights',
                 libQuran:'Quran Books',libAqeedah:'Aqeedah',libFiqh:'Fiqh',libEthics:'Ethics',libSocial:'Social',libThought:'Thought',
-                searchBtn:'Search',breakingLabel:'Latest News',
-                news1:'Welcome',news2:'Follow new articles',news3:'Intellectual platform',news4:'For Light',
-                articlesTitle:'Articles & Insights',latestUpdatesTitle:'Latest Updates',noArticles:'No articles in this category',
-                filterLabel:'Filter by:',showAll:'Show All',
-                mostRead:'Most Read',categoriesLabel:'Categories',
+                searchBtn:'Search',breakingLabel:'Latest News',news1:'Welcome',news2:'Follow new articles',news3:'Intellectual',news4:'For Light',
+                articlesTitle:'Articles',latestUpdatesTitle:'Latest Updates',noArticles:'No articles',
+                filterLabel:'Filter:',showAll:'Show All',mostRead:'Most Read',categoriesLabel:'Categories',
                 backToArticles:'Back',shareTitle:'Share',commentsTitle:'Comments',
-                copySuccess:'✅ Link copied!',copyFail:'❌ Failed',
-                shareNative:'Share',copyLinkBtn:'Copy Link',
+                copySuccess:'✅ Copied!',copyFail:'❌ Failed',shareNative:'Share',copyLinkBtn:'Copy Link',
                 readMoreBtn:'Read More',readMoreViaLink:'Read more via link',
                 searchResultsTitle:'Search Results',searchResultsFor:'Results for:',noSearchResults:'No results',
                 pageLibrary:'Library',pageLibraryDesc:'Books',noBooks:'No books',
@@ -912,163 +817,96 @@
                 audioDownload:'Download',audioShare:'Share',audioLinkCopied:'✅ Copied!',
                 pageNews:'News',pageNewsDesc:'Latest',noNews:'No news',
                 newsTypeText:'Text',newsTypeVideo:'Video',readMore:'Read more',
-                newsTabAll:'All News',newsTabUrgent:'Urgent',newsTabNormal:'Normal',
-                urgentBadge:'Urgent',
+                newsTabAll:'All News',newsTabUrgent:'Urgent',newsTabNormal:'Normal',urgentBadge:'Urgent',
                 pageCompetitions:'Competitions',pageCompetitionsDesc:'Competitions',competitionsSoon:'Coming Soon',competitionsSoonDesc:'Soon',
-                pageFiqh:'Fiqh Issues',pageFiqhDesc:'Q&A on Fiqh',
-                askQuestionTitle:'Ask Your Question',askQuestionDesc:'Have a fiqh question?',
-                fiqhQuestionLabel:'Question',fiqhSendBtn:'Send Question',
-                fiqhSuccess:'✅ Sent!',fiqhFail:'❌ Failed',
-                fiqhQaTitle:'Questions & Answers',noFiqhQa:'No Q&A yet',
-                qaCopyBtn:'Copy',qaShareBtn:'Share',
-                pageWeekly:'Weekly Light',pageWeeklyDesc:'Duas & Ziyarat',noWeekly:'No content',
-                weeklyCopyBtn:'Copy',weeklyShareBtn:'Share',
-                pageGreats:'Our Greats',pageGreatsDesc:'Immortal figures',noGreats:'No figures yet',
-                readBio:'Read Biography',
-                pageFamily:'Join Us',pageFamilyDesc:'Opportunity to join',
-                joinTeamTitle:'Join Our Team',joinTeamText:'We welcome writers, translators, and volunteers.',joinTeamBtn:'Send Request',
-                pageAbout:'About',pageAboutDesc:'Learn about Mishkat',
-                aboutIntro:'Introduction',aboutIntroText:'Mishkat is a cultural platform.',
-                aboutVision:'Vision',aboutVisionText:'Trusted digital beacon.',
-                aboutMission:'Mission',aboutMissionText:'Solid intellectual content.',
-                aboutFeatures:'Features',feat1:'Selected.',feat2:'Elegant.',feat3:'Easy.',feat4:'Multi-language.',feat5:'Free.',
-                pageContact:'Contact',pageContactDesc:'Contact us',contactInfo:'Contact Info',contactEmailLabel:'Email',contactPhoneLabel:'Phone',
-                contactSendTitle:'Send Message',formNameOnly:'Name',formEmail:'Email',formSubject:'Subject',formMessage:'Message',formSend:'Send',
-                comingSoon:'Soon',footerRights:'© 2026 Mishkat',
-                am:'AM',pm:'PM',messageAlert:'Received!',
-                usefulSitesTitle:'Useful Sites',seriesLabel:'Series:',allSeries:'All Series'
+                pageFiqh:'Fiqh',pageFiqhDesc:'Q&A',askQuestionTitle:'Ask',askQuestionDesc:'Have a question?',
+                fiqhQuestionLabel:'Question',fiqhSendBtn:'Send',fiqhSuccess:'✅ Sent!',fiqhFail:'❌ Failed',
+                fiqhQaTitle:'Q & A',noFiqhQa:'No Q&A yet',qaCopyBtn:'Copy',qaShareBtn:'Share',
+                pageWeekly:'Weekly Light',pageWeeklyDesc:'Duas',noWeekly:'No content',weeklyCopyBtn:'Copy',weeklyShareBtn:'Share',
+                pageGreats:'Our Greats',pageGreatsDesc:'Immortal figures',noGreats:'No figures',
+                pageFamily:'Join Us',pageFamilyDesc:'Opportunity',joinTeamTitle:'Join Our Team',joinTeamText:'We welcome volunteers.',joinTeamBtn:'Send Request',
+                pageAbout:'About',pageAboutDesc:'Learn about Mishkat',aboutIntro:'Intro',aboutIntroText:'Mishkat is a cultural platform.',
+                aboutVision:'Vision',aboutVisionText:'Trusted beacon.',aboutMission:'Mission',aboutMissionText:'Solid content.',
+                pageContact:'Contact',pageContactDesc:'Contact us',contactInfo:'Info',contactEmailLabel:'Email',contactPhoneLabel:'Phone',
+                comingSoon:'Soon',footerRights:'© 2026 Mishkat',am:'AM',pm:'PM',messageAlert:'Received!',
+                usefulSitesTitle:'Useful Sites',seriesHeader:'Series',allSeries:'All Videos'
             },
             fa: {
-                title:'پلتفرم مشکاه',brandName:'مشکاه',
-                langNote:'قابلیت ترجمه به‌زودی',
+                title:'پلتفرم مشکاه',brandName:'مشکاه',langNote:'ترجمه به‌زودی',
                 navHome:'خانه',navLibrary:'کتابخانه',navAbout:'درباره',navNews:'اخبار',navCompetitions:'مسابقات',
-                navVideos:'ویدیو',navAudios:'صوتی',navMedia:'ویدیو و صوتی',navVideosOnly:'ویدیو',navAudiosOnly:'صوتی',
+                navVideosOnly:'ویدیو',navAudiosOnly:'صوتی',
                 navFiqh:'مسائل فقهی',navWeekly:'نور هفته',navGreats:'بزرگان ما',
                 navTeam:'به ما بپیوندید',navContact:'تماس',
-                catAll:'همه',catAhlulbayt:'اهل بیت',catInsights:'رؤیاها',catDoubts:'شبهات',catDialogues:'گفتگوها',
-                catFamily:'خانواده و جامعه',catGeneral:'مقالات عمومی',catRights:'حقوق',
-                libQuran:'کتب قرآن',libAqeedah:'عقائد',libFiqh:'فقه',libEthics:'اخلاق',libSocial:'اجتماعی',libThought:'فکری',
-                searchBtn:'جستجو',breakingLabel:'آخرین اخبار',
-                news1:'خوش آمدید',news2:'مقالات جدید',news3:'پلتفرم فکری',news4:'برای نور',
-                articlesTitle:'مقالات و دیدگاه‌ها',latestUpdatesTitle:'آخرین به‌روزرسانی‌ها',noArticles:'مقاله‌ای نیست',
-                filterLabel:'فیلتر:',showAll:'نمایش همه',
-                mostRead:'پربازدید',categoriesLabel:'دسته‌بندی',
+                catAll:'همه',catAhlulbayt:'اهل بیت',catInsights:'رؤیاها',catDoubts:'شبهات',catDialogues:'گفتگوها',catFamily:'خانواده',catGeneral:'عمومی',catRights:'حقوق',
+                libQuran:'قرآن',libAqeedah:'عقائد',libFiqh:'فقه',libEthics:'اخلاق',libSocial:'اجتماعی',libThought:'فکری',
+                searchBtn:'جستجو',breakingLabel:'آخرین اخبار',news1:'خوش آمدید',news2:'مقالات جدید',news3:'پلتفرم فکری',news4:'نور',
+                articlesTitle:'مقالات',latestUpdatesTitle:'آخرین',noArticles:'نیست',
+                filterLabel:'فیلتر:',showAll:'همه',mostRead:'پربازدید',categoriesLabel:'دسته‌بندی',
                 backToArticles:'بازگشت',shareTitle:'اشتراک',commentsTitle:'نظرات',
-                copySuccess:'✅ کپی شد!',copyFail:'❌ نشد',
-                shareNative:'اشتراک',copyLinkBtn:'کپی لینک',
-                readMoreBtn:'ادامه مطلب',readMoreViaLink:'ادامه مطلب از طریق لینک',
-                searchResultsTitle:'نتایج',searchResultsFor:'نتایج برای:',noSearchResults:'نتیجه‌ای نیست',
-                pageLibrary:'کتابخانه',pageLibraryDesc:'کتاب‌ها',noBooks:'کتابی نیست',
-                downloadBtn:'دانلود',shareBtn:'اشتراک',downloadTitle:'انتخاب فرمت',bookLinkCopied:'✅ کپی شد!',bookNotFound:'موجود نیست',
-                pageAudios:'صوتی',pageAudiosDesc:'دروس',noAudios:'فایلی نیست',
-                pageVideos:'ویدیو',pageVideosDesc:'ویدیوها',noVideos:'ویدیویی نیست',
-                audioDownload:'دانلود',audioShare:'اشتراک',audioLinkCopied:'✅ کپی شد!',
-                pageNews:'اخبار',pageNewsDesc:'آخرین',noNews:'خبری نیست',
+                copySuccess:'✅ کپی شد!',copyFail:'❌ نشد',shareNative:'اشتراک',copyLinkBtn:'کپی لینک',
+                readMoreBtn:'ادامه',readMoreViaLink:'ادامه',
+                searchResultsTitle:'نتایج',searchResultsFor:'نتایج برای:',noSearchResults:'نیست',
+                pageLibrary:'کتابخانه',pageLibraryDesc:'کتاب‌ها',noBooks:'نیست',
+                downloadBtn:'دانلود',shareBtn:'اشتراک',downloadTitle:'فرمت',bookLinkCopied:'✅',bookNotFound:'نیست',
+                pageAudios:'صوتی',pageAudiosDesc:'دروس',noAudios:'نیست',
+                pageVideos:'ویدیو',pageVideosDesc:'ویدیوها',noVideos:'نیست',
+                audioDownload:'دانلود',audioShare:'اشتراک',audioLinkCopied:'✅',
+                pageNews:'اخبار',pageNewsDesc:'آخرین',noNews:'نیست',
                 newsTypeText:'متنی',newsTypeVideo:'ویدیو',readMore:'ادامه',
-                newsTabAll:'همه اخبار',newsTabUrgent:'فوری',newsTabNormal:'عادی',
-                urgentBadge:'فوری',
-                pageCompetitions:'مسابقات',pageCompetitionsDesc:'مسابقات',competitionsSoon:'به‌زودی',competitionsSoonDesc:'اعلام می‌شود',
-                pageFiqh:'مسائل فقهی',pageFiqhDesc:'پرسش و پاسخ فقهی',
-                askQuestionTitle:'سؤال خود را بفرستید',askQuestionDesc:'سؤال فقهی دارید؟',
-                fiqhQuestionLabel:'سؤال',fiqhSendBtn:'ارسال سؤال',
-                fiqhSuccess:'✅ ارسال شد!',fiqhFail:'❌ ارسال نشد',
-                fiqhQaTitle:'سؤالات و پاسخ‌ها',noFiqhQa:'هنوز پرسشی نیست',
-                qaCopyBtn:'کپی',qaShareBtn:'اشتراک',
-                pageWeekly:'نور هفته',pageWeeklyDesc:'دعاها و زیارات',noWeekly:'محتوایی نیست',
-                weeklyCopyBtn:'کپی',weeklyShareBtn:'اشتراک',
-                pageGreats:'بزرگان ما',pageGreatsDesc:'شخصیت‌های جاودان',noGreats:'شخصیتی نیست',
-                readBio:'بیوگرافی',
-                pageFamily:'به ما بپیوندید',pageFamilyDesc:'فرصتی برای پیوستن',
-                joinTeamTitle:'به تیم ما بپیوندید',joinTeamText:'از نویسندگان و مترجمان استقبال می‌کنیم.',joinTeamBtn:'ارسال درخواست',
-                pageAbout:'درباره',pageAboutDesc:'با پلتفرم آشنا شوید',
-                aboutIntro:'معرفی',aboutIntroText:'مشکاه یک پلتفرم فرهنگی است.',
-                aboutVision:'چشم‌انداز',aboutVisionText:'مناره دیجیتال.',
-                aboutMission:'رسالت',aboutMissionText:'محتوای استوار.',
-                aboutFeatures:'ویژگی‌ها',feat1:'گزیده.',feat2:'شیک.',feat3:'آسان.',feat4:'چندزبانه.',feat5:'رایگان.',
+                newsTabAll:'همه',newsTabUrgent:'فوری',newsTabNormal:'عادی',urgentBadge:'فوری',
+                pageCompetitions:'مسابقات',pageCompetitionsDesc:'مسابقات',competitionsSoon:'به‌زودی',competitionsSoonDesc:'بزودی',
+                pageFiqh:'فقهی',pageFiqhDesc:'پرسش و پاسخ',askQuestionTitle:'سؤال',askQuestionDesc:'سؤال دارید؟',
+                fiqhQuestionLabel:'سؤال',fiqhSendBtn:'ارسال',fiqhSuccess:'✅!',fiqhFail:'❌',
+                fiqhQaTitle:'سؤالات',noFiqhQa:'نیست',qaCopyBtn:'کپی',qaShareBtn:'اشتراک',
+                pageWeekly:'نور هفته',pageWeeklyDesc:'دعاها',noWeekly:'نیست',weeklyCopyBtn:'کپی',weeklyShareBtn:'اشتراک',
+                pageGreats:'بزرگان',pageGreatsDesc:'شخصیت‌ها',noGreats:'نیست',
+                pageFamily:'بپیوندید',pageFamilyDesc:'فرصت',joinTeamTitle:'به تیم ما',joinTeamText:'استقبال می‌کنیم.',joinTeamBtn:'ارسال',
+                pageAbout:'درباره',pageAboutDesc:'آشنا شوید',aboutIntro:'معرفی',aboutIntroText:'پلتفرم فرهنگی.',
+                aboutVision:'چشم‌انداز',aboutVisionText:'مناره.',aboutMission:'رسالت',aboutMissionText:'محتوای استوار.',
                 pageContact:'تماس',pageContactDesc:'اینجاییم',contactInfo:'تماس',contactEmailLabel:'ایمیل',contactPhoneLabel:'تلفن',
-                contactSendTitle:'ارسال پیام',formNameOnly:'نام',formEmail:'ایمیل',formSubject:'موضوع',formMessage:'پیام',formSend:'ارسال',
-                comingSoon:'به‌زودی',footerRights:'© ۲۰۲۶ مشکاه',
-                am:'ق.ظ',pm:'ب.ظ',messageAlert:'دریافت شد!',
-                usefulSitesTitle:'سایت‌های مفید',seriesLabel:'سری:',allSeries:'همه سری‌ها'
+                comingSoon:'بزودی',footerRights:'© ۲۰۲۶',am:'ق.ظ',pm:'ب.ظ',messageAlert:'دریافت شد!',
+                usefulSitesTitle:'سایت‌های مفید',seriesHeader:'سری‌ها',allSeries:'همه ویدیوها'
             }
         };
 
         let currentLang = 'ar';
 
-        async function loadDailyFromJSON() {
-            try { const r = await fetch('daily.json?t=' + Date.now()); if (!r.ok) return; mishkatDaily = await r.json(); } catch(e) {}
-        }
-        async function loadFiqhQAFromJSON() {
-            try { const r = await fetch('fiqh-qa.json?t=' + Date.now()); if (!r.ok) return; const d = await r.json(); mishkatFiqhQA = d.items || []; } catch(e) {}
-        }
+        async function loadDailyFromJSON() { try { const r = await fetch('daily.json?t=' + Date.now()); if (!r.ok) return; mishkatDaily = await r.json(); } catch(e) {} }
+        async function loadFiqhQAFromJSON() { try { const r = await fetch('fiqh-qa.json?t=' + Date.now()); if (!r.ok) return; const d = await r.json(); mishkatFiqhQA = d.items || []; } catch(e) {} }
         async function loadFiqhFromAPI() {
             try {
                 const r = await fetch('/api/fiqh?t=' + Date.now());
                 if (!r.ok) return;
                 const data = await r.json();
                 if (data.success && Array.isArray(data.questions) && data.questions.length > 0) {
-                    const apiItems = data.questions.map(q => ({
-                        question: q.question, answer: q.answer || '', category: q.category || '',
-                        date: (q.answered_at || q.created_at || '').split(' ')[0], name: q.name || ''
-                    }));
+                    const apiItems = data.questions.map(q => ({ question:q.question, answer:q.answer||'', category:q.category||'', date:(q.answered_at||q.created_at||'').split(' ')[0], name:q.name||'' }));
                     mishkatFiqhQA = apiItems.concat(mishkatFiqhQA);
                 }
             } catch(e) {}
         }
-        async function loadWeeklyFromJSON() {
-            try { const r = await fetch('weekly.json?t=' + Date.now()); if (!r.ok) return; const d = await r.json(); mishkatWeekly = d.items || []; } catch(e) {}
-        }
-        async function loadGreatsFromJSON() {
-            try { const r = await fetch('greats.json?t=' + Date.now()); if (!r.ok) return; const d = await r.json(); mishkatGreats = d.items || []; } catch(e) {}
-        }
-        async function loadUsefulSitesFromJSON() {
-            try { const r = await fetch('useful-sites.json?t=' + Date.now()); if (!r.ok) return; const d = await r.json(); mishkatUsefulSites = d.items || []; } catch(e) {}
-        }
+        async function loadWeeklyFromJSON() { try { const r = await fetch('weekly.json?t=' + Date.now()); if (!r.ok) return; const d = await r.json(); mishkatWeekly = d.items || []; } catch(e) {} }
+        async function loadGreatsFromJSON() { try { const r = await fetch('greats.json?t=' + Date.now()); if (!r.ok) return; const d = await r.json(); mishkatGreats = d.items || []; } catch(e) {} }
+        async function loadUsefulSitesFromJSON() { try { const r = await fetch('useful-sites.json?t=' + Date.now()); if (!r.ok) return; const d = await r.json(); mishkatUsefulSites = d.items || []; } catch(e) {} }
         async function loadArticlesFromJSON() {
             let allItems = [];
             for (const { file, catKey } of ARTICLE_FILES) {
-                try {
-                    const r = await fetch(file + '?t=' + Date.now());
-                    if (!r.ok) continue;
-                    const data = await r.json();
-                    const items = (data.items || []).map(item => ({ ...item, _catKey: catKey }));
-                    allItems = allItems.concat(items);
-                } catch(e) {}
+                try { const r = await fetch(file + '?t=' + Date.now()); if (!r.ok) continue; const data = await r.json(); const items = (data.items||[]).map(item => ({ ...item, _catKey: catKey })); allItems = allItems.concat(items); } catch(e) {}
             }
-            allItems = sortNewestFirst(allItems);
-            const articlesAr = allItems.map(item => ({
-                catKey: item._catKey, title: item.title_ar || '', author: item.author_ar || '',
-                date: item.date || '', excerpt: item.excerpt_ar || '', image: item.image || '',
-                body: item.body_ar || '', category: item._catKey
-            }));
+            const articlesAr = allItems.map(item => ({ catKey:item._catKey, title:item.title_ar||'', author:item.author_ar||'', date:item.date||'', excerpt:item.excerpt_ar||'', image:item.image||'', body:item.body_ar||'', category:item._catKey }));
             mishkatArticles.ar = articlesAr; mishkatArticles.en = articlesAr; mishkatArticles.fa = articlesAr;
         }
         async function loadBooksFromJSON() {
-            try {
-                const r = await fetch('books.json?t=' + Date.now()); if (!r.ok) return;
-                const data = await r.json(); let items = data.items || [];
-                const booksAr = items.map(item => ({title:item.title||'',author:item.author||'',date:item.date||'',description:item.description||'',cover:item.cover||'',pdf_url:item.pdf_url||'',word_url:item.word_url||'',category:item.category||''}));
-                mishkatBooks.ar = booksAr; mishkatBooks.en = booksAr; mishkatBooks.fa = booksAr;
-            } catch(e) {}
+            try { const r = await fetch('books.json?t=' + Date.now()); if (!r.ok) return; const data = await r.json(); let items = data.items || []; const booksAr = items.map(item => ({title:item.title||'',author:item.author||'',date:item.date||'',description:item.description||'',cover:item.cover||'',pdf_url:item.pdf_url||'',word_url:item.word_url||'',category:item.category||''})); mishkatBooks.ar = booksAr; mishkatBooks.en = booksAr; mishkatBooks.fa = booksAr; } catch(e) {}
         }
-        async function loadAudiosFromJSON() {
-            try { const r = await fetch('audios.json?t=' + Date.now()); if (!r.ok) return; const data = await r.json(); mishkatAudios = data.items || []; } catch(e) {}
-        }
-        async function loadVideosFromJSON() {
-            try { const r = await fetch('videos.json?t=' + Date.now()); if (!r.ok) return; const data = await r.json(); mishkatVideos = data.items || []; } catch(e) {}
-        }
-        async function loadNewsFromJSON() {
-            try { const r = await fetch('news.json?t=' + Date.now()); if (!r.ok) return; const data = await r.json(); mishkatNews = data.items || []; } catch(e) {}
-        }
+        async function loadAudiosFromJSON() { try { const r = await fetch('audios.json?t=' + Date.now()); if (!r.ok) return; const data = await r.json(); mishkatAudios = data.items || []; } catch(e) {} }
+        async function loadVideosFromJSON() { try { const r = await fetch('videos.json?t=' + Date.now()); if (!r.ok) return; const data = await r.json(); mishkatVideos = data.items || []; } catch(e) {} }
+        async function loadNewsFromJSON() { try { const r = await fetch('news.json?t=' + Date.now()); if (!r.ok) return; const data = await r.json(); mishkatNews = data.items || []; } catch(e) {} }
 
         function renderDaily() {
-            const box = document.getElementById('dailyBox');
-            if (!box) return;
+            const box = document.getElementById('dailyBox'); if (!box) return;
             if (!mishkatDaily || !mishkatDaily.text) { box.style.display = 'none'; return; }
             box.style.display = 'block';
-            const typeEl = document.getElementById('dailyType');
-            const textEl = document.getElementById('dailyText');
-            const srcEl = document.getElementById('dailySource');
+            const typeEl = document.getElementById('dailyType'), textEl = document.getElementById('dailyText'), srcEl = document.getElementById('dailySource');
             if (typeEl) typeEl.textContent = mishkatDaily.type || 'آية';
             if (textEl) textEl.textContent = mishkatDaily.text || '';
             if (srcEl) srcEl.innerHTML = '<i class="fa-solid fa-bookmark"></i> ' + (mishkatDaily.source || 'منصة مشكاة');
@@ -1076,8 +914,7 @@
 
         function renderGreats(filterCat) {
             if (filterCat !== undefined) currentGreatsCat = filterCat;
-            const grid = document.getElementById('greatsGrid');
-            const empty = document.getElementById('greatsEmpty');
+            const grid = document.getElementById('greatsGrid'), empty = document.getElementById('greatsEmpty');
             if (!grid) return;
             let items = mishkatGreats || [];
             if (currentGreatsCat && currentGreatsCat !== 'all') items = items.filter(g => g.category === currentGreatsCat);
@@ -1105,22 +942,19 @@
         }
 
         function renderUsefulSites() {
-            const section = document.getElementById('usefulSitesSection');
-            const grid = document.getElementById('usefulSitesGrid');
+            const section = document.getElementById('usefulSitesSection'), grid = document.getElementById('usefulSitesGrid');
             if (!section || !grid) return;
             if (!mishkatUsefulSites || mishkatUsefulSites.length === 0) { section.style.display = 'none'; return; }
             section.style.display = 'block';
             grid.innerHTML = mishkatUsefulSites.map(s => {
                 const icon = s.icon || 'fa-globe';
-                const url = s.url || '#';
-                return `<a href="${url}" target="_blank" rel="noopener" class="useful-site-card"><div class="us-icon"><i class="fa-solid ${icon}"></i></div><div class="us-info"><h4>${s.name||''}</h4>${s.description?`<p>${s.description}</p>`:''}</div></a>`;
+                return `<a href="${s.url||'#'}" target="_blank" rel="noopener" class="useful-site-card"><div class="us-icon"><i class="fa-solid ${icon}"></i></div><div class="us-info"><h4>${s.name||''}</h4>${s.description?`<p>${s.description}</p>`:''}</div></a>`;
             }).join('');
         }
 
         function renderFiqhQA(filterCat) {
             if (filterCat !== undefined) currentFiqhCat = filterCat;
-            const list = document.getElementById('fiqhQaList');
-            const empty = document.getElementById('fiqhQaEmpty');
+            const list = document.getElementById('fiqhQaList'), empty = document.getElementById('fiqhQaEmpty');
             if (!list) return;
             let items = mishkatFiqhQA || [];
             if (currentFiqhCat && currentFiqhCat !== 'all') items = items.filter(qa => qa.category === currentFiqhCat);
@@ -1134,22 +968,11 @@
             }).join('');
         }
 
-        function copyQaText(i) {
-            const qa = mishkatFiqhQA[i]; if (!qa) return;
-            copyToClipboard('❓ ' + qa.question + '\n\n✅ الجواب:\n' + (qa.answer || '') + '\n\n— منصة مشكاة', null);
-            alert('✅ تم نسخ المحتوى!');
-        }
-        async function shareQaText(i) {
-            const qa = mishkatFiqhQA[i]; if (!qa) return;
-            const text = '❓ ' + qa.question + '\n\n✅ الجواب:\n' + (qa.answer || '') + '\n\n🔗 ' + window.location.origin + '/fiqh';
-            if (navigator.share) { try { await navigator.share({ title: qa.question, text: text }); return; } catch(e) {} }
-            copyToClipboard(text, null);
-            alert('✅ تم نسخ المحتوى!');
-        }
+        function copyQaText(i) { const qa = mishkatFiqhQA[i]; if (!qa) return; copyToClipboard('❓ ' + qa.question + '\n\n✅ الجواب:\n' + (qa.answer || '') + '\n\n— منصة مشكاة', null); alert('✅'); }
+        async function shareQaText(i) { const qa = mishkatFiqhQA[i]; if (!qa) return; const text = '❓ ' + qa.question + '\n\n✅ الجواب:\n' + (qa.answer || '') + '\n\n🔗 ' + window.location.origin + '/fiqh'; if (navigator.share) { try { await navigator.share({ title: qa.question, text: text }); return; } catch(e) {} } copyToClipboard(text, null); alert('✅'); }
 
         function renderWeekly() {
-            const grid = document.getElementById('weeklyGrid');
-            const empty = document.getElementById('weeklyEmpty');
+            const grid = document.getElementById('weeklyGrid'), empty = document.getElementById('weeklyEmpty');
             if (!grid) return;
             if (!mishkatWeekly || mishkatWeekly.length === 0) { grid.innerHTML = ''; if (empty) empty.classList.remove('hidden-section'); return; }
             if (empty) empty.classList.add('hidden-section');
@@ -1158,25 +981,13 @@
                 return `<div class="weekly-card"><div class="weekly-head"><span class="weekly-type">${w.type||'دعاء'}</span><h3>${w.title||''}</h3>${w.date?`<div class="weekly-date"><i class="fa-regular fa-calendar"></i> ${w.date}</div>`:''}</div><div class="weekly-body">${bodyHtml}</div><div class="weekly-actions"><button class="w-copy" onclick="copyWeeklyText(${i})"><i class="fa-solid fa-copy"></i> نسخ</button><button class="w-share" onclick="shareWeeklyText(${i})"><i class="fa-solid fa-share-nodes"></i> مشاركة</button></div></div>`;
             }).join('');
         }
-        function copyWeeklyText(i) {
-            const w = mishkatWeekly[i]; if (!w) return;
-            copyToClipboard('📖 ' + (w.title || '') + ' (' + (w.type || '') + ')\n\n' + (w.body || '') + '\n\n— منصة مشكاة', null);
-            alert('✅ تم نسخ المحتوى!');
-        }
-        async function shareWeeklyText(i) {
-            const w = mishkatWeekly[i]; if (!w) return;
-            const text = '📖 ' + (w.title || '') + ' (' + (w.type || '') + ')\n\n' + (w.body || '') + '\n\n🔗 ' + window.location.origin + '/weekly';
-            if (navigator.share) { try { await navigator.share({ title: w.title, text: text }); return; } catch(e) {} }
-            copyToClipboard(text, null);
-            alert('✅ تم نسخ المحتوى!');
-        }
+        function copyWeeklyText(i) { const w = mishkatWeekly[i]; if (!w) return; copyToClipboard('📖 ' + (w.title || '') + '\n\n' + (w.body || '') + '\n\n— منصة مشكاة', null); alert('✅'); }
+        async function shareWeeklyText(i) { const w = mishkatWeekly[i]; if (!w) return; const text = '📖 ' + (w.title || '') + '\n\n' + (w.body || '') + '\n\n🔗 ' + window.location.origin + '/weekly'; if (navigator.share) { try { await navigator.share({ title: w.title, text: text }); return; } catch(e) {} } copyToClipboard(text, null); alert('✅'); }
 
         function updateDateTime() {
             const now = new Date();
             const lang = currentLang || 'ar';
-            const day = String(now.getDate()).padStart(2,'0');
-            const month = String(now.getMonth()+1).padStart(2,'0');
-            const year = now.getFullYear();
+            const day = String(now.getDate()).padStart(2,'0'), month = String(now.getMonth()+1).padStart(2,'0'), year = now.getFullYear();
             const gD = document.getElementById('gregorianDate'); if (gD) gD.textContent = `${day}/${month}/${year}`;
             try {
                 const adj = new Date(now.getTime() + (HIJRI_OFFSET * 24 * 60 * 60 * 1000));
@@ -1184,23 +995,17 @@
                 const hD = document.getElementById('hijriDate');
                 if (hD) hD.textContent = new Intl.DateTimeFormat(fmt, { weekday:'long', day:'numeric', month:'long', year:'numeric' }).format(adj);
             } catch(e) {}
-            let h = now.getHours();
-            const t = translations[lang];
+            let h = now.getHours(); const t = translations[lang];
             const period = h >= 12 ? t.pm : t.am;
             h = h % 12; h = h ? h : 12;
-            const m = String(now.getMinutes()).padStart(2,'0');
-            const s = String(now.getSeconds()).padStart(2,'0');
+            const m = String(now.getMinutes()).padStart(2,'0'), s = String(now.getSeconds()).padStart(2,'0');
             const lc = document.getElementById('liveClock'); if (lc) lc.textContent = `${h}:${m}:${s}`;
             const cp = document.getElementById('clockPeriod'); if (cp) cp.textContent = period;
         }
 
         function renderMarkdown(text) {
             if (!text) return '';
-            let p = String(text)
-                .replace(/\{red\}([\s\S]*?)\{\/red\}/g, '<span style="color:#dc2626;font-weight:700">$1</span>')
-                .replace(/\{gold\}([\s\S]*?)\{\/gold\}/g, '<span style="color:#c9a961;font-weight:700">$1</span>')
-                .replace(/\{blue\}([\s\S]*?)\{\/blue\}/g, '<span style="color:#2c4a7c;font-weight:700">$1</span>')
-                .replace(/\{green\}([\s\S]*?)\{\/green\}/g, '<span style="color:#16a34a;font-weight:700">$1</span>');
+            let p = String(text).replace(/\{red\}([\s\S]*?)\{\/red\}/g,'<span style="color:#dc2626;font-weight:700">$1</span>').replace(/\{gold\}([\s\S]*?)\{\/gold\}/g,'<span style="color:#c9a961;font-weight:700">$1</span>').replace(/\{blue\}([\s\S]*?)\{\/blue\}/g,'<span style="color:#2c4a7c;font-weight:700">$1</span>').replace(/\{green\}([\s\S]*?)\{\/green\}/g,'<span style="color:#16a34a;font-weight:700">$1</span>');
             if (typeof marked !== 'undefined') { try { marked.setOptions({ breaks: true, gfm: true }); return marked.parse(p); } catch(e) { return p.replace(/\n/g, '<br>'); } }
             return p.replace(/\n/g, '<br>');
         }
@@ -1209,7 +1014,6 @@
             const fb = () => { const ta = document.createElement('textarea'); ta.value = text; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} document.body.removeChild(ta); };
             if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).catch(fb); else fb();
         }
-
         function copyUrlWithFeedback(url, btnElement) {
             const done = () => { if (!btnElement) return; const o = btnElement.innerHTML; btnElement.innerHTML = '<i class="fa-solid fa-check"></i>'; btnElement.style.background = '#16a34a'; btnElement.style.color = '#fff'; setTimeout(()=>{btnElement.innerHTML=o;btnElement.style.background='';btnElement.style.color='';},1500); };
             const fb = () => { const ta = document.createElement('textarea'); ta.value = url; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');done();}catch(e){} document.body.removeChild(ta); };
@@ -1224,12 +1028,11 @@
             if (a.excerpt) text += a.excerpt + '.....\n\n';
             text += 'أكمل القراءة عبر الرابط\n' + url;
             if (navigator.share) { try { await navigator.share({ title: a.title, text: text }); } catch(e) {} }
-            else { try { await navigator.clipboard.writeText(url); alert('✅ تم نسخ الرابط!'); } catch(e) { alert('❌ فشل النسخ'); } }
+            else { try { await navigator.clipboard.writeText(url); alert('✅'); } catch(e) { alert('❌'); } }
         }
 
         function renderNews() {
-            const list = document.getElementById('newsList');
-            const empty = document.getElementById('newsEmpty');
+            const list = document.getElementById('newsList'), empty = document.getElementById('newsEmpty');
             if (!list) return;
             let items = mishkatNews || [];
             if (currentNewsTab === 'urgent') items = items.filter(n => n.urgent === true);
@@ -1239,7 +1042,7 @@
             const t = translations[currentLang];
             list.innerHTML = items.map((n) => {
                 const realIdx = mishkatNews.indexOf(n);
-                const typeLabel = n.type === 'video' ? (t.newsTypeVideo || 'فيديو') : (t.newsTypeText || 'نصي');
+                const typeLabel = n.type === 'video' ? (t.newsTypeVideo||'فيديو') : (t.newsTypeText||'نصي');
                 const typeIcon = n.type === 'video' ? 'fa-video' : 'fa-newspaper';
                 const urgentHtml = n.urgent ? `<span class="urgent-badge"><i class="fa-solid fa-circle"></i> ${t.urgentBadge||'عاجل'}</span>` : '';
                 return `<div class="news-item ${n.urgent?'is-urgent':''}">${urgentHtml}<span class="news-type"><i class="fa-solid ${typeIcon}"></i> ${typeLabel}</span><h3>${n.title}</h3>${n.date?`<div class="news-date"><i class="fa-regular fa-calendar"></i> ${n.date}</div>`:''}${n.excerpt?`<p class="news-excerpt">${n.excerpt}</p>`:''}<button class="news-more-btn" onclick="openNews(${realIdx})">${t.readMore||'اقرأ المزيد'} <i class="fa-solid fa-arrow-left"></i></button></div>`;
@@ -1256,34 +1059,12 @@
                 bodyHtml += `<div style="position:relative;width:100%;padding-bottom:56.25%;margin-bottom:20px;"><iframe src="https://www.youtube.com/embed/${n.youtube_id}" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen></iframe></div>`;
                 if (n.description) bodyHtml += `<p>${n.description.replace(/\n/g,'<br>')}</p>`;
             } else { bodyHtml += n.body ? renderMarkdown(n.body) : (n.excerpt || ''); }
-            const urgentHtml = n.urgent ? `<span class="urgent-badge" style="margin-right:8px"><i class="fa-solid fa-circle"></i> ${t.urgentBadge}</span>` : '';
-            container.innerHTML = `${urgentHtml}<span class="category-badge" style="display:inline-block;background:var(--gold-light);color:var(--primary-navy);padding:5px 14px;border-radius:4px;font-size:12px;font-weight:700;margin-bottom:15px;font-family:'Cairo',sans-serif;">${t.pageNews}</span><h1>${n.title}</h1><div class="article-meta"><span><i class="fa-regular fa-calendar"></i> ${n.date || ''}</span></div><div class="article-body">${bodyHtml}</div>`;
+            const urgentHtml = n.urgent ? `<span class="urgent-badge" style="margin-left:8px"><i class="fa-solid fa-circle"></i> ${t.urgentBadge}</span>` : '';
+            container.innerHTML = `${urgentHtml}<span class="category-badge" style="display:inline-block;background:var(--gold-light);color:var(--primary-navy);padding:5px 14px;border-radius:4px;font-size:12px;font-weight:700;margin-bottom:15px;font-family:'Cairo',sans-serif;">${t.pageNews}</span><h1>${n.title}</h1><div class="article-meta"><span><i class="fa-regular fa-calendar"></i> ${n.date||''}</span></div><div class="article-body">${bodyHtml}</div>`;
             window.history.replaceState(null, '', '/news/' + index);
             document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
             document.getElementById('view-article').classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function buildVideoSeriesTabs() {
-            const tabs = document.getElementById('videoSeriesTabs');
-            if (!tabs) return;
-            const series = [...new Set((mishkatVideos || []).map(v => v.series).filter(Boolean))];
-            const t = translations[currentLang];
-            if (series.length === 0) { tabs.innerHTML = ''; tabs.style.display = 'none'; return; }
-            tabs.style.display = 'flex';
-            let html = `<button class="cat-btn ${currentVideoSeries==='all'?'active':''}" data-video-series="all">${t.allSeries||'كل السلاسل'}</button>`;
-            series.forEach(s => {
-                html += `<button class="cat-btn ${currentVideoSeries===s?'active':''}" data-video-series="${s}">${s}</button>`;
-            });
-            tabs.innerHTML = html;
-            tabs.querySelectorAll('.cat-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    currentVideoSeries = this.dataset.videoSeries;
-                    tabs.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    renderVideos();
-                });
-            });
         }
 
         function extractYouTubeId(input) {
@@ -1298,42 +1079,118 @@
             return s;
         }
 
+        function buildSeriesSidebar() {
+            const container = document.getElementById('seriesList');
+            if (!container) return;
+            const seriesMap = {};
+            (mishkatVideos || []).forEach(v => {
+                const s = v.series || '';
+                if (!s) return;
+                if (!seriesMap[s]) seriesMap[s] = { count: 0, speaker: v.channel || '' };
+                seriesMap[s].count++;
+                if (!seriesMap[s].speaker && v.channel) seriesMap[s].speaker = v.channel;
+            });
+
+            const total = mishkatVideos.length;
+            const t = translations[currentLang];
+            let html = `<div class="series-item ${currentVideoSeries==='all'?'active':''}" data-series="all">
+                <div class="series-name">${t.allSeries||'كل المرئيات'}</div>
+                <div class="series-count">${total} مقطع</div>
+            </div>`;
+
+            const keys = Object.keys(seriesMap);
+            if (keys.length === 0) {
+                html += `<div style="padding:16px;text-align:center;color:var(--text-muted);font-size:13px;font-family:'Cairo',sans-serif;">لا توجد سلاسل حالياً</div>`;
+            } else {
+                keys.forEach(s => {
+                    html += `<div class="series-item ${currentVideoSeries===s?'active':''}" data-series="${s}">
+                        <div class="series-name">${s}</div>
+                        ${seriesMap[s].speaker?`<div class="series-speaker">${seriesMap[s].speaker}</div>`:''}
+                        <div class="series-count">${seriesMap[s].count} مقطع</div>
+                    </div>`;
+                });
+            }
+            container.innerHTML = html;
+            container.querySelectorAll('.series-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    currentVideoSeries = this.dataset.series;
+                    container.querySelectorAll('.series-item').forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+                    renderVideos();
+                });
+            });
+        }
+
         function renderVideos() {
-            const grid = document.getElementById('videosList');
-            const empty = document.getElementById('videosEmpty');
+            const grid = document.getElementById('videosList'), empty = document.getElementById('videosEmpty');
             if (!grid) return;
             let items = mishkatVideos || [];
-            if (currentVideoSeries !== 'all') items = items.filter(v => v.series === currentVideoSeries);
+            if (currentVideoSeries !== 'all') items = items.filter(v => (v.series || '') === currentVideoSeries);
             if (!items.length) { grid.innerHTML = ''; if (empty) empty.classList.remove('hidden-section'); return; }
             if (empty) empty.classList.add('hidden-section');
             grid.innerHTML = items.map(v => {
-                let embedHtml = ''; let sourceBadge = '';
+                const realIdx = mishkatVideos.indexOf(v);
                 const type = v.source_type || (v.youtube_url || v.youtube_id ? 'youtube' : (v.video_file ? 'upload' : (v.external_url ? 'external' : '')));
+                let posterHtml = '';
                 if (type === 'youtube') {
                     const ytId = extractYouTubeId(v.youtube_url || v.youtube_id || '');
-                    if (ytId) { embedHtml = `<div class="video-embed"><iframe src="https://www.youtube.com/embed/${ytId}" loading="lazy" allowfullscreen></iframe></div>`; sourceBadge = `<span class="video-source-badge"><i class="fa-brands fa-youtube"></i> يوتيوب</span>`; }
-                } else if (type === 'upload' && v.video_file) {
-                    let src = v.video_file; if (!src.startsWith('http') && !src.startsWith('/')) src = '/' + src;
-                    embedHtml = `<div class="video-embed-local"><video controls preload="metadata" playsinline><source src="${src}" type="video/mp4"></video></div>`;
-                    sourceBadge = `<span class="video-source-badge"><i class="fa-solid fa-file-video"></i> ملف مرفوع</span>`;
-                } else if (type === 'external' && v.external_url) {
-                    embedHtml = `<div class="video-embed"><iframe src="${v.external_url}" loading="lazy" allowfullscreen></iframe></div>`;
-                    sourceBadge = `<span class="video-source-badge"><i class="fa-solid fa-link"></i> رابط خارجي</span>`;
+                    const thumb = ytId ? `https://img.youtube.com/vi/${ytId}/mqdefault.jpg` : '';
+                    posterHtml = thumb ? `<img src="${thumb}" alt="${v.title}">` : `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--gold-accent);font-size:40px"><i class="fa-brands fa-youtube"></i></div>`;
+                } else if (type === 'upload') {
+                    posterHtml = `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--gold-accent);font-size:40px;background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue))"><i class="fa-solid fa-file-video"></i></div>`;
+                } else {
+                    posterHtml = `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--gold-accent);font-size:40px;background:linear-gradient(135deg,var(--primary-navy),var(--secondary-blue))"><i class="fa-solid fa-link"></i></div>`;
                 }
-                const seriesHtml = v.series ? `<span class="video-series-badge"><i class="fa-solid fa-layer-group"></i> ${v.series}</span>` : '';
-                const descHtml = v.description ? `<p style="color:var(--text-muted);font-size:14.5px;line-height:1.9;margin:8px 0 0">${v.description}</p>` : '';
-                return `<div class="video-card">${sourceBadge}${embedHtml}<div class="video-body">${seriesHtml}<h3>${v.title}</h3><div class="video-meta">${v.channel?`<span><i class="fa-solid fa-tv"></i> ${v.channel}</span>`:''}${v.date?`<span><i class="fa-regular fa-calendar"></i> ${v.date}</span>`:''}</div>${descHtml}</div></div>`;
+                const seriesHtml = v.series ? `<span class="series-pill"><i class="fa-solid fa-layer-group" style="margin-left:4px"></i> ${v.series}</span>` : '';
+                return `<div class="video-list-item" id="vitem-${realIdx}">
+                    <div class="video-poster" onclick="playVideo(${realIdx})">
+                        ${posterHtml}
+                        <div class="play-overlay"><i class="fa-solid fa-circle-play"></i></div>
+                    </div>
+                    <div class="video-info">
+                        ${seriesHtml}
+                        <h3>${v.title||''}</h3>
+                        <div class="video-meta">${v.channel?`<span><i class="fa-solid fa-tv"></i> ${v.channel}</span>`:''}${v.date?`<span><i class="fa-regular fa-calendar"></i> ${v.date}</span>`:''}</div>
+                        ${v.description?`<p>${v.description}</p>`:''}
+                    </div>
+                </div>`;
             }).join('');
         }
 
+        function playVideo(realIdx) {
+            const v = mishkatVideos[realIdx]; if (!v) return;
+            const item = document.getElementById('vitem-' + realIdx); if (!item) return;
+            const poster = item.querySelector('.video-poster'); if (!poster) return;
+            if (poster.classList.contains('playing')) return;
+
+            let playerHtml = '';
+            const type = v.source_type || (v.youtube_url || v.youtube_id ? 'youtube' : (v.video_file ? 'upload' : (v.external_url ? 'external' : '')));
+
+            if (type === 'youtube') {
+                const ytId = extractYouTubeId(v.youtube_url || v.youtube_id || '');
+                if (ytId) playerHtml = `<iframe src="https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0" allowfullscreen allow="autoplay; encrypted-media"></iframe>`;
+            } else if (type === 'upload' && v.video_file) {
+                let src = v.video_file;
+                if (!src.startsWith('http') && !src.startsWith('/')) src = '/' + src;
+                playerHtml = `<video controls autoplay playsinline><source src="${src}" type="video/mp4"></video>`;
+            } else if (type === 'external' && v.external_url) {
+                playerHtml = `<iframe src="${v.external_url}" allowfullscreen allow="autoplay"></iframe>`;
+            }
+
+            if (playerHtml) {
+                poster.innerHTML = playerHtml;
+                poster.classList.add('playing');
+                poster.onclick = null;
+            }
+        }
+
         function buildAudioSeriesTabs() {
-            const tabs = document.getElementById('audioSeriesTabs');
-            if (!tabs) return;
+            const tabs = document.getElementById('audioSeriesTabs'); if (!tabs) return;
             const series = [...new Set((mishkatAudios || []).map(a => a.series).filter(Boolean))];
             const t = translations[currentLang];
             if (series.length === 0) { tabs.innerHTML = ''; tabs.style.display = 'none'; return; }
             tabs.style.display = 'flex';
-            let html = `<button class="cat-btn ${currentAudioSeries==='all'?'active':''}" data-audio-series="all">${t.allSeries||'كل السلاسل'}</button>`;
+            let html = `<button class="cat-btn ${currentAudioSeries==='all'?'active':''}" data-audio-series="all">${t.allSeries||'كل الصوتيات'}</button>`;
             series.forEach(s => { html += `<button class="cat-btn ${currentAudioSeries===s?'active':''}" data-audio-series="${s}">${s}</button>`; });
             tabs.innerHTML = html;
             tabs.querySelectorAll('.cat-btn').forEach(btn => {
@@ -1347,8 +1204,7 @@
         }
 
         function renderAudios() {
-            const list = document.getElementById('audiosList');
-            const empty = document.getElementById('audiosEmpty');
+            const list = document.getElementById('audiosList'), empty = document.getElementById('audiosEmpty');
             if (!list) return;
             let items = mishkatAudios || [];
             if (currentAudioSeries !== 'all') items = items.filter(a => a.series === currentAudioSeries);
@@ -1358,7 +1214,7 @@
             list.innerHTML = items.map((a) => {
                 const realIdx = mishkatAudios.indexOf(a);
                 const src = '/audios/' + a.file;
-                const seriesHtml = a.series ? `<span class="video-series-badge" style="display:inline-flex;align-items:center;gap:5px;background:var(--gold-light);color:var(--primary-navy);padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700;margin-bottom:8px;font-family:'Cairo',sans-serif"><i class="fa-solid fa-layer-group" style="color:var(--gold-accent);font-size:10px"></i> ${a.series}</span>` : '';
+                const seriesHtml = a.series ? `<span class="series-pill"><i class="fa-solid fa-layer-group" style="margin-left:4px"></i> ${a.series}</span>` : '';
                 const descHtml = a.description ? `<p class="audio-desc">${a.description}</p>` : '';
                 return `<div class="audio-card">${seriesHtml}<div class="audio-head"><div class="audio-icon"><i class="fa-solid fa-headphones"></i></div><div class="audio-info"><h3>${a.title}</h3><div class="audio-meta">${a.speaker?`<span><i class="fa-solid fa-microphone"></i> ${a.speaker}</span>`:''}${a.date?`<span><i class="fa-regular fa-calendar"></i> ${a.date}</span>`:''}</div></div></div>${descHtml}<audio controls preload="none"><source src="${src}" type="audio/mpeg"></audio><div class="audio-actions"><a class="dl" href="${src}" download><i class="fa-solid fa-download"></i> ${t.audioDownload}</a><button class="sh" onclick="shareAudio(${realIdx})"><i class="fa-solid fa-share-nodes"></i> ${t.audioShare}</button></div></div>`;
             }).join('');
@@ -1368,7 +1224,7 @@
             const url = window.location.origin + '/audios/' + a.file;
             const text = '🎧 ' + a.title + '\n👤 ' + (a.speaker || '') + '\n\n🔗 ' + url;
             if (navigator.share) { try { await navigator.share({ title: a.title, text: text, url: url }); return; } catch(e) {} }
-            try { await navigator.clipboard.writeText(text); alert('✅ تم نسخ الرابط!'); } catch(e) { alert('❌ فشل النسخ'); }
+            try { await navigator.clipboard.writeText(text); alert('✅'); } catch(e) { alert('❌'); }
         }
 
         function buildLatestUpdates() {
@@ -1392,26 +1248,18 @@
             else if (type === 'news') openNews(index);
             else if (type === 'book') { showView('library'); setTimeout(() => { const el = document.querySelectorAll('.book-card')[index]; if (el) el.scrollIntoView({ behavior:'smooth', block:'center' }); }, 300); }
             else if (type === 'audio') { showView('audios'); setTimeout(() => { const el = document.querySelectorAll('#audiosList .audio-card')[index]; if (el) el.scrollIntoView({ behavior:'smooth', block:'center' }); }, 300); }
-            else if (type === 'video') { showView('videos'); setTimeout(() => { const el = document.querySelectorAll('#videosList .video-card')[index]; if (el) el.scrollIntoView({ behavior:'smooth', block:'center' }); }, 300); }
+            else if (type === 'video') { showView('videos'); setTimeout(() => { const el = document.getElementById('vitem-' + index); if (el) el.scrollIntoView({ behavior:'smooth', block:'center' }); }, 300); }
         }
 
-        function clearFilter() {
-            currentFilterCat = null;
-            document.body.classList.remove('extras-hidden');
-            const fn = document.getElementById('filterNotice'); if (fn) fn.classList.remove('show');
-            renderArticles('all');
-        }
+        function clearFilter() { currentFilterCat = null; document.body.classList.remove('extras-hidden'); const fn = document.getElementById('filterNotice'); if (fn) fn.classList.remove('show'); renderArticles('all'); }
 
         function renderArticles(filterCat) {
-            const grid = document.getElementById('articlesGrid');
-            const empty = document.getElementById('articlesEmpty');
+            const grid = document.getElementById('articlesGrid'), empty = document.getElementById('articlesEmpty');
             const t = translations[currentLang];
             const articles = mishkatArticles[currentLang] || mishkatArticles.ar;
             const isFiltered = (filterCat && filterCat !== 'all');
             currentFilterCat = isFiltered ? filterCat : null;
-            const filterNotice = document.getElementById('filterNotice');
-            const filterCatName = document.getElementById('filterCatName');
-            const sectionHeader = document.getElementById('sectionHeader');
+            const filterNotice = document.getElementById('filterNotice'), filterCatName = document.getElementById('filterCatName'), sectionHeader = document.getElementById('sectionHeader');
             if (isFiltered) {
                 document.body.classList.add('extras-hidden');
                 if (filterNotice) filterNotice.classList.add('show');
@@ -1433,17 +1281,13 @@
         }
 
         function renderBooks(filterCat) {
-            const grid = document.getElementById('libraryGrid');
-            const empty = document.getElementById('libraryEmpty');
-            const title = document.getElementById('libraryPageTitle');
-            const desc = document.getElementById('libraryPageDesc');
+            const grid = document.getElementById('libraryGrid'), empty = document.getElementById('libraryEmpty'), title = document.getElementById('libraryPageTitle'), desc = document.getElementById('libraryPageDesc');
             if (!grid) return;
             const t = translations[currentLang];
             let books = mishkatBooks[currentLang] || mishkatBooks.ar;
             if (filterCat && filterCat !== 'all') {
                 const catName = libraryCatNames[filterCat];
-                if (title) title.textContent = catName;
-                if (desc) desc.textContent = '';
+                if (title) title.textContent = catName; if (desc) desc.textContent = '';
                 books = books.filter(b => b.category === catName);
             } else { if (title) title.textContent = t.pageLibrary; if (desc) desc.textContent = t.pageLibraryDesc; }
             if (!books || books.length === 0) { grid.innerHTML = ''; empty.classList.remove('hidden-section'); return; }
@@ -1458,9 +1302,7 @@
         function showDownloadModal(index) {
             const books = mishkatBooks[currentLang] || mishkatBooks.ar;
             const book = books[index]; if (!book) return;
-            const pdfBtn = document.getElementById('downloadPDF');
-            const wordBtn = document.getElementById('downloadWord');
-            const t = translations[currentLang];
+            const pdfBtn = document.getElementById('downloadPDF'), wordBtn = document.getElementById('downloadWord'), t = translations[currentLang];
             if (book.pdf_url) { pdfBtn.href = book.pdf_url; pdfBtn.classList.remove('unavailable'); pdfBtn.onclick = null; }
             else { pdfBtn.href='#'; pdfBtn.classList.add('unavailable'); pdfBtn.onclick=(e)=>{e.preventDefault();alert(t.bookNotFound);}; }
             if (book.word_url) { wordBtn.href = book.word_url; wordBtn.classList.remove('unavailable'); wordBtn.onclick = null; }
@@ -1475,7 +1317,7 @@
             const siteUrl = 'https://mishkat-new.pages.dev';
             const text = '📚 ' + book.title + '\n👤 ' + book.author + '\n\n📖 ' + book.description + '\n\n🔗 ' + siteUrl;
             if (navigator.share) { try { await navigator.share({ title: book.title, text: text, url: siteUrl }); return; } catch(e) {} }
-            try { await navigator.clipboard.writeText(text); alert('✅ تم نسخ الرابط!'); } catch(e) { alert('❌ فشل النسخ'); }
+            try { await navigator.clipboard.writeText(text); alert('✅'); } catch(e) { alert('❌'); }
         }
 
         function openArticle(index) {
@@ -1496,17 +1338,13 @@
             setTimeout(loadComments, 200);
         }
 
-        function backFromArticle() {
-            window.history.replaceState(null, '', '/');
-            showView('home');
-        }
-
+        function backFromArticle() { window.history.replaceState(null, '', '/'); showView('home'); }
         function getCurrentArticle() {
             const path = window.location.pathname;
             if (path.startsWith('/article/')) {
                 const parts = path.substring(9).split('/').filter(Boolean);
                 if (parts.length >= 2) {
-                    const catKey = parts[0]; const posInCat = parseInt(parts[1]);
+                    const catKey = parts[0], posInCat = parseInt(parts[1]);
                     const articles = mishkatArticles[currentLang] || mishkatArticles.ar;
                     const catArticles = articles.filter(a => a.catKey === catKey);
                     return catArticles[posInCat] || null;
@@ -1540,14 +1378,13 @@
             const t = translations[lang] || translations.ar;
             document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.getAttribute('data-i18n'); if (t[key] !== undefined) el.textContent = t[key]; });
             const html = document.documentElement;
-            if (lang === 'ar' || lang === 'fa') { html.dir = 'rtl'; document.body.style.direction = 'rtl'; }
-            else { html.dir = 'ltr'; document.body.style.direction = 'ltr'; }
+            if (lang === 'ar' || lang === 'fa') { html.dir = 'rtl'; document.body.style.direction = 'rtl'; } else { html.dir = 'ltr'; document.body.style.direction = 'ltr'; }
             document.title = t.title;
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
             renderArticles(currentFilterCat || 'all');
-            renderBooks(currentLibraryCat); renderVideos(); renderAudios(); renderNews(); renderSidebar();
+            renderBooks(currentLibraryCat); renderAudios(); renderVideos(); renderNews(); renderSidebar();
             renderDaily(); renderFiqhQA(currentFiqhCat); renderWeekly(); renderGreats(currentGreatsCat);
-            buildVideoSeriesTabs(); buildAudioSeriesTabs();
+            buildSeriesSidebar(); buildAudioSeriesTabs();
             updateDateTime();
             if (document.getElementById('view-article').classList.contains('active')) loadComments();
             localStorage.setItem('mishkat_lang', lang);
@@ -1565,7 +1402,7 @@
             if (viewId === 'home') { currentFilterCat = null; renderArticles('all'); }
             else if (viewId === 'library') { currentLibraryCat = null; renderBooks(); }
             else if (viewId === 'audios') { buildAudioSeriesTabs(); renderAudios(); }
-            else if (viewId === 'videos') { buildVideoSeriesTabs(); renderVideos(); }
+            else if (viewId === 'videos') { currentVideoSeries = 'all'; buildSeriesSidebar(); renderVideos(); }
             else if (viewId === 'news') { currentNewsTab = 'all'; document.querySelectorAll('#newsTabs .cat-btn').forEach((b,i)=>b.classList.toggle('active',i===0)); renderNews(); }
             else if (viewId === 'fiqh') renderFiqhQA();
             else if (viewId === 'weekly') renderWeekly();
@@ -1597,24 +1434,13 @@
             displaySearchResults(results, query);
         }
 
-        function extractSnippet(text, query) {
-            if (!text) return '';
-            const lower = text.toLowerCase(); const idx = lower.indexOf(query);
-            if (idx === -1) return text.substring(0, 150) + '...';
-            const start = Math.max(0, idx - 60); const end = Math.min(text.length, idx + query.length + 90);
-            return (start > 0 ? '... ' : '') + text.substring(start, end) + (end < text.length ? ' ...' : '');
-        }
-        function highlightText(text, query) {
-            if (!text) return '';
-            try { const regex = new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi'); return text.replace(regex, '<mark>$1</mark>'); } catch(e) { return text; }
-        }
+        function extractSnippet(text, query) { if (!text) return ''; const lower = text.toLowerCase(); const idx = lower.indexOf(query); if (idx === -1) return text.substring(0, 150) + '...'; const start = Math.max(0, idx - 60), end = Math.min(text.length, idx + query.length + 90); return (start > 0 ? '... ' : '') + text.substring(start, end) + (end < text.length ? ' ...' : ''); }
+        function highlightText(text, query) { if (!text) return ''; try { const regex = new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi'); return text.replace(regex, '<mark>$1</mark>'); } catch(e) { return text; } }
         function displaySearchResults(results, query) {
-            const list = document.getElementById('searchResultsList');
-            const empty = document.getElementById('searchEmpty');
-            const qD = document.getElementById('searchQueryDisplay');
+            const list = document.getElementById('searchResultsList'), empty = document.getElementById('searchEmpty'), qD = document.getElementById('searchQueryDisplay');
             if (qD) qD.textContent = query;
             if (!results || results.length === 0) { list.innerHTML = ''; empty.classList.remove('hidden-section'); }
-            else { empty.classList.add('hidden-section'); list.innerHTML = results.map(r => `<div class="search-result-item" onclick="openSearchResult('${r.type}', ${r.index})"><span class="result-type"><i class="fa-solid ${r.typeIcon}"></i> ${r.typeLabel}</span><h3>${r.title}</h3><p class="result-snippet">${r.snippet}</p><div class="result-meta"><span><i class="fa-regular fa-user"></i> ${r.author||'—'}</span><span><i class="fa-regular fa-calendar"></i> ${r.date||'—'}</span></div></div>`).join(''); }
+            else { empty.classList.add('hidden-section'); list.innerHTML = results.map(r => `<div class="search-result-item" onclick="openSearchResult('${r.type}', ${r.index})"><span class="result-type"><i class="fa-solid ${r.typeIcon}"></i> ${r.typeLabel}</span><h3>${r.title}</h3><p class="result-snippet">${r.snippet}</p></div>`).join(''); }
             document.body.classList.remove('extras-hidden');
             document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
             document.getElementById('view-search').classList.add('active');
@@ -1625,7 +1451,7 @@
             else if (type === 'great') openGreat(index);
             else if (type === 'book') { showView('library'); setTimeout(() => { const bks = document.querySelectorAll('.book-card'); if (bks[index]) bks[index].scrollIntoView({ behavior:'smooth', block:'center' }); }, 300); }
             else if (type === 'audio') { showView('audios'); setTimeout(() => { const els = document.querySelectorAll('#audiosList .audio-card'); if (els[index]) els[index].scrollIntoView({ behavior:'smooth', block:'center' }); }, 300); }
-            else if (type === 'video') { showView('videos'); setTimeout(() => { const els = document.querySelectorAll('#videosList .video-card'); if (els[index]) els[index].scrollIntoView({ behavior:'smooth', block:'center' }); }, 300); }
+            else if (type === 'video') { showView('videos'); setTimeout(() => { const el = document.getElementById('vitem-' + index); if (el) el.scrollIntoView({ behavior:'smooth', block:'center' }); }, 300); }
             else if (type === 'news') openNews(index);
             else if (type === 'fiqh') { showView('fiqh'); setTimeout(() => { const els = document.querySelectorAll('.fiqh-qa-card'); if (els[index]) els[index].scrollIntoView({ behavior:'smooth', block:'center' }); }, 300); }
             else if (type === 'weekly') { showView('weekly'); setTimeout(() => { const els = document.querySelectorAll('.weekly-card'); if (els[index]) els[index].scrollIntoView({ behavior:'smooth', block:'center' }); }, 300); }
@@ -1635,18 +1461,17 @@
 
         async function loadComments() {
             const slug = getCurrentArticleSlug();
-            const list = document.getElementById('comments-list');
-            const slugInput = document.getElementById('comment-slug');
+            const list = document.getElementById('comments-list'), slugInput = document.getElementById('comment-slug');
             if (slugInput) slugInput.value = slug;
             if (!list) return;
             list.innerHTML = '<p style="color: var(--text-muted);">جاري تحميل التعليقات...</p>';
             try {
                 const r = await fetch('/api/comments?slug=' + encodeURIComponent(slug));
                 const comments = await r.json();
-                if (!Array.isArray(comments)) { list.innerHTML = '<p style="color:red;">تعذّر تحميل التعليقات.</p>'; return; }
+                if (!Array.isArray(comments)) { list.innerHTML = '<p style="color:red;">تعذّر التحميل.</p>'; return; }
                 if (comments.length === 0) { list.innerHTML = '<p style="color: var(--text-muted);">لا توجد تعليقات بعد.</p>'; return; }
                 list.innerHTML = comments.map(c => `<div class="comment-item" style="border-bottom:1px solid var(--border-color);padding:15px 0;"><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><div style="width:38px;height:38px;background:var(--primary-navy);color:var(--gold-accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Cairo',sans-serif;">${(c.author||'?').charAt(0)}</div><strong style="color:var(--primary-navy);font-family:'Cairo',sans-serif;">${c.author}</strong><small style="color:var(--text-muted);margin-right:auto;font-family:'Cairo',sans-serif;">${new Date(c.created_at*1000).toLocaleDateString('ar-EG')}</small></div><p style="margin:0;font-size:15px;line-height:1.9;">${c.body}</p></div>`).join('');
-            } catch(e) { list.innerHTML = '<p style="color:red;">تعذّر تحميل التعليقات.</p>'; }
+            } catch(e) { list.innerHTML = '<p style="color:red;">تعذّر التحميل.</p>'; }
         }
 
         (function(){
@@ -1707,12 +1532,10 @@
             document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', function() { setLanguage(this.dataset.lang); }));
             setLanguage(localStorage.getItem('mishkat_lang') || 'ar');
             renderUsefulSites();
-            buildVideoSeriesTabs();
+            buildSeriesSidebar();
             buildAudioSeriesTabs();
 
-            const menuBtn = document.getElementById('mobileMenuBtn');
-            const closeBtn = document.getElementById('mobileCloseBtn');
-            const overlay = document.getElementById('mobileOverlay');
+            const menuBtn = document.getElementById('mobileMenuBtn'), closeBtn = document.getElementById('mobileCloseBtn'), overlay = document.getElementById('mobileOverlay');
             if (menuBtn) menuBtn.addEventListener('click', openMobileMenu);
             if (closeBtn) closeBtn.addEventListener('click', closeMobileMenu);
             if (overlay) overlay.addEventListener('click', closeMobileMenu);
@@ -1725,42 +1548,24 @@
             });
 
             function setupDropdown(toggleId, menuId) {
-                const toggle = document.getElementById(toggleId);
-                const menu = document.getElementById(menuId);
+                const toggle = document.getElementById(toggleId), menu = document.getElementById(menuId);
                 if (!toggle || !menu) return;
                 toggle.addEventListener('click', function(e) { e.preventDefault(); menu.classList.toggle('show'); });
             }
             setupDropdown('libraryDropdown', 'libraryDropdownMenu');
-            setupDropdown('mediaDropdown', 'mediaDropdownMenu');
 
             document.querySelectorAll('#libraryDropdownMenu .dropdown-item').forEach(item => {
                 item.addEventListener('click', function() { showLibraryCategory(this.dataset.libCat); });
             });
-            document.querySelectorAll('#mediaDropdownMenu .dropdown-item').forEach(item => {
-                item.addEventListener('click', function() { showView(this.dataset.view); });
-            });
 
             document.querySelectorAll('#fiqhCategories .cat-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    document.querySelectorAll('#fiqhCategories .cat-btn').forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    renderFiqhQA(this.dataset.fiqhCat);
-                });
+                btn.addEventListener('click', function() { document.querySelectorAll('#fiqhCategories .cat-btn').forEach(b => b.classList.remove('active')); this.classList.add('active'); renderFiqhQA(this.dataset.fiqhCat); });
             });
             document.querySelectorAll('#greatsCategories .cat-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    document.querySelectorAll('#greatsCategories .cat-btn').forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    renderGreats(this.dataset.greatsCat);
-                });
+                btn.addEventListener('click', function() { document.querySelectorAll('#greatsCategories .cat-btn').forEach(b => b.classList.remove('active')); this.classList.add('active'); renderGreats(this.dataset.greatsCat); });
             });
             document.querySelectorAll('#newsTabs .cat-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    document.querySelectorAll('#newsTabs .cat-btn').forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    currentNewsTab = this.dataset.newsTab;
-                    renderNews();
-                });
+                btn.addEventListener('click', function() { document.querySelectorAll('#newsTabs .cat-btn').forEach(b => b.classList.remove('active')); this.classList.add('active'); currentNewsTab = this.dataset.newsTab; renderNews(); });
             });
 
             const mainSearch = document.getElementById('mainSearchInput');
@@ -1775,7 +1580,7 @@
             if (path.startsWith('/article/')) {
                 const parts = path.substring(9).split('/').filter(Boolean);
                 if (parts.length >= 2) {
-                    const catKey = parts[0]; const posInCat = parseInt(parts[1]);
+                    const catKey = parts[0], posInCat = parseInt(parts[1]);
                     const articles = mishkatArticles[currentLang] || mishkatArticles.ar;
                     const catArticles = articles.filter(a => a.catKey === catKey);
                     if (catArticles[posInCat]) { const gI = articles.indexOf(catArticles[posInCat]); if (gI >= 0) openArticle(gI); }
