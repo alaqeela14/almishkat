@@ -70,7 +70,7 @@ collections:
             summary: "{{fields.name}} - {{fields.title}}"
             fields:
               - { label: "الاسم", name: "name", widget: "string" }
-              - { label: "اللقب / الصفة", name: "title", widget: "string", required: false, hint: "مثال: الإمام، العلامة، الشيخ" }
+              - { label: "اللقب / الصفة", name: "title", widget: "string", required: false }
               - { label: "الصورة الشخصية", name: "image", widget: "image", required: false, media_folder: "assets/images", public_folder: "/assets/images" }
               - { label: "نبذة مختصرة", name: "excerpt", widget: "text", required: false }
               - { label: "السيرة الكاملة", name: "body", widget: "markdown", required: false }
@@ -233,12 +233,12 @@ collections:
             name: "items"
             widget: "list"
             add_to_top: true
-            summary: "{{fields.title}} - {{fields.speaker}}"
+            summary: "{{fields.title}} — {{fields.speaker}}"
             fields:
-              - { label: "اسم الملف (بالإنجليزي)", name: "file", widget: "string", hint: "مثال: lesson-01.mp3" }
-              - { label: "العنوان", name: "title", widget: "string" }
-              - { label: "المتحدث", name: "speaker", widget: "string", required: false }
-              - { label: "السلسلة / التصنيف", name: "series", widget: "string", required: false, hint: "مثال: محاضرات حول الأخلاق" }
+              - { label: "اسم الملف الصوتي (بالإنجليزي)", name: "file", widget: "string", hint: "مثال: lesson-01.mp3 — يُرفع يدويًا إلى مجلد audios" }
+              - { label: "عنوان المقطع", name: "title", widget: "string" }
+              - { label: "🎤 المحاضر / القارئ / المتحدث", name: "speaker", widget: "string", required: false, hint: "اسم الشخص الذي يتحدث في التسجيل" }
+              - { label: "📚 السلسلة / التصنيف", name: "series", widget: "string", required: false, hint: "مثال: محاضرات حول الأخلاق" }
               - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
               - { label: "الوصف", name: "description", widget: "text", required: false }
 
@@ -253,10 +253,11 @@ collections:
             name: "items"
             widget: "list"
             add_to_top: true
-            summary: "{{fields.title}} [{{fields.series}}]"
+            summary: "{{fields.title}} — {{fields.channel}}"
             fields:
               - { label: "عنوان الفيديو", name: "title", widget: "string" }
-              - { label: "السلسلة / التصنيف", name: "series", widget: "string", required: false, hint: "مثال: محاضرات حول الأخلاق، سلسلة العقائد، إلخ" }
+              - { label: "🎤 المحاضر / المتحدث", name: "channel", widget: "string", required: false, hint: "اسم الشخص الذي يتحدث في الفيديو" }
+              - { label: "📚 السلسلة / التصنيف", name: "series", widget: "string", required: false, hint: "مثال: محاضرات حول الأخلاق، سلسلة العقائد" }
               - label: "نوع المصدر"
                 name: "source_type"
                 widget: "select"
@@ -268,7 +269,6 @@ collections:
               - { label: "رابط أو معرّف يوتيوب", name: "youtube_url", widget: "string", required: false, hint: "الصق الرابط الكامل أو المعرّف فقط. مثال: https://youtu.be/dQw4w9WgXcQ" }
               - { label: "ملف الفيديو المرفوع", name: "video_file", widget: "file", required: false, media_folder: "videos", public_folder: "/videos", accept: "video/mp4,video/webm,video/ogg", hint: "⚠️ الحد الأقصى 20MB. للمقاطع الطويلة استخدم يوتيوب" }
               - { label: "الرابط الخارجي (Embed)", name: "external_url", widget: "string", required: false, hint: "رابط Embed مباشر. مثال: https://player.vimeo.com/video/123456" }
-              - { label: "القناة/المصدر", name: "channel", widget: "string", required: false }
               - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
               - { label: "الوصف", name: "description", widget: "text", required: false }
 
@@ -306,7 +306,7 @@ collections:
             name: "items"
             widget: "list"
             add_to_top: true
-            summary: "{{fields.name}} - {{fields.category}}"
+            summary: "{{fields.name}} — {{fields.category}}"
             fields:
               - { label: "الاسم", name: "name", widget: "string" }
               - { label: "الرابط", name: "url", widget: "string", hint: "https://example.com" }
