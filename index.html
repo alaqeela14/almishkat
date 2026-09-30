@@ -308,7 +308,14 @@
             .video-list-item{flex-direction:column}
             .video-list-item .video-poster{width:100%;aspect-ratio:16/9}
             .video-list-item .video-info{padding:14px 16px}
-        }
+        }/* إصلاح قوي للإزاحة الأفقية */
+html, body { overflow-x: hidden !important; max-width: 100% !important; width: 100% !important; }
+.main-container, .page-view, .news-grid, .content-area, .articles-grid { max-width: 100% !important; }
+.main-nav { left: -320px !important; }
+.main-nav.mobile-open { left: 0 !important; }
+.breaking-ticker marquee { max-width: 100% !important; }
+.top-bar .clock-info { overflow: hidden; text-overflow: ellipsis; }
+* { min-width: 0; }
     </style>
 </head>
 <body>
