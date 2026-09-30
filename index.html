@@ -165,7 +165,6 @@
         .fiqh-qa-card .qa-actions .qa-copy:hover{background:var(--secondary-blue)}
         .fiqh-qa-card .qa-actions .qa-share{background:var(--gold-accent);color:var(--primary-navy)}
         .fiqh-qa-card .qa-actions .qa-share:hover{background:#e0c078}
-        /* ===== تحسينات بطاقة السؤال والجواب ===== */
         .fiqh-qa-card .qa-section-label{display:inline-flex;align-items:center;gap:6px;background:var(--primary-navy);color:#fff;padding:4px 14px;border-radius:4px;font-size:12px;font-weight:700;margin-bottom:10px;font-family:'Cairo',sans-serif}
         .fiqh-qa-card .qa-section-label.answer-label{background:var(--gold-accent);color:var(--primary-navy)}
         .fiqh-qa-card .qa-section-label i{font-size:11px}
@@ -174,7 +173,6 @@
         .fiqh-qa-card .qa-answer{padding-right:0!important;margin-top:0!important}
         .fiqh-qa-card .qa-meta{padding-right:0!important}
         .fiqh-qa-card .qa-actions{padding-right:0!important}
-        /* ===== تحسينات نموذج السؤال ===== */
         #fiqh-question-form label{font-weight:700;color:var(--primary-navy);margin-bottom:6px;display:block;font-size:14px;font-family:'Cairo',sans-serif}
         #fiqh-question-form input[type="text"],#fiqh-question-form textarea{width:100%;padding:10px 14px;border:1px solid var(--border-color);border-radius:4px;font-family:'Amiri','Cairo',serif;font-size:16px;outline:none;transition:.3s;margin-bottom:18px;background:#fff;line-height:1.8}
         #fiqh-question-form input[type="text"]:focus,#fiqh-question-form textarea:focus{border-color:var(--secondary-blue);box-shadow:0 0 0 3px rgba(44,74,124,.08)}
@@ -354,6 +352,10 @@
         .video-card .video-body h3{color:var(--primary-navy);font-size:1.2rem;font-weight:700;margin:0 0 8px 0;line-height:1.5}
         .video-card .video-meta{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--text-muted);font-family:'Cairo',sans-serif}
         .video-card .video-meta i{color:var(--secondary-blue);margin-left:3px}
+        .video-card .video-embed-local{position:relative;width:100%;padding-bottom:56.25%;background:#000}
+        .video-card .video-embed-local video{position:absolute;top:0;left:0;width:100%;height:100%;border:none;object-fit:contain;background:#000}
+        .video-card .video-source-badge{position:absolute;top:10px;right:10px;background:rgba(26,43,74,.85);color:var(--gold-accent);padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700;z-index:5;font-family:'Cairo',sans-serif;display:flex;align-items:center;gap:5px;backdrop-filter:blur(4px)}
+        .video-card .video-source-badge i{font-size:10px}
         .news-item{background:#fff;border-radius:8px;padding:20px 22px;margin-bottom:16px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border-color);border-right:5px solid var(--gold-accent);cursor:default;transition:.3s;position:relative}
         .news-item:hover{transform:translateX(-5px);box-shadow:0 8px 20px rgba(26,43,74,.12);border-right-color:var(--primary-navy)}
         .news-item .news-type{display:inline-flex;align-items:center;gap:6px;background:var(--very-light-blue);color:var(--primary-navy);padding:3px 10px;border-radius:12px;font-size:11.5px;font-weight:700;margin-bottom:10px;border:1px solid var(--border-color);font-family:'Cairo',sans-serif}
@@ -1376,6 +1378,21 @@
             try { await navigator.clipboard.writeText(text); alert(t.audioLinkCopied); } catch(e) { alert(t.copyFail); }
         }
 
+        function extractYouTubeId(input) {
+            if (!input) return '';
+            const s = String(input).trim();
+            if (/^[a-zA-Z0-9_-]{11}$/.test(s)) return s;
+            const patterns = [
+                /(?:youtube\.com\/watch\?v=|youtube\.com\/embed\/|youtu\.be\/|youtube\.com\/shorts\/)([a-zA-Z0-9_-]{11})/,
+                /[?&]v=([a-zA-Z0-9_-]{11})/
+            ];
+            for (const p of patterns) {
+                const m = s.match(p);
+                if (m && m[1]) return m[1];
+            }
+            return s;
+        }
+
         function renderVideos() {
             const grid = document.getElementById('videosList');
             const empty = document.getElementById('videosEmpty');
@@ -1383,10 +1400,29 @@
             if (!mishkatVideos || mishkatVideos.length === 0) { grid.innerHTML = ''; if (empty) empty.classList.remove('hidden-section'); return; }
             if (empty) empty.classList.add('hidden-section');
             grid.innerHTML = mishkatVideos.map(v => {
-                const ytId = v.youtube_id || '';
-                const embedUrl = ytId ? 'https://www.youtube.com/embed/' + ytId : '';
-                const embedHtml = ytId ? `<div class="video-embed"><iframe src="${embedUrl}" loading="lazy" allowfullscreen></iframe></div>` : '';
-                return `<div class="video-card">${embedHtml}<div class="video-body"><h3>${v.title}</h3><div class="video-meta">${v.channel ? `<span><i class="fa-brands fa-youtube"></i> ${v.channel}</span>` : ''}${v.date ? `<span><i class="fa-regular fa-calendar"></i> ${v.date}</span>` : ''}</div></div></div>`;
+                let embedHtml = '';
+                let sourceBadge = '';
+                const type = v.source_type || (v.youtube_url || v.youtube_id ? 'youtube' : (v.video_file ? 'upload' : (v.external_url ? 'external' : '')));
+
+                if (type === 'youtube') {
+                    const ytId = extractYouTubeId(v.youtube_url || v.youtube_id || '');
+                    if (ytId) {
+                        embedHtml = `<div class="video-embed"><iframe src="https://www.youtube.com/embed/${ytId}" loading="lazy" allowfullscreen></iframe></div>`;
+                        sourceBadge = `<span class="video-source-badge"><i class="fa-brands fa-youtube"></i> يوتيوب</span>`;
+                    }
+                } else if (type === 'upload' && v.video_file) {
+                    let src = v.video_file;
+                    if (!src.startsWith('http') && !src.startsWith('/')) src = '/' + src;
+                    embedHtml = `<div class="video-embed-local"><video controls preload="metadata" playsinline><source src="${src}" type="video/mp4"></video></div>`;
+                    sourceBadge = `<span class="video-source-badge"><i class="fa-solid fa-file-video"></i> ملف مرفوع</span>`;
+                } else if (type === 'external' && v.external_url) {
+                    embedHtml = `<div class="video-embed"><iframe src="${v.external_url}" loading="lazy" allowfullscreen></iframe></div>`;
+                    sourceBadge = `<span class="video-source-badge"><i class="fa-solid fa-link"></i> رابط خارجي</span>`;
+                }
+
+                const descHtml = v.description ? `<p class="video-desc" style="color:var(--text-muted);font-size:14.5px;line-height:1.9;margin:8px 0 0">${v.description}</p>` : '';
+
+                return `<div class="video-card" style="position:relative">${sourceBadge}${embedHtml}<div class="video-body"><h3>${v.title}</h3><div class="video-meta">${v.channel ? `<span><i class="fa-solid fa-tv"></i> ${v.channel}</span>` : ''}${v.date ? `<span><i class="fa-regular fa-calendar"></i> ${v.date}</span>` : ''}</div>${descHtml}</div></div>`;
             }).join('');
         }
 
