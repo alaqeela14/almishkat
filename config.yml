@@ -35,6 +35,7 @@ collections:
             fields:
               - { label: "السؤال", name: "question", widget: "string" }
               - { label: "الجواب", name: "answer", widget: "markdown" }
+              - { label: "التصنيف", name: "category", widget: "select", required: false, options: ["حول الطهارة", "حول الصلاة", "حول الصيام", "حول الزكاة والخمس", "حول الحج", "حول الزواج", "حول النساء", "حول المعاملات", "حول العقائد", "أخرى"] }
               - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
 
   - name: "weekly"
@@ -229,11 +230,21 @@ collections:
             name: "items"
             widget: "list"
             add_to_top: true
-            summary: "{{fields.title}}"
+            summary: "{{fields.title}} [{{fields.source_type}}]"
             fields:
               - { label: "عنوان الفيديو", name: "title", widget: "string" }
-              - { label: "معرّف يوتيوب", name: "youtube_id", widget: "string", hint: "مثال: dQw4w9WgXcQ" }
-              - { label: "القناة", name: "channel", widget: "string", required: false }
+              - label: "نوع المصدر"
+                name: "source_type"
+                widget: "select"
+                options:
+                  - { label: "يوتيوب", value: "youtube" }
+                  - { label: "ملف مرفوع", value: "upload" }
+                  - { label: "رابط خارجي (Vimeo وغيرها)", value: "external" }
+                default: "youtube"
+              - { label: "رابط أو معرّف يوتيوب", name: "youtube_url", widget: "string", required: false, hint: "الصق الرابط الكامل أو المعرّف فقط. مثال: https://youtu.be/dQw4w9WgXcQ" }
+              - { label: "ملف الفيديو المرفوع", name: "video_file", widget: "file", required: false, media_folder: "videos", public_folder: "/videos", accept: "video/mp4,video/webm,video/ogg", hint: "⚠️ الحد الأقصى 20MB. للمقاطع الطويلة استخدم يوتيوب" }
+              - { label: "الرابط الخارجي (Embed)", name: "external_url", widget: "string", required: false, hint: "رابط Embed مباشر. مثال: https://player.vimeo.com/video/123456" }
+              - { label: "القناة/المصدر", name: "channel", widget: "string", required: false }
               - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
               - { label: "الوصف", name: "description", widget: "text", required: false }
 
