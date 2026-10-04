@@ -24,35 +24,31 @@ a{text-decoration:none;color:inherit}
 img{max-width:100%;height:auto;display:block}
 .hidden-section{display:none!important}
 .container{max-width:1400px;margin:0 auto;padding:0 12px}
-
-/* TOP BAR */
 .top-bar{background:var(--navy-dark);color:#b8c4d6;padding:5px 0;border-bottom:2px solid var(--gold);font-size:10.5px}
 .top-bar .row{display:flex;align-items:center;gap:8px}
 .top-bar .clock-info{display:flex;align-items:center;gap:6px;font-size:10.5px;flex-wrap:wrap;min-width:0;order:2}
 .top-bar .clock-info i{color:var(--gold)}
 .top-bar .clock-info .sep{color:#3a4a6a}
 .top-bar .langs-group{display:flex;flex-direction:column;align-items:center;gap:2px;flex-shrink:0;order:3;margin-right:auto}
-.top-bar .langs-row{display:flex;gap:4px}
+.top-bar .langs-row{display:flex;gap:4px;align-items:center}
 .top-bar .lang-btn{background:transparent;border:1px solid #3a4a6a;color:#b8c4d6;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;font-weight:500;font-family:'Cairo',sans-serif}
 .top-bar .lang-btn.active,.top-bar .lang-btn:hover{border-color:var(--gold);color:var(--gold)}
 .top-bar .lang-note{font-size:8px;color:#8896b0;font-style:italic;white-space:nowrap}
 .top-bar .dark-toggle{order:1;background:transparent;border:1px solid #3a4a6a;color:#b8c4d6;width:24px;height:24px;border-radius:50%;cursor:pointer;font-size:11px;display:inline-flex;align-items:center;justify-content:center;padding:0;flex-shrink:0}
 .top-bar .dark-toggle:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
-
-/* BANNER */
+.top-bar .notify-icon-btn{background:var(--gold);border:none;color:var(--navy);width:22px;height:22px;border-radius:50%;cursor:pointer;font-size:10px;display:inline-flex;align-items:center;justify-content:center;padding:0;flex-shrink:0;transition:.3s;animation:pulse-notify 2s infinite}
+.top-bar .notify-icon-btn:hover{transform:scale(1.15)}
+.top-bar .notify-icon-btn[disabled]{background:#16a34a;color:#fff;animation:none;cursor:default}
+@keyframes pulse-notify{0%,100%{box-shadow:0 0 0 0 rgba(201,169,97,.7)}50%{box-shadow:0 0 0 6px rgba(201,169,97,0)}}
 .banner{position:relative;width:100%;overflow:hidden;background:var(--navy);line-height:0}
 .banner img{width:100%;height:auto;max-height:380px;object-fit:cover}
 .menu-btn{position:absolute;top:14px;left:14px;z-index:20;background:rgba(255,255,255,.95);color:var(--navy);border:none;width:52px;height:52px;border-radius:10px;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.2)}
 .menu-btn:hover{background:var(--gold)}
-
-/* SEARCH */
 .search-bar{background:#fff;padding:8px 12px;border-bottom:1px solid var(--border);display:flex;justify-content:flex-end}
 .search-inner{display:flex;max-width:360px;width:100%;border:1px solid var(--border);border-radius:6px;overflow:hidden;background:#fff}
 .search-inner input{flex:1;padding:7px 14px;border:none;outline:none;font-family:'Cairo',sans-serif;font-size:13px;background:transparent;color:var(--text);min-width:0}
 .search-inner button{padding:7px 16px;background:var(--navy);color:#fff;border:none;cursor:pointer;font-family:'Cairo',sans-serif;font-weight:700;font-size:12.5px;display:flex;align-items:center;gap:5px;white-space:nowrap}
 .search-inner button:hover{background:var(--gold);color:var(--navy)}
-
-/* SIDEBAR NAV */
 .main-nav{position:fixed;top:0;left:0;width:300px;max-width:85vw;height:100vh;z-index:2000;background:var(--navy);overflow-y:auto;transform:translateX(-100%);transition:transform .3s ease;box-shadow:5px 0 20px rgba(0,0,0,.3)}
 .main-nav.open{transform:translateX(0)}
 .main-nav .nav-list{list-style:none;display:flex;flex-direction:column;padding:60px 0 20px}
@@ -61,33 +57,27 @@ img{max-width:100%;height:auto;display:block}
 .close-menu{position:absolute;top:15px;right:15px;background:transparent;color:var(--gold);border:none;font-size:24px;cursor:pointer}
 .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1500}
 .overlay.show{display:block}
-
-/* MAIN */
 .main{max-width:1400px;margin:0 auto;padding:20px 12px;width:100%;overflow-x:hidden}
 .view{display:none}
 .view.active{display:block}
-
-/* Filter mode: hide extras */
 body.filter-mode .daily-box,
 body.filter-mode .breaking-bar,
-body.filter-mode .sidebar,
-body.filter-mode .notify-box{display:none!important}
+body.filter-mode .sidebar{display:none!important}
 body.filter-mode .news-grid{grid-template-columns:1fr!important}
-
-/* Title bar */
 .title-bar{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:30px 22px;border-radius:6px;margin-bottom:20px;border-right:5px solid var(--gold);position:relative;overflow:hidden}
 .title-bar::before{content:'';position:absolute;top:-50%;left:-20%;width:140%;height:200%;background:radial-gradient(circle,rgba(201,169,97,.15),transparent 60%)}
 .title-bar h1{font-size:1.8rem;font-weight:700;margin-bottom:6px;position:relative;z-index:2;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .title-bar h1 i{color:var(--gold)}
 .title-bar p{font-size:14px;color:rgba(255,255,255,.85);margin:0;position:relative;z-index:2}
-
-/* Cards */
+.back-nav-btn{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:#fff;border:none;padding:9px 18px;border-radius:6px;font-family:'Cairo',sans-serif;font-weight:700;font-size:13px;cursor:pointer;margin-bottom:16px;transition:.3s}
+.back-nav-btn:hover{background:var(--gold);color:var(--navy)}
+.back-nav-btn i{font-size:12px}
+body.dark .back-nav-btn{background:var(--gold);color:var(--navy)}
+body.dark .back-nav-btn:hover{background:#fff}
 .card{background:#fff;border-radius:6px;padding:22px 26px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border);margin-bottom:18px;border-top:4px solid var(--navy)}
 .card h2{color:var(--navy);font-size:1.3rem;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:10px;padding-bottom:10px;border-bottom:2px solid var(--gold-light);font-family:'Cairo',sans-serif}
 .card h2 i{color:var(--gold)}
 .card p{font-size:15px;line-height:2;margin-bottom:12px}
-
-/* Grid */
 .news-grid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:22px;width:100%}
 .content-area{min-width:0;overflow:hidden}
 .sidebar{display:flex;flex-direction:column;gap:18px;min-width:0}
@@ -95,29 +85,21 @@ body.filter-mode .news-grid{grid-template-columns:1fr!important}
 .box-header{background:var(--navy);color:#fff;padding:10px 16px;font-size:13.5px;font-weight:700;display:flex;align-items:center;gap:8px;border-bottom:2px solid var(--gold);font-family:'Cairo',sans-serif}
 .box-header i{color:var(--gold)}
 .box-body{padding:12px 16px}
-
-/* Breaking */
 .breaking-bar{background:#fff;border:1px solid var(--border);border-radius:4px;padding:10px 14px;display:flex;align-items:center;margin-bottom:18px;overflow:hidden;gap:12px}
 .breaking-label{background:var(--red);color:#fff;padding:5px 14px;border-radius:3px;font-size:12.5px;font-weight:700;white-space:nowrap;display:flex;align-items:center;gap:6px;flex-shrink:0;font-family:'Cairo',sans-serif}
 .breaking-ticker{flex:1;overflow:hidden;min-width:0}
 .breaking-ticker marquee{font-size:14px;display:block}
 .breaking-ticker marquee a{color:var(--navy);font-weight:600;margin:0 8px}
 .breaking-ticker marquee span{color:var(--gold)}
-
-/* Daily */
 .daily-box{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-radius:10px;padding:18px 22px;margin-bottom:20px;border-top:5px solid var(--gold);position:relative;overflow:hidden;box-shadow:0 8px 25px rgba(26,43,74,.15);display:block}
 .daily-box::before{content:'\f10d';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;top:12px;right:18px;font-size:55px;color:rgba(201,169,97,.12);pointer-events:none}
 .daily-type{background:rgba(201,169,97,.25);color:var(--gold);padding:3px 12px;border-radius:20px;font-size:11.5px;font-weight:700;border:1px solid rgba(201,169,97,.4);font-family:'Cairo',sans-serif;display:inline-block;margin-bottom:10px;position:relative;z-index:2}
 .daily-text{font-size:1.15rem;line-height:2;font-weight:500;margin-bottom:10px;position:relative;z-index:2;text-align:center;padding:0 10px;color:#f5f8fc}
 .daily-source{text-align:left;font-size:13px;color:var(--gold);font-weight:700;position:relative;z-index:2;font-family:'Cairo',sans-serif}
 .daily-source i{margin-left:5px}
-
-/* Section header */
 .section-header{display:flex;align-items:center;gap:10px;border-bottom:3px solid var(--navy);padding-bottom:8px;margin:0 0 16px}
 .section-header h2{font-size:1.3rem;font-weight:700;color:var(--navy);margin:0;display:flex;align-items:center;gap:8px;font-family:'Cairo',sans-serif;flex-wrap:wrap}
 .section-header h2::before{content:'';width:5px;height:22px;background:var(--gold);border-radius:2px}
-
-/* Articles */
 .articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
 .article-card{background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 2px 8px rgba(26,43,74,.06);display:flex;flex-direction:column;border:1px solid var(--border);min-width:0}
 .article-card:hover{box-shadow:0 10px 25px rgba(26,43,74,.15);border-color:var(--gold)}
@@ -130,8 +112,6 @@ body.filter-mode .news-grid{grid-template-columns:1fr!important}
 .read-more-btn:hover{background:var(--gold);color:var(--navy)}
 .meta{border-top:1px solid var(--border);padding-top:8px;display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);font-family:'Cairo',sans-serif;gap:8px;flex-wrap:wrap}
 .meta i{color:var(--blue)}
-
-/* Sidebar items */
 .most-read-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px dashed var(--border);cursor:pointer}
 .most-read-item:last-child{border-bottom:none}
 .most-read-item .number{width:26px;height:26px;background:var(--gold-light);color:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;font-family:'Cairo',sans-serif}
@@ -142,8 +122,6 @@ body.filter-mode .news-grid{grid-template-columns:1fr!important}
 .sidebar-cat-item:last-child{border-bottom:none}
 .sidebar-cat-item span:first-child{font-size:14px;font-weight:600;color:var(--text);font-family:'Cairo',sans-serif;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .sidebar-cat-item .count{background:var(--very-light);color:var(--navy);padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;font-family:'Cairo',sans-serif;flex-shrink:0}
-
-/* Tabs */
 .tabs{display:flex;gap:6px;margin-bottom:16px;overflow-x:auto;padding-bottom:5px;scrollbar-width:thin}
 .tabs::-webkit-scrollbar{height:4px}
 .tabs::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
@@ -151,8 +129,6 @@ body.filter-mode .news-grid{grid-template-columns:1fr!important}
 .tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
 .tab.urgent.active{background:#dc2626;border-color:#dc2626}
 .tab i{margin-left:4px}
-
-/* Fiqh */
 .fiqh-card{background:#fff;border-radius:8px;padding:18px 20px;margin-bottom:14px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border);border-right:5px solid var(--gold);min-width:0}
 .qa-label{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:#fff;padding:4px 14px;border-radius:4px;font-size:12px;font-weight:700;margin-bottom:10px;font-family:'Cairo',sans-serif}
 .qa-label.answer{background:var(--gold);color:var(--navy)}
@@ -164,16 +140,12 @@ body.filter-mode .news-grid{grid-template-columns:1fr!important}
 .qa-actions button{border:none;padding:7px 14px;border-radius:5px;font-family:'Cairo',sans-serif;font-weight:700;font-size:12px;cursor:pointer;display:inline-flex;align-items:center;gap:5px}
 .qa-actions .qa-copy{background:var(--navy);color:#fff}
 .qa-actions .qa-share{background:var(--gold);color:var(--navy)}
-
-/* Forms */
 .form-box{background:#fff;border-radius:6px;padding:22px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border);border-top:4px solid var(--gold);margin-top:25px}
 .form-box label{font-weight:700;color:var(--navy);margin-bottom:6px;display:block;font-size:14px;font-family:'Cairo',sans-serif}
 .form-box input,.form-box textarea,.form-box select{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:4px;font-family:'Amiri','Cairo',serif;font-size:15px;outline:none;margin-bottom:16px;background:#fff;line-height:1.8}
 .form-box input:focus,.form-box textarea:focus,.form-box select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(44,74,124,.08)}
 .btn-submit{background:var(--navy);color:#fff;border:none;padding:11px 30px;border-radius:4px;font-weight:700;font-family:'Cairo',sans-serif;cursor:pointer;font-size:14px}
 .btn-submit:hover{background:var(--gold);color:var(--navy)}
-
-/* Weekly */
 .weekly-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
 .weekly-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 4px 15px rgba(26,43,74,.06);border:1px solid var(--border);border-top:5px solid var(--gold)}
 .weekly-head{padding:14px 18px;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;position:relative;overflow:hidden}
@@ -184,8 +156,6 @@ body.filter-mode .news-grid{grid-template-columns:1fr!important}
 .weekly-actions button{border:none;padding:7px 14px;border-radius:5px;font-family:'Cairo',sans-serif;font-weight:700;font-size:12px;cursor:pointer;display:inline-flex;align-items:center;gap:5px}
 .weekly-actions .w-copy{background:var(--navy);color:#fff}
 .weekly-actions .w-share{background:var(--gold);color:var(--navy)}
-
-/* Greats */
 .greats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
 .great-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border);cursor:pointer;display:flex;flex-direction:column;min-width:0}
 .great-card:hover{box-shadow:0 10px 25px rgba(26,43,74,.15);border-color:var(--gold)}
@@ -197,8 +167,6 @@ body.filter-mode .news-grid{grid-template-columns:1fr!important}
 .great-title{color:var(--gold);font-size:13px;font-weight:700;margin-bottom:8px;font-family:'Cairo',sans-serif}
 .great-excerpt{color:var(--muted);font-size:13.5px;line-height:1.8;flex-grow:1;margin-bottom:10px;word-wrap:break-word}
 .great-quote{background:var(--gold-light);border-right:3px solid var(--gold);padding:8px 12px;border-radius:6px;color:var(--navy);font-style:italic;font-size:13px;line-height:1.7}
-
-/* Courses */
 .courses-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
 .course-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border);border-top:5px solid var(--gold);display:flex;flex-direction:column;min-width:0}
 .course-card:hover{box-shadow:0 10px 25px rgba(26,43,74,.15)}
@@ -217,8 +185,6 @@ body.filter-mode .news-grid{grid-template-columns:1fr!important}
 .course-btn{width:100%;background:var(--navy);color:#fff;border:none;padding:9px 14px;border-radius:5px;font-family:'Cairo',sans-serif;font-weight:700;font-size:13px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px}
 .course-btn:hover{background:var(--gold);color:var(--navy)}
 .course-btn[disabled]{background:#9ca3af;cursor:not-allowed}
-
-/* Library */
 .library-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
 .book-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 4px 15px rgba(26,43,74,.06);border:1px solid var(--border);display:flex;flex-direction:column;min-width:0}
 .book-cover{background:linear-gradient(135deg,var(--navy),var(--blue));height:170px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:50px;overflow:hidden}
@@ -231,13 +197,9 @@ body.filter-mode .news-grid{grid-template-columns:1fr!important}
 .book-btn{flex:1;min-width:80px;border:none;padding:9px 10px;border-radius:5px;font-family:'Cairo',sans-serif;font-weight:700;font-size:12.5px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px;color:#fff}
 .book-btn.download{background:var(--navy)}
 .book-btn.share{background:var(--gold);color:var(--navy)}
-
-/* Empty */
 .empty{text-align:center;padding:50px 20px;color:var(--muted);background:#fff;border-radius:8px;border:1px solid var(--border)}
 .empty i{font-size:50px;color:var(--gold);margin-bottom:12px;display:block}
 .empty h3{color:var(--navy);font-size:1.15rem;font-weight:700;margin-bottom:6px;font-family:'Cairo',sans-serif}
-
-/* Videos */
 .vnav-tabs{display:flex;gap:8px;margin-bottom:16px;background:#fff;padding:8px;border-radius:8px;border:1px solid var(--border);box-shadow:0 2px 8px rgba(26,43,74,.04)}
 .vnav-btn{flex:1;background:transparent;border:none;padding:10px 14px;border-radius:6px;font-family:'Cairo',sans-serif;font-weight:700;font-size:14px;color:var(--navy);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px}
 .vnav-btn:hover{background:var(--very-light)}
@@ -271,8 +233,6 @@ body.filter-mode .news-grid{grid-template-columns:1fr!important}
 .series-header h3{color:var(--navy);font-size:1.2rem;font-weight:700;margin:0;font-family:'Cairo',sans-serif;word-wrap:break-word}
 .series-header .sd-meta{color:var(--muted);font-size:12.5px;font-family:'Cairo',sans-serif}
 .series-back{background:var(--navy);color:#fff;border:none;padding:8px 16px;border-radius:6px;font-family:'Cairo',sans-serif;font-weight:700;font-size:13px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
-
-/* News */
 .news-item{background:#fff;border-radius:8px;padding:18px 20px;margin-bottom:14px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border);border-right:5px solid var(--gold);min-width:0}
 .news-item.urgent{border-right-color:#dc2626}
 .news-badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
@@ -283,8 +243,6 @@ body.filter-mode .news-grid{grid-template-columns:1fr!important}
 .news-excerpt{color:var(--muted);font-size:14.5px;line-height:1.9;margin:0 0 10px 0;word-wrap:break-word}
 .news-more{display:inline-flex;align-items:center;gap:5px;background:var(--navy);color:#fff;padding:5px 12px;border:none;border-radius:4px;font-family:'Cairo',sans-serif;font-weight:700;font-size:11.5px;cursor:pointer}
 .news-more:hover{background:var(--gold);color:var(--navy)}
-
-/* Audio */
 .audio-card{background:#fff;border-radius:8px;padding:18px 20px;margin-bottom:14px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border);border-right:5px solid var(--gold);min-width:0}
 .audio-head{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;min-width:0}
 .audio-icon{width:48px;height:48px;background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:20px;flex-shrink:0}
@@ -298,8 +256,6 @@ body.filter-mode .news-grid{grid-template-columns:1fr!important}
 .audio-actions a,.audio-actions button{border:none;padding:8px 16px;border-radius:5px;font-family:'Cairo',sans-serif;font-weight:700;font-size:12.5px;cursor:pointer;display:inline-flex;align-items:center;gap:5px;text-decoration:none;color:#fff}
 .audio-actions .dl{background:var(--navy)}
 .audio-actions .sh{background:var(--gold);color:var(--navy)}
-
-/* Article full */
 .article-full{background:#fff;border-radius:6px;padding:26px;box-shadow:0 4px 15px rgba(26,43,74,.08);border:1px solid var(--border);margin-bottom:18px;border-top:5px solid var(--gold);min-width:0}
 .article-full h1{color:var(--navy);font-size:1.8rem;font-weight:700;margin-bottom:14px;line-height:1.5;word-wrap:break-word}
 .article-meta{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted);border-bottom:2px solid var(--gold-light);padding-bottom:14px;margin-bottom:18px;font-family:'Cairo',sans-serif}
@@ -309,15 +265,12 @@ body.filter-mode .news-grid{grid-template-columns:1fr!important}
 .article-body blockquote{background:var(--gold-light);border-right:5px solid var(--gold);padding:14px 20px;margin:16px 0;border-radius:6px;font-style:italic;font-size:1.15rem;color:var(--navy);line-height:2}
 .back-btn{background:var(--navy);color:#fff;border:none;padding:10px 22px;border-radius:4px;font-family:'Cairo',sans-serif;font-weight:700;cursor:pointer;margin-bottom:18px;display:inline-flex;align-items:center;gap:8px;font-size:14px}
 .back-btn:hover{background:var(--gold);color:var(--navy)}
-.share-section,.comments-section{background:#fff;border-radius:6px;padding:18px 22px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border);border-top:4px solid var(--gold);margin-bottom:18px}
-.comments-section{border-top-color:var(--navy)}
-.share-section h3,.comments-section h3{color:var(--navy);font-size:1.15rem;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px;font-family:'Cairo',sans-serif}
-.share-section h3 i,.comments-section h3 i{color:var(--gold)}
+.share-section{background:#fff;border-radius:6px;padding:18px 22px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border);border-top:4px solid var(--gold);margin-bottom:18px}
+.share-section h3{color:var(--navy);font-size:1.15rem;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px;font-family:'Cairo',sans-serif}
+.share-section h3 i{color:var(--gold)}
 .share-btn{border:none;padding:10px 22px;border-radius:6px;color:#fff;font-family:'Cairo',sans-serif;font-weight:700;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
 .share-btn.native{background:var(--navy)}
 .copy-link-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 22px;background:var(--gold);color:var(--navy);border:none;border-radius:6px;font-family:'Cairo',sans-serif;font-weight:700;font-size:14px;cursor:pointer}
-
-/* Search */
 .search-results-header{background:#fff;border-radius:6px;padding:18px 22px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border);border-top:4px solid var(--gold);margin-bottom:18px}
 .search-results-header h2{color:var(--navy);font-size:1.3rem;font-weight:700;margin:0 0 5px 0;font-family:'Cairo',sans-serif}
 .search-result-item{background:#fff;border-radius:8px;padding:16px 20px;margin-bottom:12px;box-shadow:0 2px 10px rgba(26,43,74,.06);border:1px solid var(--border);border-right:5px solid var(--blue);cursor:pointer;min-width:0}
@@ -325,9 +278,6 @@ body.filter-mode .news-grid{grid-template-columns:1fr!important}
 .result-type{display:inline-flex;align-items:center;gap:6px;background:var(--very-light);color:var(--navy);padding:3px 10px;border-radius:12px;font-size:11.5px;font-weight:700;margin-bottom:8px;font-family:'Cairo',sans-serif}
 .search-result-item h3{color:var(--navy);font-size:1.15rem;font-weight:700;margin:0 0 8px 0;line-height:1.5;word-wrap:break-word}
 .result-snippet{color:var(--muted);font-size:14.5px;line-height:1.8;word-wrap:break-word}
-.result-snippet mark{background:var(--gold-light);color:var(--navy);padding:2px 4px;border-radius:3px;font-weight:700}
-
-/* Useful */
 .useful-sites{background:#fff;border-radius:8px;padding:22px 26px;margin:25px 0 18px;box-shadow:0 4px 15px rgba(26,43,74,.06);border:1px solid var(--border);border-top:5px solid var(--gold)}
 .useful-sites h2{color:var(--navy);font-size:1.4rem;font-weight:700;margin:0 0 18px 0;display:flex;align-items:center;gap:10px;padding-bottom:10px;border-bottom:2px solid var(--gold-light);font-family:'Cairo',sans-serif}
 .useful-sites h2 i{color:var(--gold)}
@@ -338,8 +288,6 @@ body.filter-mode .news-grid{grid-template-columns:1fr!important}
 .useful-info{flex:1;min-width:0}
 .useful-info h4{margin:0 0 4px 0;color:var(--navy);font-size:1rem;font-weight:700;font-family:'Cairo',sans-serif}
 .useful-info p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.6;font-family:'Cairo',sans-serif}
-
-/* Footer */
 footer{background:var(--navy);color:#b8c4d6;padding:28px 0 0;border-top:4px solid var(--gold);margin-top:35px}
 .footer-brand{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:18px}
 .footer-brand span{color:#fff;font-size:1.6rem;font-weight:700}
@@ -354,24 +302,11 @@ footer{background:var(--navy);color:#b8c4d6;padding:28px 0 0;border-top:4px soli
 .admin-link{display:none!important}
 .footer-bottom{background:var(--navy-dark);padding:12px 0;text-align:center}
 .footer-bottom p{margin:0;font-size:12.5px;color:#8896b0;font-family:'Cairo',sans-serif}
-
-/* Notify */
-.notify-box{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-radius:8px;padding:16px 20px;margin:18px 0;display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:space-between}
-.notify-box .nb-text{flex:1;min-width:200px}
-.notify-box .nb-text strong{display:block;font-size:15px;font-family:'Cairo',sans-serif;margin-bottom:4px}
-.notify-box .nb-text small{font-size:12.5px;opacity:.9;font-family:'Cairo',sans-serif}
-.notify-btn{background:var(--gold);color:var(--navy);border:none;padding:9px 20px;border-radius:6px;font-family:'Cairo',sans-serif;font-weight:700;font-size:13.5px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
-.notify-btn:hover{background:#fff}
-.notify-btn[disabled]{background:#16a34a;color:#fff;cursor:not-allowed}
-
-/* Modal */
 .modal{display:none;position:fixed;inset:0;background:rgba(15,30,61,.75);z-index:3000;align-items:center;justify-content:center;padding:20px}
 .modal.show{display:flex}
 .modal-box{background:#fff;border-radius:12px;padding:26px;max-width:420px;width:100%;position:relative;border-top:5px solid var(--gold);max-height:90vh;overflow-y:auto}
 .modal-close{position:absolute;top:10px;left:10px;background:transparent;border:none;font-size:26px;color:var(--muted);cursor:pointer}
 .modal-box h3{color:var(--navy);font-size:1.2rem;font-weight:700;margin-bottom:18px;text-align:center;font-family:'Cairo',sans-serif}
-
-/* LIBRARY MODAL */
 .lib-cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
 .lib-cat-btn{background:var(--very-light);border:1px solid var(--border);color:var(--navy);padding:16px 12px;border-radius:10px;cursor:pointer;font-family:'Cairo',sans-serif;font-weight:700;font-size:13.5px;display:flex;flex-direction:column;align-items:center;gap:8px;transition:.3s;text-align:center;line-height:1.4}
 .lib-cat-btn:hover{background:var(--gold);border-color:var(--gold);transform:translateY(-2px)}
@@ -379,8 +314,6 @@ footer{background:var(--navy);color:#b8c4d6;padding:28px 0 0;border-top:4px soli
 .lib-cat-btn:hover i{color:var(--navy)}
 body.dark .lib-cat-btn{background:#131d2e;border-color:#2a3a52;color:#e0e6ed}
 body.dark .lib-cat-btn:hover{background:var(--gold);color:var(--navy)}
-
-/* Dark mode */
 body.dark{background:#0d1520;color:#e0e6ed}
 body.dark .top-bar{background:#050a12}
 body.dark .banner{background:#0d1520}
@@ -390,7 +323,7 @@ body.dark .search-inner input{color:#e0e6ed}
 body.dark .breaking-bar{background:#1a2535;border-color:#2a3a52}
 body.dark .breaking-ticker marquee a{color:#e0e6ed}
 body.dark .title-bar{background:linear-gradient(135deg,#0f1a2e,#1a2b45)}
-body.dark .card,body.dark .article-card,body.dark .sidebar-box,body.dark .form-box,body.dark .article-full,body.dark .share-section,body.dark .comments-section,body.dark .book-card,body.dark .modal-box,body.dark .search-results-header,body.dark .search-result-item,body.dark .empty,body.dark .audio-card,body.dark .news-item,body.dark .fiqh-card,body.dark .weekly-card,body.dark .great-card,body.dark .useful-sites,body.dark .video-item,body.dark .series-card,body.dark .series-header,body.dark .course-card{background:#1a2535!important;color:#e0e6ed;border-color:#2a3a52}
+body.dark .card,body.dark .article-card,body.dark .sidebar-box,body.dark .form-box,body.dark .article-full,body.dark .share-section,body.dark .book-card,body.dark .modal-box,body.dark .search-results-header,body.dark .search-result-item,body.dark .empty,body.dark .audio-card,body.dark .news-item,body.dark .fiqh-card,body.dark .weekly-card,body.dark .great-card,body.dark .useful-sites,body.dark .video-item,body.dark .series-card,body.dark .series-header,body.dark .course-card{background:#1a2535!important;color:#e0e6ed;border-color:#2a3a52}
 body.dark .article-card h3,body.dark .card h2,body.dark .section-header h2,body.dark .article-full h1,body.dark .title-bar h1,body.dark .news-item h3,body.dark .audio-info h3,body.dark .search-result-item h3,body.dark .book-body h3,body.dark .qa-question,body.dark .great-body h3,body.dark .useful-sites h2,body.dark .useful-info h4,body.dark .video-info h3,body.dark .series-card h4,body.dark .series-header h3,body.dark .course-head h3{color:#e0e6ed!important}
 body.dark .excerpt,body.dark .book-desc,body.dark .audio-desc,body.dark .news-excerpt,body.dark .meta,body.dark .article-meta,body.dark .news-date,body.dark .card p,body.dark .qa-answer,body.dark .great-excerpt,body.dark .useful-info p,body.dark .video-info p,body.dark .result-snippet,body.dark .sc-speaker,body.dark .course-desc,body.dark .course-meta{color:#9ca8bb}
 body.dark .read-more-btn,body.dark .news-more{background:#c9a961;color:#1a2b4a}
@@ -412,8 +345,6 @@ body.dark .daily-box{background:linear-gradient(135deg,#0f1a2e 0%,#1a2b45 100%)}
 body.dark .course-status.open{background:#065f46;color:#d1fae5}
 body.dark .course-status.closed{background:#991b1b;color:#fee2e2}
 body.dark .course-status.coming{background:#92400e;color:#fef3c7}
-
-/* Responsive */
 @media (max-width:1100px){.news-grid{grid-template-columns:minmax(0,1fr) 280px;gap:18px}}
 @media (max-width:900px){
     .news-grid{grid-template-columns:1fr;gap:16px}
@@ -427,6 +358,7 @@ body.dark .course-status.coming{background:#92400e;color:#fef3c7}
     .lang-note{font-size:7.5px}
     .lang-btn{font-size:9px;padding:1px 5px}
     .dark-toggle{width:22px;height:22px;font-size:10px}
+    .notify-icon-btn{width:20px;height:20px;font-size:9px}
     .banner img{max-height:220px}
     .menu-btn{width:46px;height:46px;font-size:20px;top:10px;left:10px}
     .search-bar{padding:6px 10px}
@@ -457,7 +389,6 @@ body.dark .course-status.coming{background:#92400e;color:#fef3c7}
 </head>
 <body>
 
-<!-- TOP BAR -->
 <div class="top-bar">
     <div class="container row">
         <button class="dark-toggle" id="darkToggle" title="الوضع الليلي"><i class="fa-solid fa-moon"></i></button>
@@ -473,19 +404,18 @@ body.dark .course-status.coming{background:#92400e;color:#fef3c7}
                 <button class="lang-btn active" data-lang="ar">العربية</button>
                 <button class="lang-btn" data-lang="en">English</button>
                 <button class="lang-btn" data-lang="fa">فارسی</button>
+                <button class="notify-icon-btn" id="notifyBtn" title="اشترك في الإشعارات"><i class="fa-solid fa-bell"></i></button>
             </div>
             <div class="lang-note" data-i18n="langNote">ستتوفر ميزة ترجمة المقال قريباً</div>
         </div>
     </div>
 </div>
 
-<!-- BANNER -->
 <div class="banner">
     <button class="menu-btn" id="menuBtn" title="القائمة"><i class="fa-solid fa-bars"></i></button>
     <img src="/assets/images/file_00000000175082109123db13309793e5.png" alt="منصة مشكاة">
 </div>
 
-<!-- SEARCH -->
 <div class="search-bar">
     <div class="search-inner">
         <input type="search" id="searchInput" placeholder="ابحث في الموقع...">
@@ -493,7 +423,6 @@ body.dark .course-status.coming{background:#92400e;color:#fef3c7}
     </div>
 </div>
 
-<!-- SIDEBAR NAV -->
 <nav class="main-nav" id="mainNav">
     <button class="close-menu" id="closeMenuBtn"><i class="fa-solid fa-times"></i></button>
     <ul class="nav-list">
@@ -521,9 +450,7 @@ body.dark .course-status.coming{background:#92400e;color:#fef3c7}
 </nav>
 <div class="overlay" id="overlay"></div>
 
-<!-- MAIN -->
 <main class="main">
-    <!-- HOME -->
     <section class="view active" id="view-home">
         <div class="breaking-bar">
             <div class="breaking-label"><i class="fa-solid fa-circle"></i> <span data-i18n="breakingLabel">آخر الأخبار</span></div>
@@ -547,13 +474,6 @@ body.dark .course-status.coming{background:#92400e;color:#fef3c7}
                 <div class="section-header"><h2 data-i18n="latestUpdates">آخر التحديثات</h2></div>
                 <div class="articles-grid" id="articlesGrid"></div>
                 <div class="empty hidden-section" id="articlesEmpty"><i class="fa-regular fa-newspaper"></i><h3>لا يوجد محتوى حالياً</h3></div>
-                <div class="notify-box">
-                    <div class="nb-text">
-                        <strong><i class="fa-solid fa-bell"></i> اشترك في الإشعارات</strong>
-                        <small>ليصلك جديد المنشورات والدروس مباشرة</small>
-                    </div>
-                    <button class="notify-btn" id="notifyBtn"><i class="fa-solid fa-bell"></i> اشترك الآن</button>
-                </div>
             </div>
             <aside class="sidebar">
                 <div class="sidebar-box"><div class="box-header"><i class="fa-solid fa-fire"></i> <span data-i18n="mostRead">الأكثر قراءة</span></div><div class="box-body" id="mostReadBox"></div></div>
@@ -562,7 +482,6 @@ body.dark .course-status.coming{background:#92400e;color:#fef3c7}
         </div>
     </section>
 
-    <!-- COURSES -->
     <section class="view" id="view-courses">
         <div class="title-bar"><h1><i class="fa-solid fa-graduation-cap"></i> <span data-i18n="pageCourses">دورات تعليمية</span></h1><p data-i18n="pageCoursesDesc">دورات لأعمار ومستويات مختلفة</p></div>
         <div class="tabs" id="coursesTabs">
@@ -573,7 +492,6 @@ body.dark .course-status.coming{background:#92400e;color:#fef3c7}
         <div id="coursesContent"></div>
     </section>
 
-    <!-- GREATS -->
     <section class="view" id="view-greats">
         <div class="title-bar"><h1><i class="fa-solid fa-star"></i> <span data-i18n="pageGreats">عظماؤنا</span></h1><p data-i18n="pageGreatsDesc">شخصيات خالدة أثرت في التاريخ</p></div>
         <div class="tabs" id="greatsTabs">
@@ -589,7 +507,6 @@ body.dark .course-status.coming{background:#92400e;color:#fef3c7}
         <div class="empty hidden-section" id="greatsEmpty"><i class="fa-solid fa-star"></i><h3>لا توجد شخصيات حالياً</h3></div>
     </section>
 
-    <!-- FIQH -->
     <section class="view" id="view-fiqh">
         <div class="title-bar"><h1><i class="fa-solid fa-scale-balanced"></i> <span data-i18n="pageFiqh">مسائل فقهية</span></h1><p data-i18n="pageFiqhDesc">أسئلة وأجوبة فقهية</p></div>
         <div class="tabs" id="fiqhTabs">
@@ -621,14 +538,12 @@ body.dark .course-status.coming{background:#92400e;color:#fef3c7}
         </div>
     </section>
 
-    <!-- WEEKLY -->
     <section class="view" id="view-weekly">
         <div class="title-bar"><h1><i class="fa-solid fa-hands-praying"></i> <span data-i18n="pageWeekly">نور الأسبوع</span></h1><p data-i18n="pageWeeklyDesc">أدعية وزيارات</p></div>
         <div class="weekly-grid" id="weeklyGrid"></div>
         <div class="empty hidden-section" id="weeklyEmpty"><i class="fa-solid fa-hands-praying"></i><h3>لا يوجد محتوى حالياً</h3></div>
     </section>
 
-    <!-- VIDEOS -->
     <section class="view" id="view-videos">
         <div class="title-bar"><h1><i class="fa-solid fa-video"></i> <span data-i18n="pageVideos">المرئيات</span></h1><p data-i18n="pageVideosDesc">مقاطع فيديو</p></div>
         <div class="vnav-tabs">
@@ -639,7 +554,6 @@ body.dark .course-status.coming{background:#92400e;color:#fef3c7}
         <div class="empty hidden-section" id="videosEmpty"><i class="fa-solid fa-video"></i><h3>لا توجد مقاطع حالياً</h3></div>
     </section>
 
-    <!-- AUDIOS -->
     <section class="view" id="view-audios">
         <div class="title-bar"><h1><i class="fa-solid fa-headphones"></i> <span data-i18n="pageAudios">الصوتيات</span></h1><p data-i18n="pageAudiosDesc">مقاطع صوتية</p></div>
         <div class="tabs" id="audiosTabs"></div>
@@ -647,7 +561,6 @@ body.dark .course-status.coming{background:#92400e;color:#fef3c7}
         <div class="empty hidden-section" id="audiosEmpty"><i class="fa-solid fa-headphones"></i><h3>لا توجد مقاطع حالياً</h3></div>
     </section>
 
-    <!-- NEWS -->
     <section class="view" id="view-news">
         <div class="title-bar"><h1><i class="fa-solid fa-newspaper"></i> <span data-i18n="pageNews">الأخبار</span></h1><p data-i18n="pageNewsDesc">آخر الأخبار</p></div>
         <div class="tabs" id="newsTabs">
@@ -659,20 +572,17 @@ body.dark .course-status.coming{background:#92400e;color:#fef3c7}
         <div class="empty hidden-section" id="newsEmpty"><i class="fa-solid fa-newspaper"></i><h3>لا توجد أخبار</h3></div>
     </section>
 
-    <!-- COMPETITIONS -->
     <section class="view" id="view-competitions">
         <div class="title-bar"><h1><i class="fa-solid fa-trophy"></i> مسابقات</h1><p>مسابقات ثقافية</p></div>
         <div class="empty"><i class="fa-solid fa-trophy"></i><h3>يجري الترتيب</h3><p>سيتم الإعلان قريباً</p></div>
     </section>
 
-    <!-- LIBRARY -->
     <section class="view" id="view-library">
         <div class="title-bar"><h1><i class="fa-solid fa-book"></i> <span id="libTitle">المكتبة</span></h1><p id="libDesc">كتب وملفات</p></div>
         <div class="library-grid" id="libraryGrid"></div>
         <div class="empty hidden-section" id="libraryEmpty"><i class="fa-solid fa-book-open"></i><h3>لا توجد كتب</h3></div>
     </section>
 
-    <!-- FAMILY -->
     <section class="view" id="view-family">
         <div class="title-bar"><h1><i class="fa-solid fa-handshake-angle"></i> انضم إلينا</h1><p>فرصة للانضمام إلى فريق مشكاة</p></div>
         <div class="card" style="border-top-color:var(--gold);text-align:center">
@@ -682,7 +592,6 @@ body.dark .course-status.coming{background:#92400e;color:#fef3c7}
         </div>
     </section>
 
-    <!-- ABOUT -->
     <section class="view" id="view-about">
         <div class="title-bar"><h1><i class="fa-solid fa-circle-info"></i> عن المنصة</h1><p>تعرّف على منصة مشكاة</p></div>
         <div class="card"><h2><i class="fa-solid fa-lightbulb"></i> التعريف</h2><p>مشكاة منصة إسلامية فكرية توعوية.</p></div>
@@ -690,7 +599,6 @@ body.dark .course-status.coming{background:#92400e;color:#fef3c7}
         <div class="card"><h2><i class="fa-solid fa-bullhorn"></i> الرسالة</h2><p>تقديم محتوى فكري وثقافي رصين.</p></div>
     </section>
 
-    <!-- CONTACT -->
     <section class="view" id="view-contact">
         <div class="title-bar"><h1><i class="fa-solid fa-address-book"></i> تواصل معنا</h1><p>نحن هنا للإجابة</p></div>
         <div class="card">
@@ -700,7 +608,6 @@ body.dark .course-status.coming{background:#92400e;color:#fef3c7}
         </div>
     </section>
 
-    <!-- SEARCH -->
     <section class="view" id="view-search">
         <div class="search-results-header">
             <h2><i class="fa-solid fa-magnifying-glass"></i> نتائج البحث</h2>
@@ -710,7 +617,6 @@ body.dark .course-status.coming{background:#92400e;color:#fef3c7}
         <div class="empty hidden-section" id="searchEmpty"><i class="fa-solid fa-magnifying-glass-minus"></i><h3>لا توجد نتائج</h3></div>
     </section>
 
-    <!-- ARTICLE -->
     <section class="view" id="view-article">
         <div style="max-width:900px;margin:0 auto">
             <button class="back-btn" onclick="backToHome()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
@@ -720,22 +626,6 @@ body.dark .course-status.coming{background:#92400e;color:#fef3c7}
                 <div style="display:flex;gap:10px;flex-wrap:wrap">
                     <button class="share-btn native" onclick="nativeShare()"><i class="fa-solid fa-share-nodes"></i> مشاركة</button>
                     <button class="copy-link-btn" onclick="copyCurrentLink(event)"><i class="fa-solid fa-link"></i> نسخ الرابط</button>
-                </div>
-            </div>
-            <div class="comments-section">
-                <h3><i class="fa-regular fa-comments"></i> التعليقات</h3>
-                <div id="commentsList"><p style="color:var(--muted)">جاري التحميل...</p></div>
-                <div class="form-box" style="border-top:2px dashed var(--border);box-shadow:none;background:var(--very-light)">
-                    <h4 style="color:var(--navy);margin-bottom:14px;font-family:'Cairo',sans-serif">أضف تعليقاً</h4>
-                    <form id="commentForm">
-                        <input type="hidden" id="commentSlug">
-                        <label>الاسم</label>
-                        <input type="text" id="commentName" required maxlength="60">
-                        <label>التعليق</label>
-                        <textarea id="commentBody" rows="4" required maxlength="2000"></textarea>
-                        <button type="submit" class="btn-submit"><i class="fa-regular fa-paper-plane"></i> إرسال</button>
-                        <p id="commentMsg" style="margin-top:10px;font-weight:bold"></p>
-                    </form>
                 </div>
             </div>
         </div>
@@ -767,7 +657,6 @@ body.dark .course-status.coming{background:#92400e;color:#fef3c7}
     <div class="footer-bottom"><div class="container"><p>جميع الحقوق محفوظة © 2026 منصة مشكاة | للنور والوعي</p></div></div>
 </footer>
 
-<!-- LIBRARY MODAL -->
 <div class="modal" id="libraryModal" onclick="if(event.target===this)closeLibraryModal()">
     <div class="modal-box" style="max-width:500px">
         <button class="modal-close" onclick="closeLibraryModal()">×</button>
@@ -784,7 +673,6 @@ body.dark .course-status.coming{background:#92400e;color:#fef3c7}
     </div>
 </div>
 
-<!-- DOWNLOAD MODAL -->
 <div class="modal" id="downloadModal">
     <div class="modal-box">
         <button class="modal-close" onclick="closeDownload()">×</button>
@@ -796,7 +684,6 @@ body.dark .course-status.coming{background:#92400e;color:#fef3c7}
     </div>
 </div>
 
-<!-- ONESIGNAL -->
 <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 <script>
 window.OneSignalDeferred = window.OneSignalDeferred || [];
@@ -811,13 +698,11 @@ OneSignalDeferred.push(async function(OneSignal) {
 
 <script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
 <script>
-// ============ STATE ============
 let articles=[], books=[], audios=[], videos=[], news=[], daily=null, fiqh=[], weekly=[], greats=[], useful=[], courses=[];
 let lang='ar';
 let videosState='all', currentSeries='', newsFilter='all', fiqhFilter='all', greatsFilter='all', audioSeries='all';
 let coursesTab='lessons';
 
-// ============ TRANSLATIONS ============
 const T = {
     ar: { langNote:'ستتوفر ميزة ترجمة المقال قريباً', navHome:'الرئيسية', navGreats:'عظماؤنا', navFiqh:'مسائل فقهية',
         navCourses:'دورات تعليمية', navWeekly:'نور الأسبوع', navLibrary:'المكتبة', navVideos:'المرئيات', navAudios:'الصوتيات',
@@ -872,20 +757,15 @@ function renderMarkdown(text) {
     return p.replace(/\n/g,'<br>');
 }
 
-// ============ VIEWS ============
 function showView(id) {
-    if (id === 'home') {
-        document.body.classList.remove('filter-mode');
-    } else {
-        document.body.classList.add('filter-mode');
-    }
+    if (id === 'home') { document.body.classList.remove('filter-mode'); }
+    else { document.body.classList.add('filter-mode'); }
     document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
     const t = $('view-' + id);
     if (t) t.classList.add('active');
     document.querySelectorAll('.main-nav a[data-view]').forEach(a => a.classList.toggle('active', a.dataset.view === id));
     window.scrollTo({top:0,behavior:'smooth'});
     closeMenu();
-
     if (id === 'home') renderHome();
     if (id === 'courses') renderCourses();
     if (id === 'greats') renderGreats();
@@ -901,18 +781,24 @@ function openMenu() { $('mainNav').classList.add('open'); $('overlay').classList
 function closeMenu() { $('mainNav').classList.remove('open'); $('overlay').classList.remove('show'); }
 function updateTabs(id) { const c = $(id); if (!c) return; c.querySelectorAll('.tab').forEach((b,i) => b.classList.toggle('active', i===0)); }
 
-function openLibraryModal() {
-    closeMenu();
-    $('libraryModal').classList.add('show');
-}
+function openLibraryModal() { closeMenu(); $('libraryModal').classList.add('show'); }
 function closeLibraryModal() { $('libraryModal').classList.remove('show'); }
-function openLibCat(cat) {
-    closeLibraryModal();
-    showView('library');
-    setTimeout(() => renderBooks(cat), 50);
+function openLibCat(cat) { closeLibraryModal(); showView('library'); setTimeout(() => renderBooks(cat), 50); }
+
+function addBackButtons() {
+    const views = ['greats','fiqh','courses','weekly','videos','audios','news','competitions','library','family','about','contact'];
+    views.forEach(id => {
+        const view = document.getElementById('view-' + id);
+        if (!view) return;
+        if (view.querySelector('.back-nav-btn')) return;
+        const btn = document.createElement('button');
+        btn.className = 'back-nav-btn';
+        btn.innerHTML = '<i class="fa-solid fa-arrow-right"></i> رجوع للرئيسية';
+        btn.onclick = () => showView('home');
+        view.insertBefore(btn, view.firstChild);
+    });
 }
 
-// ============ LOAD DATA ============
 async function fetchJSON(file) {
     try { const r = await fetch(file + '?t=' + Date.now()); if (!r.ok) return null; return await r.json(); }
     catch(e) { return null; }
@@ -931,7 +817,6 @@ const ARTICLE_FILES = [
 async function loadAll() {
     const d = await fetchJSON('daily.json');
     if (d && d.text) daily = d;
-
     const fq = await fetchJSON('fiqh-qa.json');
     if (fq && fq.items) fiqh = fq.items;
     try {
@@ -943,7 +828,6 @@ async function loadAll() {
             }
         }
     } catch(e) {}
-
     const w = await fetchJSON('weekly.json');
     if (w && w.items) weekly = w.items;
     const g = await fetchJSON('greats.json');
@@ -952,19 +836,14 @@ async function loadAll() {
     if (u && u.items) useful = u.items;
     const c = await fetchJSON('courses.json');
     if (c && c.items) courses = c.items;
-
     for (const {file, cat} of ARTICLE_FILES) {
         const data = await fetchJSON(file);
         if (data && data.items) {
             data.items.forEach(item => {
-                articles.push({
-                    cat, title: item.title_ar||'', author: item.author_ar||'', date: item.date||'',
-                    excerpt: item.excerpt_ar||'', image: item.image||'', body: item.body_ar||''
-                });
+                articles.push({ cat, title: item.title_ar||'', author: item.author_ar||'', date: item.date||'', excerpt: item.excerpt_ar||'', image: item.image||'', body: item.body_ar||'' });
             });
         }
     }
-
     const b = await fetchJSON('books.json');
     if (b && b.items) books = b.items;
     const a = await fetchJSON('audios.json');
@@ -973,7 +852,6 @@ async function loadAll() {
     if (v && v.items) videos = v.items;
     const n = await fetchJSON('news.json');
     if (n && n.items) news = n.items;
-
     renderDaily();
     renderHome();
     renderSidebar();
@@ -981,7 +859,6 @@ async function loadAll() {
     buildAudioTabs();
 }
 
-// ============ DAILY ============
 function renderDaily() {
     const box = $('dailyBox');
     if (!box) return;
@@ -992,14 +869,12 @@ function renderDaily() {
     $('dailySource').innerHTML = '<i class="fa-solid fa-bookmark"></i> ' + (daily.source || 'منصة مشكاة');
 }
 
-// ============ HOME ============
 function renderHome() {
     document.body.classList.remove('filter-mode');
     const grid = $('articlesGrid');
     const empty = $('articlesEmpty');
     if (!grid) return;
     $('categoryTitleWrap').style.display = 'none';
-
     const items = [];
     articles.forEach((a,i) => items.push({type:'article', label:'مقال', icon:'fa-newspaper', title:a.title, excerpt:a.excerpt, author:a.author, date:a.date, idx:i}));
     news.forEach((n,i) => items.push({type:'news', label:'خبر', icon:'fa-newspaper', title:n.title, excerpt:n.excerpt||'', author:'', date:n.date||'', idx:i}));
@@ -1007,129 +882,52 @@ function renderHome() {
     videos.forEach((v,i) => items.push({type:'video', label:'مرئي', icon:'fa-video', title:v.title, excerpt:v.description||'', author:v.channel||'', date:v.date||'', idx:i}));
     audios.forEach((a,i) => items.push({type:'audio', label:'صوتي', icon:'fa-headphones', title:a.title, excerpt:a.description||'', author:a.speaker||'', date:a.date||'', idx:i}));
     courses.forEach((c,i) => items.push({type:'course', label:'دورة', icon:'fa-graduation-cap', title:c.title, excerpt:c.description||'', author:c.instructor||'', date:c.date||'', idx:i}));
-
     items.sort((a,b) => (b.date||'').localeCompare(a.date||''));
-
     if (!items.length) { grid.innerHTML = ''; if (empty) empty.classList.remove('hidden-section'); return; }
     if (empty) empty.classList.add('hidden-section');
-    grid.innerHTML = items.slice(0, 14).map(it => `
-        <div class="article-card">
-            <div class="card-top"></div>
-            <div class="card-body">
-                <span class="category-badge"><i class="fa-solid ${it.icon}"></i> ${it.label}</span>
-                <h3>${esc(it.title)}</h3>
-                <p class="excerpt">${esc(it.excerpt)}</p>
-                <button class="read-more-btn" onclick="openItem('${it.type}',${it.idx})"><i class="fa-solid fa-arrow-left"></i> أكمل القراءة</button>
-                <div class="meta"><span><i class="fa-regular fa-user"></i> ${esc(it.author||'مشكاة')}</span><span><i class="fa-regular fa-calendar"></i> ${esc(it.date||'')}</span></div>
-            </div>
-        </div>`).join('');
+    grid.innerHTML = items.slice(0, 14).map(it => `<div class="article-card"><div class="card-top"></div><div class="card-body"><span class="category-badge"><i class="fa-solid ${it.icon}"></i> ${it.label}</span><h3>${esc(it.title)}</h3><p class="excerpt">${esc(it.excerpt)}</p><button class="read-more-btn" onclick="openItem('${it.type}',${it.idx})"><i class="fa-solid fa-arrow-left"></i> أكمل القراءة</button><div class="meta"><span><i class="fa-regular fa-user"></i> ${esc(it.author||'مشكاة')}</span><span><i class="fa-regular fa-calendar"></i> ${esc(it.date||'')}</span></div></div></div>`).join('');
 }
 
 function renderSidebar() {
     const mr = $('mostReadBox');
-    if (mr) mr.innerHTML = articles.slice(0,5).map((a,i) => `
-        <div class="most-read-item" onclick="openArticle(${i})">
-            <div class="number">${i+1}</div>
-            <div class="text"><p>${esc(a.title)}</p><small>${esc(a.cat)}</small></div>
-        </div>`).join('') || '<p style="color:var(--muted);font-size:13px">لا توجد مقالات</p>';
-
+    if (mr) mr.innerHTML = articles.slice(0,5).map((a,i) => `<div class="most-read-item" onclick="openArticle(${i})"><div class="number">${i+1}</div><div class="text"><p>${esc(a.title)}</p><small>${esc(a.cat)}</small></div></div>`).join('') || '<p style="color:var(--muted);font-size:13px">لا توجد مقالات</p>';
     const sc = $('sidebarCatsBox');
     if (sc) {
         const counts = {};
         articles.forEach(a => { counts[a.cat] = (counts[a.cat]||0)+1; });
         const names = {ahlulbayt:'أهل البيت (عليهم السلام)', insights:'رؤى وأفكار', doubts:'شبهات وردود', dialogues:'حوارات ومقابلات', family:'الأسرة والمجتمع', general:'مقالات عامة', rights:'حقوق'};
-        sc.innerHTML = Object.keys(counts).map(k => `
-            <div class="sidebar-cat-item" onclick="filterCat('${k}')">
-                <span>${names[k]||k}</span><span class="count">${counts[k]}</span>
-            </div>`).join('') || '<p style="color:var(--muted);font-size:13px">لا توجد تصنيفات</p>';
+        sc.innerHTML = Object.keys(counts).map(k => `<div class="sidebar-cat-item" onclick="filterCat('${k}')"><span>${names[k]||k}</span><span class="count">${counts[k]}</span></div>`).join('') || '<p style="color:var(--muted);font-size:13px">لا توجد تصنيفات</p>';
     }
 }
 
-// ============ FILTER CAT ============
 function filterCat(cat) {
     closeMenu();
     document.body.classList.add('filter-mode');
     document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
     $('view-home').classList.add('active');
-
     const names = {ahlulbayt:'أهل البيت (عليهم السلام)', insights:'رؤى وأفكار', doubts:'شبهات وردود', dialogues:'حوارات ومقابلات', family:'الأسرة والمجتمع', general:'مقالات عامة', rights:'حقوق'};
     const titleWrap = $('categoryTitleWrap');
     if (titleWrap) {
         titleWrap.innerHTML = `<div class="section-header"><h2>${esc(names[cat]||cat)} <button onclick="renderHome()" style="background:var(--navy);color:#fff;border:none;padding:4px 12px;border-radius:4px;font-size:12px;cursor:pointer;font-family:'Cairo',sans-serif;margin-right:12px"><i class="fa-solid fa-times"></i> عرض الكل</button></h2></div>`;
         titleWrap.style.display = 'block';
     }
-
     const grid = $('articlesGrid');
     const filtered = articles.filter(a => a.cat === cat);
     if (!filtered.length) { grid.innerHTML = ''; $('articlesEmpty').classList.remove('hidden-section'); return; }
     $('articlesEmpty').classList.add('hidden-section');
-    grid.innerHTML = filtered.map(a => {
-        const idx = articles.indexOf(a);
-        return `<div class="article-card"><div class="card-top"></div><div class="card-body"><h3>${esc(a.title)}</h3><p class="excerpt">${esc(a.excerpt)}</p><button class="read-more-btn" onclick="openArticle(${idx})"><i class="fa-solid fa-arrow-left"></i> أكمل القراءة</button><div class="meta"><span><i class="fa-regular fa-user"></i> ${esc(a.author)}</span><span><i class="fa-regular fa-calendar"></i> ${esc(a.date)}</span></div></div></div>`;
-    }).join('');
+    grid.innerHTML = filtered.map(a => { const idx = articles.indexOf(a); return `<div class="article-card"><div class="card-top"></div><div class="card-body"><h3>${esc(a.title)}</h3><p class="excerpt">${esc(a.excerpt)}</p><button class="read-more-btn" onclick="openArticle(${idx})"><i class="fa-solid fa-arrow-left"></i> أكمل القراءة</button><div class="meta"><span><i class="fa-regular fa-user"></i> ${esc(a.author)}</span><span><i class="fa-regular fa-calendar"></i> ${esc(a.date)}</span></div></div></div>`; }).join('');
     window.scrollTo({top:0,behavior:'smooth'});
 }
 
-// ============ COURSES ============
 function renderCourses() {
     const area = $('coursesContent');
     if (!area) return;
     if (coursesTab === 'lessons') {
         if (!courses.length) { area.innerHTML = '<div class="empty"><i class="fa-solid fa-graduation-cap"></i><h3>لا توجد دورات حالياً</h3><p>سيتم الإعلان عن الدورات القادمة قريباً</p></div>'; return; }
         const statusLabel = {open:'التسجيل مفتوح', closed:'مغلق', coming:'قريباً'};
-        area.innerHTML = `<div class="courses-grid">${courses.map((c,i) => `
-            <div class="course-card">
-                <div class="course-head">
-                    <span class="course-status ${c.status||'coming'}">${statusLabel[c.status]||'قريباً'}</span>
-                    <h3>${esc(c.title||'')}</h3>
-                </div>
-                <div class="course-body">
-                    <div class="course-meta">
-                        ${c.instructor?`<span><i class="fa-solid fa-user-tie"></i> ${esc(c.instructor)}</span>`:''}
-                        ${c.age_group?`<span><i class="fa-solid fa-users"></i> ${esc(c.age_group)}</span>`:''}
-                        ${c.level?`<span><i class="fa-solid fa-signal"></i> ${esc(c.level)}</span>`:''}
-                        ${c.duration?`<span><i class="fa-regular fa-clock"></i> ${esc(c.duration)}</span>`:''}
-                        ${c.date?`<span><i class="fa-regular fa-calendar"></i> ${esc(c.date)}</span>`:''}
-                    </div>
-                    ${c.description?`<p class="course-desc">${esc(c.description)}</p>`:''}
-                    <div class="course-actions">
-                        ${c.status === 'open' ? `<button class="course-btn" onclick="openCourseRegister('${esc(c.title)}')"><i class="fa-solid fa-pen-to-square"></i> سجل الآن</button>` :
-                          c.status === 'closed' ? `<button class="course-btn" disabled><i class="fa-solid fa-lock"></i> التسجيل مغلق</button>` :
-                          `<button class="course-btn" disabled><i class="fa-solid fa-hourglass-half"></i> قريباً</button>`}
-                    </div>
-                </div>
-            </div>`).join('')}</div>`;
+        area.innerHTML = `<div class="courses-grid">${courses.map((c,i) => `<div class="course-card"><div class="course-head"><span class="course-status ${c.status||'coming'}">${statusLabel[c.status]||'قريباً'}</span><h3>${esc(c.title||'')}</h3></div><div class="course-body"><div class="course-meta">${c.instructor?`<span><i class="fa-solid fa-user-tie"></i> ${esc(c.instructor)}</span>`:''}${c.age_group?`<span><i class="fa-solid fa-users"></i> ${esc(c.age_group)}</span>`:''}${c.level?`<span><i class="fa-solid fa-signal"></i> ${esc(c.level)}</span>`:''}${c.duration?`<span><i class="fa-regular fa-clock"></i> ${esc(c.duration)}</span>`:''}${c.date?`<span><i class="fa-regular fa-calendar"></i> ${esc(c.date)}</span>`:''}</div>${c.description?`<p class="course-desc">${esc(c.description)}</p>`:''}<div class="course-actions">${c.status === 'open' ? `<button class="course-btn" onclick="openCourseRegister('${esc(c.title)}')"><i class="fa-solid fa-pen-to-square"></i> سجل الآن</button>` : c.status === 'closed' ? `<button class="course-btn" disabled><i class="fa-solid fa-lock"></i> التسجيل مغلق</button>` : `<button class="course-btn" disabled><i class="fa-solid fa-hourglass-half"></i> قريباً</button>`}</div></div></div>`).join('')}</div>`;
     } else if (coursesTab === 'register') {
-        area.innerHTML = `
-            <div class="card" style="border-top-color:var(--gold)">
-                <h2><i class="fa-solid fa-pen-to-square"></i> استمارة التسجيل في الدورات</h2>
-                <p>يرجى تعبئة البيانات التالية وسنتواصل معك قريباً بإذن الله.</p>
-                <form id="courseRegisterForm" style="margin-top:14px">
-                    <label>الاسم الكامل *</label>
-                    <input type="text" id="regName" required maxlength="80">
-                    <label>العمر *</label>
-                    <select id="regAge" required>
-                        <option value="">اختر الفئة العمرية</option>
-                        <option value="أقل من 10 سنوات">أقل من 10 سنوات</option>
-                        <option value="10 - 14 سنة">10 - 14 سنة</option>
-                        <option value="15 - 18 سنة">15 - 18 سنة</option>
-                        <option value="19 - 25 سنة">19 - 25 سنة</option>
-                        <option value="26 - 40 سنة">26 - 40 سنة</option>
-                        <option value="أكبر من 40 سنة">أكبر من 40 سنة</option>
-                    </select>
-                    <label>رقم الجوال / البريد *</label>
-                    <input type="text" id="regContact" required maxlength="120">
-                    <label>الدورة المطلوبة</label>
-                    <select id="regCourse">
-                        <option value="">اختر الدورة</option>
-                        ${courses.filter(c => c.status === 'open').map(c => `<option value="${esc(c.title)}">${esc(c.title)}</option>`).join('')}
-                    </select>
-                    <label>ملاحظات إضافية</label>
-                    <textarea id="regNotes" rows="4" maxlength="500"></textarea>
-                    <button type="submit" class="btn-submit"><i class="fa-regular fa-paper-plane"></i> إرسال الطلب</button>
-                    <p id="regMsg" style="margin-top:10px;font-weight:bold"></p>
-                </form>
-            </div>`;
+        area.innerHTML = `<div class="card" style="border-top-color:var(--gold)"><h2><i class="fa-solid fa-pen-to-square"></i> استمارة التسجيل في الدورات</h2><p>يرجى تعبئة البيانات التالية وسنتواصل معك قريباً بإذن الله.</p><form id="courseRegisterForm" style="margin-top:14px"><label>الاسم الكامل *</label><input type="text" id="regName" required maxlength="80"><label>العمر *</label><select id="regAge" required><option value="">اختر الفئة العمرية</option><option value="أقل من 10 سنوات">أقل من 10 سنوات</option><option value="10 - 14 سنة">10 - 14 سنة</option><option value="15 - 18 سنة">15 - 18 سنة</option><option value="19 - 25 سنة">19 - 25 سنة</option><option value="26 - 40 سنة">26 - 40 سنة</option><option value="أكبر من 40 سنة">أكبر من 40 سنة</option></select><label>رقم الجوال / البريد *</label><input type="text" id="regContact" required maxlength="120"><label>الدورة المطلوبة</label><select id="regCourse"><option value="">اختر الدورة</option>${courses.filter(c => c.status === 'open').map(c => `<option value="${esc(c.title)}">${esc(c.title)}</option>`).join('')}</select><label>ملاحظات إضافية</label><textarea id="regNotes" rows="4" maxlength="500"></textarea><button type="submit" class="btn-submit"><i class="fa-regular fa-paper-plane"></i> إرسال الطلب</button><p id="regMsg" style="margin-top:10px;font-weight:bold"></p></form></div>`;
         $('courseRegisterForm')?.addEventListener('submit', async e => {
             e.preventDefault();
             const msg = $('regMsg');
@@ -1142,19 +940,7 @@ function renderCourses() {
             } catch(err) { msg.textContent = '❌ فشل الإرسال، حاول مرة أخرى'; msg.style.color = 'red'; }
         });
     } else if (coursesTab === 'about') {
-        area.innerHTML = `
-            <div class="card">
-                <h2><i class="fa-solid fa-graduation-cap"></i> عن الدورات التعليمية</h2>
-                <p>نقدّم في منصة مشكاة سلسلة من الدورات التعليمية المتنوعة، تستهدف أعمارًا ومستويات مختلفة، وتشمل مجالات متعددة.</p>
-                <h3 style="color:var(--navy);font-family:'Cairo',sans-serif;margin:18px 0 10px">المميزات:</h3>
-                <ul style="list-style:none;padding:0">
-                    <li style="padding:10px 0;border-bottom:1px dashed var(--border)"><i class="fa-solid fa-check" style="color:var(--gold);margin-left:8px"></i> دورات لأعمار مختلفة (أطفال، شباب، كبار)</li>
-                    <li style="padding:10px 0;border-bottom:1px dashed var(--border)"><i class="fa-solid fa-check" style="color:var(--gold);margin-left:8px"></i> محاضرون متخصصون</li>
-                    <li style="padding:10px 0;border-bottom:1px dashed var(--border)"><i class="fa-solid fa-check" style="color:var(--gold);margin-left:8px"></i> شهادات حضور</li>
-                    <li style="padding:10px 0;border-bottom:1px dashed var(--border)"><i class="fa-solid fa-check" style="color:var(--gold);margin-left:8px"></i> محتوى أصيل ورصين</li>
-                    <li style="padding:10px 0"><i class="fa-solid fa-check" style="color:var(--gold);margin-left:8px"></i> أسعار رمزية أو مجانية</li>
-                </ul>
-            </div>`;
+        area.innerHTML = `<div class="card"><h2><i class="fa-solid fa-graduation-cap"></i> عن الدورات التعليمية</h2><p>نقدّم في منصة مشكاة سلسلة من الدورات التعليمية المتنوعة، تستهدف أعمارًا ومستويات مختلفة، وتشمل مجالات متعددة.</p><h3 style="color:var(--navy);font-family:'Cairo',sans-serif;margin:18px 0 10px">المميزات:</h3><ul style="list-style:none;padding:0"><li style="padding:10px 0;border-bottom:1px dashed var(--border)"><i class="fa-solid fa-check" style="color:var(--gold);margin-left:8px"></i> دورات لأعمار مختلفة (أطفال، شباب، كبار)</li><li style="padding:10px 0;border-bottom:1px dashed var(--border)"><i class="fa-solid fa-check" style="color:var(--gold);margin-left:8px"></i> محاضرون متخصصون</li><li style="padding:10px 0;border-bottom:1px dashed var(--border)"><i class="fa-solid fa-check" style="color:var(--gold);margin-left:8px"></i> شهادات حضور</li><li style="padding:10px 0;border-bottom:1px dashed var(--border)"><i class="fa-solid fa-check" style="color:var(--gold);margin-left:8px"></i> محتوى أصيل ورصين</li><li style="padding:10px 0"><i class="fa-solid fa-check" style="color:var(--gold);margin-left:8px"></i> أسعار رمزية أو مجانية</li></ul></div>`;
     }
 }
 
@@ -1165,7 +951,6 @@ function openCourseRegister(courseTitle) {
     setTimeout(() => { const sel = $('regCourse'); if (sel && courseTitle) sel.value = courseTitle; }, 100);
 }
 
-// ============ GREATS ============
 function renderGreats() {
     const grid = $('greatsGrid');
     const empty = $('greatsEmpty');
@@ -1174,10 +959,7 @@ function renderGreats() {
     if (greatsFilter !== 'all') items = greats.filter(g => g.category === greatsFilter);
     if (!items.length) { grid.innerHTML = ''; empty.classList.remove('hidden-section'); return; }
     empty.classList.add('hidden-section');
-    grid.innerHTML = items.map(g => {
-        const idx = greats.indexOf(g);
-        return `<div class="great-card" onclick="openGreat(${idx})"><div class="great-img">${g.image?`<img src="${g.image}" alt="${esc(g.name)}">`:`<i class="fa-solid fa-user-tie"></i>`}</div><div class="great-body">${g.category?`<span class="great-cat">${esc(g.category)}</span>`:''}<h3>${esc(g.name)}</h3>${g.title?`<div class="great-title">${esc(g.title)}</div>`:''}<p class="great-excerpt">${esc(g.excerpt||'')}</p>${g.quote?`<div class="great-quote">"${esc(g.quote)}"</div>`:''}</div></div>`;
-    }).join('');
+    grid.innerHTML = items.map(g => { const idx = greats.indexOf(g); return `<div class="great-card" onclick="openGreat(${idx})"><div class="great-img">${g.image?`<img src="${g.image}" alt="${esc(g.name)}">`:`<i class="fa-solid fa-user-tie"></i>`}</div><div class="great-body">${g.category?`<span class="great-cat">${esc(g.category)}</span>`:''}<h3>${esc(g.name)}</h3>${g.title?`<div class="great-title">${esc(g.title)}</div>`:''}<p class="great-excerpt">${esc(g.excerpt||'')}</p>${g.quote?`<div class="great-quote">"${esc(g.quote)}"</div>`:''}</div></div>`; }).join('');
 }
 
 function openGreat(idx) {
@@ -1189,7 +971,6 @@ function openGreat(idx) {
     window.scrollTo({top:0,behavior:'smooth'});
 }
 
-// ============ FIQH ============
 function renderFiqh() {
     const list = $('fiqhList');
     const empty = $('fiqhEmpty');
@@ -1198,16 +979,11 @@ function renderFiqh() {
     if (fiqhFilter !== 'all') items = fiqh.filter(q => q.category === fiqhFilter);
     if (!items.length) { list.innerHTML = ''; empty.classList.remove('hidden-section'); return; }
     empty.classList.add('hidden-section');
-    list.innerHTML = items.map(qa => {
-        const idx = fiqh.indexOf(qa);
-        return `<div class="fiqh-card">${qa.category?`<span class="category-badge">${esc(qa.category)}</span>`:''}<div class="qa-label"><i class="fa-solid fa-circle-question"></i> سؤال</div><div class="qa-question">${esc(qa.question)}</div>${qa.answer?`<hr class="qa-divider"><div class="qa-label answer"><i class="fa-solid fa-check"></i> الجواب</div><div class="qa-answer">${renderMarkdown(qa.answer)}</div>`:''}${qa.date?`<div class="qa-meta"><i class="fa-regular fa-calendar"></i> ${esc(qa.date)}</div>`:''}<div class="qa-actions"><button class="qa-copy" onclick="copyQA(${idx})"><i class="fa-solid fa-copy"></i> نسخ</button><button class="qa-share" onclick="shareQA(${idx})"><i class="fa-solid fa-share-nodes"></i> مشاركة</button></div></div>`;
-    }).join('');
+    list.innerHTML = items.map(qa => { const idx = fiqh.indexOf(qa); return `<div class="fiqh-card">${qa.category?`<span class="category-badge">${esc(qa.category)}</span>`:''}<div class="qa-label"><i class="fa-solid fa-circle-question"></i> سؤال</div><div class="qa-question">${esc(qa.question)}</div>${qa.answer?`<hr class="qa-divider"><div class="qa-label answer"><i class="fa-solid fa-check"></i> الجواب</div><div class="qa-answer">${renderMarkdown(qa.answer)}</div>`:''}${qa.date?`<div class="qa-meta"><i class="fa-regular fa-calendar"></i> ${esc(qa.date)}</div>`:''}<div class="qa-actions"><button class="qa-copy" onclick="copyQA(${idx})"><i class="fa-solid fa-copy"></i> نسخ</button><button class="qa-share" onclick="shareQA(${idx})"><i class="fa-solid fa-share-nodes"></i> مشاركة</button></div></div>`; }).join('');
 }
+function copyQA(i) { const q = fiqh[i]; if (!q) return; navigator.clipboard?.writeText('❓ '+q.question+'\n\n✅ '+(q.answer||'')+'\n\n— منصة مشكاة'); alert('✅'); }
+async function shareQA(i) { const q = fiqh[i]; if (!q) return; const t='❓ '+q.question+'\n\n✅ '+(q.answer||''); if (navigator.share) { try { await navigator.share({title:q.question,text:t}); return; } catch(e){} } navigator.clipboard?.writeText(t); alert('✅'); }
 
-function copyQA(i) { const q = fiqh[i]; if (!q) return; const t='❓ '+q.question+'\n\n✅ '+(q.answer||'')+'\n\n— منصة مشكاة'; navigator.clipboard?.writeText(t); alert('✅ تم النسخ'); }
-async function shareQA(i) { const q = fiqh[i]; if (!q) return; const t='❓ '+q.question+'\n\n✅ '+(q.answer||''); if (navigator.share) { try { await navigator.share({title:q.question,text:t}); return; } catch(e){} } navigator.clipboard?.writeText(t); alert('✅ تم النسخ'); }
-
-// ============ WEEKLY ============
 function renderWeekly() {
     const grid = $('weeklyGrid');
     const empty = $('weeklyEmpty');
@@ -1219,7 +995,6 @@ function renderWeekly() {
 function copyWeekly(i) { const w=weekly[i]; if (!w) return; navigator.clipboard?.writeText('📖 '+w.title+'\n\n'+w.body); alert('✅'); }
 async function shareWeekly(i) { const w=weekly[i]; if (!w) return; const t='📖 '+w.title+'\n\n'+w.body; if (navigator.share) { try { await navigator.share({title:w.title,text:t}); return; } catch(e){} } navigator.clipboard?.writeText(t); alert('✅'); }
 
-// ============ VIDEOS ============
 function extractYT(input) {
     if (!input) return '';
     const s = String(input).trim();
@@ -1237,18 +1012,7 @@ function buildVideoItem(v, idx) {
     } else {
         poster = `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:40px;background:linear-gradient(135deg,var(--navy),var(--blue))"><i class="fa-solid ${type==='upload'?'fa-file-video':'fa-link'}"></i></div>`;
     }
-    return `<div class="video-item" id="vitem-${idx}">
-        <div class="video-poster" onclick="playVideo(${idx})">
-            ${poster}
-            <div class="play-overlay"><i class="fa-solid fa-circle-play"></i></div>
-        </div>
-        <div class="video-info">
-            ${v.series?`<span class="series-pill"><i class="fa-solid fa-layer-group"></i> ${esc(v.series)}</span>`:''}
-            <h3>${esc(v.title)}</h3>
-            <div class="video-meta">${v.channel?`<span><i class="fa-solid fa-user-tie"></i> ${esc(v.channel)}</span>`:''}${v.date?`<span><i class="fa-regular fa-calendar"></i> ${esc(v.date)}</span>`:''}</div>
-            ${v.description?`<p>${esc(v.description)}</p>`:''}
-        </div>
-    </div>`;
+    return `<div class="video-item" id="vitem-${idx}"><div class="video-poster" onclick="playVideo(${idx})">${poster}<div class="play-overlay"><i class="fa-solid fa-circle-play"></i></div></div><div class="video-info">${v.series?`<span class="series-pill"><i class="fa-solid fa-layer-group"></i> ${esc(v.series)}</span>`:''}<h3>${esc(v.title)}</h3><div class="video-meta">${v.channel?`<span><i class="fa-solid fa-user-tie"></i> ${esc(v.channel)}</span>`:''}${v.date?`<span><i class="fa-regular fa-calendar"></i> ${esc(v.date)}</span>`:''}</div>${v.description?`<p>${esc(v.description)}</p>`:''}</div></div>`;
 }
 
 function renderVideosPage() {
@@ -1257,17 +1021,11 @@ function renderVideosPage() {
     if (!area) return;
     if (!videos.length) { area.innerHTML = ''; empty.classList.remove('hidden-section'); return; }
     empty.classList.add('hidden-section');
-
     if (videosState === 'all') {
         area.innerHTML = `<div class="videos-list">${videos.map((v,i) => buildVideoItem(v,i)).join('')}</div>`;
     } else if (videosState === 'series') {
         const map = {};
-        videos.forEach(v => {
-            if (!v.series) return;
-            if (!map[v.series]) map[v.series] = {count:0, speaker:v.channel||''};
-            map[v.series].count++;
-            if (!map[v.series].speaker && v.channel) map[v.series].speaker = v.channel;
-        });
+        videos.forEach(v => { if (!v.series) return; if (!map[v.series]) map[v.series] = {count:0, speaker:v.channel||''}; map[v.series].count++; if (!map[v.series].speaker && v.channel) map[v.series].speaker = v.channel; });
         const keys = Object.keys(map);
         if (!keys.length) { area.innerHTML = '<div class="empty"><i class="fa-solid fa-layer-group"></i><h3>لا توجد سلاسل</h3></div>'; return; }
         area.innerHTML = `<div class="series-cards-grid">${keys.map(s => `<div class="series-card" onclick="openSeries('${s.replace(/'/g,"\\'")}')"><div class="sc-icon"><i class="fa-solid fa-layer-group"></i></div><h4>${esc(s)}</h4>${map[s].speaker?`<div class="sc-speaker"><i class="fa-solid fa-microphone"></i> ${esc(map[s].speaker)}</div>`:''}<span class="sc-count">${map[s].count} مقطع</span></div>`).join('')}</div>`;
@@ -1277,7 +1035,6 @@ function renderVideosPage() {
         area.innerHTML = `<div class="series-header"><div><h3>${esc(currentSeries)}</h3>${speaker?`<div class="sd-meta"><i class="fa-solid fa-microphone"></i> ${esc(speaker)} • ${items.length} مقطع</div>`:`<div class="sd-meta">${items.length} مقطع</div>`}</div><button class="series-back" onclick="backToSeries()"><i class="fa-solid fa-arrow-right"></i> رجوع للسلاسل</button></div><div class="videos-list">${items.map(o => buildVideoItem(o.v,o.i)).join('')}</div>`;
     }
 }
-
 function updateVnav() { document.querySelectorAll('.vnav-btn').forEach(b => b.classList.toggle('active', b.dataset.vnav === videosState)); }
 function openSeries(name) { videosState='detail'; currentSeries=name; renderVideosPage(); window.scrollTo({top:0,behavior:'smooth'}); }
 function backToSeries() { videosState='series'; currentSeries=''; updateVnav(); renderVideosPage(); window.scrollTo({top:0,behavior:'smooth'}); }
@@ -1288,19 +1045,12 @@ function playVideo(idx) {
     const poster = item.querySelector('.video-poster'); if (!poster || poster.classList.contains('playing')) return;
     const type = v.source_type || (v.youtube_url||v.youtube_id ? 'youtube' : (v.video_file ? 'upload' : (v.external_url ? 'external' : '')));
     let html = '';
-    if (type === 'youtube') {
-        const id = extractYT(v.youtube_url||v.youtube_id||'');
-        if (id) html = `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0" allowfullscreen allow="autoplay;encrypted-media"></iframe>`;
-    } else if (type === 'upload' && v.video_file) {
-        let src = v.video_file; if (!src.startsWith('http') && !src.startsWith('/')) src = '/'+src;
-        html = `<video controls autoplay playsinline><source src="${src}" type="video/mp4"></video>`;
-    } else if (type === 'external' && v.external_url) {
-        html = `<iframe src="${v.external_url}" allowfullscreen allow="autoplay"></iframe>`;
-    }
+    if (type === 'youtube') { const id = extractYT(v.youtube_url||v.youtube_id||''); if (id) html = `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0" allowfullscreen allow="autoplay;encrypted-media"></iframe>`; }
+    else if (type === 'upload' && v.video_file) { let src = v.video_file; if (!src.startsWith('http') && !src.startsWith('/')) src = '/'+src; html = `<video controls autoplay playsinline><source src="${src}" type="video/mp4"></video>`; }
+    else if (type === 'external' && v.external_url) { html = `<iframe src="${v.external_url}" allowfullscreen allow="autoplay"></iframe>`; }
     if (html) { poster.innerHTML = html; poster.classList.add('playing'); poster.onclick = null; }
 }
 
-// ============ AUDIOS ============
 function buildAudioTabs() {
     const tabs = $('audiosTabs'); if (!tabs) return;
     const series = [...new Set(audios.map(a => a.series).filter(Boolean))];
@@ -1317,15 +1067,10 @@ function renderAudios() {
     if (audioSeries !== 'all') items = audios.filter(a => a.series === audioSeries);
     if (!items.length) { list.innerHTML = ''; empty.classList.remove('hidden-section'); return; }
     empty.classList.add('hidden-section');
-    list.innerHTML = items.map(a => {
-        const idx = audios.indexOf(a);
-        const src = '/audios/' + a.file;
-        return `<div class="audio-card">${a.series?`<span class="series-pill"><i class="fa-solid fa-layer-group"></i> ${esc(a.series)}</span>`:''}<div class="audio-head"><div class="audio-icon"><i class="fa-solid fa-headphones"></i></div><div class="audio-info"><h3>${esc(a.title)}</h3><div class="audio-meta">${a.speaker?`<span><i class="fa-solid fa-microphone"></i> ${esc(a.speaker)}</span>`:''}${a.date?`<span><i class="fa-regular fa-calendar"></i> ${esc(a.date)}</span>`:''}</div></div></div>${a.description?`<p class="audio-desc">${esc(a.description)}</p>`:''}<audio controls preload="none"><source src="${src}" type="audio/mpeg"></audio><div class="audio-actions"><a class="dl" href="${src}" download><i class="fa-solid fa-download"></i> تحميل</a><button class="sh" onclick="shareAudio(${idx})"><i class="fa-solid fa-share-nodes"></i> مشاركة</button></div></div>`;
-    }).join('');
+    list.innerHTML = items.map(a => { const idx = audios.indexOf(a); const src = '/audios/' + a.file; return `<div class="audio-card">${a.series?`<span class="series-pill"><i class="fa-solid fa-layer-group"></i> ${esc(a.series)}</span>`:''}<div class="audio-head"><div class="audio-icon"><i class="fa-solid fa-headphones"></i></div><div class="audio-info"><h3>${esc(a.title)}</h3><div class="audio-meta">${a.speaker?`<span><i class="fa-solid fa-microphone"></i> ${esc(a.speaker)}</span>`:''}${a.date?`<span><i class="fa-regular fa-calendar"></i> ${esc(a.date)}</span>`:''}</div></div></div>${a.description?`<p class="audio-desc">${esc(a.description)}</p>`:''}<audio controls preload="none"><source src="${src}" type="audio/mpeg"></audio><div class="audio-actions"><a class="dl" href="${src}" download><i class="fa-solid fa-download"></i> تحميل</a><button class="sh" onclick="shareAudio(${idx})"><i class="fa-solid fa-share-nodes"></i> مشاركة</button></div></div>`; }).join('');
 }
 async function shareAudio(i) { const a=audios[i]; if (!a) return; const url=location.origin+'/audios/'+a.file; const t='🎧 '+a.title+'\n🔗 '+url; if (navigator.share) { try { await navigator.share({title:a.title,text:t,url}); return; } catch(e){} } navigator.clipboard?.writeText(t); alert('✅'); }
 
-// ============ NEWS ============
 function renderNews() {
     const list = $('newsList'); const empty = $('newsEmpty');
     if (!list) return;
@@ -1334,12 +1079,7 @@ function renderNews() {
     else if (newsFilter === 'normal') items = news.filter(n => !n.urgent);
     if (!items.length) { list.innerHTML = ''; empty.classList.remove('hidden-section'); return; }
     empty.classList.add('hidden-section');
-    list.innerHTML = items.map(n => {
-        const idx = news.indexOf(n);
-        const icon = n.type === 'video' ? 'fa-video' : 'fa-newspaper';
-        const label = n.type === 'video' ? 'فيديو' : 'نصي';
-        return `<div class="news-item ${n.urgent?'urgent':''}"><div class="news-badges">${n.urgent?`<span class="urgent-badge"><i class="fa-solid fa-circle"></i> عاجل</span>`:''}<span class="news-type"><i class="fa-solid ${icon}"></i> ${label}</span></div><h3>${esc(n.title)}</h3>${n.date?`<div class="news-date"><i class="fa-regular fa-calendar"></i> ${esc(n.date)}</div>`:''}${n.excerpt?`<p class="news-excerpt">${esc(n.excerpt)}</p>`:''}<button class="news-more" onclick="openNews(${idx})">اقرأ المزيد <i class="fa-solid fa-arrow-left"></i></button></div>`;
-    }).join('');
+    list.innerHTML = items.map(n => { const idx = news.indexOf(n); const icon = n.type === 'video' ? 'fa-video' : 'fa-newspaper'; const label = n.type === 'video' ? 'فيديو' : 'نصي'; return `<div class="news-item ${n.urgent?'urgent':''}"><div class="news-badges">${n.urgent?`<span class="urgent-badge"><i class="fa-solid fa-circle"></i> عاجل</span>`:''}<span class="news-type"><i class="fa-solid ${icon}"></i> ${label}</span></div><h3>${esc(n.title)}</h3>${n.date?`<div class="news-date"><i class="fa-regular fa-calendar"></i> ${esc(n.date)}</div>`:''}${n.excerpt?`<p class="news-excerpt">${esc(n.excerpt)}</p>`:''}<button class="news-more" onclick="openNews(${idx})">اقرأ المزيد <i class="fa-solid fa-arrow-left"></i></button></div>`; }).join('');
 }
 function openNews(idx) {
     const n = news[idx]; if (!n) return;
@@ -1353,7 +1093,6 @@ function openNews(idx) {
     window.scrollTo({top:0,behavior:'smooth'});
 }
 
-// ============ LIBRARY ============
 function renderBooks(filter) {
     const grid = $('libraryGrid'); const empty = $('libraryEmpty');
     if (!grid) return;
@@ -1363,10 +1102,7 @@ function renderBooks(filter) {
     else { $('libTitle').textContent = 'المكتبة'; $('libDesc').textContent = 'كتب وملفات'; }
     if (!items.length) { grid.innerHTML = ''; empty.classList.remove('hidden-section'); return; }
     empty.classList.add('hidden-section');
-    grid.innerHTML = items.map(b => {
-        const idx = books.indexOf(b);
-        return `<div class="book-card"><div class="book-cover">${b.cover?`<img src="${b.cover}" alt="${esc(b.title)}">`:`<i class="fa-solid fa-book"></i>`}</div><div class="book-body"><h3>${esc(b.title)}</h3><div class="book-author"><i class="fa-solid fa-user-pen"></i> ${esc(b.author||'')}</div><p class="book-desc">${esc(b.description||'')}</p><div class="book-actions"><button class="book-btn download" onclick="showDownload(${idx})"><i class="fa-solid fa-download"></i> تحميل</button><button class="book-btn share" onclick="shareBook(${idx})"><i class="fa-solid fa-share-nodes"></i> مشاركة</button></div></div></div>`;
-    }).join('');
+    grid.innerHTML = items.map(b => { const idx = books.indexOf(b); return `<div class="book-card"><div class="book-cover">${b.cover?`<img src="${b.cover}" alt="${esc(b.title)}">`:`<i class="fa-solid fa-book"></i>`}</div><div class="book-body"><h3>${esc(b.title)}</h3><div class="book-author"><i class="fa-solid fa-user-pen"></i> ${esc(b.author||'')}</div><p class="book-desc">${esc(b.description||'')}</p><div class="book-actions"><button class="book-btn download" onclick="showDownload(${idx})"><i class="fa-solid fa-download"></i> تحميل</button><button class="book-btn share" onclick="shareBook(${idx})"><i class="fa-solid fa-share-nodes"></i> مشاركة</button></div></div></div>`; }).join('');
 }
 function showDownload(i) {
     const b = books[i]; if (!b) return;
@@ -1380,7 +1116,6 @@ function showDownload(i) {
 function closeDownload() { $('downloadModal').classList.remove('show'); }
 async function shareBook(i) { const b=books[i]; if (!b) return; const t='📚 '+b.title+'\n👤 '+b.author+'\n\n📖 '+b.description+'\n\n🔗 '+location.origin; if (navigator.share) { try { await navigator.share({title:b.title,text:t}); return; } catch(e){} } navigator.clipboard?.writeText(t); alert('✅'); }
 
-// ============ USEFUL ============
 function renderUseful() {
     const sec = $('usefulSites'); const grid = $('usefulGrid');
     if (!sec || !grid) return;
@@ -1389,7 +1124,6 @@ function renderUseful() {
     grid.innerHTML = useful.map(s => `<a href="${esc(s.url||'#')}" target="_blank" rel="noopener" class="useful-card"><div class="useful-icon"><i class="fa-solid ${esc(s.icon||'fa-globe')}"></i></div><div class="useful-info"><h4>${esc(s.name||'')}</h4>${s.description?`<p>${esc(s.description)}</p>`:''}</div></a>`).join('');
 }
 
-// ============ OPEN ITEM ============
 function openItem(type, idx) {
     if (type === 'article') openArticle(idx);
     else if (type === 'news') openNews(idx);
@@ -1405,17 +1139,14 @@ function openArticle(idx) {
     const img = a.image ? `<img src="${a.image}" alt="${esc(a.title)}" class="article-image">` : '';
     const body = a.body ? renderMarkdown(a.body) : `<p>${esc(a.excerpt||'')}</p>`;
     $('articleBody').innerHTML = `<span class="category-badge">${catNames[a.cat]||''}</span><h1>${esc(a.title)}</h1><div class="article-meta"><span><i class="fa-regular fa-user"></i> ${esc(a.author||'')}</span><span><i class="fa-regular fa-calendar"></i> ${esc(a.date||'')}</span></div>${img}<div class="article-body">${body}</div>`;
-    $('commentSlug').value = a.title;
     document.body.classList.add('filter-mode');
     document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
     $('view-article').classList.add('active');
     window.scrollTo({top:0,behavior:'smooth'});
-    setTimeout(loadComments, 100);
 }
 
 function backToHome() { showView('home'); }
 
-// ============ SEARCH ============
 function doSearch(q) {
     q = (q||'').trim().toLowerCase();
     if (q.length < 2) return;
@@ -1428,14 +1159,10 @@ function doSearch(q) {
     news.forEach((n,i) => { if ((n.title+(n.excerpt||'')).toLowerCase().includes(q)) results.push({type:'news',label:'خبر',icon:'fa-newspaper',idx:i,title:n.title,excerpt:n.excerpt||''}); });
     fiqh.forEach((f,i) => { if ((f.question+(f.answer||'')).toLowerCase().includes(q)) results.push({type:'fiqh',label:'فقهي',icon:'fa-scale-balanced',idx:i,title:f.question,excerpt:f.answer||''}); });
     courses.forEach((c,i) => { if ((c.title+(c.description||'')).toLowerCase().includes(q)) results.push({type:'course',label:'دورة',icon:'fa-graduation-cap',idx:i,title:c.title,excerpt:c.description||''}); });
-
     const list = $('searchResults'); const empty = $('searchEmpty');
     $('searchQuery').textContent = q;
     if (!results.length) { list.innerHTML = ''; empty.classList.remove('hidden-section'); }
-    else {
-        empty.classList.add('hidden-section');
-        list.innerHTML = results.map(r => `<div class="search-result-item" onclick="openSearch('${r.type}',${r.idx})"><span class="result-type"><i class="fa-solid ${r.icon}"></i> ${r.label}</span><h3>${esc(r.title)}</h3><p class="result-snippet">${esc(r.excerpt)}</p></div>`).join('');
-    }
+    else { empty.classList.add('hidden-section'); list.innerHTML = results.map(r => `<div class="search-result-item" onclick="openSearch('${r.type}',${r.idx})"><span class="result-type"><i class="fa-solid ${r.icon}"></i> ${r.label}</span><h3>${esc(r.title)}</h3><p class="result-snippet">${esc(r.excerpt)}</p></div>`).join(''); }
     document.body.classList.add('filter-mode');
     document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
     $('view-search').classList.add('active');
@@ -1453,45 +1180,29 @@ function openSearch(type, idx) {
     else if (type === 'fiqh') { showView('fiqh'); setTimeout(() => { const el=document.querySelectorAll('.fiqh-card')[idx]; if (el) el.scrollIntoView({behavior:'smooth',block:'center'}); }, 200); }
 }
 
-// ============ COMMENTS ============
-async function loadComments() {
-    const slug = $('commentSlug').value;
-    const list = $('commentsList');
-    if (!list) return;
-    list.innerHTML = '<p style="color:var(--muted)">جاري التحميل...</p>';
-    try {
-        const r = await fetch('/api/comments?slug=' + encodeURIComponent(slug));
-        const c = await r.json();
-        if (!Array.isArray(c) || !c.length) { list.innerHTML = '<p style="color:var(--muted)">لا توجد تعليقات بعد.</p>'; return; }
-        list.innerHTML = c.map(x => `<div style="border-bottom:1px solid var(--border);padding:14px 0"><div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><div style="width:36px;height:36px;background:var(--navy);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Cairo',sans-serif">${esc((x.author||'?').charAt(0))}</div><strong style="color:var(--navy);font-family:'Cairo',sans-serif">${esc(x.author)}</strong><small style="color:var(--muted);margin-right:auto;font-family:'Cairo',sans-serif">${new Date(x.created_at*1000).toLocaleDateString('ar-EG')}</small></div><p style="margin:0;font-size:14.5px;line-height:1.8">${esc(x.body)}</p></div>`).join('');
-    } catch(e) { list.innerHTML = '<p style="color:red">تعذّر التحميل.</p>'; }
-}
-
-// ============ SHARE ============
 function copyCurrentLink(e) { e.stopPropagation(); navigator.clipboard?.writeText(location.href); const b = e.currentTarget; const o = b.innerHTML; b.innerHTML = '<i class="fa-solid fa-check"></i> تم'; setTimeout(() => b.innerHTML = o, 1500); }
 async function nativeShare() {
-    const title = $('commentSlug').value || document.title;
+    const title = document.querySelector('.article-full h1')?.textContent || document.title;
     if (navigator.share) { try { await navigator.share({title, url:location.href}); return; } catch(e){} }
     navigator.clipboard?.writeText(location.href); alert('✅ تم نسخ الرابط');
 }
 
-// ============ NOTIFICATIONS ============
 async function subscribeNotify() {
     const btn = $('notifyBtn');
     if (!btn) return;
     try {
         if (window.OneSignal && typeof OneSignal.User?.PushSubscription?.optIn === 'function') {
             await OneSignal.User.PushSubscription.optIn();
-            btn.innerHTML = '<i class="fa-solid fa-check"></i> مشترك ✓';
+            btn.innerHTML = '<i class="fa-solid fa-check"></i>';
             btn.disabled = true;
-            alert('✅ تم الاشتراك بنجاح! ستصلك الإشعارات عن الجديد.');
+            btn.title = 'مشترك ✓';
+            alert('✅ تم الاشتراك بنجاح! ستصلك الإشعارات.');
         } else {
             alert('⚠️ خدمة الإشعارات قيد الإعداد. سيتم تفعيلها قريباً.');
         }
     } catch(e) { alert('⚠️ تعذّر الاشتراك: ' + e.message); }
 }
 
-// ============ LANG ============
 function setLang(l) {
     lang = l;
     const t = T[l] || T.ar;
@@ -1501,11 +1212,9 @@ function setLang(l) {
     localStorage.setItem('mishkat_lang', l);
 }
 
-// ============ INIT ============
 document.addEventListener('DOMContentLoaded', async () => {
     document.querySelectorAll('.lang-btn').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
     setLang(localStorage.getItem('mishkat_lang') || 'ar');
-
     if (localStorage.getItem('mishkat_theme') === 'dark') document.body.classList.add('dark');
     $('darkToggle')?.addEventListener('click', () => {
         document.body.classList.toggle('dark');
@@ -1514,40 +1223,20 @@ document.addEventListener('DOMContentLoaded', async () => {
         localStorage.setItem('mishkat_theme', isDark ? 'dark' : 'light');
     });
     if (document.body.classList.contains('dark')) $('darkToggle').innerHTML = '<i class="fa-solid fa-sun"></i>';
-
     $('menuBtn')?.addEventListener('click', openMenu);
     $('closeMenuBtn')?.addEventListener('click', closeMenu);
     $('overlay')?.addEventListener('click', closeMenu);
-
     document.querySelectorAll('.main-nav a[data-view]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); showView(a.dataset.view); }));
     document.querySelectorAll('.main-nav a[data-cat]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); filterCat(a.dataset.cat); }));
-
-    // Library modal
     $('libraryOpenBtn')?.addEventListener('click', e => { e.preventDefault(); openLibraryModal(); });
-
-    // Video tabs
     document.querySelectorAll('.vnav-btn').forEach(b => b.addEventListener('click', () => { videosState = b.dataset.vnav; currentSeries = ''; updateVnav(); renderVideosPage(); }));
-
-    // Fiqh
     $('fiqhTabs')?.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () => { $('fiqhTabs').querySelectorAll('.tab').forEach(x => x.classList.remove('active')); b.classList.add('active'); fiqhFilter = b.dataset.fiqh; renderFiqh(); }));
-
-    // News
     $('newsTabs')?.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () => { $('newsTabs').querySelectorAll('.tab').forEach(x => x.classList.remove('active')); b.classList.add('active'); newsFilter = b.dataset.news; renderNews(); }));
-
-    // Greats
     $('greatsTabs')?.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () => { $('greatsTabs').querySelectorAll('.tab').forEach(x => x.classList.remove('active')); b.classList.add('active'); greatsFilter = b.dataset.greats; renderGreats(); }));
-
-    // Courses
     $('coursesTabs')?.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () => { $('coursesTabs').querySelectorAll('.tab').forEach(x => x.classList.remove('active')); b.classList.add('active'); coursesTab = b.dataset.courses; renderCourses(); }));
-
-    // Search
     $('searchInput')?.addEventListener('input', e => doSearch(e.target.value));
     $('searchBtn')?.addEventListener('click', () => doSearch($('searchInput').value));
-
-    // Notify
     $('notifyBtn')?.addEventListener('click', subscribeNotify);
-
-    // Fiqh form
     $('fiqhForm')?.addEventListener('submit', async e => {
         e.preventDefault();
         const msg = $('fiqhMsg');
@@ -1559,20 +1248,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             else throw new Error(j.error || 'خطأ');
         } catch(err) { msg.textContent = '❌ ' + err.message; msg.style.color = 'red'; }
     });
-
-    // Comment form
-    $('commentForm')?.addEventListener('submit', async e => {
-        e.preventDefault();
-        const msg = $('commentMsg');
-        msg.textContent = 'جاري الإرسال...'; msg.style.color = 'var(--navy)';
-        try {
-            const r = await fetch('/api/comments', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({post_slug:$('commentSlug').value,author:$('commentName').value.trim(),body:$('commentBody').value.trim()})});
-            if (r.ok) { msg.textContent = '✅ تم الإرسال'; msg.style.color = 'green'; e.target.reset(); loadComments(); }
-            else throw new Error('خطأ');
-        } catch(err) { msg.textContent = '❌ فشل الإرسال'; msg.style.color = 'red'; }
-    });
-
-    // Clock
     function updateClock() {
         const n = new Date();
         const d = String(n.getDate()).padStart(2,'0'), m = String(n.getMonth()+1).padStart(2,'0'), y = n.getFullYear();
@@ -1584,9 +1259,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
     updateClock();
     setInterval(updateClock, 1000);
-
     await loadAll();
-
+    addBackButtons();
     if (location.pathname === '/fiqh' || location.pathname === '/fiqh/') showView('fiqh');
     if (location.pathname === '/weekly' || location.pathname === '/weekly/') showView('weekly');
     if (location.pathname === '/courses' || location.pathname === '/courses/') showView('courses');
