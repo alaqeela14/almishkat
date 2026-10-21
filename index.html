@@ -39,7 +39,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .container{max-width:1180px;margin:0 auto;padding:0 20px}
 .hidden{display:none!important}
 
-/* إصلاح: إخفاء وإظهار الأقسام */
+/* إخفاء وإظهار الأقسام */
 .view{display:none; animation: fadeIn 0.4s ease-in-out;}
 .view.active{display:block;}
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -345,9 +345,10 @@ body.dark .tabs{border-color:#2a3a52}
 /* الجوال */
 @media(max-width:768px){
 .top-strip{font-size:.7rem;padding:5px 0}
-.top-strip .inner{padding:0 12px;gap:8px}
-.top-strip .meta{gap:10px}
-.top-strip .meta span:not(:first-child){display:none}
+.top-strip .inner{padding:0 12px; gap:6px; flex-wrap:wrap; justify-content:center;}
+.top-strip .meta{font-size:.65rem; gap:6px; display:flex; flex-wrap:wrap; justify-content:center;}
+.top-strip .sep{display:none;}
+.top-strip .langs{transform:scale(0.9); transform-origin:center;}
 .header{padding:12px 0}
 .header .inner{padding:0 14px;gap:10px}
 .brand-icon{width:42px;height:42px;font-size:1.1rem}
@@ -882,9 +883,11 @@ function extractYT(input){ if(!input) return ''; const s=String(input).trim(); i
 function videoCardHTML(v,idx){
   const type = v.source_type || (v.youtube_url||v.youtube_id?'youtube':(v.video_file?'upload':'external'));
   let thumb = '';
-  if(type==='youtube'){ const id = extractYT(v.youtube_url||v.youtube_id||''); if(id) thumb = `<img src="https://img.youtube.com/vi/${id}/mqdefault.jpg" alt="${esc(v.title)}">`; }
-  if(!thumb) thumb = `<div class="thumb-ph"><i class="fa-solid fa-play-circle"></i></div>`;
-  return `<div class="video-card" id="vitem-${idx}">${thumb}<div class="body">${v.series?`<span class="card-cat">${esc(v.series)}</span>`:''}<h3>${esc(v.title)}</h3><div class="meta">${v.channel?`<span><i class="fa-solid fa-user-tie"></i>${esc(v.channel)}</span>`:''}${v.date?`<span><i class="fa-regular fa-calendar"></i>${esc(v.date)}</span>`:''}</div><button class="play-btn" onclick="playVideo(${idx})"><i class="fa-solid fa-play"></i>تشغيل</button></div></div>`;
+  let thumbSrc = '';
+  if(type==='youtube'){ const id = extractYT(v.youtube_url||v.youtube_id||''); if(id && id.length === 11) thumbSrc = `https://img.youtube.com/vi/${id}/mqdefault.jpg`; }
+  if(thumbSrc) { thumb = `<img src="${thumbSrc}" alt="${esc(v.title)}">`; }
+  else { thumb = `<div class="thumb-ph"><i class="fa-solid fa-play-circle"></i></div>`; }
+  return `<div class="video-card" id="vitem-${idx}" onclick="playVideo(${idx})">${thumb}<div class="body">${v.series?`<span class="card-cat">${esc(v.series)}</span>`:''}<h3>${esc(v.title)}</h3><div class="meta">${v.channel?`<span><i class="fa-solid fa-user-tie"></i>${esc(v.channel)}</span>`:''}${v.date?`<span><i class="fa-regular fa-calendar"></i>${esc(v.date)}</span>`:''}</div><button class="play-btn"><i class="fa-solid fa-play"></i>تشغيل</button></div></div>`;
 }
 
 function renderVideosPage(){
@@ -898,7 +901,31 @@ function renderVideosPage(){
 function updateVTabs(){ document.querySelectorAll('#videosTabs .tab').forEach(b=>b.classList.toggle('active', b.dataset.vnav===videosState)); }
 function openSeries(name){ videosState='detail'; currentSeries=name; updateVTabs(); renderVideosPage(); window.scrollTo({top:0,behavior:'smooth'}); }
 function backToSeries(){ videosState='series'; currentSeries=''; updateVTabs(); renderVideosPage(); window.scrollTo({top:0,behavior:'smooth'}); }
-function playVideo(idx){ const v=videos[idx]; if(!v) return; const item=$('vitem-'+idx); if(!item) return; const type=v.source_type||(v.youtube_url||v.youtube_id?'youtube':(v.video_file?'upload':'external')); let html=''; if(type==='youtube'){ const id=extractYT(v.youtube_url||v.youtube_id||''); if(id) html=`<div style="position:relative;width:100%;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/${id}?autoplay=1" style="position:absolute;inset:0;width:100%;height:100%;border:none" allowfullscreen></iframe></div>`; } else if(type==='upload' && v.video_file){ let src=v.video_file; if(!src.startsWith('http')&&!src.startsWith('/')) src='/'+src; html=`<video controls autoplay playsinline style="width:100%;border-radius:4px"><source src="${src}" type="video/mp4"></video>`; } else if(type==='external' && v.external_url){ html=`<div style="position:relative;width:100%;padding-bottom:56.25%"><iframe src="${v.external_url}" style="position:absolute;inset:0;width:100%;height:100%;border:none" allowfullscreen></iframe></div>`; } item.innerHTML = html + '<div class="body"><h3>'+esc(v.title)+'</h3></div>'; }
+function playVideo(idx){ 
+  const v=videos[idx]; if(!v) return; 
+  const item=$('vitem-'+idx); if(!item) return; 
+  const type=v.source_type||(v.youtube_url||v.youtube_id?'youtube':(v.video_file?'upload':'external')); 
+  let html=''; 
+  if(type==='youtube'){ 
+    const id=extractYT(v.youtube_url||v.youtube_id||''); 
+    if(id && id.length === 11) {
+      html=`<div style="position:relative;width:100%;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0" style="position:absolute;inset:0;width:100%;height:100%;border:none" allowfullscreen></iframe></div>`; 
+    } else {
+      alert('⚠️ رابط يوتيوب غير صالح. يرجى التأكد من الرابط في لوحة التحكم.');
+      return;
+    }
+  } else if(type==='upload' && v.video_file){ 
+    let src=v.video_file; 
+    if(!src.startsWith('http')&&!src.startsWith('/')) src='/'+src; 
+    html=`<video controls autoplay playsinline style="width:100%;border-radius:4px"><source src="${src}" type="video/mp4"></video>`; 
+  } else if(type==='external' && v.external_url){ 
+    html=`<div style="position:relative;width:100%;padding-bottom:56.25%"><iframe src="${v.external_url}" style="position:absolute;inset:0;width:100%;height:100%;border:none" allowfullscreen></iframe></div>`; 
+  } else {
+    alert('⚠️ لم يتم العثور على رابط فيديو صالح أو ملف مرفوع.');
+    return;
+  }
+  item.innerHTML = html + '<div class="body"><h3>'+esc(v.title)+'</h3></div>'; 
+}
 
 function buildAudioTabs(){ const tabs=$('audiosTabs'); if(!tabs) return; const series=[...new Set(audios.map(a=>a.series).filter(Boolean))]; if(!series.length){ tabs.innerHTML=''; tabs.style.display='none'; return; } tabs.style.display='flex'; tabs.innerHTML = `<button class="tab ${audioSeries==='all'?'active':''}" data-audio="all">كل الصوتيات</button>` + series.map(s=>`<button class="tab ${audioSeries===s?'active':''}" data-audio="${esc(s)}">${esc(s)}</button>`).join(''); tabs.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{ audioSeries=b.dataset.audio; buildAudioTabs(); renderAudios(); })); }
 
