@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: alaqeela14/mishkat
+  repo: alaqeela14/amishkat
   branch: main
   base_url: https://sveltia-cms-auth.alaqeelafoundation.workers.dev
   auth_endpoint: auth
