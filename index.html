@@ -39,6 +39,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .container{max-width:1180px;margin:0 auto;padding:0 20px}
 .hidden{display:none!important}
 
+/* إصلاح: إخفاء وإظهار الأقسام */
+.view{display:none; animation: fadeIn 0.4s ease-in-out;}
+.view.active{display:block;}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
 /* 1. البانر (ممتد من الحافة إلى الحافة) */
 .banner{width:100%;line-height:0;background:var(--navy);border-bottom:3px solid var(--gold)}
 .banner img{width:100%;height:auto;max-height:340px;object-fit:cover;display:block}
