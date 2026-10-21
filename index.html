@@ -446,6 +446,8 @@ body.dark .tabs{border-color:#2a3a52}
       <div class="source" id="dailySource"><i class="fa-solid fa-bookmark"></i> منصة مشكاة</div>
     </div>
     <div class="section-title"><i class="fa-solid fa-clock-rotate-left"></i><h2>أحدث الإضافات</h2></div>
+    <!-- تم إضافة مؤشر تحميل هنا -->
+    <div id="homeLoading" style="text-align:center;padding:40px;color:var(--gold);font-weight:bold;font-size:1.2rem;"><i class="fa-solid fa-spinner fa-spin"></i> جاري تحميل أحدث الإضافات...</div>
     <div class="grid" id="latestList"></div>
   </section>
 
@@ -734,19 +736,67 @@ function closeSearch(){ $('searchOverlay').classList.remove('show'); $('searchIn
 async function fetchJSON(f){ try{ const r=await fetch(f+'?t='+Date.now()); if(!r.ok) return null; return await r.json(); }catch(e){ return null; } }
 const ARTICLE_FILES=[{file:'articles-ahlulbayt.json',cat:'ahlulbayt'},{file:'articles-insights.json',cat:'insights'},{file:'articles-doubts.json',cat:'doubts'},{file:'articles-dialogues.json',cat:'dialogues'},{file:'articles-family.json',cat:'family'},{file:'articles-general.json',cat:'general'},{file:'articles-rights.json',cat:'rights'}];
 
+// 🔥 هذا هو الجزء الذي تم إصلاحه (التحميل المتوازي لتسريع الموقع)
 async function loadAll(){
-  const d=await fetchJSON('daily.json'); if(d&&d.text) daily=d;
-  const fq=await fetchJSON('fiqh-qa.json'); if(fq&&fq.items) fiqh=fq.items;
-  try{ const r=await fetch('/api/fiqh?t='+Date.now()); if(r.ok){ const j=await r.json(); if(j.success && Array.isArray(j.questions)){ fiqh=j.questions.map(q=>({question:q.question,answer:q.answer||'',category:q.category||'',date:(q.answered_at||q.created_at||'').split(' ')[0]})).concat(fiqh); } } }catch(e){}
-  const w=await fetchJSON('weekly.json'); if(w&&w.items) weekly=w.items;
-  const g=await fetchJSON('greats.json'); if(g&&g.items) greats=g.items;
-  const c=await fetchJSON('courses.json'); if(c&&c.items) courses=c.items;
-  for(const {file,cat} of ARTICLE_FILES){ const data=await fetchJSON(file); if(data&&data.items) data.items.forEach(item=>articles.push({cat,title:item.title_ar||'',author:item.author_ar||'',date:item.date||'',excerpt:item.excerpt_ar||'',image:item.image||'',body:item.body_ar||''})); }
-  const b=await fetchJSON('books.json'); if(b&&b.items) books=b.items;
-  const a=await fetchJSON('audios.json'); if(a&&a.items) audios=a.items;
-  const v=await fetchJSON('videos.json'); if(v&&v.items) videos=v.items;
-  const n=await fetchJSON('news.json'); if(n&&n.items) news=n.items;
-  renderDaily(); renderHome();
+  try {
+    const [
+      d, fq, apiFq, w, g, c, b, a, v, n, ...articleResults
+    ] = await Promise.all([
+      fetchJSON('daily.json'),
+      fetchJSON('fiqh-qa.json'),
+      fetch('/api/fiqh?t='+Date.now()).then(r => r.ok ? r.json() : null).catch(() => null),
+      fetchJSON('weekly.json'),
+      fetchJSON('greats.json'),
+      fetchJSON('courses.json'),
+      fetchJSON('books.json'),
+      fetchJSON('audios.json'),
+      fetchJSON('videos.json'),
+      fetchJSON('news.json'),
+      ...ARTICLE_FILES.map(f => fetchJSON(f.file))
+    ]);
+
+    // تعيين البيانات الأساسية
+    if(d && d.text) daily = d;
+    if(fq && fq.items) fiqh = fq.items;
+    if(apiFq && apiFq.success && Array.isArray(apiFq.questions)) {
+      fiqh = apiFq.questions.map(q=>({
+        question: q.question,
+        answer: q.answer||'',
+        category: q.category||'',
+        date: (q.answered_at||q.created_at||'').split(' ')[0]
+      })).concat(fiqh);
+    }
+    if(w && w.items) weekly = w.items;
+    if(g && g.items) greats = g.items;
+    if(c && c.items) courses = c.items;
+    if(b && b.items) books = b.items;
+    if(a && a.items) audios = a.items;
+    if(v && v.items) videos = v.items;
+    if(n && n.items) news = n.items;
+
+    // معالجة المقالات
+    ARTICLE_FILES.forEach((fObj, index) => {
+      const data = articleResults[index];
+      if(data && data.items) {
+        data.items.forEach(item => articles.push({
+          cat: fObj.cat,
+          title: item.title_ar||'',
+          author: item.author_ar||'',
+          date: item.date||'',
+          excerpt: item.excerpt_ar||'',
+          image: item.image||'',
+          body: item.body_ar||''
+        }));
+      }
+    });
+
+    renderDaily();
+    $('homeLoading').style.display = 'none'; // إخفاء مؤشر التحميل
+    renderHome();
+  } catch(err) {
+    console.error("خطأ في تحميل البيانات:", err);
+    $('homeLoading').innerHTML = 'حدث خطأ في الاتصال، يرجى تحديث الصفحة.';
+  }
 }
 
 function renderDaily(){
