@@ -2,1069 +2,943 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>منصة مشكاة | للنور والوعي</title>
+<meta name="description" content="منصة إسلامية فكرية توعوية أكاديمية">
+<!-- وسوم المشاركة (OG Tags) المحسنة -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="منصة مشكاة">
 <meta property="og:title" content="منصة مشكاة | للنور والوعي">
-<meta property="og:description" content="منصة إسلامية فكرية توعوية">
-<meta property="og:image" content="https://mishkat-new.pages.dev/assets/images/og-share.jpg?v=5">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+<meta property="og:description" content="منصة إسلامية فكرية توعوية أكاديمية">
+<meta property="og:image" content="https://mishkat-new.pages.dev/assets/images/file_00000000175082109123db13309793e5.png">
+<meta property="og:url" content="https://mishkat-new.pages.dev/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="منصة مشكاة | للنور والوعي">
+<meta name="twitter:description" content="منصة إسلامية فكرية توعوية أكاديمية">
+<meta name="twitter:image" content="https://mishkat-new.pages.dev/assets/images/file_00000000175082109123db13309793e5.png">
+
+<!-- مكتبة الأيقونات -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- الخطوط -->
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#1a2b4a;--navy-dark:#0f1e3d;--blue:#2c4a7c;--bg:#f5f8fc;--card:#fff;--gold:#c9a961;--gold-light:#f5edd6;--text:#1a1a1a;--muted:#6B7280;--border:#e0e6ed;--red:#b91c1c}
-*{box-sizing:border-box;margin:0;padding:0}
-html{overflow-x:hidden}
-body{font-family:'Amiri','Cairo',serif;background:var(--bg);color:var(--text);line-height:1.9;font-size:16px;overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-img{max-width:100%;height:auto;display:block}
-button{font-family:inherit;cursor:pointer}
-.hidden-section{display:none!important}
-.container{max-width:1000px;margin:0 auto;padding:0 12px}
+:root{
+--navy:#1e3a5f;--navy-dark:#152a47;--navy-light:#2d5285;
+--gold:#b8860b;--gold-light:#f5ebd2;
+--cream:#faf8f5;--white:#fff;
+--ink:#1a1a1a;--muted:#5a6472;--border:#e3e0d9;
+--red:#a11d1d;--green:#1e6b3a;
+--font-serif:'Amiri',serif;--font-sans:'Tajawal',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font-sans);background:var(--cream);color:var(--ink);line-height:1.85;font-size:16px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit;transition:.3s}
+ul{list-style:none}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.container{max-width:1180px;margin:0 auto;padding:0 20px}
+.hidden{display:none!important}
 
-/* ===== TOP BAR ===== */
-.topbar{background:var(--navy-dark);color:#b8c4d6;padding:6px 0;border-bottom:2px solid var(--gold);font-size:11px}
-.topbar .row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:space-between;padding:0 12px;max-width:1200px;margin:0 auto}
-.topbar-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.topbar-right span{display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
-.topbar-right i{color:var(--gold)}
-.topbar-right .sep{color:#3a4a6a}
-.topbar-center{display:flex;gap:3px}
-.lang-btn{background:transparent;border:1px solid #3a4a6a;color:#b8c4d6;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:500;font-family:'Cairo',sans-serif}
-.lang-btn.active,.lang-btn:hover{border-color:var(--gold);color:var(--gold)}
-.topbar-left{display:flex;gap:5px;align-items:center}
-.icon-btn{background:transparent;border:1px solid #3a4a6a;color:#b8c4d6;width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;padding:0}
-.icon-btn:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
-.icon-btn.notify{background:var(--gold);color:var(--navy);border-color:var(--gold);animation:pulse-n 2s infinite}
-.icon-btn.notify[disabled]{background:#16a34a;color:#fff;animation:none;cursor:default}
-@keyframes pulse-n{0%,100%{box-shadow:0 0 0 0 rgba(201,169,97,.7)}50%{box-shadow:0 0 0 6px rgba(201,169,97,0)}}
+/* 1. البانر (ممتد من الحافة إلى الحافة) */
+.banner{width:100%;line-height:0;background:var(--navy);border-bottom:3px solid var(--gold)}
+.banner img{width:100%;height:auto;max-height:340px;object-fit:cover;display:block}
 
-/* ===== HEADER ===== */
-.site-header{background:#fff;border-bottom:1px solid var(--border);padding:12px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(26,43,74,.05)}
-.site-header .inner{max-width:1200px;margin:0 auto;padding:0 12px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.site-header .brand{display:flex;align-items:center;gap:12px}
-.site-header .brand img{max-height:55px;width:auto}
-.site-header .brand .text{display:flex;flex-direction:column;line-height:1.15}
-.site-header .brand .text strong{color:var(--navy);font-size:1.5rem;font-weight:700}
-.site-header .brand .text small{color:var(--muted);font-size:11.5px;font-family:'Cairo',sans-serif}
-.menu-btn{background:var(--navy);color:var(--gold);border:none;width:46px;height:46px;border-radius:8px;font-size:20px;display:inline-flex;align-items:center;justify-content:center;transition:.3s}
-.menu-btn:hover{background:var(--gold);color:var(--navy)}
+/* 2. الشريط العلوي الرفيع */
+.top-strip{background:var(--navy-dark);color:#c4cfe0;font-size:.78rem;padding:6px 0;border-bottom:1px solid rgba(184,134,11,.3)}
+.top-strip .inner{max-width:1180px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.top-strip .meta{display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-family:var(--font-sans)}
+.top-strip .meta span{display:inline-flex;align-items:center;gap:5px}
+.top-strip .meta i{color:var(--gold)}
+.top-strip .sep{color:#485a78}
+.top-strip .langs{display:flex;gap:4px}
+.top-strip .lang-btn{background:transparent;border:1px solid #3a4f70;color:#c4cfe0;padding:2px 9px;border-radius:3px;font-size:.72rem;font-family:var(--font-sans);cursor:pointer}
+.top-strip .lang-btn.active,.top-strip .lang-btn:hover{border-color:var(--gold);color:var(--gold)}
 
-/* ===== SEARCH ===== */
-.search-box{max-width:1200px;margin:12px auto;padding:0 12px}
-.search-box .inner{background:#fff;border:1px solid var(--border);border-radius:8px;padding:8px;display:flex;gap:8px}
-.search-box input{flex:1;border:none;outline:none;padding:8px 12px;font-family:'Cairo',sans-serif;font-size:14px;background:transparent;min-width:0}
-.search-box button{background:var(--navy);color:#fff;border:none;padding:8px 20px;border-radius:6px;font-family:'Cairo',sans-serif;font-weight:700;font-size:13px;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
-.search-box button:hover{background:var(--gold);color:var(--navy)}
+/* 3. الترويسة (Header) */
+.header{background:var(--white);border-bottom:1px solid var(--border);padding:16px 0;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(30,58,95,.04)}
+.header .inner{max-width:1180px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;cursor:pointer}
+.brand-icon{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-light));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.4rem;border:2px solid var(--gold);flex-shrink:0}
+.brand-text{display:flex;flex-direction:column;line-height:1.1}
+.brand-text .name{font-family:var(--font-serif);font-size:1.75rem;font-weight:700;color:var(--navy);letter-spacing:.5px}
+.brand-text .name span{color:var(--gold)}
+.brand-text .tag{font-size:.72rem;color:var(--muted);font-weight:500;letter-spacing:1px;margin-top:2px}
 
-/* ===== SIDEBAR DRAWER ===== */
-.drawer{position:fixed;top:0;right:0;width:300px;max-width:85vw;height:100vh;background:var(--navy);color:#fff;z-index:2000;transform:translateX(100%);transition:transform .3s;overflow-y:auto;box-shadow:-5px 0 20px rgba(0,0,0,.3)}
+/* الأيقونات في رأس الموقع */
+.header-actions{display:flex;gap:6px;align-items:center}
+.icon-btn{width:42px;height:42px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--navy);font-size:1.05rem;border:1px solid var(--border);transition:.3s;background:var(--white);cursor:pointer}
+.icon-btn:hover{background:var(--navy);color:var(--white);border-color:var(--navy)}
+.icon-btn.notify{background:var(--gold);color:var(--white);border-color:var(--gold);animation:pulse 2s infinite}
+.icon-btn.notify[disabled]{background:var(--green);animation:none;cursor:default}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(184,134,11,.5)}50%{box-shadow:0 0 0 8px rgba(184,134,11,0)}}
+
+/* 4. القائمة الأفقية (Navbar) */
+.navbar{background:var(--navy);border-bottom:3px solid var(--gold);position:sticky;top:85px;z-index:99}
+.navbar .inner{max-width:1180px;margin:0 auto;padding:0 20px;display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+.navbar .inner::-webkit-scrollbar{display:none}
+.navbar a{font-family:var(--font-sans);font-weight:700;font-size:.9rem;color:#d8e0ec;padding:14px 18px;position:relative;white-space:nowrap;cursor:pointer;border-bottom:3px solid transparent;transition:.3s;letter-spacing:.2px}
+.navbar a:hover{color:var(--gold);background:rgba(184,134,11,.06)}
+.navbar a.active{color:var(--gold);border-bottom-color:var(--gold);background:rgba(184,134,11,.1)}
+
+/* عناوين الصفحات */
+.page-head{margin:32px 0 26px;text-align:center;position:relative;padding-bottom:20px}
+.page-head h1{font-family:var(--font-serif);font-size:2.2rem;font-weight:700;color:var(--navy);margin-bottom:8px;letter-spacing:.5px}
+.page-head .subtitle{color:var(--muted);font-size:.92rem;font-weight:500}
+.page-head::after{content:'';position:absolute;bottom:0;right:50%;transform:translateX(50%);width:80px;height:3px;background:var(--gold);border-radius:2px}
+
+/* عناوين الأقسام */
+.section-title{display:flex;align-items:center;gap:12px;margin:36px 0 22px;padding-bottom:12px;border-bottom:2px solid var(--border);position:relative}
+.section-title::after{content:'';position:absolute;bottom:-2px;right:0;width:80px;height:2px;background:var(--gold)}
+.section-title h2{font-family:var(--font-serif);font-size:1.55rem;font-weight:700;color:var(--navy);letter-spacing:.3px}
+.section-title i{color:var(--gold);font-size:1.3rem}
+
+/* نور اليوم */
+.daily{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);color:var(--white);border-radius:4px;padding:28px 32px;margin:26px 0;position:relative;overflow:hidden;border-top:4px solid var(--gold);box-shadow:0 8px 24px rgba(30,58,95,.12)}
+.daily::before{content:'\f10d';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;top:10px;left:20px;font-size:70px;color:rgba(184,134,11,.1);pointer-events:none}
+.daily .type{display:inline-block;background:rgba(184,134,11,.28);color:var(--gold);padding:4px 14px;border-radius:2px;font-size:.75rem;font-weight:700;letter-spacing:.5px;margin-bottom:16px;border:1px solid rgba(184,134,11,.35)}
+.daily .text{font-family:var(--font-serif);font-size:1.35rem;line-height:2;text-align:center;margin-bottom:16px;font-weight:700;color:#f5f0e1}
+.daily .source{text-align:left;font-size:.85rem;color:var(--gold);font-weight:700;letter-spacing:.3px}
+.daily .source i{margin-left:6px}
+
+/* الشبكة والبطاقات */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;margin-bottom:24px}
+.card{background:var(--white);border-radius:4px;overflow:hidden;border:1px solid var(--border);transition:.35s;cursor:pointer;display:flex;flex-direction:column;position:relative}
+.card::before{content:'';position:absolute;top:0;right:0;left:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .4s}
+.card:hover{border-color:var(--gold);box-shadow:0 12px 32px rgba(30,58,95,.1);transform:translateY(-4px)}
+.card:hover::before{transform:scaleX(1)}
+.card-img{width:100%;height:220px;object-fit:cover;display:block;background:linear-gradient(135deg,var(--navy),var(--navy-light))}
+.card-img-placeholder{width:100%;height:220px;background:linear-gradient(135deg,var(--navy),var(--navy-light));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:60px}
+.card-body{padding:22px 24px 20px;display:flex;flex-direction:column;flex-grow:1}
+.card-cat{display:inline-block;background:var(--gold-light);color:var(--navy);padding:4px 12px;border-radius:2px;font-size:.7rem;font-weight:800;letter-spacing:.5px;margin-bottom:12px;align-self:flex-start;border-right:3px solid var(--gold)}
+.card-title{font-family:var(--font-serif);font-size:1.25rem;font-weight:700;color:var(--navy);margin-bottom:10px;line-height:1.45;letter-spacing:.2px}
+.card-excerpt{color:var(--muted);font-size:.92rem;line-height:1.8;flex-grow:1;margin-bottom:16px}
+.card-meta{display:flex;justify-content:space-between;align-items:center;padding-top:14px;border-top:1px solid var(--border);font-size:.78rem;color:var(--muted);font-family:var(--font-sans);flex-wrap:wrap;gap:8px}
+.card-meta span{display:inline-flex;align-items:center;gap:5px}
+.card-meta i{color:var(--gold)}
+
+/* زر الرجوع */
+.back-btn{display:inline-flex;align-items:center;gap:8px;background:var(--white);color:var(--navy);border:1px solid var(--border);padding:10px 20px;border-radius:3px;font-family:var(--font-sans);font-weight:700;font-size:.88rem;margin-bottom:20px;cursor:pointer;transition:.3s}
+.back-btn:hover{background:var(--navy);color:var(--white);border-color:var(--navy)}
+.back-btn i{font-size:.75rem}
+
+/* صفحة المقال */
+.article{background:var(--white);border:1px solid var(--border);border-top:4px solid var(--gold);border-radius:4px;padding:40px 44px;margin-bottom:24px}
+.article .cat{display:inline-block;background:var(--gold-light);color:var(--navy);padding:4px 14px;border-radius:2px;font-size:.72rem;font-weight:800;letter-spacing:.5px;margin-bottom:16px}
+.article h1{font-family:var(--font-serif);font-size:2rem;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:20px;letter-spacing:.2px}
+.article .meta{display:flex;gap:20px;flex-wrap:wrap;font-size:.82rem;color:var(--muted);padding:16px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:26px;font-family:var(--font-sans)}
+.article .meta span{display:inline-flex;align-items:center;gap:6px}
+.article .meta i{color:var(--gold)}
+.article .cover{width:100%;border-radius:4px;margin-bottom:26px;border:1px solid var(--border)}
+.article .content{font-size:1.08rem;line-height:2.1;color:var(--ink);font-family:var(--font-serif)}
+.article .content p{margin-bottom:18px}
+.article .content h1,.article .content h2,.article .content h3,.article .content h4{font-family:var(--font-serif);color:var(--navy);margin:26px 0 14px;font-weight:700;line-height:1.4}
+.article .content img{max-width:100%;border-radius:4px;margin:16px 0}
+.article .content blockquote{background:var(--gold-light);border-right:4px solid var(--gold);padding:18px 24px;margin:20px 0;border-radius:3px;font-style:italic;color:var(--navy);font-size:1.12rem;line-height:2}
+.article .content ul,.article .content ol{margin:16px 0;padding-right:28px}
+.article .content ul li,.article .content ol li{margin-bottom:10px;font-size:1.05rem}
+
+/* المشاركة */
+.share-bar{background:var(--cream);border:1px solid var(--border);border-radius:4px;padding:20px 24px;margin-bottom:24px;text-align:center}
+.share-bar .lbl{color:var(--navy);font-weight:700;font-size:.9rem;letter-spacing:.3px;display:block;margin-bottom:14px;font-family:var(--font-sans)}
+.share-bar .lbl i{color:var(--gold);margin-left:6px}
+.share-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.share-btns button{padding:10px 22px;border-radius:3px;font-weight:700;font-size:.85rem;display:inline-flex;align-items:center;gap:7px;font-family:var(--font-sans);letter-spacing:.3px;transition:.3s}
+.share-btns .share{background:var(--navy);color:var(--white)}
+.share-btns .copy{background:var(--gold);color:var(--white)}
+.share-btns button:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(30,58,95,.15)}
+
+/* الحالة الفارغة */
+.empty{text-align:center;padding:70px 20px;background:var(--white);border:1px dashed var(--border);border-radius:4px;color:var(--muted)}
+.empty i{font-size:56px;color:var(--gold);margin-bottom:16px;display:block;opacity:.5}
+.empty h3{font-family:var(--font-serif);color:var(--navy);font-weight:700;font-size:1.2rem}
+
+/* المسائل الفقهية */
+.fiqh{background:var(--white);border:1px solid var(--border);border-right:4px solid var(--gold);border-radius:3px;padding:26px 28px;margin-bottom:18px;transition:.3s}
+.fiqh:hover{box-shadow:0 6px 20px rgba(30,58,95,.06)}
+.fiqh .cat{display:inline-block;background:var(--gold-light);color:var(--navy);padding:3px 12px;border-radius:2px;font-size:.7rem;font-weight:800;letter-spacing:.5px;margin-bottom:12px}
+.fiqh .q-label{display:inline-flex;align-items:center;gap:8px;color:var(--navy);font-weight:800;font-size:.78rem;letter-spacing:1px;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--gold);font-family:var(--font-sans)}
+.fiqh .q-label.a{color:var(--gold);border-bottom-color:var(--navy)}
+.fiqh .q{font-family:var(--font-serif);color:var(--navy);font-size:1.15rem;font-weight:700;line-height:1.75;margin-bottom:14px}
+.fiqh .divider{border:none;border-top:1px dashed var(--border);margin:20px 0}
+.fiqh .a{color:var(--ink);font-size:1rem;line-height:2;font-family:var(--font-serif)}
+.fiqh .meta{font-size:.78rem;color:var(--muted);margin-top:14px;font-family:var(--font-sans)}
+.fiqh .meta i{color:var(--gold);margin-left:4px}
+.fiqh .actions{display:flex;gap:8px;margin-top:16px;padding-top:16px;border-top:1px solid var(--border);flex-wrap:wrap}
+.fiqh .actions button{padding:7px 16px;border-radius:3px;font-weight:700;font-size:.78rem;display:inline-flex;align-items:center;gap:6px;font-family:var(--font-sans);letter-spacing:.3px;transition:.3s}
+.fiqh .actions .copy{background:var(--navy);color:var(--white)}
+.fiqh .actions .share{background:var(--gold);color:var(--white)}
+.fiqh .actions button:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(30,58,95,.15)}
+
+/* النماذج */
+.form{background:var(--white);border:1px solid var(--border);border-top:4px solid var(--navy);border-radius:4px;padding:30px 34px;margin-top:28px}
+.form h3{font-family:var(--font-serif);color:var(--navy);font-size:1.35rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.form h3 i{color:var(--gold);font-size:1.1rem}
+.form .desc{color:var(--muted);font-size:.9rem;margin-bottom:22px;line-height:1.8}
+.form label{display:block;color:var(--navy);font-weight:700;font-size:.85rem;margin-bottom:8px;letter-spacing:.3px}
+.form input,.form textarea,.form select{width:100%;padding:13px 16px;border:1px solid var(--border);border-radius:3px;font-family:var(--font-sans);font-size:.95rem;margin-bottom:18px;outline:none;background:var(--white);transition:.3s;line-height:1.7}
+.form input:focus,.form textarea:focus,.form select:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(30,58,95,.06)}
+.btn-primary{background:var(--navy);color:var(--white);padding:13px 32px;border-radius:3px;font-weight:700;font-size:.9rem;display:inline-flex;align-items:center;gap:8px;font-family:var(--font-sans);letter-spacing:.5px;transition:.3s;cursor:pointer}
+.btn-primary:hover{background:var(--gold)}
+
+/* المرئيات */
+.video-card{background:var(--white);border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:.35s;cursor:pointer;position:relative}
+.video-card::before{content:'';position:absolute;top:0;right:0;left:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .4s;z-index:2}
+.video-card:hover{border-color:var(--gold);box-shadow:0 12px 32px rgba(30,58,95,.1);transform:translateY(-4px)}
+.video-card:hover::before{transform:scaleX(1)}
+.video-card .thumb{width:100%;height:200px;object-fit:cover;display:block;background:var(--navy)}
+.video-card .thumb-ph{width:100%;height:200px;background:linear-gradient(135deg,var(--navy),var(--navy-light));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:56px}
+.video-card .body{padding:18px 20px}
+.video-card h3{font-family:var(--font-serif);color:var(--navy);font-size:1.1rem;font-weight:700;margin-bottom:10px;line-height:1.5}
+.video-card .meta{font-size:.78rem;color:var(--muted);display:flex;gap:14px;flex-wrap:wrap;font-family:var(--font-sans)}
+.video-card .meta i{color:var(--gold);margin-left:4px}
+.video-card .play-btn{background:var(--navy);color:var(--white);width:100%;padding:10px 14px;border-radius:3px;font-weight:700;font-size:.82rem;margin-top:12px;display:inline-flex;align-items:center;justify-content:center;gap:6px;font-family:var(--font-sans);letter-spacing:.3px;transition:.3s;cursor:pointer}
+.video-card .play-btn:hover{background:var(--gold)}
+
+/* الصوتيات */
+.audio-card{background:var(--white);border:1px solid var(--border);border-right:4px solid var(--gold);border-radius:3px;padding:22px 24px;margin-bottom:16px;transition:.3s}
+.audio-card:hover{box-shadow:0 6px 20px rgba(30,58,95,.06)}
+.audio-card h3{font-family:var(--font-serif);color:var(--navy);font-size:1.15rem;font-weight:700;margin-bottom:10px}
+.audio-card .meta{font-size:.8rem;color:var(--muted);margin-bottom:14px;display:flex;gap:16px;flex-wrap:wrap;font-family:var(--font-sans)}
+.audio-card .meta i{color:var(--gold);margin-left:4px}
+.audio-card audio{width:100%;border-radius:3px;outline:none}
+
+/* الكتب */
+.book-card{background:var(--white);border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:.35s;display:flex;flex-direction:column}
+.book-card:hover{box-shadow:0 12px 32px rgba(30,58,95,.1);transform:translateY(-4px);border-color:var(--gold)}
+.book-card .cover{width:100%;height:230px;object-fit:cover;background:linear-gradient(135deg,var(--navy),var(--navy-light))}
+.book-card .cover-ph{width:100%;height:230px;background:linear-gradient(135deg,var(--navy),var(--navy-light));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:64px}
+.book-card .body{padding:20px 22px;display:flex;flex-direction:column;flex-grow:1}
+.book-card h3{font-family:var(--font-serif);color:var(--navy);font-size:1.15rem;font-weight:700;margin-bottom:8px;line-height:1.45}
+.book-card .author{color:var(--gold);font-size:.82rem;font-weight:700;margin-bottom:12px;font-family:var(--font-sans);letter-spacing:.3px}
+.book-card .author i{margin-left:5px}
+.book-card .desc{color:var(--muted);font-size:.88rem;line-height:1.8;flex-grow:1;margin-bottom:16px}
+.book-card .actions{margin-top:auto}
+.book-card .btn{background:var(--navy);color:var(--white);padding:11px 18px;border-radius:3px;font-weight:700;font-size:.82rem;display:inline-flex;align-items:center;justify-content:center;gap:6px;cursor:pointer;width:100%;font-family:var(--font-sans);letter-spacing:.5px;transition:.3s}
+.book-card .btn:hover{background:var(--gold)}
+
+/* الأخبار */
+.news-item{background:var(--white);border:1px solid var(--border);border-right:4px solid var(--gold);border-radius:3px;padding:24px 28px;margin-bottom:18px;transition:.3s}
+.news-item:hover{box-shadow:0 6px 20px rgba(30,58,95,.06)}
+.news-item.urgent{border-right-color:var(--red)}
+.news-item .badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.news-item .badge{display:inline-flex;align-items:center;gap:5px;padding:3px 12px;border-radius:2px;font-size:.7rem;font-weight:800;letter-spacing:.5px;font-family:var(--font-sans)}
+.news-item .badge.urgent{background:var(--red);color:var(--white)}
+.news-item h3{font-family:var(--font-serif);color:var(--navy);font-size:1.25rem;font-weight:700;line-height:1.5;margin-bottom:10px}
+.news-item .date{font-size:.8rem;color:var(--muted);margin-bottom:12px;font-family:var(--font-sans)}
+.news-item .date i{color:var(--gold);margin-left:5px}
+.news-item .exc{color:var(--muted);font-size:.95rem;line-height:1.9;margin-bottom:16px;font-family:var(--font-serif)}
+.news-item .more{background:var(--navy);color:var(--white);padding:9px 20px;border-radius:3px;font-weight:700;font-size:.82rem;display:inline-flex;align-items:center;gap:6px;cursor:pointer;font-family:var(--font-sans);letter-spacing:.3px}
+.news-item .more:hover{background:var(--gold)}
+
+/* نور الأسبوع */
+.week-card{background:var(--white);border:1px solid var(--border);border-top:4px solid var(--gold);border-radius:4px;overflow:hidden;margin-bottom:22px;transition:.3s}
+.week-card:hover{box-shadow:0 12px 32px rgba(30,58,95,.08)}
+.week-card .head{background:linear-gradient(135deg,var(--navy),var(--navy-light));color:var(--white);padding:22px 26px;position:relative}
+.week-card .head::after{content:'';position:absolute;bottom:0;right:0;left:0;height:2px;background:var(--gold)}
+.week-card .type{display:inline-block;background:rgba(184,134,11,.3);color:var(--gold);padding:4px 14px;border-radius:2px;font-size:.72rem;font-weight:800;letter-spacing:.5px;margin-bottom:10px;border:1px solid rgba(184,134,11,.4)}
+.week-card h3{font-family:var(--font-serif);font-size:1.35rem;font-weight:700;line-height:1.4;letter-spacing:.2px}
+.week-card .date{font-size:.82rem;color:rgba(255,255,255,.75);margin-top:8px;font-family:var(--font-sans)}
+.week-card .body{padding:26px 30px;font-size:1.08rem;line-height:2.1;color:var(--ink);font-family:var(--font-serif);max-height:500px;overflow-y:auto}
+.week-card .body p{margin-bottom:14px}
+.week-card .body blockquote{background:var(--gold-light);border-right:4px solid var(--gold);padding:16px 22px;margin:16px 0;border-radius:3px;font-style:italic;color:var(--navy);font-size:1.05rem;line-height:2}
+.week-card .actions{display:flex;gap:10px;padding:14px 26px;border-top:1px solid var(--border);background:var(--cream);flex-wrap:wrap}
+.week-card .actions button{border:none;padding:9px 18px;border-radius:3px;font-weight:700;font-size:.8rem;cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-family:var(--font-sans);letter-spacing:.3px;transition:.3s}
+.week-card .actions .copy{background:var(--navy);color:var(--white)}
+.week-card .actions .share{background:var(--gold);color:var(--white)}
+.week-card .actions button:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(30,58,95,.15)}
+
+/* التبويبات */
+.tabs{display:flex;gap:6px;margin-bottom:24px;overflow-x:auto;scrollbar-width:none;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.tabs::-webkit-scrollbar{display:none}
+.tab{background:transparent;border:none;color:var(--muted);padding:10px 18px;font-weight:700;font-size:.85rem;white-space:nowrap;cursor:pointer;transition:.3s;font-family:var(--font-sans);letter-spacing:.3px;border-bottom:3px solid transparent;margin-bottom:-1px}
+.tab:hover{color:var(--navy)}
+.tab.active{color:var(--navy);border-bottom-color:var(--gold)}
+.tab.urgent.active{color:var(--red);border-bottom-color:var(--red)}
+
+/* القائمة الجانبية (Drawer) */
+.drawer{position:fixed;top:0;right:0;width:320px;max-width:88vw;height:100vh;background:var(--navy);color:var(--white);z-index:2000;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);overflow-y:auto;box-shadow:-8px 0 32px rgba(0,0,0,.3)}
 .drawer.open{transform:translateX(0)}
-.drawer-header{padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--navy);z-index:5}
-.drawer-header strong{color:var(--gold);font-size:1.1rem;font-family:'Cairo',sans-serif}
-.drawer-close{background:transparent;border:none;color:var(--gold);font-size:22px}
-.drawer ul{list-style:none}
-.drawer li > a{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;color:#e0e6ed;font-family:'Cairo',sans-serif;cursor:pointer;transition:.2s}
-.drawer li > a:hover{background:rgba(201,169,97,.1);color:var(--gold)}
-.drawer li > a.active{background:rgba(201,169,97,.15);color:var(--gold);border-right:3px solid var(--gold)}
-.drawer li > a .arrow{color:var(--gold);font-size:11px;transition:.3s}
-.drawer li > a.open .arrow{transform:rotate(90deg)}
+.drawer-head{padding:22px 24px;border-bottom:1px solid rgba(184,134,11,.2);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:var(--navy);z-index:5}
+.drawer-head strong{color:var(--gold);font-size:1.15rem;font-family:var(--font-serif);letter-spacing:.5px}
+.drawer-head button{color:var(--gold);font-size:1.4rem;cursor:pointer}
+.drawer ul li > a{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;border-bottom:1px solid rgba(255,255,255,.06);font-size:.92rem;color:#d8e0ec;cursor:pointer;transition:.3s;font-family:var(--font-sans);font-weight:500}
+.drawer ul li > a:hover{background:rgba(184,134,11,.1);color:var(--gold);padding-right:28px}
+.drawer ul li > a.active{background:rgba(184,134,11,.15);color:var(--gold);border-right:3px solid var(--gold)}
+.drawer ul li > a i:first-child{color:var(--gold);width:22px;margin-left:10px;font-size:.9rem}
+.drawer ul li > a i:last-child{font-size:.7rem;color:var(--gold);transition:.3s}
+.drawer ul li > a.open i:last-child{transform:rotate(90deg)}
 .drawer .submenu{display:none;background:rgba(0,0,0,.2)}
 .drawer .submenu.show{display:block}
-.drawer .submenu li a{padding:10px 40px 10px 20px;font-size:13px;color:#b8c4d6;border-bottom:1px solid rgba(255,255,255,.04);display:block}
-.drawer .submenu li a::before{content:'›';position:absolute;right:22px;color:var(--gold);font-weight:700}
-.drawer .submenu li a{position:relative}
-.drawer .submenu li a:hover{background:rgba(201,169,97,.08);color:var(--gold)}
-.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1500}
+.drawer .submenu li a{padding:11px 48px 11px 22px;font-size:.83rem;color:#b8c4d6;display:block;border-bottom:1px solid rgba(255,255,255,.03);cursor:pointer;transition:.3s;position:relative;font-family:var(--font-sans)}
+.drawer .submenu li a::before{content:'›';color:var(--gold);position:absolute;right:26px;font-weight:900}
+.drawer .submenu li a:hover{background:rgba(184,134,11,.08);color:var(--gold);padding-right:52px}
+.overlay{position:fixed;inset:0;background:rgba(15,30,61,.65);z-index:1500;display:none;backdrop-filter:blur(2px)}
 .overlay.show{display:block}
 
-/* ===== MAIN ===== */
-.main{max-width:1000px;margin:0 auto;padding:16px 12px;width:100%}
-.view{display:none}
-.view.active{display:block}
-body.filter-mode .stats-grid,body.filter-mode .welcome-box{display:none!important}
+/* نافذة البحث */
+.search-overlay{position:fixed;inset:0;background:rgba(15,30,61,.75);z-index:3000;display:none;align-items:flex-start;justify-content:center;padding-top:90px;backdrop-filter:blur(4px)}
+.search-overlay.show{display:flex}
+.search-box{background:var(--white);border-radius:4px;padding:28px 30px;width:92%;max-width:640px;box-shadow:0 30px 80px rgba(0,0,0,.4);border-top:4px solid var(--gold);max-height:80vh;overflow-y:auto}
+.search-box .close-btn{float:left;font-size:1.5rem;color:var(--muted);cursor:pointer;line-height:1;transition:.3s}
+.search-box .close-btn:hover{color:var(--red)}
+.search-box h3{font-family:var(--font-serif);color:var(--navy);font-size:1.3rem;font-weight:700;margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid var(--border);letter-spacing:.3px}
+.search-box h3 i{color:var(--gold);margin-left:8px}
+.search-box input{width:100%;border:1px solid var(--border);border-radius:3px;padding:14px 18px;font-family:var(--font-sans);font-size:1rem;outline:none;transition:.3s;background:var(--cream)}
+.search-box input:focus{border-color:var(--navy);background:var(--white);box-shadow:0 0 0 3px rgba(30,58,95,.06)}
+#searchResults{margin-top:18px}
+.sr-item{padding:16px 0;border-bottom:1px solid var(--border);cursor:pointer;transition:.3s}
+.sr-item:hover{padding-right:10px}
+.sr-item:last-child{border-bottom:none}
+.sr-item .type{font-size:.68rem;color:var(--gold);font-weight:800;margin-bottom:6px;letter-spacing:1px;font-family:var(--font-sans)}
+.sr-item .title{color:var(--navy);font-weight:700;font-size:1rem;margin-bottom:6px;font-family:var(--font-serif);line-height:1.5}
+.sr-item .exc{color:var(--muted);font-size:.82rem;line-height:1.7}
 
-/* ===== PAGE TITLE ===== */
-.page-title{background:#fff;border:1px solid var(--border);border-right:4px solid var(--gold);border-radius:8px;padding:18px 22px;margin-bottom:18px}
-.page-title h1{color:var(--navy);font-size:1.4rem;font-weight:700;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.page-title h1 i{color:var(--gold)}
-.page-title p{color:var(--muted);font-size:13px;margin-top:4px;font-family:'Cairo',sans-serif}
+/* الفوتر */
+footer{background:var(--navy-dark);color:#c4cfe0;padding:44px 0 0;margin-top:60px;border-top:4px solid var(--gold)}
+footer .fbrand{text-align:center;margin-bottom:26px;font-family:var(--font-serif);font-size:1.8rem;font-weight:700;color:var(--white);letter-spacing:1px}
+footer .fbrand .accent{color:var(--gold)}
+footer .fcontact{display:flex;justify-content:center;flex-wrap:wrap;gap:20px 40px;padding:20px 0;border-top:1px solid rgba(184,134,11,.15);border-bottom:1px solid rgba(184,134,11,.15);font-size:.88rem;font-family:var(--font-sans)}
+footer .fcontact a,footer .fcontact div{display:flex;align-items:center;gap:8px;color:#c4cfe0;transition:.3s}
+footer .fcontact a:hover{color:var(--gold)}
+footer .fcontact i{color:var(--gold);font-size:.9rem}
+footer .fsocial{display:flex;justify-content:center;gap:12px;padding:24px 0;flex-wrap:wrap}
+footer .fsocial a{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:16px;transition:.3s;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
+footer .fsocial a:hover{transform:translateY(-4px);background:var(--gold);border-color:var(--gold)}
+.fb{background:#1877f2!important;border-color:#1877f2!important}
+.tw{background:#1da1f2!important;border-color:#1da1f2!important}
+.yt{background:#ff0000!important;border-color:#ff0000!important}
+.tg{background:#0088cc!important;border-color:#0088cc!important}
+.wa{background:#25d366!important;border-color:#25d366!important}
+.ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)!important;border-color:#bc1888!important}
+footer .fbottom{background:#0f1e33;padding:16px 0;text-align:center;font-size:.82rem;color:#8593a8;font-family:var(--font-sans);letter-spacing:.3px}
 
-/* ===== BACK BUTTON ===== */
-.back-btn{display:inline-flex;align-items:center;gap:6px;background:#fff;color:var(--navy);border:1px solid var(--border);padding:9px 18px;border-radius:6px;font-family:'Cairo',sans-serif;font-weight:700;font-size:13px;margin-bottom:14px;transition:.3s}
-.back-btn:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* الوضع الليلي */
+body.dark{background:#0d1a2b;color:#e0e6ed}
+body.dark .top-strip{background:#050d18}
+body.dark .header{background:#152437;border-color:#2a3a52}
+body.dark .brand-icon{background:linear-gradient(135deg,#0d1a2b,#1e3a5f)}
+body.dark .brand-text .name{color:#f5f0e1}
+body.dark .navbar{background:#0d1a2b;border-color:var(--gold)}
+body.dark .navbar a{color:#c4cfe0}
+body.dark .icon-btn{background:#1a2d44;color:#e0e6ed;border-color:#2a3a52}
+body.dark .card,body.dark .fiqh,body.dark .video-card,body.dark .audio-card,body.dark .book-card,body.dark .news-item,body.dark .week-card,body.dark .article,body.dark .form,body.dark .back-btn,body.dark .search-box,body.dark .empty{background:#152437!important;border-color:#2a3a52;color:#e0e6ed}
+body.dark .card-title,body.dark .fiqh .q,body.dark .video-card h3,body.dark .audio-card h3,body.dark .book-card h3,body.dark .news-item h3,body.dark .article h1,body.dark .section-title h2,body.dark .form h3,body.dark .page-head h1{color:#f5f0e1!important}
+body.dark .card-excerpt,body.dark .fiqh .a,body.dark .news-item .exc,body.dark .card-meta,body.dark .meta,body.dark .book-card .desc{color:#9ca8bb}
+body.dark .article .content{color:#d5dce6}
+body.dark .article .content h1,body.dark .article .content h2,body.dark .article .content h3,body.dark .article .content h4{color:var(--gold)}
+body.dark .share-bar{background:#0d1a2b;border-color:#2a3a52}
+body.dark footer{background:#050d18}
+body.dark .form input,body.dark .form textarea,body.dark .form select{background:#0d1a2b;color:#e0e6ed;border-color:#2a3a52}
+body.dark .form label{color:var(--gold)}
+body.dark .tab{color:#9ca8bb}
+body.dark .tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+body.dark .section-title{border-color:#2a3a52}
+body.dark .week-card .body{color:#d5dce6}
+body.dark .search-box input{background:#0d1a2b;color:#e0e6ed;border-color:#2a3a52}
+body.dark .tabs{border-color:#2a3a52}
 
-/* ===== WELCOME BOX ===== */
-.welcome-box{background:#fff;border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:16px;border-top:4px solid var(--gold);text-align:center}
-.welcome-box h2{color:var(--navy);font-size:1.35rem;font-weight:700;margin-bottom:6px;font-family:'Cairo',sans-serif}
-.welcome-box p{color:var(--muted);font-size:13.5px;line-height:1.9}
-.daily-box{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-radius:8px;padding:22px 24px;margin:16px 0;border-top:4px solid var(--gold);position:relative;overflow:hidden}
-.daily-box .type{background:rgba(201,169,97,.3);color:var(--gold);padding:3px 12px;border-radius:12px;font-size:11.5px;font-weight:700;font-family:'Cairo',sans-serif;display:inline-block;margin-bottom:12px}
-.daily-box .text{font-size:1.15rem;line-height:2;text-align:center;padding:0 10px;margin-bottom:12px}
-.daily-box .source{text-align:left;font-size:12.5px;color:var(--gold);font-family:'Cairo',sans-serif;font-weight:700}
-
-/* ===== STATS GRID ===== */
-.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:18px}
-.stat-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:16px 12px;text-align:center;transition:.3s}
-.stat-card:hover{border-color:var(--gold);box-shadow:0 4px 12px rgba(26,43,74,.08)}
-.stat-card i{font-size:22px;color:var(--gold);margin-bottom:8px;display:block}
-.stat-card .num{font-size:1.5rem;font-weight:800;color:var(--navy);font-family:'Cairo',sans-serif}
-.stat-card .lbl{font-size:11.5px;color:var(--muted);font-family:'Cairo',sans-serif;margin-top:2px}
-
-/* ===== SECTION TITLE ===== */
-.section-title{display:flex;align-items:center;gap:10px;padding:10px 0 8px;border-bottom:2px solid var(--navy);margin:20px 0 14px}
-.section-title h2{color:var(--navy);font-size:1.2rem;font-weight:700;font-family:'Cairo',sans-serif;margin:0;display:flex;align-items:center;gap:8px}
-.section-title h2::before{content:'';width:4px;height:20px;background:var(--gold);border-radius:2px}
-
-/* ===== CARDS ===== */
-.list-box{background:#fff;border:1px solid var(--border);border-radius:8px;margin-bottom:16px;overflow:hidden}
-.list-box .head{background:var(--navy);color:#fff;padding:10px 16px;font-family:'Cairo',sans-serif;font-weight:700;font-size:13.5px;display:flex;align-items:center;gap:8px;border-bottom:2px solid var(--gold)}
-.list-box .head i{color:var(--gold)}
-.list-box .body{padding:0}
-.list-item{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;border-bottom:1px solid var(--border);cursor:pointer;transition:.2s}
-.list-item:last-child{border-bottom:none}
-.list-item:hover{background:var(--bg)}
-.list-item .num{width:28px;height:28px;background:var(--gold-light);color:var(--navy);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;font-family:'Cairo',sans-serif}
-.list-item .info{flex:1;min-width:0}
-.list-item .info h4{color:var(--navy);font-size:14.5px;font-weight:700;line-height:1.5;margin:0 0 4px}
-.list-item .info small{color:var(--muted);font-size:11.5px;font-family:'Cairo',sans-serif}
-.list-item .info .badge{display:inline-block;background:var(--bg);color:var(--navy);padding:2px 8px;border-radius:10px;font-size:10.5px;font-weight:700;font-family:'Cairo',sans-serif;margin-right:4px}
-
-/* ===== GRID CARDS ===== */
-.grid-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-bottom:16px}
-.card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:16px;display:flex;flex-direction:column;cursor:pointer;transition:.3s;min-width:0}
-.card:hover{border-color:var(--gold);box-shadow:0 6px 18px rgba(26,43,74,.08)}
-.card .badge{display:inline-block;background:var(--bg);color:var(--navy);padding:2px 10px;border-radius:10px;font-size:11px;font-weight:700;margin-bottom:10px;align-self:flex-start;font-family:'Cairo',sans-serif}
-.card h3{color:var(--navy);font-size:1.05rem;font-weight:700;margin-bottom:8px;line-height:1.5;word-wrap:break-word}
-.card p{color:var(--muted);font-size:13.5px;line-height:1.8;flex-grow:1;margin-bottom:10px;word-wrap:break-word}
-.card .meta{border-top:1px solid var(--border);padding-top:8px;display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);font-family:'Cairo',sans-serif;flex-wrap:wrap;gap:6px}
-.card .meta i{color:var(--blue)}
-
-/* ===== ARTICLE VIEW ===== */
-.article-view{background:#fff;border:1px solid var(--border);border-radius:8px;padding:24px;border-top:4px solid var(--gold)}
-.article-view h1{color:var(--navy);font-size:1.65rem;font-weight:700;margin-bottom:14px;line-height:1.5;word-wrap:break-word}
-.article-view .meta{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);border-bottom:2px solid var(--gold-light);padding-bottom:12px;margin-bottom:18px;font-family:'Cairo',sans-serif}
-.article-view .meta i{color:var(--gold);margin-left:4px}
-.article-view .cover{width:100%;border-radius:8px;margin-bottom:18px;display:block}
-.article-view .body{font-size:16.5px;line-height:2.1;color:var(--text);word-wrap:break-word}
-.article-view .body img{max-width:100%;border-radius:8px;margin:12px 0}
-.article-view .body blockquote{background:var(--gold-light);border-right:4px solid var(--gold);padding:14px 20px;margin:16px 0;border-radius:6px;font-style:italic;font-size:1.1rem;color:var(--navy);line-height:2}
-.article-view .body h1,.article-view .body h2,.article-view .body h3,.article-view .body h4{color:var(--navy);font-weight:700;margin:20px 0 10px;font-family:'Cairo',sans-serif}
-
-/* ===== META BOXES ===== */
-.meta-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
-.meta-box{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px 14px;flex:1;min-width:110px;text-align:center}
-.meta-box i{color:var(--blue);font-size:14px;display:block;margin-bottom:4px}
-.meta-box .lbl{font-size:10.5px;color:var(--muted);font-family:'Cairo',sans-serif}
-.meta-box .val{font-size:13px;color:var(--navy);font-weight:700;font-family:'Cairo',sans-serif;margin-top:2px}
-
-/* ===== SHARE ROW ===== */
-.share-row{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px 18px;margin-bottom:18px;text-align:center}
-.share-row .lbl{color:var(--navy);font-size:13.5px;font-weight:700;font-family:'Cairo',sans-serif;display:block;margin-bottom:10px}
-.share-row .btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
-.share-row .btns button{border:none;background:var(--navy);color:#fff;padding:8px 18px;border-radius:6px;font-family:'Cairo',sans-serif;font-weight:700;font-size:12.5px;display:inline-flex;align-items:center;gap:6px}
-.share-row .btns button:hover{background:var(--gold);color:var(--navy)}
-
-/* ===== PREV-NEXT NAV ===== */
-.pn-nav{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
-.pn-nav a{flex:1;min-width:140px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-family:'Cairo',sans-serif;transition:.3s;display:flex;flex-direction:column}
-.pn-nav a:hover{border-color:var(--gold)}
-.pn-nav a .lbl{color:var(--muted);font-size:11.5px;margin-bottom:4px}
-.pn-nav a .title{color:var(--navy);font-size:13.5px;font-weight:700;line-height:1.4}
-
-/* ===== TABS ===== */
-.tabs{display:flex;gap:6px;margin-bottom:14px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
-.tabs::-webkit-scrollbar{display:none}
-.tab{background:#fff;border:1px solid var(--border);color:var(--navy);padding:7px 14px;border-radius:6px;font-family:'Cairo',sans-serif;font-weight:600;font-size:12.5px;white-space:nowrap;transition:.2s}
-.tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
-.tab.urgent.active{background:#dc2626;border-color:#dc2626}
-
-/* ===== FIQH CARD ===== */
-.fiqh-card{background:#fff;border:1px solid var(--border);border-right:4px solid var(--gold);border-radius:8px;padding:18px 20px;margin-bottom:12px}
-.fiqh-card .q-label{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:#fff;padding:3px 12px;border-radius:4px;font-size:11.5px;font-weight:700;margin-bottom:10px;font-family:'Cairo',sans-serif}
-.fiqh-card .q-label.a{background:var(--gold);color:var(--navy)}
-.fiqh-card .q-title{color:var(--navy);font-size:1.05rem;font-weight:700;line-height:1.8;margin-bottom:10px}
-.fiqh-card .divider{border:none;border-top:2px dashed var(--gold);margin:14px 0;opacity:.5}
-.fiqh-card .a-text{color:var(--text);font-size:15px;line-height:2}
-.fiqh-card .fiqh-meta{font-size:11.5px;color:var(--muted);font-family:'Cairo',sans-serif;margin-top:10px}
-.fiqh-card .actions{display:flex;gap:8px;margin-top:12px;padding-top:10px;border-top:1px solid var(--border);flex-wrap:wrap}
-.fiqh-card .actions button{border:none;padding:6px 14px;border-radius:5px;font-family:'Cairo',sans-serif;font-weight:700;font-size:12px;cursor:pointer;display:inline-flex;align-items:center;gap:5px}
-.fiqh-card .actions .copy{background:var(--navy);color:#fff}
-.fiqh-card .actions .share{background:var(--gold);color:var(--navy)}
-
-/* ===== FORM ===== */
-.form-box{background:#fff;border:1px solid var(--border);border-top:4px solid var(--gold);border-radius:8px;padding:22px;margin-top:20px}
-.form-box h3{color:var(--navy);font-size:1.15rem;font-weight:700;margin-bottom:14px;font-family:'Cairo',sans-serif;display:flex;align-items:center;gap:8px}
-.form-box h3 i{color:var(--gold)}
-.form-box label{font-weight:700;color:var(--navy);margin-bottom:6px;display:block;font-size:13px;font-family:'Cairo',sans-serif}
-.form-box input,.form-box textarea,.form-box select{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:6px;font-family:'Amiri','Cairo',serif;font-size:15px;outline:none;margin-bottom:14px;background:#fff;line-height:1.8}
-.form-box input:focus,.form-box textarea:focus,.form-box select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(44,74,124,.08)}
-.btn-primary{background:var(--navy);color:#fff;border:none;padding:11px 26px;border-radius:6px;font-family:'Cairo',sans-serif;font-weight:700;font-size:14px}
-.btn-primary:hover{background:var(--gold);color:var(--navy)}
-
-/* ===== STATS INFO ===== */
-.info-box{background:#fff;border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:14px}
-.info-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);font-family:'Cairo',sans-serif;font-size:13.5px}
-.info-row:last-child{border-bottom:none}
-.info-row i{color:var(--gold);width:20px;text-align:center}
-.info-row .val{margin-right:auto;color:var(--navy);font-weight:700}
-
-/* ===== EMPTY ===== */
-.empty{text-align:center;padding:40px 20px;background:#fff;border:1px solid var(--border);border-radius:8px;color:var(--muted)}
-.empty i{font-size:44px;color:var(--gold);display:block;margin-bottom:10px}
-.empty h3{color:var(--navy);font-size:1.1rem;font-weight:700;font-family:'Cairo',sans-serif}
-
-/* ===== FOOTER ===== */
-footer{background:var(--navy);color:#b8c4d6;padding:24px 0 0;border-top:4px solid var(--gold);margin-top:30px}
-footer .row{max-width:1200px;margin:0 auto;padding:0 12px}
-footer .brand{text-align:center;margin-bottom:16px}
-footer .brand strong{color:#fff;font-size:1.5rem;font-weight:700;display:block}
-footer .contact{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px 28px;padding:14px 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);font-family:'Cairo',sans-serif;font-size:13px}
-footer .contact a,footer .contact div{display:flex;align-items:center;gap:6px;color:#b8c4d6}
-footer .contact i{color:var(--gold)}
-footer .social{display:flex;justify-content:center;gap:8px;padding:16px 0;flex-wrap:wrap}
-footer .social a{width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:50%;color:#fff;font-size:15px}
-footer .social a:hover{transform:translateY(-3px)}
-.fb{background:#1877f2}.tw{background:#1da1f2}.yt{background:#ff0000}.tg{background:#0088cc}.wa{background:#25d366}
-.ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}
-footer .bottom{background:var(--navy-dark);padding:12px 0;text-align:center;font-family:'Cairo',sans-serif;font-size:12px;color:#8896b0}
-
-/* ===== MODAL ===== */
-.modal{display:none;position:fixed;inset:0;background:rgba(15,30,61,.75);z-index:3000;align-items:center;justify-content:center;padding:20px}
-.modal.show{display:flex}
-.modal-box{background:#fff;border-radius:12px;padding:24px;max-width:420px;width:100%;position:relative;border-top:5px solid var(--gold);max-height:90vh;overflow-y:auto}
-.modal-close{position:absolute;top:10px;left:10px;background:transparent;border:none;font-size:24px;color:var(--muted);cursor:pointer}
-.modal-box h3{color:var(--navy);font-size:1.15rem;font-weight:700;margin-bottom:18px;text-align:center;font-family:'Cairo',sans-serif}
-.lib-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.lib-btn{background:var(--bg);border:1px solid var(--border);color:var(--navy);padding:16px 10px;border-radius:10px;font-family:'Cairo',sans-serif;font-weight:700;font-size:13px;display:flex;flex-direction:column;align-items:center;gap:8px;transition:.3s}
-.lib-btn:hover{background:var(--gold);border-color:var(--gold)}
-.lib-btn i{font-size:22px;color:var(--gold)}
-.lib-btn:hover i{color:var(--navy)}
-
-/* ===== DARK MODE ===== */
-body.dark{background:#0d1520;color:#e0e6ed}
-body.dark .topbar{background:#050a12}
-body.dark .site-header{background:#1a2535;border-bottom-color:#2a3a52}
-body.dark .site-header .brand .text strong{color:#e0e6ed}
-body.dark .menu-btn{background:var(--gold);color:var(--navy)}
-body.dark .search-box .inner{background:#1a2535;border-color:#2a3a52}
-body.dark .search-box input{color:#e0e6ed}
-body.dark .page-title,body.dark .welcome-box,body.dark .list-box,body.dark .card,body.dark .stat-card,body.dark .article-view,body.dark .meta-box,body.dark .share-row,body.dark .pn-nav a,body.dark .fiqh-card,body.dark .form-box,body.dark .info-box,body.dark .empty,body.dark .modal-box{background:#1a2535!important;border-color:#2a3a52;color:#e0e6ed}
-body.dark .page-title h1,body.dark .welcome-box h2,body.dark .card h3,body.dark .list-item .info h4,body.dark .article-view h1,body.dark .fiqh-card .q-title,body.dark .fiqh-card .a-text,body.dark .form-box h3,body.dark .section-title h2,body.dark .pn-nav a .title{color:#e0e6ed!important}
-body.dark .page-title p,body.dark .card p,body.dark .list-item .info small,body.dark .welcome-box p,body.dark .card .meta,body.dark .fiqh-card .fiqh-meta{color:#9ca8bb}
-body.dark .tab{background:#1a2535;color:#e0e6ed;border-color:#2a3a52}
-body.dark .tab.active{background:var(--gold);color:var(--navy)}
-body.dark .section-title{border-bottom-color:#2a3a52}
-body.dark .list-item:hover{background:#0d1520}
-body.dark .list-box .head{background:#131d2e}
-body.dark footer{background:#050a12}
-body.dark footer .bottom{background:#000308}
-body.dark .form-box input,body.dark .form-box textarea,body.dark .form-box select{background:#0d1520;color:#e0e6ed;border-color:#2a3a52}
-body.dark .form-box label{color:var(--gold)}
-body.dark .article-view .body{color:#d5dce6}
-body.dark .article-view .body h1,body.dark .article-view .body h2,body.dark .article-view .body h3,body.dark .article-view .body h4{color:var(--gold)}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width:768px){
-    .topbar{font-size:10px}
-    .topbar .row{padding:0 8px;gap:6px}
-    .topbar-right span{font-size:9.5px}
-    .lang-btn{font-size:9px;padding:1px 6px}
-    .icon-btn{width:22px;height:22px;font-size:10px}
-    .site-header .brand img{max-height:42px}
-    .site-header .brand .text strong{font-size:1.2rem}
-    .site-header .brand .text small{font-size:10px}
-    .menu-btn{width:42px;height:42px;font-size:18px}
-    .main{padding:12px 8px}
-    .grid-cards{grid-template-columns:1fr;gap:10px}
-    .stats-grid{grid-template-columns:repeat(2,1fr);gap:8px}
-    .stat-card .num{font-size:1.25rem}
-    .article-view{padding:16px}
-    .article-view h1{font-size:1.35rem}
-    .article-view .body{font-size:15px}
-    .page-title h1{font-size:1.15rem}
-    .page-title{padding:14px 16px}
-    .meta-row .meta-box{min-width:90px;padding:8px 10px}
-    .lib-grid{grid-template-columns:1fr}
-    .share-row .btns button{padding:8px 14px;font-size:12px}
-}
-@media (max-width:480px){
-    .topbar-right span .txt{display:none}
+/* الجوال */
+@media(max-width:768px){
+.top-strip{font-size:.7rem;padding:5px 0}
+.top-strip .inner{padding:0 12px;gap:8px}
+.top-strip .meta{gap:10px}
+.top-strip .meta span:not(:first-child){display:none}
+.header{padding:12px 0}
+.header .inner{padding:0 14px;gap:10px}
+.brand-icon{width:42px;height:42px;font-size:1.1rem}
+.brand-text .name{font-size:1.35rem}
+.brand-text .tag{display:none}
+.icon-btn{width:38px;height:38px;font-size:.95rem}
+.navbar{top:73px}
+.navbar .inner{padding:0 12px}
+.navbar a{font-size:.83rem;padding:12px 14px}
+.banner img{max-height:200px}
+.page-head h1{font-size:1.6rem}
+.section-title h2{font-size:1.25rem}
+.grid{grid-template-columns:1fr;gap:16px}
+.card-img,.card-img-placeholder{height:180px}
+.card-body{padding:18px 20px}
+.card-title{font-size:1.1rem}
+.article{padding:24px 22px}
+.article h1{font-size:1.5rem}
+.article .content{font-size:1rem}
+.daily{padding:20px 22px}
+.daily .text{font-size:1.1rem}
+.fiqh{padding:20px}
+.fiqh .q{font-size:1.05rem}
+.week-card .body{padding:20px 22px;font-size:1rem}
+.drawer{width:280px}
+.form{padding:22px 24px}
 }
 </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-    <div class="row">
-        <div class="topbar-right">
-            <span><i class="fa-regular fa-clock"></i> <span id="liveClock">--:--</span> <span id="clockPeriod">ص</span></span>
-            <span class="sep">|</span>
-            <span><i class="fa-regular fa-calendar"></i> <span id="gregorianDate">—</span></span>
-            <span class="sep">|</span>
-            <span><i class="fa-solid fa-moon"></i> <span id="hijriDate">—</span></span>
-        </div>
-        <div class="topbar-center">
-            <button class="lang-btn active" data-lang="ar">ع</button>
-            <button class="lang-btn" data-lang="en">EN</button>
-            <button class="lang-btn" data-lang="fa">فا</button>
-        </div>
-        <div class="topbar-left">
-            <button class="icon-btn notify" id="notifyBtn" title="اشترك في الإشعارات"><i class="fa-solid fa-bell"></i></button>
-            <button class="icon-btn" id="darkToggle" title="الوضع الليلي"><i class="fa-solid fa-moon"></i></button>
-        </div>
-    </div>
+<!-- 1. البانر (ممتد من الحافة إلى الحافة) -->
+<div class="banner">
+  <img src="/assets/images/file_00000000175082109123db13309793e5.png" alt="منصة مشكاة">
 </div>
 
-<!-- HEADER -->
-<header class="site-header">
-    <div class="inner">
-        <button class="menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></button>
-        <a class="brand" onclick="showView('home')">
-            <div class="text">
-                <strong>مِشْكَاة</strong>
-                <small>منصة إسلامية فكرية توعوية</small>
-            </div>
-            <img src="/assets/images/file_00000000175082109123db13309793e5.png" alt="مشكاة">
-        </a>
+<!-- 2. الشريط العلوي الرفيع -->
+<div class="top-strip">
+  <div class="inner">
+    <div class="meta">
+      <span><i class="fa-regular fa-clock"></i> <span id="liveClock">--:--</span> <span id="clockPeriod">ص</span></span>
+      <span class="sep">|</span>
+      <span><i class="fa-regular fa-calendar"></i> <span id="gregorianDate">—</span></span>
+      <span class="sep">|</span>
+      <span><i class="fa-solid fa-moon"></i> <span id="hijriDate">—</span></span>
     </div>
+    <div class="langs">
+      <button class="lang-btn active" data-lang="ar">العربية</button>
+      <button class="lang-btn" data-lang="en">English</button>
+      <button class="lang-btn" data-lang="fa">فارسی</button>
+    </div>
+  </div>
+</div>
+
+<!-- 3. الترويسة (Header) -->
+<header class="header">
+  <div class="inner">
+    <div class="brand" onclick="showView('home')">
+      <div class="brand-icon"><i class="fa-solid fa-lightbulb"></i></div>
+      <div class="brand-text">
+        <div class="name">مِشْكَاة <span>النُّور</span></div>
+        <div class="tag">منصة إسلامية فكرية توعوية</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn notify" id="notifyBtn" title="اشترك في الإشعارات"><i class="fa-solid fa-bell"></i></button>
+      <button class="icon-btn" id="darkToggle" title="الوضع الليلي"><i class="fa-solid fa-moon"></i></button>
+      <button class="icon-btn" onclick="openSearch()" title="بحث"><i class="fa-solid fa-search"></i></button>
+      <button class="icon-btn" onclick="openDrawer()" title="القائمة"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
 </header>
 
-<!-- SEARCH -->
-<div class="search-box">
-    <div class="inner">
-        <input type="search" id="searchInput" placeholder="ابحث في الموقع...">
-        <button id="searchBtn"><i class="fa-solid fa-search"></i> بحث</button>
-    </div>
-</div>
-
-<!-- DRAWER -->
-<nav class="drawer" id="drawer">
-    <div class="drawer-header">
-        <strong>القائمة</strong>
-        <button class="drawer-close" id="drawerClose"><i class="fa-solid fa-times"></i></button>
-    </div>
-    <ul>
-        <li><a data-view="home"><span><i class="fa-solid fa-house" style="color:var(--gold);width:18px"></i> الرئيسية</span></a></li>
-        <li>
-            <a class="accordion-toggle"><span><i class="fa-solid fa-mosque" style="color:var(--gold);width:18px"></i> أهل البيت (عليهم السلام)</span> <i class="fa-solid fa-chevron-left arrow"></i></a>
-            <ul class="submenu">
-                <li><a data-cat="ahlulbayt">جميع المقالات</a></li>
-            </ul>
-        </li>
-        <li><a data-view="greats"><span><i class="fa-solid fa-star" style="color:var(--gold);width:18px"></i> عظماؤنا</span></a></li>
-        <li><a data-view="fiqh"><span><i class="fa-solid fa-scale-balanced" style="color:var(--gold);width:18px"></i> مسائل فقهية</span></a></li>
-        <li><a data-view="courses"><span><i class="fa-solid fa-graduation-cap" style="color:var(--gold);width:18px"></i> دورات تعليمية</span></a></li>
-        <li><a data-view="weekly"><span><i class="fa-solid fa-hands-praying" style="color:var(--gold);width:18px"></i> نور الأسبوع</span></a></li>
-        <li><a data-cat="insights"><span><i class="fa-solid fa-lightbulb" style="color:var(--gold);width:18px"></i> رؤى وأفكار</span></a></li>
-        <li><a data-cat="doubts"><span><i class="fa-solid fa-shield-halved" style="color:var(--gold);width:18px"></i> شبهات وردود</span></a></li>
-        <li><a data-cat="dialogues"><span><i class="fa-solid fa-comments" style="color:var(--gold);width:18px"></i> حوارات ومقابلات</span></a></li>
-        <li><a data-cat="family"><span><i class="fa-solid fa-users" style="color:var(--gold);width:18px"></i> الأسرة والمجتمع</span></a></li>
-        <li><a data-cat="general"><span><i class="fa-solid fa-newspaper" style="color:var(--gold);width:18px"></i> مقالات عامة</span></a></li>
-        <li><a data-cat="rights"><span><i class="fa-solid fa-balance-scale" style="color:var(--gold);width:18px"></i> حقوق</span></a></li>
-        <li>
-            <a class="accordion-toggle"><span><i class="fa-solid fa-book" style="color:var(--gold);width:18px"></i> المكتبة</span> <i class="fa-solid fa-chevron-left arrow"></i></a>
-            <ul class="submenu">
-                <li><a data-lib="quran">كتب حول القرآن</a></li>
-                <li><a data-lib="aqeedah">كتب عقائدية</a></li>
-                <li><a data-lib="fiqh">كتب فقهية</a></li>
-                <li><a data-lib="ethics">كتب أخلاقية</a></li>
-                <li><a data-lib="social">كتب اجتماعية</a></li>
-                <li><a data-lib="thought">كتب فكرية</a></li>
-            </ul>
-        </li>
-        <li><a data-view="videos"><span><i class="fa-solid fa-video" style="color:var(--gold);width:18px"></i> المرئيات</span></a></li>
-        <li><a data-view="audios"><span><i class="fa-solid fa-headphones" style="color:var(--gold);width:18px"></i> الصوتيات</span></a></li>
-        <li><a data-view="news"><span><i class="fa-solid fa-newspaper" style="color:var(--gold);width:18px"></i> الأخبار</span></a></li>
-        <li><a data-view="competitions"><span><i class="fa-solid fa-trophy" style="color:var(--gold);width:18px"></i> مسابقات</span></a></li>
-        <li><a data-view="family"><span><i class="fa-solid fa-handshake-angle" style="color:var(--gold);width:18px"></i> انضم إلينا</span></a></li>
-        <li><a data-view="about"><span><i class="fa-solid fa-circle-info" style="color:var(--gold);width:18px"></i> عن المنصة</span></a></li>
-        <li><a data-view="contact"><span><i class="fa-solid fa-address-book" style="color:var(--gold);width:18px"></i> تواصل معنا</span></a></li>
-    </ul>
+<!-- 4. القائمة الأفقية (Navbar) -->
+<nav class="navbar">
+  <div class="inner">
+    <a class="active" data-view="home" onclick="showView('home')">الرئيسية</a>
+    <a data-view="greats" onclick="showView('greats')">عظماؤنا</a>
+    <a data-view="fiqh" onclick="showView('fiqh')">مسائل فقهية</a>
+    <a data-view="courses" onclick="showView('courses')">دورات تعليمية</a>
+    <a data-view="weekly" onclick="showView('weekly')">نور الأسبوع</a>
+    <a data-view="videos" onclick="showView('videos')">المرئيات</a>
+    <a data-view="audios" onclick="showView('audios')">الصوتيات</a>
+    <a data-view="news" onclick="showView('news')">الأخبار</a>
+  </div>
 </nav>
-<div class="overlay" id="overlay"></div>
 
-<!-- MAIN -->
-<main class="main">
+<main class="container" style="padding-top:20px;padding-bottom:20px">
 
-    <!-- HOME -->
-    <section class="view active" id="view-home">
-        <div class="welcome-box">
-            <h2>مِشْكَاةُ النُّورِ</h2>
-            <p>منصة إسلامية فكرية توعوية — لنشر المقالات والرؤى والمعرفة في ضوء القرآن والعترة</p>
-        </div>
+  <!-- الرئيسية -->
+  <section class="view active" id="view-home">
+    <div class="daily" id="dailyBox">
+      <span class="type" id="dailyType">آية</span>
+      <div class="text" id="dailyText">﴿بسم الله الرحمن الرحيم﴾</div>
+      <div class="source" id="dailySource"><i class="fa-solid fa-bookmark"></i> منصة مشكاة</div>
+    </div>
+    <div class="section-title"><i class="fa-solid fa-clock-rotate-left"></i><h2>أحدث الإضافات</h2></div>
+    <div class="grid" id="latestList"></div>
+  </section>
 
-        <div class="daily-box" id="dailyBox">
-            <span class="type" id="dailyType">آية</span>
-            <div class="text" id="dailyText">﴿بسم الله الرحمن الرحيم﴾</div>
-            <div class="source" id="dailySource"><i class="fa-solid fa-bookmark"></i> منصة مشكاة</div>
-        </div>
+  <!-- قسم (تصنيف) -->
+  <section class="view" id="view-category">
+    <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
+    <div class="page-head"><h1 id="categoryTitle">القسم</h1></div>
+    <div class="grid" id="categoryGrid"></div>
+    <div class="empty hidden" id="categoryEmpty"><i class="fa-regular fa-newspaper"></i><h3>لا توجد مقالات</h3></div>
+  </section>
 
-        <div class="stats-grid">
-            <div class="stat-card"><i class="fa-solid fa-newspaper"></i><div class="num" id="statArticles">0</div><div class="lbl">مقالة</div></div>
-            <div class="stat-card"><i class="fa-solid fa-book"></i><div class="num" id="statBooks">0</div><div class="lbl">كتاب</div></div>
-            <div class="stat-card"><i class="fa-solid fa-video"></i><div class="num" id="statVideos">0</div><div class="lbl">مرئي</div></div>
-            <div class="stat-card"><i class="fa-solid fa-headphones"></i><div class="num" id="statAudios">0</div><div class="lbl">صوتي</div></div>
-            <div class="stat-card"><i class="fa-solid fa-circle-question"></i><div class="num" id="statFiqh">0</div><div class="lbl">مسألة</div></div>
-            <div class="stat-card"><i class="fa-solid fa-graduation-cap"></i><div class="num" id="statCourses">0</div><div class="lbl">دورة</div></div>
-        </div>
+  <!-- عظماؤنا -->
+  <section class="view" id="view-greats">
+    <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
+    <div class="page-head"><h1>عظماؤنا</h1><div class="subtitle">شخصيات خالدة أثرت في التاريخ</div></div>
+    <div class="tabs" id="greatsTabs">
+      <button class="tab active" data-greats="all">الكل</button>
+      <button class="tab" data-greats="علماء">علماء</button>
+      <button class="tab" data-greats="فلاسفة">فلاسفة</button>
+      <button class="tab" data-greats="شعراء">شعراء</button>
+      <button class="tab" data-greats="قادة">قادة</button>
+      <button class="tab" data-greats="مصلحون">مصلحون</button>
+    </div>
+    <div class="grid" id="greatsGrid"></div>
+    <div class="empty hidden" id="greatsEmpty"><i class="fa-solid fa-star"></i><h3>لا توجد شخصيات</h3></div>
+  </section>
 
-        <div class="section-title"><h2><i class="fa-solid fa-clock-rotate-left"></i> آخر التحديثات</h2></div>
-        <div class="list-box">
-            <div class="body" id="latestList"></div>
-        </div>
-    </section>
+  <!-- مسائل فقهية -->
+  <section class="view" id="view-fiqh">
+    <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
+    <div class="page-head"><h1>مسائل فقهية</h1><div class="subtitle">أسئلة وأجوبة فقهية</div></div>
+    <div class="tabs" id="fiqhTabs">
+      <button class="tab active" data-fiqh="all">الكل</button>
+      <button class="tab" data-fiqh="حول الطهارة">الطهارة</button>
+      <button class="tab" data-fiqh="حول الصلاة">الصلاة</button>
+      <button class="tab" data-fiqh="حول الصيام">الصيام</button>
+      <button class="tab" data-fiqh="حول الزكاة والخمس">الزكاة والخمس</button>
+      <button class="tab" data-fiqh="حول الحج">الحج</button>
+      <button class="tab" data-fiqh="حول الزواج">الزواج</button>
+      <button class="tab" data-fiqh="حول النساء">النساء</button>
+      <button class="tab" data-fiqh="حول المعاملات">المعاملات</button>
+      <button class="tab" data-fiqh="حول العقائد">العقائد</button>
+      <button class="tab" data-fiqh="أخرى">أخرى</button>
+    </div>
+    <div id="fiqhList"></div>
+    <div class="empty hidden" id="fiqhEmpty"><i class="fa-solid fa-scale-balanced"></i><h3>لا توجد أسئلة</h3></div>
+    <div class="form">
+      <h3><i class="fa-regular fa-circle-question"></i> أرسل سؤالك الفقهي</h3>
+      <p class="desc">هل لديك سؤال فقهي؟ أرسله إلينا وسنجيب عليه في أقرب وقت بإذن الله.</p>
+      <form id="fiqhForm">
+        <label>الاسم</label>
+        <input type="text" id="fiqhName" required maxlength="60">
+        <label>السؤال</label>
+        <textarea id="fiqhQuestion" rows="5" required maxlength="2000"></textarea>
+        <button type="submit" class="btn-primary"><i class="fa-regular fa-paper-plane"></i> إرسال السؤال</button>
+        <p id="fiqhMsg" style="margin-top:10px;font-weight:bold"></p>
+      </form>
+    </div>
+  </section>
 
-    <!-- ARTICLES CATEGORY (rendered inside home) -->
-    <section class="view" id="view-category">
-        <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
-        <div class="page-title" id="categoryTitle"></div>
-        <div class="grid-cards" id="categoryGrid"></div>
-        <div class="empty hidden-section" id="categoryEmpty"><i class="fa-regular fa-newspaper"></i><h3>لا توجد مقالات</h3></div>
-    </section>
+  <!-- دورات تعليمية -->
+  <section class="view" id="view-courses">
+    <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
+    <div class="page-head"><h1>دورات تعليمية</h1><div class="subtitle">دورات لأعمار ومستويات مختلفة</div></div>
+    <div class="tabs" id="coursesTabs">
+      <button class="tab active" data-courses="lessons">الدروس</button>
+      <button class="tab" data-courses="register">التسجيل</button>
+      <button class="tab" data-courses="about">عن الدورات</button>
+    </div>
+    <div id="coursesContent"></div>
+  </section>
 
-    <!-- COURSES -->
-    <section class="view" id="view-courses">
-        <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
-        <div class="page-title"><h1><i class="fa-solid fa-graduation-cap"></i> دورات تعليمية</h1><p>دورات لأعمار ومستويات مختلفة</p></div>
-        <div class="tabs" id="coursesTabs">
-            <button class="tab active" data-courses="lessons">الدروس</button>
-            <button class="tab" data-courses="register">التسجيل</button>
-            <button class="tab" data-courses="about">عن الدورات</button>
-        </div>
-        <div id="coursesContent"></div>
-    </section>
+  <!-- نور الأسبوع -->
+  <section class="view" id="view-weekly">
+    <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
+    <div class="page-head"><h1>نور الأسبوع</h1><div class="subtitle">أدعية وزيارات مكتوبة</div></div>
+    <div id="weeklyList"></div>
+    <div class="empty hidden" id="weeklyEmpty"><i class="fa-solid fa-hands-praying"></i><h3>لا يوجد محتوى</h3></div>
+  </section>
 
-    <!-- GREATS -->
-    <section class="view" id="view-greats">
-        <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
-        <div class="page-title"><h1><i class="fa-solid fa-star"></i> عظماؤنا</h1><p>شخصيات خالدة أثرت في التاريخ</p></div>
-        <div class="tabs" id="greatsTabs">
-            <button class="tab active" data-greats="all">الكل</button>
-            <button class="tab" data-greats="علماء">علماء</button>
-            <button class="tab" data-greats="فلاسفة">فلاسفة</button>
-            <button class="tab" data-greats="شعراء">شعراء</button>
-            <button class="tab" data-greats="قادة">قادة</button>
-            <button class="tab" data-greats="مصلحون">مصلحون</button>
-            <button class="tab" data-greats="أخرى">أخرى</button>
-        </div>
-        <div class="grid-cards" id="greatsGrid"></div>
-        <div class="empty hidden-section" id="greatsEmpty"><i class="fa-solid fa-star"></i><h3>لا توجد شخصيات</h3></div>
-    </section>
+  <!-- المرئيات -->
+  <section class="view" id="view-videos">
+    <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
+    <div class="page-head"><h1>المرئيات</h1><div class="subtitle">مقاطع فيديو</div></div>
+    <div class="tabs" id="videosTabs">
+      <button class="tab active" data-vnav="all">كل المرئيات</button>
+      <button class="tab" data-vnav="series">سلاسل</button>
+    </div>
+    <div id="videosArea"></div>
+    <div class="empty hidden" id="videosEmpty"><i class="fa-solid fa-video"></i><h3>لا توجد مقاطع</h3></div>
+  </section>
 
-    <!-- FIQH -->
-    <section class="view" id="view-fiqh">
-        <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
-        <div class="page-title"><h1><i class="fa-solid fa-scale-balanced"></i> مسائل فقهية</h1><p>أسئلة وأجوبة فقهية</p></div>
-        <div class="tabs" id="fiqhTabs">
-            <button class="tab active" data-fiqh="all">الكل</button>
-            <button class="tab" data-fiqh="حول الطهارة">الطهارة</button>
-            <button class="tab" data-fiqh="حول الصلاة">الصلاة</button>
-            <button class="tab" data-fiqh="حول الصيام">الصيام</button>
-            <button class="tab" data-fiqh="حول الزكاة والخمس">الزكاة والخمس</button>
-            <button class="tab" data-fiqh="حول الحج">الحج</button>
-            <button class="tab" data-fiqh="حول الزواج">الزواج</button>
-            <button class="tab" data-fiqh="حول النساء">النساء</button>
-            <button class="tab" data-fiqh="حول المعاملات">المعاملات</button>
-            <button class="tab" data-fiqh="حول العقائد">العقائد</button>
-            <button class="tab" data-fiqh="أخرى">أخرى</button>
-        </div>
-        <div id="fiqhList"></div>
-        <div class="empty hidden-section" id="fiqhEmpty"><i class="fa-solid fa-scale-balanced"></i><h3>لا توجد أسئلة</h3></div>
-        <div class="form-box">
-            <h3><i class="fa-regular fa-circle-question"></i> أرسل سؤالك الفقهي</h3>
-            <p style="color:var(--muted);font-size:13.5px;margin-bottom:14px">هل لديك سؤال فقهي؟ أرسله إلينا وسنجيب عليه في أقرب وقت بإذن الله.</p>
-            <form id="fiqhForm">
-                <label>الاسم</label>
-                <input type="text" id="fiqhName" required maxlength="60">
-                <label>السؤال</label>
-                <textarea id="fiqhQuestion" rows="5" required maxlength="2000"></textarea>
-                <button type="submit" class="btn-primary"><i class="fa-regular fa-paper-plane"></i> إرسال</button>
-                <p id="fiqhMsg" style="margin-top:10px;font-weight:bold"></p>
-            </form>
-        </div>
-    </section>
+  <!-- الصوتيات -->
+  <section class="view" id="view-audios">
+    <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
+    <div class="page-head"><h1>الصوتيات</h1><div class="subtitle">مقاطع صوتية</div></div>
+    <div class="tabs" id="audiosTabs"></div>
+    <div id="audiosList"></div>
+    <div class="empty hidden" id="audiosEmpty"><i class="fa-solid fa-headphones"></i><h3>لا توجد مقاطع</h3></div>
+  </section>
 
-    <!-- WEEKLY -->
-    <section class="view" id="view-weekly">
-        <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
-        <div class="page-title"><h1><i class="fa-solid fa-hands-praying"></i> نور الأسبوع</h1><p>أدعية وزيارات</p></div>
-        <div id="weeklyList"></div>
-        <div class="empty hidden-section" id="weeklyEmpty"><i class="fa-solid fa-hands-praying"></i><h3>لا يوجد محتوى</h3></div>
-    </section>
+  <!-- الأخبار -->
+  <section class="view" id="view-news">
+    <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
+    <div class="page-head"><h1>الأخبار</h1><div class="subtitle">آخر أخبار المنصة</div></div>
+    <div class="tabs" id="newsTabs">
+      <button class="tab active" data-news="all">جميع الأخبار</button>
+      <button class="tab urgent" data-news="urgent"><i class="fa-solid fa-bolt"></i> عاجل</button>
+      <button class="tab" data-news="normal">عادي</button>
+    </div>
+    <div id="newsList"></div>
+    <div class="empty hidden" id="newsEmpty"><i class="fa-regular fa-newspaper"></i><h3>لا توجد أخبار</h3></div>
+  </section>
 
-    <!-- VIDEOS -->
-    <section class="view" id="view-videos">
-        <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
-        <div class="page-title"><h1><i class="fa-solid fa-video"></i> المرئيات</h1><p>مقاطع فيديو</p></div>
-        <div class="tabs" id="videosTabs">
-            <button class="tab active" data-vnav="all">كل المرئيات</button>
-            <button class="tab" data-vnav="series">سلاسل</button>
-        </div>
-        <div id="videosArea"></div>
-        <div class="empty hidden-section" id="videosEmpty"><i class="fa-solid fa-video"></i><h3>لا توجد مقاطع</h3></div>
-    </section>
+  <!-- المكتبة -->
+  <section class="view" id="view-library">
+    <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
+    <div class="page-head"><h1 id="libTitle">المكتبة</h1><div class="subtitle">كتب وملفات</div></div>
+    <div class="grid" id="libraryGrid"></div>
+    <div class="empty hidden" id="libraryEmpty"><i class="fa-solid fa-book-open"></i><h3>لا توجد كتب</h3></div>
+  </section>
 
-    <!-- AUDIOS -->
-    <section class="view" id="view-audios">
-        <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
-        <div class="page-title"><h1><i class="fa-solid fa-headphones"></i> الصوتيات</h1><p>مقاطع صوتية</p></div>
-        <div class="tabs" id="audiosTabs"></div>
-        <div id="audiosList"></div>
-        <div class="empty hidden-section" id="audiosEmpty"><i class="fa-solid fa-headphones"></i><h3>لا توجد مقاطع</h3></div>
-    </section>
+  <!-- انضم إلينا -->
+  <section class="view" id="view-family">
+    <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
+    <div class="page-head"><h1>انضم إلينا</h1><div class="subtitle">فرصة للانضمام إلى فريق مشكاة</div></div>
+    <div class="form" style="text-align:center">
+      <h3 style="justify-content:center"><i class="fa-solid fa-handshake-angle"></i> انضم إلى فريقنا</h3>
+      <p class="desc">هل ترغب بالمساهمة في نشر الوعي والمعرفة؟ نرحّب بكتّاب ومترجمين ومتطوعين للانضمام إلى فريق مشكاة.</p>
+      <a href="mailto:mishkat.alnuwr@gmail.com?subject=طلب انضمام" class="btn-primary" style="text-decoration:none"><i class="fa-solid fa-paper-plane"></i> أرسل طلبك</a>
+    </div>
+  </section>
 
-    <!-- NEWS -->
-    <section class="view" id="view-news">
-        <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
-        <div class="page-title"><h1><i class="fa-solid fa-newspaper"></i> الأخبار</h1><p>آخر الأخبار</p></div>
-        <div class="tabs" id="newsTabs">
-            <button class="tab active" data-news="all">جميع الأخبار</button>
-            <button class="tab urgent" data-news="urgent"><i class="fa-solid fa-bolt"></i> عاجل</button>
-            <button class="tab" data-news="normal">عادي</button>
-        </div>
-        <div id="newsList"></div>
-        <div class="empty hidden-section" id="newsEmpty"><i class="fa-solid fa-newspaper"></i><h3>لا توجد أخبار</h3></div>
-    </section>
+  <!-- عن المنصة -->
+  <section class="view" id="view-about">
+    <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
+    <div class="page-head"><h1>عن المنصة</h1><div class="subtitle">تعرّف على منصة مشكاة</div></div>
+    <div class="fiqh"><div class="q-label"><i class="fa-solid fa-lightbulb"></i> التعريف</div><p style="font-size:1.05rem;line-height:2;font-family:var(--font-serif)">مشكاة منصة إسلامية فكرية توعوية تُعنى بنشر الأفكار والرؤى والمقالات الهادفة التي تساهم في توعية المجتمع.</p></div>
+    <div class="fiqh"><div class="q-label"><i class="fa-solid fa-eye"></i> الرؤية</div><p style="font-size:1.05rem;line-height:2;font-family:var(--font-serif)">أن تكون مشكاة منارة رقمية موثوقة، يلجأ إليها الباحث عن المعرفة الصافية والفكر النير.</p></div>
+    <div class="fiqh"><div class="q-label"><i class="fa-solid fa-bullhorn"></i> الرسالة</div><p style="font-size:1.05rem;line-height:2;font-family:var(--font-serif)">تقديم محتوى فكري وثقافي رصين، يُساهم في بناء وعي مجتمعي متصل بكتاب الله وعترة رسوله.</p></div>
+  </section>
 
-    <!-- COMPETITIONS -->
-    <section class="view" id="view-competitions">
-        <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
-        <div class="page-title"><h1><i class="fa-solid fa-trophy"></i> مسابقات</h1><p>مسابقات ثقافية</p></div>
-        <div class="empty"><i class="fa-solid fa-trophy"></i><h3>يجري الترتيب</h3><p>سيتم الإعلان قريباً</p></div>
-    </section>
+  <!-- تواصل معنا -->
+  <section class="view" id="view-contact">
+    <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
+    <div class="page-head"><h1>تواصل معنا</h1><div class="subtitle">نحن هنا للإجابة</div></div>
+    <div class="fiqh"><div class="q-label"><i class="fa-regular fa-envelope"></i> البريد الإلكتروني</div><p style="font-size:1.05rem">mishkat.alnuwr@gmail.com</p></div>
+    <div class="fiqh"><div class="q-label"><i class="fa-solid fa-phone"></i> الهاتف</div><p style="font-size:1.05rem">سيتم الإعلان قريباً</p></div>
+  </section>
 
-    <!-- LIBRARY -->
-    <section class="view" id="view-library">
-        <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
-        <div class="page-title"><h1><i class="fa-solid fa-book"></i> <span id="libTitle">المكتبة</span></h1><p id="libDesc">كتب وملفات</p></div>
-        <div class="grid-cards" id="libraryGrid"></div>
-        <div class="empty hidden-section" id="libraryEmpty"><i class="fa-solid fa-book-open"></i><h3>لا توجد كتب</h3></div>
-    </section>
+  <!-- مسابقات -->
+  <section class="view" id="view-competitions">
+    <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
+    <div class="page-head"><h1>مسابقات</h1><div class="subtitle">مسابقات ثقافية</div></div>
+    <div class="empty"><i class="fa-solid fa-trophy"></i><h3>يجري الترتيب</h3><p>سيتم الإعلان قريباً</p></div>
+  </section>
 
-    <!-- FAMILY -->
-    <section class="view" id="view-family">
-        <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
-        <div class="page-title"><h1><i class="fa-solid fa-handshake-angle"></i> انضم إلينا</h1><p>فرصة للانضمام إلى فريق مشكاة</p></div>
-        <div class="form-box">
-            <h3><i class="fa-solid fa-handshake-angle"></i> انضم إلى فريقنا</h3>
-            <p style="color:var(--muted);font-size:14px;line-height:2;margin-bottom:14px">هل ترغب بالمساهمة في نشر الوعي والمعرفة؟ نرحّب بكتّاب ومترجمين ومتطوعين للانضمام إلى فريق مشكاة.</p>
-            <a href="mailto:mishkat.alnuwr@gmail.com?subject=طلب انضمام" class="btn-primary" style="display:inline-flex;align-items:center;gap:6px;text-decoration:none"><i class="fa-solid fa-paper-plane"></i> أرسل طلبك</a>
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="view" id="view-about">
-        <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
-        <div class="page-title"><h1><i class="fa-solid fa-circle-info"></i> عن المنصة</h1><p>تعرّف على منصة مشكاة</p></div>
-        <div class="list-box">
-            <div class="head"><i class="fa-solid fa-lightbulb"></i> التعريف</div>
-            <div class="body"><div class="list-item"><div class="info"><p style="font-size:15px;line-height:2">مشكاة منصة إسلامية فكرية توعوية تُعنى بنشر الأفكار والرؤى والمقالات الهادفة.</p></div></div></div>
-        </div>
-        <div class="list-box">
-            <div class="head"><i class="fa-solid fa-eye"></i> الرؤية</div>
-            <div class="body"><div class="list-item"><div class="info"><p style="font-size:15px;line-height:2">أن تكون مشكاة منارة رقمية موثوقة يلجأ إليها الباحث عن المعرفة الصافية.</p></div></div></div>
-        </div>
-        <div class="list-box">
-            <div class="head"><i class="fa-solid fa-bullhorn"></i> الرسالة</div>
-            <div class="body"><div class="list-item"><div class="info"><p style="font-size:15px;line-height:2">تقديم محتوى فكري وثقافي رصين يُساهم في بناء وعي مجتمعي متصل بكتاب الله وعترة رسوله.</p></div></div></div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="view" id="view-contact">
-        <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
-        <div class="page-title"><h1><i class="fa-solid fa-address-book"></i> تواصل معنا</h1><p>نحن هنا للإجابة على استفساراتكم</p></div>
-        <div class="info-box">
-            <div class="info-row"><i class="fa-regular fa-envelope"></i><span>البريد الإلكتروني</span><span class="val">mishkat.alnuwr@gmail.com</span></div>
-            <div class="info-row"><i class="fa-solid fa-phone"></i><span>الهاتف</span><span class="val">سيتم الإعلان قريباً</span></div>
-        </div>
-    </section>
-
-    <!-- SEARCH RESULTS -->
-    <section class="view" id="view-search">
-        <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
-        <div class="page-title"><h1><i class="fa-solid fa-magnifying-glass"></i> نتائج البحث</h1><p>عن: <strong id="searchQuery">—</strong></p></div>
-        <div id="searchResults"></div>
-        <div class="empty hidden-section" id="searchEmpty"><i class="fa-solid fa-magnifying-glass-minus"></i><h3>لا توجد نتائج</h3></div>
-    </section>
-
-    <!-- ARTICLE -->
-    <section class="view" id="view-article">
-        <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
-        <div class="article-view" id="articleBody"></div>
-        <div class="share-row">
-            <span class="lbl"><i class="fa-solid fa-share-nodes"></i> شارك</span>
-            <div class="btns">
-                <button onclick="nativeShare()"><i class="fa-solid fa-share-nodes"></i> مشاركة</button>
-                <button onclick="copyCurrentLink(event)" style="background:var(--gold);color:var(--navy)"><i class="fa-solid fa-link"></i> نسخ الرابط</button>
-            </div>
-        </div>
-    </section>
+  <!-- صفحة المقال -->
+  <section class="view" id="view-article">
+    <button class="back-btn" onclick="backSmart()"><i class="fa-solid fa-arrow-right"></i> رجوع</button>
+    <div class="article" id="articleBody"></div>
+    <div class="share-bar">
+      <span class="lbl"><i class="fa-solid fa-share-nodes"></i> شارك الموضوع</span>
+      <div class="share-btns">
+        <button class="share" onclick="nativeShare()"><i class="fa-solid fa-share-nodes"></i> مشاركة</button>
+        <button class="copy" onclick="copyLink(event)"><i class="fa-solid fa-link"></i> نسخ الرابط</button>
+      </div>
+    </div>
+  </section>
 
 </main>
 
-<!-- FOOTER -->
+<!-- الفوتر -->
 <footer>
-    <div class="row">
-        <div class="brand"><strong>مِشْكَاة</strong></div>
-        <div class="contact">
-            <a href="mailto:mishkat.alnuwr@gmail.com"><i class="fa-regular fa-envelope"></i> mishkat.alnuwr@gmail.com</a>
-            <div><i class="fa-solid fa-phone"></i> سيتم الإعلان قريباً</div>
-        </div>
-        <div class="social">
-            <a href="https://www.facebook.com/share/1Gcs92VeQ8/" class="fb" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://x.com/mishkat_alnuwr" class="tw" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://youtube.com/@mishkat_alnuwr" class="yt" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://t.me/mishkat_alnuwr" class="tg" target="_blank"><i class="fab fa-telegram"></i></a>
-            <a href="https://whatsapp.com/channel/0029VbE5q3G1iUxiBdtcX33g" class="wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.instagram.com/mishkat_alnuwr" class="ig" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="/admin/" style="display:none"><i class="fa-solid fa-gear"></i></a>
-        </div>
+  <div class="container">
+    <div class="fbrand">مِشْكَاة <span class="accent">النُّور</span></div>
+    <div class="fcontact">
+      <a href="mailto:mishkat.alnuwr@gmail.com"><i class="fa-regular fa-envelope"></i> mishkat.alnuwr@gmail.com</a>
+      <div><i class="fa-solid fa-phone"></i> سيتم الإعلان قريباً</div>
     </div>
-    <div class="bottom">جميع الحقوق محفوظة © 2026 منصة مشكاة | للنور والوعي</div>
+    <div class="fsocial">
+      <a href="https://www.facebook.com/share/1Gcs92VeQ8/" class="fb" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://x.com/mishkat_alnuwr" class="tw" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://youtube.com/@mishkat_alnuwr" class="yt" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://t.me/mishkat_alnuwr" class="tg" target="_blank"><i class="fab fa-telegram"></i></a>
+      <a href="https://whatsapp.com/channel/0029VbE5q3G1iUxiBdtcX33g" class="wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/mishkat_alnuwr" class="ig" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+  <div class="fbottom">جميع الحقوق محفوظة © 2026 منصة مشكاة | للنور والوعي</div>
 </footer>
 
-<!-- LIBRARY MODAL -->
-<div class="modal" id="libraryModal">
-    <div class="modal-box">
-        <button class="modal-close" onclick="closeLibraryModal()">×</button>
-        <h3><i class="fa-solid fa-book"></i> المكتبة</h3>
-        <div class="lib-grid">
-            <button class="lib-btn" onclick="openLibCat('quran')"><i class="fa-solid fa-book-quran"></i>كتب حول القرآن</button>
-            <button class="lib-btn" onclick="openLibCat('aqeedah')"><i class="fa-solid fa-mosque"></i>كتب عقائدية</button>
-            <button class="lib-btn" onclick="openLibCat('fiqh')"><i class="fa-solid fa-scale-balanced"></i>كتب فقهية</button>
-            <button class="lib-btn" onclick="openLibCat('ethics')"><i class="fa-solid fa-heart"></i>كتب أخلاقية</button>
-            <button class="lib-btn" onclick="openLibCat('social')"><i class="fa-solid fa-users"></i>كتب اجتماعية</button>
-            <button class="lib-btn" onclick="openLibCat('thought')"><i class="fa-solid fa-lightbulb"></i>كتب فكرية</button>
-        </div>
-    </div>
+<!-- نافذة البحث -->
+<div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)closeSearch()">
+  <div class="search-box">
+    <span class="close-btn" onclick="closeSearch()">×</span>
+    <h3><i class="fa-solid fa-magnifying-glass"></i> بحث</h3>
+    <input type="search" id="searchInput" placeholder="ابحث في الموقع..." oninput="doSearch(this.value)">
+    <div id="searchResults"></div>
+  </div>
 </div>
 
-<!-- DOWNLOAD MODAL -->
-<div class="modal" id="downloadModal">
-    <div class="modal-box">
-        <button class="modal-close" onclick="closeDownload()">×</button>
-        <h3><i class="fa-solid fa-download"></i> اختر صيغة التحميل</h3>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-            <a id="dlPDF" href="#" target="_blank" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:20px 12px;border-radius:10px;text-decoration:none;color:#fff;font-weight:800;font-family:'Cairo',sans-serif;background:#dc2626"><i class="fa-solid fa-file-pdf" style="font-size:34px"></i>PDF</a>
-            <a id="dlWord" href="#" target="_blank" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:20px 12px;border-radius:10px;text-decoration:none;color:#fff;font-weight:800;font-family:'Cairo',sans-serif;background:#2563eb"><i class="fa-solid fa-file-word" style="font-size:34px"></i>Word</a>
-        </div>
-    </div>
-</div>
+<!-- القائمة الجانبية -->
+<nav class="drawer" id="drawer">
+  <div class="drawer-head">
+    <strong>القائمة</strong>
+    <button onclick="closeDrawer()"><i class="fa-solid fa-times"></i></button>
+  </div>
+  <ul>
+    <li><a onclick="showView('home')"><span><i class="fa-solid fa-house"></i>الرئيسية</span></a></li>
+    <li><a onclick="renderCategory('ahlulbayt')"><span><i class="fa-solid fa-mosque"></i>أهل البيت (عليهم السلام)</span></a></li>
+    <li><a onclick="showView('greats')"><span><i class="fa-solid fa-star"></i>عظماؤنا</span></a></li>
+    <li><a onclick="showView('fiqh')"><span><i class="fa-solid fa-scale-balanced"></i>مسائل فقهية</span></a></li>
+    <li><a onclick="showView('courses')"><span><i class="fa-solid fa-graduation-cap"></i>دورات تعليمية</span></a></li>
+    <li><a onclick="showView('weekly')"><span><i class="fa-solid fa-hands-praying"></i>نور الأسبوع</span></a></li>
+    <li><a onclick="renderCategory('insights')"><span><i class="fa-solid fa-lightbulb"></i>رؤى وأفكار</span></a></li>
+    <li><a onclick="renderCategory('doubts')"><span><i class="fa-solid fa-shield-halved"></i>شبهات وردود</span></a></li>
+    <li><a onclick="renderCategory('dialogues')"><span><i class="fa-solid fa-comments"></i>حوارات ومقابلات</span></a></li>
+    <li><a onclick="renderCategory('family')"><span><i class="fa-solid fa-users"></i>الأسرة والمجتمع</span></a></li>
+    <li><a onclick="renderCategory('general')"><span><i class="fa-regular fa-newspaper"></i>مقالات عامة</span></a></li>
+    <li><a onclick="renderCategory('rights')"><span><i class="fa-solid fa-balance-scale"></i>حقوق</span></a></li>
+    <li>
+      <a onclick="this.nextElementSibling.classList.toggle('show'); this.classList.toggle('open')"><span><i class="fa-solid fa-book"></i>المكتبة</span><i class="fa-solid fa-chevron-left"></i></a>
+      <ul class="submenu">
+        <li><a onclick="openLibCat('quran')">كتب حول القرآن</a></li>
+        <li><a onclick="openLibCat('aqeedah')">كتب عقائدية</a></li>
+        <li><a onclick="openLibCat('fiqh')">كتب فقهية</a></li>
+        <li><a onclick="openLibCat('ethics')">كتب أخلاقية</a></li>
+        <li><a onclick="openLibCat('social')">كتب اجتماعية</a></li>
+        <li><a onclick="openLibCat('thought')">كتب فكرية</a></li>
+      </ul>
+    </li>
+    <li><a onclick="showView('videos')"><span><i class="fa-solid fa-video"></i>المرئيات</span></a></li>
+    <li><a onclick="showView('audios')"><span><i class="fa-solid fa-headphones"></i>الصوتيات</span></a></li>
+    <li><a onclick="showView('news')"><span><i class="fa-regular fa-newspaper"></i>الأخبار</span></a></li>
+    <li><a onclick="showView('competitions')"><span><i class="fa-solid fa-trophy"></i>مسابقات</span></a></li>
+    <li><a onclick="showView('family')"><span><i class="fa-solid fa-handshake-angle"></i>انضم إلينا</span></a></li>
+    <li><a onclick="showView('about')"><span><i class="fa-solid fa-circle-info"></i>عن المنصة</span></a></li>
+    <li><a onclick="showView('contact')"><span><i class="fa-solid fa-address-book"></i>تواصل معنا</span></a></li>
+  </ul>
+</nav>
+<div class="overlay" id="overlay" onclick="closeDrawer()"></div>
 
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
 <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 <script>
 window.OneSignalDeferred = window.OneSignalDeferred || [];
-OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
-        appId: "YOUR_ONESIGNAL_APP_ID",
-        allowLocalhostAsSecureOrigin: true,
-        notifyButton: { enable: false }
-    });
-});
+OneSignalDeferred.push(async function(OneSignal){ try{ await OneSignal.init({appId:"YOUR_ONESIGNAL_APP_ID",allowLocalhostAsSecureOrigin:true,notifyButton:{enable:false}}); }catch(e){} });
 </script>
-
-<script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
 <script>
-let articles=[], books=[], audios=[], videos=[], news=[], daily=null, fiqh=[], weekly=[], greats=[], useful=[], courses=[];
-let videosState='all', currentSeries='', newsFilter='all', fiqhFilter='all', greatsFilter='all', audioSeries='all';
-let coursesTab='lessons';
-let currentView = 'home';
-
 const $ = id => document.getElementById(id);
 const esc = s => String(s||'').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 
-const catNames = {ahlulbayt:'أهل البيت (عليهم السلام)', insights:'رؤى وأفكار', doubts:'شبهات وردود', dialogues:'حوارات ومقابلات', family:'الأسرة والمجتمع', general:'مقالات عامة', rights:'حقوق'};
-const libNames = {quran:'كتب حول القرآن', aqeedah:'كتب عقائدية', fiqh:'كتب فقهية', ethics:'كتب أخلاقية', social:'كتب اجتماعية', thought:'كتب فكرية'};
+let articles=[],books=[],audios=[],videos=[],news=[],daily=null,fiqh=[],weekly=[],greats=[],courses=[];
+let videosState='all',currentSeries='',newsFilter='all',fiqhFilter='all',greatsFilter='all',audioSeries='all',coursesTab='lessons';
+let currentView='home';
+const catNames={ahlulbayt:'أهل البيت (عليهم السلام)',insights:'رؤى وأفكار',doubts:'شبهات وردود',dialogues:'حوارات ومقابلات',family:'الأسرة والمجتمع',general:'مقالات عامة',rights:'حقوق'};
+const libNames={quran:'كتب حول القرآن',aqeedah:'كتب عقائدية',fiqh:'كتب فقهية',ethics:'كتب أخلاقية',social:'كتب اجتماعية',thought:'كتب فكرية'};
 
-function renderMarkdown(text) {
-    if (!text) return '';
-    let p = String(text).replace(/\{red\}([\s\S]*?)\{\/red\}/g,'<span style="color:#dc2626;font-weight:700">$1</span>').replace(/\{gold\}([\s\S]*?)\{\/gold\}/g,'<span style="color:#c9a961;font-weight:700">$1</span>').replace(/\{blue\}([\s\S]*?)\{\/blue\}/g,'<span style="color:#2c4a7c;font-weight:700">$1</span>');
-    if (typeof marked !== 'undefined') { try { marked.setOptions({breaks:true,gfm:true}); return marked.parse(p); } catch(e) { return p.replace(/\n/g,'<br>'); } }
-    return p.replace(/\n/g,'<br>');
+function renderMarkdown(t){ if(!t) return ''; let p=String(t); if(typeof marked!=='undefined'){ try{ marked.setOptions({breaks:true,gfm:true}); return marked.parse(p); }catch(e){ return p.replace(/\n/g,'<br>'); } } return p.replace(/\n/g,'<br>'); }
+
+function showView(id, push=true){
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  const t=$('view-'+id); if(t) t.classList.add('active');
+  document.querySelectorAll('.navbar a').forEach(a=>a.classList.toggle('active',a.dataset.view===id));
+  window.scrollTo({top:0,behavior:'smooth'});
+  closeDrawer();
+  if(push && id!==currentView){ window.history.pushState({view:id},'',id==='home'?location.pathname:'#'+id); }
+  currentView=id;
+  if(id==='home') renderHome();
+  if(id==='greats') renderGreats();
+  if(id==='fiqh') renderFiqh();
+  if(id==='courses') renderCourses();
+  if(id==='weekly') renderWeekly();
+  if(id==='videos'){ videosState='all'; updateVTabs(); renderVideosPage(); }
+  if(id==='audios'){ buildAudioTabs(); renderAudios(); }
+  if(id==='news'){ newsFilter='all'; document.querySelectorAll('#newsTabs .tab').forEach((b,i)=>b.classList.toggle('active',i===0)); renderNews(); }
+  if(id==='library') renderBooks();
+}
+function openDrawer(){ $('drawer').classList.add('open'); $('overlay').classList.add('show'); }
+function closeDrawer(){ $('drawer').classList.remove('open'); $('overlay').classList.remove('show'); }
+function backSmart(){ if(window.history.length>1) window.history.back(); else showView('home',false); }
+function openSearch(){ $('searchOverlay').classList.add('show'); setTimeout(()=>$('searchInput').focus(),100); }
+function closeSearch(){ $('searchOverlay').classList.remove('show'); $('searchInput').value=''; $('searchResults').innerHTML=''; }
+
+async function fetchJSON(f){ try{ const r=await fetch(f+'?t='+Date.now()); if(!r.ok) return null; return await r.json(); }catch(e){ return null; } }
+const ARTICLE_FILES=[{file:'articles-ahlulbayt.json',cat:'ahlulbayt'},{file:'articles-insights.json',cat:'insights'},{file:'articles-doubts.json',cat:'doubts'},{file:'articles-dialogues.json',cat:'dialogues'},{file:'articles-family.json',cat:'family'},{file:'articles-general.json',cat:'general'},{file:'articles-rights.json',cat:'rights'}];
+
+async function loadAll(){
+  const d=await fetchJSON('daily.json'); if(d&&d.text) daily=d;
+  const fq=await fetchJSON('fiqh-qa.json'); if(fq&&fq.items) fiqh=fq.items;
+  try{ const r=await fetch('/api/fiqh?t='+Date.now()); if(r.ok){ const j=await r.json(); if(j.success && Array.isArray(j.questions)){ fiqh=j.questions.map(q=>({question:q.question,answer:q.answer||'',category:q.category||'',date:(q.answered_at||q.created_at||'').split(' ')[0]})).concat(fiqh); } } }catch(e){}
+  const w=await fetchJSON('weekly.json'); if(w&&w.items) weekly=w.items;
+  const g=await fetchJSON('greats.json'); if(g&&g.items) greats=g.items;
+  const c=await fetchJSON('courses.json'); if(c&&c.items) courses=c.items;
+  for(const {file,cat} of ARTICLE_FILES){ const data=await fetchJSON(file); if(data&&data.items) data.items.forEach(item=>articles.push({cat,title:item.title_ar||'',author:item.author_ar||'',date:item.date||'',excerpt:item.excerpt_ar||'',image:item.image||'',body:item.body_ar||''})); }
+  const b=await fetchJSON('books.json'); if(b&&b.items) books=b.items;
+  const a=await fetchJSON('audios.json'); if(a&&a.items) audios=a.items;
+  const v=await fetchJSON('videos.json'); if(v&&v.items) videos=v.items;
+  const n=await fetchJSON('news.json'); if(n&&n.items) news=n.items;
+  renderDaily(); renderHome();
 }
 
-function showView(id, pushHistory = true) {
-    if (id === 'home') document.body.classList.remove('filter-mode');
-    else document.body.classList.add('filter-mode');
-    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-    const t = $('view-' + id);
-    if (t) t.classList.add('active');
-    document.querySelectorAll('.drawer a[data-view]').forEach(a => a.classList.toggle('active', a.dataset.view === id));
-    window.scrollTo({top:0,behavior:'smooth'});
-    closeDrawer();
-    if (pushHistory && id !== currentView) {
-        window.history.pushState({view:id}, '', id === 'home' ? location.pathname : '#' + id);
-    }
-    currentView = id;
-    if (id === 'home') renderHome();
-    if (id === 'courses') renderCourses();
-    if (id === 'greats') renderGreats();
-    if (id === 'fiqh') renderFiqh();
-    if (id === 'weekly') renderWeekly();
-    if (id === 'videos') { videosState='all'; updateVTabs(); renderVideosPage(); }
-    if (id === 'audios') { buildAudioTabs(); renderAudios(); }
-    if (id === 'news') { newsFilter='all'; $('newsTabs').querySelectorAll('.tab').forEach((b,i)=>b.classList.toggle('active',i===0)); renderNews(); }
-    if (id === 'library') { $('libTitle').textContent='المكتبة'; $('libDesc').textContent='كتب وملفات'; renderBooks(); }
+function renderDaily(){
+  const box=$('dailyBox'); if(!box) return;
+  if(!daily || !daily.text){ box.style.display='none'; return; }
+  box.style.display='block';
+  $('dailyType').textContent = daily.type || 'آية';
+  $('dailyText').textContent = daily.text || '';
+  $('dailySource').innerHTML = '<i class="fa-solid fa-bookmark"></i> ' + (daily.source || 'منصة مشكاة');
 }
 
-function openDrawer() { $('drawer').classList.add('open'); $('overlay').classList.add('show'); }
-function closeDrawer() { $('drawer').classList.remove('open'); $('overlay').classList.remove('show'); }
+function timeAgo(d){ if(!d) return ''; try{ const dt=new Date(d); const s=(Date.now()-dt.getTime())/1000; if(s<60) return 'الآن'; if(s<3600) return 'منذ '+Math.floor(s/60)+' دقيقة'; if(s<86400) return 'منذ '+Math.floor(s/3600)+' ساعة'; if(s<604800) return 'منذ '+Math.floor(s/86400)+' يوم'; return d; }catch(e){ return d; } }
 
-function backSmart() {
-    if (window.history.length > 1) window.history.back();
-    else showView('home', false);
-}
-
-async function fetchJSON(file) { try { const r = await fetch(file + '?t=' + Date.now()); if (!r.ok) return null; return await r.json(); } catch(e) { return null; } }
-
-const ARTICLE_FILES = [
-    {file:'articles-ahlulbayt.json', cat:'ahlulbayt'},{file:'articles-insights.json', cat:'insights'},
-    {file:'articles-doubts.json', cat:'doubts'},{file:'articles-dialogues.json', cat:'dialogues'},
-    {file:'articles-family.json', cat:'family'},{file:'articles-general.json', cat:'general'},
-    {file:'articles-rights.json', cat:'rights'}
-];
-
-async function loadAll() {
-    const d = await fetchJSON('daily.json'); if (d && d.text) daily = d;
-    const fq = await fetchJSON('fiqh-qa.json'); if (fq && fq.items) fiqh = fq.items;
-    try { const r = await fetch('/api/fiqh?t=' + Date.now()); if (r.ok) { const j = await r.json(); if (j.success && Array.isArray(j.questions)) { fiqh = j.questions.map(q => ({question:q.question, answer:q.answer||'', category:q.category||'', date:(q.answered_at||q.created_at||'').split(' ')[0]})).concat(fiqh); } } } catch(e) {}
-    const w = await fetchJSON('weekly.json'); if (w && w.items) weekly = w.items;
-    const g = await fetchJSON('greats.json'); if (g && g.items) greats = g.items;
-    const u = await fetchJSON('useful-sites.json'); if (u && u.items) useful = u.items;
-    const c = await fetchJSON('courses.json'); if (c && c.items) courses = c.items;
-    for (const {file, cat} of ARTICLE_FILES) {
-        const data = await fetchJSON(file);
-        if (data && data.items) data.items.forEach(item => articles.push({cat, title:item.title_ar||'', author:item.author_ar||'', date:item.date||'', excerpt:item.excerpt_ar||'', image:item.image||'', body:item.body_ar||''}));
-    }
-    const b = await fetchJSON('books.json'); if (b && b.items) books = b.items;
-    const a = await fetchJSON('audios.json'); if (a && a.items) audios = a.items;
-    const v = await fetchJSON('videos.json'); if (v && v.items) videos = v.items;
-    const n = await fetchJSON('news.json'); if (n && n.items) news = n.items;
-    renderStats();
-    renderDaily();
-    renderHome();
-}
-
-function renderStats() {
-    $('statArticles').textContent = articles.length;
-    $('statBooks').textContent = books.length;
-    $('statVideos').textContent = videos.length;
-    $('statAudios').textContent = audios.length;
-    $('statFiqh').textContent = fiqh.length;
-    $('statCourses').textContent = courses.length;
-}
-
-function renderDaily() {
-    const box = $('dailyBox'); if (!box) return;
-    if (!daily || !daily.text) { box.style.display = 'none'; return; }
-    box.style.display = 'block';
-    $('dailyType').textContent = daily.type || 'آية';
-    $('dailyText').textContent = daily.text || '';
-    $('dailySource').innerHTML = '<i class="fa-solid fa-bookmark"></i> ' + (daily.source || 'منصة مشكاة');
-}
-
-function renderHome() {
-    document.body.classList.remove('filter-mode');
-    const list = $('latestList'); if (!list) return;
-    const items = [];
-    articles.forEach((a,i) => items.push({type:'article', label:'مقال', title:a.title, excerpt:a.excerpt, author:a.author, date:a.date, idx:i, cat:a.cat}));
-    news.forEach((n,i) => items.push({type:'news', label:'خبر', title:n.title, excerpt:n.excerpt||'', author:'', date:n.date||'', idx:i}));
-    books.forEach((b,i) => items.push({type:'book', label:'كتاب', title:b.title, excerpt:b.description||'', author:b.author||'', date:b.date||'', idx:i}));
-    videos.forEach((v,i) => items.push({type:'video', label:'مرئي', title:v.title, excerpt:v.description||'', author:v.channel||'', date:v.date||'', idx:i}));
-    audios.forEach((a,i) => items.push({type:'audio', label:'صوتي', title:a.title, excerpt:a.description||'', author:a.speaker||'', date:a.date||'', idx:i}));
-    courses.forEach((c,i) => items.push({type:'course', label:'دورة', title:c.title, excerpt:c.description||'', author:c.instructor||'', date:c.date||'', idx:i}));
-    items.sort((a,b) => (b.date||'').localeCompare(a.date||''));
-    if (!items.length) { list.innerHTML = '<div class="empty"><i class="fa-regular fa-newspaper"></i><h3>لا يوجد محتوى حالياً</h3></div>'; return; }
-    list.innerHTML = items.slice(0, 12).map(it => `
-        <div class="list-item" onclick="openItem('${it.type}',${it.idx})">
-            <div class="info">
-                <h4>${esc(it.title)}</h4>
-                <small><span class="badge">${it.label}</span>${esc(it.date||'')} ${it.author?' • '+esc(it.author):''}</small>
-            </div>
-            <i class="fa-solid fa-chevron-left" style="color:var(--gold);margin-top:6px"></i>
-        </div>`).join('');
-}
-
-function renderCategory(cat) {
-    document.body.classList.add('filter-mode');
-    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-    $('view-category').classList.add('active');
-    currentView = 'category';
-    $('categoryTitle').innerHTML = `<h1><i class="fa-solid fa-tag"></i> ${catNames[cat]||cat}</h1><p>${articles.filter(a=>a.cat===cat).length} مقالة</p>`;
-    const grid = $('categoryGrid'); const empty = $('categoryEmpty');
-    const filtered = articles.filter(a => a.cat === cat);
-    if (!filtered.length) { grid.innerHTML = ''; empty.classList.remove('hidden-section'); return; }
-    empty.classList.add('hidden-section');
-    grid.innerHTML = filtered.map(a => { const idx = articles.indexOf(a); return cardHTML(a.title, a.excerpt, a.author, a.date, `openArticle(${idx})`); }).join('');
-    window.scrollTo({top:0,behavior:'smooth'});
-}
-
-function cardHTML(title, excerpt, author, date, onclick) {
-    return `<div class="card" onclick="${onclick}">
-        <h3>${esc(title)}</h3>
-        <p>${esc(excerpt)}</p>
-        <div class="meta"><span><i class="fa-regular fa-user"></i> ${esc(author||'مشكاة')}</span><span><i class="fa-regular fa-calendar"></i> ${esc(date||'')}</span></div>
+function renderHome(){
+  const list=$('latestList'); if(!list) return;
+  const items=[];
+  articles.forEach((a,i)=>items.push({type:'article',label:'مقال',title:a.title,excerpt:a.excerpt,author:a.author,date:a.date,idx:i,img:a.image,cat:a.cat}));
+  news.forEach((n,i)=>items.push({type:'news',label:'خبر',title:n.title,excerpt:n.excerpt||'',author:'',date:n.date||'',idx:i,img:n.image||''}));
+  books.forEach((b,i)=>items.push({type:'book',label:'كتاب',title:b.title,excerpt:b.description||'',author:b.author||'',date:b.date||'',idx:i,img:b.cover||''}));
+  videos.forEach((v,i)=>items.push({type:'video',label:'مرئي',title:v.title,excerpt:v.description||'',author:v.channel||'',date:v.date||'',idx:i,img:''}));
+  audios.forEach((a,i)=>items.push({type:'audio',label:'صوتي',title:a.title,excerpt:a.description||'',author:a.speaker||'',date:a.date||'',idx:i,img:''}));
+  courses.forEach((c,i)=>items.push({type:'course',label:'دورة',title:c.title,excerpt:c.description||'',author:c.instructor||'',date:c.date||'',idx:i,img:''}));
+  items.sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+  if(!items.length){ list.innerHTML='<div class="empty"><i class="fa-regular fa-newspaper"></i><h3>لا يوجد محتوى حالياً</h3></div>'; return; }
+  list.innerHTML = items.slice(0,12).map(it => {
+    const img = it.img ? `<img src="${esc(it.img)}" class="card-img" alt="${esc(it.title)}" onerror="this.style.display='none'">` : `<div class="card-img-placeholder"><i class="fa-solid fa-file-lines"></i></div>`;
+    return `<div class="card" onclick="openItem('${it.type}',${it.idx})">
+      ${img}
+      <div class="card-body">
+        <span class="card-cat">${it.label}</span>
+        <h3 class="card-title">${esc(it.title)}</h3>
+        <p class="card-excerpt">${esc(it.excerpt)}</p>
+        <div class="card-meta"><span><i class="fa-regular fa-user"></i>${esc(it.author||'مشكاة')}</span><span><i class="fa-regular fa-calendar"></i>${esc(timeAgo(it.date))}</span></div>
+      </div>
     </div>`;
+  }).join('');
 }
 
-function openItem(type, idx) {
-    if (type === 'article') openArticle(idx);
-    else if (type === 'news') openNews(idx);
-    else if (type === 'book') { showView('library'); setTimeout(() => { const el = document.querySelectorAll('#libraryGrid .card')[idx]; if (el) el.scrollIntoView({behavior:'smooth',block:'center'}); }, 200); }
-    else if (type === 'audio') { showView('audios'); setTimeout(() => { const el = document.querySelectorAll('#audiosList .card')[idx]; if (el) el.scrollIntoView({behavior:'smooth',block:'center'}); }, 200); }
-    else if (type === 'video') { showView('videos'); setTimeout(() => { const el = document.querySelectorAll('#videosArea .card')[idx]; if (el) el.scrollIntoView({behavior:'smooth',block:'center'}); }, 200); }
-    else if (type === 'course') { showView('courses'); }
+function renderCategory(cat){
+  closeDrawer();
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  $('view-category').classList.add('active');
+  currentView='category';
+  const filtered = articles.filter(a => a.cat === cat);
+  $('categoryTitle').textContent = catNames[cat]||cat;
+  const grid=$('categoryGrid'), empty=$('categoryEmpty');
+  if(!filtered.length){ grid.innerHTML=''; empty.classList.remove('hidden'); return; }
+  empty.classList.add('hidden');
+  grid.innerHTML = filtered.map(a => { const idx=articles.indexOf(a); const img=a.image?`<img src="${esc(a.image)}" class="card-img" onerror="this.style.display='none'">`:`<div class="card-img-placeholder"><i class="fa-solid fa-file-lines"></i></div>`; return `<div class="card" onclick="openArticle(${idx})">${img}<div class="card-body"><span class="card-cat">${catNames[a.cat]||''}</span><h3 class="card-title">${esc(a.title)}</h3><p class="card-excerpt">${esc(a.excerpt)}</p><div class="card-meta"><span><i class="fa-regular fa-user"></i>${esc(a.author||'')}</span><span><i class="fa-regular fa-calendar"></i>${esc(a.date)}</span></div></div></div>`; }).join('');
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
-function openArticle(idx) {
-    const a = articles[idx]; if (!a) return;
-    const img = a.image ? `<img src="${a.image}" alt="${esc(a.title)}" class="cover">` : '';
-    const body = a.body ? renderMarkdown(a.body) : `<p>${esc(a.excerpt||'')}</p>`;
-    $('articleBody').innerHTML = `<span class="badge" style="display:inline-block;background:var(--gold-light);color:var(--navy);padding:3px 12px;border-radius:12px;font-size:11px;font-weight:700;margin-bottom:12px;font-family:'Cairo',sans-serif">${catNames[a.cat]||''}</span><h1>${esc(a.title)}</h1><div class="meta"><span><i class="fa-regular fa-user"></i> ${esc(a.author||'')}</span><span><i class="fa-regular fa-calendar"></i> ${esc(a.date||'')}</span></div>${img}<div class="body">${body}</div>`;
-    document.body.classList.add('filter-mode');
-    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-    $('view-article').classList.add('active');
-    window.history.pushState({view:'article'}, '', '#article');
-    currentView = 'article';
-    window.scrollTo({top:0,behavior:'smooth'});
+function openItem(type,idx){ if(type==='article') openArticle(idx); else if(type==='news') openNews(idx); else if(type==='book'){ showView('library'); setTimeout(()=>{const el=document.querySelectorAll('#libraryGrid .book-card')[idx]; if(el) el.scrollIntoView({behavior:'smooth',block:'center'});},200); } else if(type==='audio'){ showView('audios'); setTimeout(()=>{const el=document.querySelectorAll('.audio-card')[idx]; if(el) el.scrollIntoView({behavior:'smooth',block:'center'});},200); } else if(type==='video'){ showView('videos'); setTimeout(()=>{const el=document.querySelectorAll('.video-card')[idx]; if(el) el.scrollIntoView({behavior:'smooth',block:'center'});},200); } else if(type==='course') showView('courses'); }
+
+function openArticle(idx){
+  const a=articles[idx]; if(!a) return;
+  const img = a.image ? `<img src="${esc(a.image)}" class="cover" alt="${esc(a.title)}" onerror="this.style.display='none'">` : '';
+  const body = a.body ? renderMarkdown(a.body) : `<p>${esc(a.excerpt||'')}</p>`;
+  $('articleBody').innerHTML = `<span class="cat">${catNames[a.cat]||''}</span><h1>${esc(a.title)}</h1><div class="meta"><span><i class="fa-regular fa-user"></i>${esc(a.author||'')}</span><span><i class="fa-regular fa-calendar"></i>${esc(a.date||'')}</span></div>${img}<div class="content">${body}</div>`;
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  $('view-article').classList.add('active');
+  window.history.pushState({view:'article'},'','#article');
+  currentView='article';
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
-function openGreat(idx) {
-    const g = greats[idx]; if (!g) return;
-    const img = g.image ? `<img src="${g.image}" alt="${esc(g.name)}" class="cover">` : '';
-    const quote = g.quote ? `<blockquote>"${esc(g.quote)}"</blockquote>` : '';
-    $('articleBody').innerHTML = `${g.category?`<span class="badge" style="display:inline-block;background:var(--gold-light);color:var(--navy);padding:3px 12px;border-radius:12px;font-size:11px;font-weight:700;margin-bottom:12px;font-family:'Cairo',sans-serif">${esc(g.category)}</span>`:''}<h1>${esc(g.name)}</h1>${g.title?`<div class="meta"><span><i class="fa-solid fa-award"></i> ${esc(g.title)}</span></div>`:''}${img}${quote}<div class="body">${g.body?renderMarkdown(g.body):''}</div>`;
-    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-    $('view-article').classList.add('active');
-    window.history.pushState({view:'article'}, '', '#great');
-    currentView = 'article';
-    window.scrollTo({top:0,behavior:'smooth'});
+function openGreat(idx){
+  const g=greats[idx]; if(!g) return;
+  const img=g.image?`<img src="${esc(g.image)}" class="cover">`:'';
+  const quote=g.quote?`<blockquote>"${esc(g.quote)}"</blockquote>`:'';
+  $('articleBody').innerHTML = `${g.category?`<span class="cat">${esc(g.category)}</span>`:''}<h1>${esc(g.name)}</h1>${g.title?`<div class="meta"><span><i class="fa-solid fa-award"></i>${esc(g.title)}</span></div>`:''}${img}${quote}<div class="content">${g.body?renderMarkdown(g.body):''}</div>`;
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  $('view-article').classList.add('active');
+  window.history.pushState({view:'article'},'','#great');
+  currentView='article';
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
-function openNews(idx) {
-    const n = news[idx]; if (!n) return;
-    let body = '';
-    if (n.image && n.type !== 'video') body += `<img src="${n.image}" alt="${esc(n.title)}" class="cover">`;
-    if (n.type === 'video' && n.youtube_id) body += `<div style="position:relative;width:100%;padding-bottom:56.25%;margin-bottom:16px"><iframe src="https://www.youtube.com/embed/${n.youtube_id}" style="position:absolute;inset:0;width:100%;height:100%;border:none" allowfullscreen></iframe></div>`;
-    else body += n.body ? renderMarkdown(n.body) : (n.excerpt||'');
-    $('articleBody').innerHTML = `${n.urgent?`<span class="badge" style="display:inline-block;background:#dc2626;color:#fff;padding:3px 12px;border-radius:12px;font-size:11px;font-weight:700;margin-bottom:12px;font-family:'Cairo',sans-serif">عاجل</span>`:''}<h1>${esc(n.title)}</h1><div class="meta"><span><i class="fa-regular fa-calendar"></i> ${esc(n.date||'')}</span></div><div class="body">${body}</div>`;
-    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-    $('view-article').classList.add('active');
-    window.history.pushState({view:'article'}, '', '#news');
-    currentView = 'article';
-    window.scrollTo({top:0,behavior:'smooth'});
+function openNews(idx){
+  const n=news[idx]; if(!n) return;
+  let body='';
+  if(n.image&&n.type!=='video') body += `<img src="${esc(n.image)}" class="cover">`;
+  if(n.type==='video'&&n.youtube_id) body += `<div style="position:relative;width:100%;padding-bottom:56.25%;margin-bottom:16px"><iframe src="https://www.youtube.com/embed/${n.youtube_id}" style="position:absolute;inset:0;width:100%;height:100%;border:none" allowfullscreen></iframe></div>`;
+  else body += n.body ? renderMarkdown(n.body) : (n.excerpt||'');
+  $('articleBody').innerHTML = `${n.urgent?`<span class="cat" style="background:var(--red);color:var(--white)">عاجل</span>`:''}<h1>${esc(n.title)}</h1><div class="meta"><span><i class="fa-regular fa-calendar"></i>${esc(n.date||'')}</span></div><div class="content">${body}</div>`;
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  $('view-article').classList.add('active');
+  window.history.pushState({view:'article'},'','#news');
+  currentView='article';
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
-function renderCourses() {
-    const area = $('coursesContent'); if (!area) return;
-    if (coursesTab === 'lessons') {
-        if (!courses.length) { area.innerHTML = '<div class="empty"><i class="fa-solid fa-graduation-cap"></i><h3>لا توجد دورات حالياً</h3></div>'; return; }
-        const statusLabel = {open:'التسجيل مفتوح', closed:'مغلق', coming:'قريباً'};
-        area.innerHTML = `<div class="grid-cards">${courses.map(c => `<div class="card" style="cursor:default"><span class="badge" style="background:${c.status==='open'?'#d1fae5':c.status==='closed'?'#fee2e2':'#fef3c7'};color:${c.status==='open'?'#065f46':c.status==='closed'?'#991b1b':'#92400e'}">${statusLabel[c.status]||'قريباً'}</span><h3>${esc(c.title||'')}</h3>${c.instructor?`<p><i class="fa-solid fa-user-tie" style="color:var(--gold)"></i> ${esc(c.instructor)}</p>`:''}${c.age_group?`<p><i class="fa-solid fa-users" style="color:var(--gold)"></i> ${esc(c.age_group)}</p>`:''}${c.description?`<p>${esc(c.description)}</p>`:''}</div>`).join('')}</div>`;
-    } else if (coursesTab === 'register') {
-        area.innerHTML = `<div class="form-box"><h3><i class="fa-solid fa-pen-to-square"></i> استمارة التسجيل</h3><form id="courseRegisterForm"><label>الاسم *</label><input type="text" id="regName" required><label>العمر *</label><select id="regAge" required><option value="">اختر</option><option>أقل من 10 سنوات</option><option>10 - 14 سنة</option><option>15 - 18 سنة</option><option>19 - 25 سنة</option><option>26 - 40 سنة</option><option>أكبر من 40 سنة</option></select><label>التواصل *</label><input type="text" id="regContact" required><label>الدورة المطلوبة</label><select id="regCourse"><option value="">اختر</option>${courses.filter(c=>c.status==='open').map(c=>`<option>${esc(c.title)}</option>`).join('')}</select><label>ملاحظات</label><textarea id="regNotes" rows="3"></textarea><button type="submit" class="btn-primary"><i class="fa-regular fa-paper-plane"></i> إرسال</button><p id="regMsg" style="margin-top:10px;font-weight:bold"></p></form></div>`;
-        $('courseRegisterForm')?.addEventListener('submit', async e => {
-            e.preventDefault();
-            const msg = $('regMsg'); msg.textContent = 'جاري الإرسال...';
-            const body = `الاسم: ${$('regName').value}\nالعمر: ${$('regAge').value}\nالتواصل: ${$('regContact').value}\nالدورة: ${$('regCourse').value}\nملاحظات: ${$('regNotes').value}`;
-            try { const r = await fetch('/api/fiqh', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:$('regName').value, question:'[طلب تسجيل دورة] ' + body})}); if (r.ok) { msg.textContent='✅ تم الإرسال'; msg.style.color='green'; e.target.reset(); } else throw new Error(); } catch(err) { msg.textContent='❌ فشل'; msg.style.color='red'; }
-        });
-    } else {
-        area.innerHTML = `<div class="form-box"><h3><i class="fa-solid fa-graduation-cap"></i> عن الدورات التعليمية</h3><p style="color:var(--muted);line-height:2;font-size:14px">نقدّم في منصة مشكاة سلسلة من الدورات التعليمية المتنوعة، تستهدف أعمارًا ومستويات مختلفة، وتشمل مجالات متعددة.</p></div>`;
-    }
+function renderGreats(){
+  const grid=$('greatsGrid'), empty=$('greatsEmpty'); if(!grid) return;
+  let items=greats; if(greatsFilter!=='all') items=greats.filter(g=>g.category===greatsFilter);
+  if(!items.length){ grid.innerHTML=''; empty.classList.remove('hidden'); return; }
+  empty.classList.add('hidden');
+  grid.innerHTML = items.map(g=>{ const idx=greats.indexOf(g); const img=g.image?`<img src="${esc(g.image)}" class="card-img" style="height:240px">`:`<div class="card-img-placeholder" style="height:240px"><i class="fa-solid fa-user-tie"></i></div>`; return `<div class="card" onclick="openGreat(${idx})">${img}<div class="card-body">${g.category?`<span class="card-cat">${esc(g.category)}</span>`:''}<h3 class="card-title">${esc(g.name)}</h3>${g.title?`<p style="color:var(--gold);font-weight:700;font-size:.85rem;margin-bottom:6px">${esc(g.title)}</p>`:''}<p class="card-excerpt">${esc(g.excerpt||'')}</p></div></div>`; }).join('');
 }
 
-function renderGreats() {
-    const grid = $('greatsGrid'); const empty = $('greatsEmpty'); if (!grid) return;
-    let items = greats;
-    if (greatsFilter !== 'all') items = greats.filter(g => g.category === greatsFilter);
-    if (!items.length) { grid.innerHTML = ''; empty.classList.remove('hidden-section'); return; }
-    empty.classList.add('hidden-section');
-    grid.innerHTML = items.map(g => { const idx = greats.indexOf(g); return `<div class="card" onclick="openGreat(${idx})">${g.category?`<span class="badge">${esc(g.category)}</span>`:''}<h3>${esc(g.name)}</h3>${g.title?`<p style="color:var(--gold);font-weight:700;font-size:13px">${esc(g.title)}</p>`:''}<p>${esc(g.excerpt||'')}</p></div>`; }).join('');
+function renderFiqh(){
+  const list=$('fiqhList'), empty=$('fiqhEmpty'); if(!list) return;
+  let items=fiqh; if(fiqhFilter!=='all') items=fiqh.filter(q=>q.category===fiqhFilter);
+  if(!items.length){ list.innerHTML=''; empty.classList.remove('hidden'); return; }
+  empty.classList.add('hidden');
+  list.innerHTML = items.map(qa=>{ const idx=fiqh.indexOf(qa); const answerHtml=qa.answer?renderMarkdown(qa.answer):''; return `<div class="fiqh">${qa.category?`<span class="cat">${esc(qa.category)}</span>`:''}<div class="q-label"><i class="fa-solid fa-circle-question"></i>سؤال</div><div class="q">${esc(qa.question)}</div>${answerHtml?`<hr class="divider"><div class="q-label a"><i class="fa-solid fa-check"></i>الجواب</div><div class="a">${answerHtml}</div>`:''}${qa.date?`<div class="meta"><i class="fa-regular fa-calendar"></i>${esc(qa.date)}</div>`:''}<div class="actions"><button class="copy" onclick="copyQA(${idx})"><i class="fa-solid fa-copy"></i>نسخ</button><button class="share" onclick="shareQA(${idx})"><i class="fa-solid fa-share-nodes"></i>مشاركة</button></div></div>`; }).join('');
+}
+function copyQA(i){ const q=fiqh[i]; if(!q) return; navigator.clipboard?.writeText('❓ '+q.question+'\n\n✅ '+(q.answer||'')); alert('✅'); }
+async function shareQA(i){ const q=fiqh[i]; if(!q) return; const t='❓ '+q.question+'\n\n✅ '+(q.answer||''); if(navigator.share){ try{ await navigator.share({title:q.question,text:t}); return; }catch(e){} } navigator.clipboard?.writeText(t); alert('✅'); }
+
+function renderCourses(){
+  const area=$('coursesContent'); if(!area) return;
+  if(coursesTab==='lessons'){
+    if(!courses.length){ area.innerHTML='<div class="empty"><i class="fa-solid fa-graduation-cap"></i><h3>لا توجد دورات حالياً</h3></div>'; return; }
+    const sl={open:'التسجيل مفتوح',closed:'مغلق',coming:'قريباً'}, sc={open:'var(--green)',closed:'var(--red)',coming:'#d97706'};
+    area.innerHTML = `<div class="grid">${courses.map(c=>`<div class="card" style="cursor:default;padding:20px"><span style="background:${sc[c.status]||'#d97706'};color:#fff;padding:4px 14px;border-radius:2px;font-size:.72rem;font-weight:800;align-self:flex-start;display:inline-block">${sl[c.status]||'قريباً'}</span><h3 class="card-title" style="margin-top:10px">${esc(c.title||'')}</h3>${c.instructor?`<p style="color:var(--muted);font-size:.9rem"><i class="fa-solid fa-user-tie" style="color:var(--gold)"></i> ${esc(c.instructor)}</p>`:''}${c.age_group?`<p style="color:var(--muted);font-size:.9rem"><i class="fa-solid fa-users" style="color:var(--gold)"></i> ${esc(c.age_group)}</p>`:''}${c.description?`<p class="card-excerpt">${esc(c.description)}</p>`:''}</div>`).join('')}</div>`;
+  } else if(coursesTab==='register'){
+    area.innerHTML = `<div class="form"><h3><i class="fa-solid fa-pen-to-square"></i> استمارة التسجيل</h3><form id="courseRegForm"><label>الاسم *</label><input type="text" id="regName" required><label>العمر *</label><select id="regAge" required><option value="">اختر</option><option>أقل من 10 سنوات</option><option>10 - 14 سنة</option><option>15 - 18 سنة</option><option>19 - 25 سنة</option><option>26 - 40 سنة</option><option>أكبر من 40 سنة</option></select><label>التواصل *</label><input type="text" id="regContact" required><label>الدورة</label><select id="regCourse"><option value="">اختر</option>${courses.filter(c=>c.status==='open').map(c=>`<option>${esc(c.title)}</option>`).join('')}</select><label>ملاحظات</label><textarea id="regNotes" rows="3"></textarea><button type="submit" class="btn-primary"><i class="fa-solid fa-paper-plane"></i> إرسال</button><p id="regMsg" style="margin-top:10px;font-weight:bold"></p></form></div>`;
+    $('courseRegForm')?.addEventListener('submit', async e=>{ e.preventDefault(); const msg=$('regMsg'); msg.textContent='جاري الإرسال...'; const body=`الاسم: ${$('regName').value}\nالعمر: ${$('regAge').value}\nالتواصل: ${$('regContact').value}\nالدورة: ${$('regCourse').value}\nملاحظات: ${$('regNotes').value}`; try{ const r=await fetch('/api/fiqh',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:$('regName').value,question:'[طلب تسجيل دورة] '+body})}); if(r.ok){ msg.textContent='✅ تم الإرسال'; msg.style.color='var(--green)'; e.target.reset(); } else throw new Error(); }catch(err){ msg.textContent='❌ فشل'; msg.style.color='var(--red)'; } });
+  } else {
+    area.innerHTML = `<div class="form"><h3><i class="fa-solid fa-graduation-cap"></i> عن الدورات التعليمية</h3><p style="color:var(--muted);line-height:2;font-size:.95rem">نقدّم في منصة مشكاة سلسلة من الدورات التعليمية المتنوعة، تستهدف أعمارًا ومستويات مختلفة.</p></div>`;
+  }
 }
 
-function renderFiqh() {
-    const list = $('fiqhList'); const empty = $('fiqhEmpty'); if (!list) return;
-    let items = fiqh;
-    if (fiqhFilter !== 'all') items = fiqh.filter(q => q.category === fiqhFilter);
-    if (!items.length) { list.innerHTML = ''; empty.classList.remove('hidden-section'); return; }
-    empty.classList.add('hidden-section');
-    list.innerHTML = items.map(qa => { const idx = fiqh.indexOf(qa); const answerHtml = qa.answer ? renderMarkdown(qa.answer) : ''; return `<div class="fiqh-card">${qa.category?`<span class="badge" style="display:inline-block;background:var(--gold-light);color:var(--navy);padding:3px 12px;border-radius:12px;font-size:11px;font-weight:700;margin-bottom:10px;font-family:'Cairo',sans-serif">${esc(qa.category)}</span>`:''}<div class="q-label"><i class="fa-solid fa-circle-question"></i> سؤال</div><div class="q-title">${esc(qa.question)}</div>${answerHtml?`<hr class="divider"><div class="q-label a"><i class="fa-solid fa-check"></i> الجواب</div><div class="a-text">${answerHtml}</div>`:''}${qa.date?`<div class="fiqh-meta"><i class="fa-regular fa-calendar"></i> ${esc(qa.date)}</div>`:''}<div class="actions"><button class="copy" onclick="copyQA(${idx})"><i class="fa-solid fa-copy"></i> نسخ</button><button class="share" onclick="shareQA(${idx})"><i class="fa-solid fa-share-nodes"></i> مشاركة</button></div></div>`; }).join('');
-}
-function copyQA(i) { const q = fiqh[i]; if (!q) return; navigator.clipboard?.writeText('❓ '+q.question+'\n\n✅ '+(q.answer||'')); alert('✅'); }
-async function shareQA(i) { const q = fiqh[i]; if (!q) return; const t='❓ '+q.question+'\n\n✅ '+(q.answer||''); if (navigator.share) { try { await navigator.share({title:q.question,text:t}); return; } catch(e){} } navigator.clipboard?.writeText(t); alert('✅'); }
-
-function renderWeekly() {
-    const list = $('weeklyList'); const empty = $('weeklyEmpty'); if (!list) return;
-    if (!weekly.length) { list.innerHTML = ''; empty.classList.remove('hidden-section'); return; }
-    empty.classList.add('hidden-section');
-    list.innerHTML = weekly.map((w,i) => `<div class="list-box" style="margin-bottom:14px"><div class="head"><i class="fa-solid fa-hands-praying"></i> ${esc(w.title)} <span style="margin-right:auto;font-size:11px;background:rgba(201,169,97,.3);color:var(--gold);padding:2px 10px;border-radius:10px">${esc(w.type||'دعاء')}</span></div><div class="body"><div class="list-item" style="cursor:default"><div class="info">${renderMarkdown(w.body||'')}</div></div></div></div>`).join('');
+function renderWeekly(){
+  const list=$('weeklyList'), empty=$('weeklyEmpty'); if(!list) return;
+  if(!weekly.length){ list.innerHTML=''; empty.classList.remove('hidden'); return; }
+  empty.classList.add('hidden');
+  list.innerHTML = weekly.map(w=>`<div class="week-card"><div class="head"><span class="type">${esc(w.type||'دعاء')}</span><h3>${esc(w.title)}</h3>${w.date?`<div class="date"><i class="fa-regular fa-calendar"></i> ${esc(w.date)}</div>`:''}</div><div class="body">${renderMarkdown(w.body||'')}</div></div>`).join('');
 }
 
-function extractYT(input) { if (!input) return ''; const s = String(input).trim(); if (/^[a-zA-Z0-9_-]{11}$/.test(s)) return s; const m = s.match(/(?:youtube\.com\/watch\?v=|youtube\.com\/embed\/|youtu\.be\/|youtube\.com\/shorts\/)([a-zA-Z0-9_-]{11})/) || s.match(/[?&]v=([a-zA-Z0-9_-]{11})/); return m ? m[1] : s; }
+function extractYT(input){ if(!input) return ''; const s=String(input).trim(); if(/^[a-zA-Z0-9_-]{11}$/.test(s)) return s; const m=s.match(/(?:youtube\.com\/watch\?v=|youtube\.com\/embed\/|youtu\.be\/|youtube\.com\/shorts\/)([a-zA-Z0-9_-]{11})/)||s.match(/[?&]v=([a-zA-Z0-9_-]{11})/); return m?m[1]:s; }
 
-function buildVideoCard(v, idx) {
-    const type = v.source_type || (v.youtube_url||v.youtube_id ? 'youtube' : (v.video_file ? 'upload' : (v.external_url ? 'external' : '')));
-    let poster = '';
-    if (type === 'youtube') { const id = extractYT(v.youtube_url||v.youtube_id||''); poster = id ? `<img src="https://img.youtube.com/vi/${id}/mqdefault.jpg" alt="${esc(v.title)}" style="width:100%;border-radius:6px;margin-bottom:10px">` : ''; }
-    return `<div class="card" style="cursor:default" id="vitem-${idx}">${poster}${v.series?`<span class="badge">${esc(v.series)}</span>`:''}<h3>${esc(v.title)}</h3><p>${esc(v.description||'')}</p><div class="meta"><span><i class="fa-solid fa-user-tie"></i> ${esc(v.channel||'')}</span><span><i class="fa-regular fa-calendar"></i> ${esc(v.date||'')}</span></div><button class="btn-primary" style="margin-top:10px;font-size:12.5px;padding:8px 14px" onclick="playVideo(${idx})"><i class="fa-solid fa-play"></i> تشغيل</button></div>`;
+function videoCardHTML(v,idx){
+  const type = v.source_type || (v.youtube_url||v.youtube_id?'youtube':(v.video_file?'upload':'external'));
+  let thumb = '';
+  if(type==='youtube'){ const id = extractYT(v.youtube_url||v.youtube_id||''); if(id) thumb = `<img src="https://img.youtube.com/vi/${id}/mqdefault.jpg" alt="${esc(v.title)}">`; }
+  if(!thumb) thumb = `<div class="thumb-ph"><i class="fa-solid fa-play-circle"></i></div>`;
+  return `<div class="video-card" id="vitem-${idx}">${thumb}<div class="body">${v.series?`<span class="card-cat">${esc(v.series)}</span>`:''}<h3>${esc(v.title)}</h3><div class="meta">${v.channel?`<span><i class="fa-solid fa-user-tie"></i>${esc(v.channel)}</span>`:''}${v.date?`<span><i class="fa-regular fa-calendar"></i>${esc(v.date)}</span>`:''}</div><button class="play-btn" onclick="playVideo(${idx})"><i class="fa-solid fa-play"></i>تشغيل</button></div></div>`;
 }
 
-function renderVideosPage() {
-    const area = $('videosArea'); const empty = $('videosEmpty'); if (!area) return;
-    if (!videos.length) { area.innerHTML = ''; empty.classList.remove('hidden-section'); return; }
-    empty.classList.add('hidden-section');
-    if (videosState === 'all') { area.innerHTML = `<div class="grid-cards">${videos.map((v,i)=>buildVideoCard(v,i)).join('')}</div>`; }
-    else if (videosState === 'series') {
-        const map = {};
-        videos.forEach(v => { if (!v.series) return; if (!map[v.series]) map[v.series] = {count:0, speaker:v.channel||''}; map[v.series].count++; if (!map[v.series].speaker && v.channel) map[v.series].speaker = v.channel; });
-        const keys = Object.keys(map);
-        if (!keys.length) { area.innerHTML = '<div class="empty"><i class="fa-solid fa-layer-group"></i><h3>لا توجد سلاسل</h3></div>'; return; }
-        area.innerHTML = `<div class="grid-cards">${keys.map(s => `<div class="card" onclick="openSeries('${s.replace(/'/g,"\\'")}')"><h3>${esc(s)}</h3><p>${map[s].speaker?`<i class="fa-solid fa-microphone" style="color:var(--gold)"></i> ${esc(map[s].speaker)}`:''}</p><div class="meta"><span>${map[s].count} مقطع</span></div></div>`).join('')}</div>`;
-    } else if (videosState === 'detail') {
-        const items = videos.map((v,i)=>({v,i})).filter(o => (o.v.series||'') === currentSeries);
-        area.innerHTML = `<div class="info-box" style="display:flex;align-items:center;gap:10px;justify-content:space-between;flex-wrap:wrap"><div><strong style="color:var(--navy);font-family:'Cairo',sans-serif">${esc(currentSeries)}</strong><div style="font-size:12.5px;color:var(--muted);font-family:'Cairo',sans-serif">${items.length} مقطع</div></div><button class="tab active" onclick="backToSeries()"><i class="fa-solid fa-arrow-right"></i> رجوع للسلاسل</button></div><div class="grid-cards">${items.map(o=>buildVideoCard(o.v,o.i)).join('')}</div>`;
-    }
+function renderVideosPage(){
+  const area=$('videosArea'), empty=$('videosEmpty'); if(!area) return;
+  if(!videos.length){ area.innerHTML=''; empty.classList.remove('hidden'); return; }
+  empty.classList.add('hidden');
+  if(videosState==='all'){ area.innerHTML = `<div class="grid">${videos.map((v,i)=>videoCardHTML(v,i)).join('')}</div>`; }
+  else if(videosState==='series'){ const map={}; videos.forEach(v=>{ if(!v.series) return; if(!map[v.series]) map[v.series]={count:0,speaker:v.channel||''}; map[v.series].count++; if(!map[v.series].speaker && v.channel) map[v.series].speaker=v.channel; }); const keys=Object.keys(map); if(!keys.length){ area.innerHTML='<div class="empty"><i class="fa-solid fa-layer-group"></i><h3>لا توجد سلاسل</h3></div>'; return; } area.innerHTML = `<div class="grid">${keys.map(s=>`<div class="card" style="padding:20px" onclick="openSeries('${s.replace(/'/g,"\\'")}')"><h3 class="card-title">${esc(s)}</h3><p style="color:var(--muted);font-size:.85rem;margin-bottom:8px">${map[s].speaker?`<i class="fa-solid fa-microphone" style="color:var(--gold)"></i> ${esc(map[s].speaker)}`:''}</p><div style="border-top:1px solid var(--border);padding-top:8px;font-size:.8rem;color:var(--muted)">${map[s].count} مقطع</div></div>`).join('')}</div>`; }
+  else { const items = videos.map((v,i)=>({v,i})).filter(o=>(o.v.series||'')===currentSeries); area.innerHTML = `<div style="background:#fff;border:1px solid var(--border);border-radius:4px;padding:16px 20px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px"><div><strong style="color:var(--navy);font-size:1.05rem;font-family:var(--font-serif)">${esc(currentSeries)}</strong><div style="font-size:.82rem;color:var(--muted)">${items.length} مقطع</div></div><button class="back-btn" style="margin:0" onclick="backToSeries()"><i class="fa-solid fa-arrow-right"></i>رجوع</button></div><div class="grid">${items.map(o=>videoCardHTML(o.v,o.i)).join('')}</div>`; }
 }
-function updateVTabs() { document.querySelectorAll('#videosTabs .tab').forEach(b => b.classList.toggle('active', b.dataset.vnav === videosState)); }
-function openSeries(name) { videosState='detail'; currentSeries=name; updateVTabs(); renderVideosPage(); window.scrollTo({top:0,behavior:'smooth'}); }
-function backToSeries() { videosState='series'; currentSeries=''; updateVTabs(); renderVideosPage(); window.scrollTo({top:0,behavior:'smooth'}); }
-function playVideo(idx) { const v = videos[idx]; if (!v) return; const item = $('vitem-'+idx); if (!item) return; const type = v.source_type || (v.youtube_url||v.youtube_id ? 'youtube' : (v.video_file ? 'upload' : 'external')); let html = ''; if (type === 'youtube') { const id = extractYT(v.youtube_url||v.youtube_id||''); if (id) html = `<div style="position:relative;width:100%;padding-bottom:56.25%;margin-bottom:10px"><iframe src="https://www.youtube.com/embed/${id}?autoplay=1" style="position:absolute;inset:0;width:100%;height:100%;border:none" allowfullscreen></iframe></div>`; } else if (type === 'upload' && v.video_file) { let src = v.video_file; if (!src.startsWith('http') && !src.startsWith('/')) src = '/'+src; html = `<video controls autoplay playsinline style="width:100%;border-radius:6px;margin-bottom:10px"><source src="${src}" type="video/mp4"></video>`; } else if (type === 'external' && v.external_url) { html = `<div style="position:relative;width:100%;padding-bottom:56.25%;margin-bottom:10px"><iframe src="${v.external_url}" style="position:absolute;inset:0;width:100%;height:100%;border:none" allowfullscreen></iframe></div>`; } const btn = item.querySelector('button'); if (html) { item.insertAdjacentHTML('afterbegin', html); if (btn) btn.remove(); } }
+function updateVTabs(){ document.querySelectorAll('#videosTabs .tab').forEach(b=>b.classList.toggle('active', b.dataset.vnav===videosState)); }
+function openSeries(name){ videosState='detail'; currentSeries=name; updateVTabs(); renderVideosPage(); window.scrollTo({top:0,behavior:'smooth'}); }
+function backToSeries(){ videosState='series'; currentSeries=''; updateVTabs(); renderVideosPage(); window.scrollTo({top:0,behavior:'smooth'}); }
+function playVideo(idx){ const v=videos[idx]; if(!v) return; const item=$('vitem-'+idx); if(!item) return; const type=v.source_type||(v.youtube_url||v.youtube_id?'youtube':(v.video_file?'upload':'external')); let html=''; if(type==='youtube'){ const id=extractYT(v.youtube_url||v.youtube_id||''); if(id) html=`<div style="position:relative;width:100%;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/${id}?autoplay=1" style="position:absolute;inset:0;width:100%;height:100%;border:none" allowfullscreen></iframe></div>`; } else if(type==='upload' && v.video_file){ let src=v.video_file; if(!src.startsWith('http')&&!src.startsWith('/')) src='/'+src; html=`<video controls autoplay playsinline style="width:100%;border-radius:4px"><source src="${src}" type="video/mp4"></video>`; } else if(type==='external' && v.external_url){ html=`<div style="position:relative;width:100%;padding-bottom:56.25%"><iframe src="${v.external_url}" style="position:absolute;inset:0;width:100%;height:100%;border:none" allowfullscreen></iframe></div>`; } item.innerHTML = html + '<div class="body"><h3>'+esc(v.title)+'</h3></div>'; }
 
-function buildAudioTabs() {
-    const tabs = $('audiosTabs'); if (!tabs) return;
-    const series = [...new Set(audios.map(a => a.series).filter(Boolean))];
-    if (!series.length) { tabs.innerHTML = ''; tabs.style.display = 'none'; return; }
-    tabs.style.display = 'flex';
-    tabs.innerHTML = `<button class="tab ${audioSeries==='all'?'active':''}" data-audio="all">كل الصوتيات</button>` + series.map(s => `<button class="tab ${audioSeries===s?'active':''}" data-audio="${esc(s)}">${esc(s)}</button>`).join('');
-    tabs.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () => { audioSeries = b.dataset.audio; buildAudioTabs(); renderAudios(); }));
-}
+function buildAudioTabs(){ const tabs=$('audiosTabs'); if(!tabs) return; const series=[...new Set(audios.map(a=>a.series).filter(Boolean))]; if(!series.length){ tabs.innerHTML=''; tabs.style.display='none'; return; } tabs.style.display='flex'; tabs.innerHTML = `<button class="tab ${audioSeries==='all'?'active':''}" data-audio="all">كل الصوتيات</button>` + series.map(s=>`<button class="tab ${audioSeries===s?'active':''}" data-audio="${esc(s)}">${esc(s)}</button>`).join(''); tabs.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{ audioSeries=b.dataset.audio; buildAudioTabs(); renderAudios(); })); }
 
-function renderAudios() {
-    const list = $('audiosList'); const empty = $('audiosEmpty'); if (!list) return;
-    let items = audios;
-    if (audioSeries !== 'all') items = audios.filter(a => a.series === audioSeries);
-    if (!items.length) { list.innerHTML = ''; empty.classList.remove('hidden-section'); return; }
-    empty.classList.add('hidden-section');
-    list.innerHTML = items.map(a => { const src = '/audios/' + a.file; return `<div class="card" style="cursor:default;margin-bottom:12px">${a.series?`<span class="badge">${esc(a.series)}</span>`:''}<h3>${esc(a.title)}</h3><div class="meta" style="margin-bottom:10px"><span><i class="fa-solid fa-microphone"></i> ${esc(a.speaker||'')}</span><span><i class="fa-regular fa-calendar"></i> ${esc(a.date||'')}</span></div><audio controls preload="none" style="width:100%"><source src="${src}" type="audio/mpeg"></audio></div>`; }).join('');
-}
+function renderAudios(){ const list=$('audiosList'), empty=$('audiosEmpty'); if(!list) return; let items=audios; if(audioSeries!=='all') items=audios.filter(a=>a.series===audioSeries); if(!items.length){ list.innerHTML=''; empty.classList.remove('hidden'); return; } empty.classList.add('hidden'); list.innerHTML = items.map(a=>{ const src='/audios/'+a.file; return `<div class="audio-card">${a.series?`<span class="card-cat">${esc(a.series)}</span>`:''}<h3>${esc(a.title)}</h3><div class="meta">${a.speaker?`<span><i class="fa-solid fa-microphone"></i>${esc(a.speaker)}</span>`:''}${a.date?`<span><i class="fa-regular fa-calendar"></i>${esc(a.date)}</span>`:''}</div><audio controls preload="none"><source src="${src}" type="audio/mpeg"></audio></div>`; }).join(''); }
 
-function renderNews() {
-    const list = $('newsList'); const empty = $('newsEmpty'); if (!list) return;
-    let items = news;
-    if (newsFilter === 'urgent') items = news.filter(n => n.urgent === true);
-    else if (newsFilter === 'normal') items = news.filter(n => !n.urgent);
-    if (!items.length) { list.innerHTML = ''; empty.classList.remove('hidden-section'); return; }
-    empty.classList.add('hidden-section');
-    list.innerHTML = items.map(n => { const idx = news.indexOf(n); return `<div class="fiqh-card" style="${n.urgent?'border-right-color:#dc2626':''}">${n.urgent?`<span class="badge" style="display:inline-block;background:#dc2626;color:#fff;padding:2px 10px;border-radius:10px;font-size:10.5px;font-weight:700;margin-bottom:8px;font-family:'Cairo',sans-serif">عاجل</span>`:''}<h3 style="color:var(--navy);font-size:1.1rem;font-weight:700;margin-bottom:8px;line-height:1.5">${esc(n.title)}</h3><div class="fiqh-meta" style="margin-top:0;margin-bottom:8px"><i class="fa-regular fa-calendar"></i> ${esc(n.date||'')}</div>${n.excerpt?`<p style="color:var(--muted);font-size:14px;line-height:1.8;margin-bottom:10px">${esc(n.excerpt)}</p>`:''}<button class="tab active" onclick="openNews(${idx})">اقرأ المزيد <i class="fa-solid fa-arrow-left"></i></button></div>`; }).join('');
-}
+function renderNews(){ const list=$('newsList'), empty=$('newsEmpty'); if(!list) return; let items=news; if(newsFilter==='urgent') items=news.filter(n=>n.urgent===true); else if(newsFilter==='normal') items=news.filter(n=>!n.urgent); if(!items.length){ list.innerHTML=''; empty.classList.remove('hidden'); return; } empty.classList.add('hidden'); list.innerHTML = items.map(n=>{ const idx=news.indexOf(n); return `<div class="news-item ${n.urgent?'urgent':''}">${n.urgent?`<div class="badges"><span class="badge urgent">عاجل</span></div>`:''}<h3>${esc(n.title)}</h3><div class="date"><i class="fa-regular fa-calendar"></i>${esc(n.date||'')}</div>${n.excerpt?`<p class="exc">${esc(n.excerpt)}</p>`:''}<button class="more" onclick="openNews(${idx})">اقرأ المزيد <i class="fa-solid fa-arrow-left"></i></button></div>`; }).join(''); }
 
-function renderBooks(filter) {
-    const grid = $('libraryGrid'); const empty = $('libraryEmpty'); if (!grid) return;
-    let items = books;
-    if (filter && filter !== 'all') { items = books.filter(b => b.category === libNames[filter]); $('libTitle').textContent = libNames[filter]; $('libDesc').textContent = ''; }
-    else { $('libTitle').textContent = 'المكتبة'; $('libDesc').textContent = 'كتب وملفات'; }
-    if (!items.length) { grid.innerHTML = ''; empty.classList.remove('hidden-section'); return; }
-    empty.classList.add('hidden-section');
-    grid.innerHTML = items.map(b => { const idx = books.indexOf(b); return `<div class="card" style="cursor:default">${b.cover?`<img src="${b.cover}" alt="${esc(b.title)}" style="width:100%;height:160px;object-fit:cover;border-radius:6px;margin-bottom:10px">`:''}<h3>${esc(b.title)}</h3><p style="color:var(--gold);font-size:12.5px;font-weight:700">${esc(b.author||'')}</p><p>${esc(b.description||'')}</p><button class="btn-primary" style="margin-top:8px" onclick="showDownload(${idx})"><i class="fa-solid fa-download"></i> تحميل</button></div>`; }).join('');
-}
-function showDownload(i) { const b = books[i]; if (!b) return; const pdf = $('dlPDF'), word = $('dlWord'); if (b.pdf_url) { pdf.href = b.pdf_url; pdf.style.opacity='1'; pdf.style.pointerEvents='auto'; } else { pdf.href='#'; pdf.style.opacity='.5'; pdf.style.pointerEvents='none'; } if (b.word_url) { word.href = b.word_url; word.style.opacity='1'; word.style.pointerEvents='auto'; } else { word.href='#'; word.style.opacity='.5'; word.style.pointerEvents='none'; } $('downloadModal').classList.add('show'); }
-function closeDownload() { $('downloadModal').classList.remove('show'); }
+function renderBooks(filter){ const grid=$('libraryGrid'), empty=$('libraryEmpty'); if(!grid) return; let items=books; if(filter && filter!=='all'){ items=books.filter(b=>b.category===libNames[filter]); $('libTitle').textContent=libNames[filter]; } else $('libTitle').textContent='المكتبة'; if(!items.length){ grid.innerHTML=''; empty.classList.remove('hidden'); return; } empty.classList.add('hidden'); grid.innerHTML = items.map(b=>{ const idx=books.indexOf(b); const cover=b.cover?`<img src="${esc(b.cover)}" class="cover">`:`<div class="cover-ph"><i class="fa-solid fa-book"></i></div>`; return `<div class="book-card">${cover}<div class="body"><h3>${esc(b.title)}</h3>${b.author?`<div class="author"><i class="fa-solid fa-user-pen"></i>${esc(b.author)}</div>`:''}<p class="desc">${esc(b.description||'')}</p><div class="actions"><button class="btn" onclick="showDownload(${idx})"><i class="fa-solid fa-download"></i>تحميل</button></div></div></div>`; }).join(''); }
+function openLibCat(cat){ closeDrawer(); showView('library'); setTimeout(()=>renderBooks(cat),50); }
+function showDownload(i){ const b=books[i]; if(!b) return; if(b.pdf_url) window.open(b.pdf_url,'_blank'); else if(b.word_url) window.open(b.word_url,'_blank'); else alert('⚠️ الملف غير متوفر'); }
 
-function openLibraryModal() { closeDrawer(); $('libraryModal').classList.add('show'); }
-function closeLibraryModal() { $('libraryModal').classList.remove('show'); }
-function openLibCat(cat) { closeLibraryModal(); showView('library'); setTimeout(() => renderBooks(cat), 50); }
+function doSearch(q){ q=(q||'').trim().toLowerCase(); const box=$('searchResults'); if(q.length<2){ box.innerHTML=''; return; } const r=[]; articles.forEach((a,i)=>{ if((a.title+a.excerpt+a.body+a.author).toLowerCase().includes(q)) r.push({type:'article',label:'مقال',idx:i,title:a.title,excerpt:a.excerpt}); }); greats.forEach((g,i)=>{ if((g.name+(g.excerpt||'')+(g.body||'')).toLowerCase().includes(q)) r.push({type:'great',label:'عظيم',idx:i,title:g.name,excerpt:g.excerpt||''}); }); books.forEach((b,i)=>{ if((b.title+(b.description||'')+(b.author||'')).toLowerCase().includes(q)) r.push({type:'book',label:'كتاب',idx:i,title:b.title,excerpt:b.description||''}); }); audios.forEach((a,i)=>{ if((a.title+(a.speaker||'')).toLowerCase().includes(q)) r.push({type:'audio',label:'صوتي',idx:i,title:a.title,excerpt:a.description||''}); }); videos.forEach((v,i)=>{ if((v.title+(v.channel||'')).toLowerCase().includes(q)) r.push({type:'video',label:'مرئي',idx:i,title:v.title,excerpt:v.description||''}); }); news.forEach((n,i)=>{ if((n.title+(n.excerpt||'')).toLowerCase().includes(q)) r.push({type:'news',label:'خبر',idx:i,title:n.title,excerpt:n.excerpt||''}); }); fiqh.forEach((f,i)=>{ if((f.question+(f.answer||'')).toLowerCase().includes(q)) r.push({type:'fiqh',label:'فقهي',idx:i,title:f.question,excerpt:f.answer||''}); }); if(!r.length){ box.innerHTML='<p style="color:var(--muted);text-align:center;padding:20px">لا توجد نتائج</p>'; return; } box.innerHTML = r.slice(0,15).map(x=>`<div class="sr-item" onclick="closeSearch();openItem('${x.type}',${x.idx})"><div class="type">${x.label}</div><div class="title">${esc(x.title)}</div><div class="exc">${esc(x.excerpt).slice(0,80)}...</div></div>`).join(''); }
 
-function doSearch(q) {
-    q = (q||'').trim().toLowerCase();
-    if (q.length < 2) return;
-    const results = [];
-    articles.forEach((a,i) => { if ((a.title+a.excerpt+a.body+a.author).toLowerCase().includes(q)) results.push({type:'article',label:'مقال',idx:i,title:a.title,excerpt:a.excerpt}); });
-    greats.forEach((g,i) => { if ((g.name+(g.excerpt||'')+(g.body||'')).toLowerCase().includes(q)) results.push({type:'great',label:'عظيم',idx:i,title:g.name,excerpt:g.excerpt||''}); });
-    books.forEach((b,i) => { if ((b.title+(b.description||'')+(b.author||'')).toLowerCase().includes(q)) results.push({type:'book',label:'كتاب',idx:i,title:b.title,excerpt:b.description||''}); });
-    audios.forEach((a,i) => { if ((a.title+(a.speaker||'')).toLowerCase().includes(q)) results.push({type:'audio',label:'صوتي',idx:i,title:a.title,excerpt:a.description||''}); });
-    videos.forEach((v,i) => { if ((v.title+(v.channel||'')).toLowerCase().includes(q)) results.push({type:'video',label:'مرئي',idx:i,title:v.title,excerpt:v.description||''}); });
-    news.forEach((n,i) => { if ((n.title+(n.excerpt||'')).toLowerCase().includes(q)) results.push({type:'news',label:'خبر',idx:i,title:n.title,excerpt:n.excerpt||''}); });
-    fiqh.forEach((f,i) => { if ((f.question+(f.answer||'')).toLowerCase().includes(q)) results.push({type:'fiqh',label:'فقهي',idx:i,title:f.question,excerpt:f.answer||''}); });
-    const list = $('searchResults'); const empty = $('searchEmpty');
-    $('searchQuery').textContent = q;
-    if (!results.length) { list.innerHTML = ''; empty.classList.remove('hidden-section'); }
-    else { empty.classList.add('hidden-section'); list.innerHTML = `<div class="grid-cards">${results.map(r => cardHTML(r.title, r.excerpt, '', '', `openSearch('${r.type}',${r.idx})`)).join('')}</div>`; }
-    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-    $('view-search').classList.add('active');
-    currentView = 'search';
-    window.scrollTo({top:0,behavior:'smooth'});
-}
+function copyLink(e){ e.stopPropagation(); navigator.clipboard?.writeText(location.href); const b=e.currentTarget; const o=b.innerHTML; b.innerHTML='<i class="fa-solid fa-check"></i>'; setTimeout(()=>b.innerHTML=o,1500); }
+async function nativeShare(){ const title=document.querySelector('.article h1')?.textContent||document.title; if(navigator.share){ try{ await navigator.share({title,url:location.href}); return; }catch(e){} } navigator.clipboard?.writeText(location.href); alert('✅ تم النسخ'); }
 
-function openSearch(type, idx) {
-    if (type === 'article') openArticle(idx);
-    else if (type === 'great') openGreat(idx);
-    else if (type === 'news') openNews(idx);
-    else if (type === 'book') { showView('library'); setTimeout(()=>{const el=document.querySelectorAll('#libraryGrid .card')[idx]; if(el) el.scrollIntoView({behavior:'smooth',block:'center'});}, 200); }
-    else if (type === 'audio') { showView('audios'); setTimeout(()=>{const el=document.querySelectorAll('#audiosList .card')[idx]; if(el) el.scrollIntoView({behavior:'smooth',block:'center'});}, 200); }
-    else if (type === 'video') { showView('videos'); setTimeout(()=>{const el=document.querySelectorAll('#videosArea .card')[idx]; if(el) el.scrollIntoView({behavior:'smooth',block:'center'});}, 200); }
-    else if (type === 'fiqh') { showView('fiqh'); setTimeout(()=>{const el=document.querySelectorAll('.fiqh-card')[idx]; if(el) el.scrollIntoView({behavior:'smooth',block:'center'});}, 200); }
-}
+async function subscribeNotify(){ const btn=$('notifyBtn'); if(!btn) return; try{ if(window.OneSignal && typeof OneSignal.User?.PushSubscription?.optIn === 'function'){ await OneSignal.User.PushSubscription.optIn(); btn.innerHTML='<i class="fa-solid fa-check"></i>'; btn.disabled=true; alert('✅ تم الاشتراك'); } else alert('⚠️ خدمة الإشعارات قيد الإعداد'); }catch(e){ alert('⚠️ '+e.message); } }
 
-function copyCurrentLink(e) { e.stopPropagation(); navigator.clipboard?.writeText(location.href); const b = e.currentTarget; const o = b.innerHTML; b.innerHTML = '<i class="fa-solid fa-check"></i> تم'; setTimeout(() => b.innerHTML = o, 1500); }
-async function nativeShare() { const title = document.querySelector('.article-view h1')?.textContent || document.title; if (navigator.share) { try { await navigator.share({title, url:location.href}); return; } catch(e){} } navigator.clipboard?.writeText(location.href); alert('✅'); }
+document.addEventListener('DOMContentLoaded', async ()=>{
+  if(localStorage.getItem('mishkat_theme')==='dark') document.body.classList.add('dark');
+  $('darkToggle')?.addEventListener('click',()=>{ document.body.classList.toggle('dark'); const d=document.body.classList.contains('dark'); $('darkToggle').innerHTML = d?'<i class="fa-solid fa-sun"></i>':'<i class="fa-solid fa-moon"></i>'; localStorage.setItem('mishkat_theme',d?'dark':'light'); });
+  if(document.body.classList.contains('dark')) $('darkToggle').innerHTML = '<i class="fa-solid fa-sun"></i>';
+  $('notifyBtn')?.addEventListener('click', subscribeNotify);
 
-async function subscribeNotify() {
-    const btn = $('notifyBtn'); if (!btn) return;
-    try { if (window.OneSignal && typeof OneSignal.User?.PushSubscription?.optIn === 'function') { await OneSignal.User.PushSubscription.optIn(); btn.innerHTML='<i class="fa-solid fa-check"></i>'; btn.disabled=true; alert('✅ تم الاشتراك'); } else { alert('⚠️ خدمة الإشعارات قيد الإعداد'); } } catch(e) { alert('⚠️ ' + e.message); }
-}
+  document.querySelectorAll('#videosTabs .tab').forEach(b=>b.addEventListener('click',()=>{ videosState=b.dataset.vnav; updateVTabs(); renderVideosPage(); }));
+  document.querySelectorAll('#fiqhTabs .tab').forEach(b=>b.addEventListener('click',()=>{ document.querySelectorAll('#fiqhTabs .tab').forEach(x=>x.classList.remove('active')); b.classList.add('active'); fiqhFilter=b.dataset.fiqh; renderFiqh(); }));
+  document.querySelectorAll('#newsTabs .tab').forEach(b=>b.addEventListener('click',()=>{ document.querySelectorAll('#newsTabs .tab').forEach(x=>x.classList.remove('active')); b.classList.add('active'); newsFilter=b.dataset.news; renderNews(); }));
+  document.querySelectorAll('#greatsTabs .tab').forEach(b=>b.addEventListener('click',()=>{ document.querySelectorAll('#greatsTabs .tab').forEach(x=>x.classList.remove('active')); b.classList.add('active'); greatsFilter=b.dataset.greats; renderGreats(); }));
+  document.querySelectorAll('#coursesTabs .tab').forEach(b=>b.addEventListener('click',()=>{ document.querySelectorAll('#coursesTabs .tab').forEach(x=>x.classList.remove('active')); b.classList.add('active'); coursesTab=b.dataset.courses; renderCourses(); }));
 
-function setLang(l) {
-    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === l));
-    document.documentElement.dir = (l === 'en') ? 'ltr' : 'rtl';
-    localStorage.setItem('mishkat_lang', l);
-}
+  $('fiqhForm')?.addEventListener('submit', async e=>{ e.preventDefault(); const msg=$('fiqhMsg'); msg.textContent='جاري الإرسال...'; msg.style.color='var(--navy)'; try{ const r=await fetch('/api/fiqh',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:$('fiqhName').value.trim(),question:$('fiqhQuestion').value.trim()})}); const j=await r.json(); if(r.ok && j.success){ msg.textContent='✅ تم الإرسال'; msg.style.color='var(--green)'; e.target.reset(); } else throw new Error(); }catch(err){ msg.textContent='❌ فشل'; msg.style.color='var(--red)'; } });
 
-document.addEventListener('DOMContentLoaded', async () => {
-    document.querySelectorAll('.lang-btn').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
-    setLang(localStorage.getItem('mishkat_lang') || 'ar');
-    if (localStorage.getItem('mishkat_theme') === 'dark') document.body.classList.add('dark');
-    $('darkToggle')?.addEventListener('click', () => { document.body.classList.toggle('dark'); const d = document.body.classList.contains('dark'); $('darkToggle').innerHTML = d ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>'; localStorage.setItem('mishkat_theme', d ? 'dark' : 'light'); });
-    if (document.body.classList.contains('dark')) $('darkToggle').innerHTML = '<i class="fa-solid fa-sun"></i>';
-    $('menuBtn')?.addEventListener('click', openDrawer);
-    $('drawerClose')?.addEventListener('click', closeDrawer);
-    $('overlay')?.addEventListener('click', closeDrawer);
+  window.addEventListener('popstate', (e)=>{ const st=e.state; if(st && st.view && st.view!=='article') showView(st.view,false); else showView('home',false); });
 
-    document.querySelectorAll('.drawer a[data-view]').forEach(a => a.addEventListener('click', () => showView(a.dataset.view)));
-    document.querySelectorAll('.drawer a[data-cat]').forEach(a => a.addEventListener('click', () => { closeDrawer(); renderCategory(a.dataset.cat); }));
-    document.querySelectorAll('.drawer a[data-lib]').forEach(a => a.addEventListener('click', () => { closeDrawer(); showView('library'); setTimeout(() => renderBooks(a.dataset.lib), 50); }));
+  function updateClock(){
+    const n=new Date(); const d=String(n.getDate()).padStart(2,'0'), m=String(n.getMonth()+1).padStart(2,'0'), y=n.getFullYear();
+    $('gregorianDate').textContent = `${d}/${m}/${y}`;
+    try{ $('hijriDate').textContent = new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura',{day:'numeric',month:'long',year:'numeric'}).format(n); }catch(e){}
+    let h=n.getHours(); const p = h>=12?'م':'ص'; h = h%12||12;
+    $('liveClock').textContent = `${h}:${String(n.getMinutes()).padStart(2,'0')}`;
+    $('clockPeriod').textContent = p;
+  }
+  updateClock(); setInterval(updateClock, 30000);
 
-    document.querySelectorAll('.drawer .accordion-toggle').forEach(t => t.addEventListener('click', (e) => { e.preventDefault(); const sub = t.nextElementSibling; if (sub) sub.classList.toggle('show'); t.classList.toggle('open'); }));
-
-    document.querySelectorAll('#videosTabs .tab').forEach(b => b.addEventListener('click', () => { videosState = b.dataset.vnav; updateVTabs(); renderVideosPage(); }));
-    document.querySelectorAll('#fiqhTabs .tab').forEach(b => b.addEventListener('click', () => { document.querySelectorAll('#fiqhTabs .tab').forEach(x=>x.classList.remove('active')); b.classList.add('active'); fiqhFilter = b.dataset.fiqh; renderFiqh(); }));
-    document.querySelectorAll('#newsTabs .tab').forEach(b => b.addEventListener('click', () => { document.querySelectorAll('#newsTabs .tab').forEach(x=>x.classList.remove('active')); b.classList.add('active'); newsFilter = b.dataset.news; renderNews(); }));
-    document.querySelectorAll('#greatsTabs .tab').forEach(b => b.addEventListener('click', () => { document.querySelectorAll('#greatsTabs .tab').forEach(x=>x.classList.remove('active')); b.classList.add('active'); greatsFilter = b.dataset.greats; renderGreats(); }));
-    document.querySelectorAll('#coursesTabs .tab').forEach(b => b.addEventListener('click', () => { document.querySelectorAll('#coursesTabs .tab').forEach(x=>x.classList.remove('active')); b.classList.add('active'); coursesTab = b.dataset.courses; renderCourses(); }));
-
-    $('searchInput')?.addEventListener('input', e => doSearch(e.target.value));
-    $('searchBtn')?.addEventListener('click', () => doSearch($('searchInput').value));
-    $('notifyBtn')?.addEventListener('click', subscribeNotify);
-
-    $('fiqhForm')?.addEventListener('submit', async e => { e.preventDefault(); const msg = $('fiqhMsg'); msg.textContent='جاري الإرسال...'; try { const r = await fetch('/api/fiqh', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:$('fiqhName').value.trim(),question:$('fiqhQuestion').value.trim()})}); const j = await r.json(); if (r.ok && j.success) { msg.textContent='✅ تم الإرسال'; msg.style.color='green'; e.target.reset(); } else throw new Error(); } catch(err) { msg.textContent='❌ فشل'; msg.style.color='red'; } });
-
-    function updateClock() {
-        const n = new Date(); const d = String(n.getDate()).padStart(2,'0'), m = String(n.getMonth()+1).padStart(2,'0'), y = n.getFullYear();
-        $('gregorianDate').textContent = `${d}/${m}/${y}`;
-        try { $('hijriDate').textContent = new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura',{day:'numeric',month:'long',year:'numeric'}).format(n); } catch(e) {}
-        let h = n.getHours(); const p = h >= 12 ? 'م' : 'ص'; h = h % 12 || 12;
-        $('liveClock').textContent = `${h}:${String(n.getMinutes()).padStart(2,'0')}`;
-        $('clockPeriod').textContent = p;
-    }
-    updateClock(); setInterval(updateClock, 30000);
-
-    await loadAll();
-    window.addEventListener('popstate', (e) => { const state = e.state; if (state && state.view && state.view !== 'article') showView(state.view, false); else if (state && state.view === 'article') showView('home', false); else showView('home', false); });
+  await loadAll();
 });
 </script>
 </body>
