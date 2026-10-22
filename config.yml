@@ -235,20 +235,14 @@ collections:
             add_to_top: true
             summary: "{{fields.title}} — {{fields.series}}"
             fields:
-              - { label: "اسم الملف الصوتي (بالإنجليزي)", name: "file", widget: "string", hint: "مثال: lesson-01.mp3 — يُرفع يدويًا إلى مجلد audios" }
+              - { label: "ملف الصوت (MP3)", name: "file", widget: "file", media_folder: "audios", public_folder: "/audios", accept: "audio/mpeg,audio/mp3" }
               - { label: "عنوان المقطع", name: "title", widget: "string" }
               - { label: "🎤 المحاضر / القارئ / المتحدث", name: "speaker", widget: "string", required: false, hint: "اسم الشخص الذي يتحدث في التسجيل" }
               - label: "📚 السلسلة / التصنيف"
                 name: "series"
-                widget: "select"
+                widget: "string"
                 required: false
-                options:
-                  - "محاضرات حول الأخلاق"
-                  - "سلسلة العقائد"
-                  - "تفسير القرآن الكريم"
-                  - "أدعية وزيارات"
-                  - "محاضرات عامة"
-                hint: "اختر التصنيف (السلسلة) الذي ينتمي إليه هذا المقطع. سيتم تجميع المقاطع التي تحمل نفس التصنيف تلقائياً في تبويب واحد بالموقع."
+                hint: "اكتب اسم التصنيف (مثال: محاضرات حول الأخلاق). يمكنك كتابة تصنيف جديد وسيتم إنشاء تبويب خاص به في الموقع تلقائياً. (تأكد من كتابة الاسم بنفس الطريقة في كل مرة لتجميع المقاطع معاً)."
               - { label: "التاريخ", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
               - { label: "الوصف", name: "description", widget: "text", required: false }
 
