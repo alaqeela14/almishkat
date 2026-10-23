@@ -1,9 +1,18 @@
 {
   "items": [
     {
+      "file": "audios/Who supports Israel؟.mp3",
+      "title": "Who supports Israel؟",
+      "speaker": "السيد محمد الحسيني الشيرازي",
+      "series": "حول اسرائيل",
+      "date": "2026-10-23",
+      "description": ""
+    },
+    {
       "file": "ahlulbayt.mp3",
       "title": "أهل البيت صفوة خلق الله تعالى",
       "speaker": "الشيخ عبدالرضا معاش",
+      "series": "",
       "date": "2026-09-26",
       "description": ""
     },
@@ -11,6 +20,7 @@
       "file": "hudud-ilahiyya.mp3",
       "title": "الحدود الإلهية في العلاقات الإنسانية",
       "speaker": "الشيخ عبدالرضا معاش",
+      "series": "",
       "date": "2026-09-26",
       "description": ""
     },
@@ -18,6 +28,7 @@
       "file": "jihad-nafs.mp3",
       "title": "فلننذر أنفسنا للجهاد في سبيل الله - أهل البيت عليهم السلام مثالاً",
       "speaker": "الشيخ عبدالرضا معاش",
+      "series": "",
       "date": "2026-09-26",
       "description": ""
     }
